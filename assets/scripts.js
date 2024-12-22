@@ -218,3 +218,66 @@ async function fetchBitcoinRate() {
 }
 
 window.onload = fetchBitcoinRate;
+
+async function redirectToLocalizedSite() {
+	try {
+			
+			const response = await fetch('https://ipapi.co/json/'); 
+			const data = await response.json();
+			const countryCode = data.country_code;
+
+		
+			const redirectionRules = {
+					DE: '/de/index.html',
+					FR: '/index.html',
+					ES: '/es/index.html',
+					GB: '/en/index.html',
+					US: '/en/index.html',
+					RU: '/ru/index.html',
+			};
+
+			
+			if (redirectionRules[countryCode]) {
+					window.location.href = redirectionRules[countryCode];
+			} else {
+	
+					window.location.href = '/en/index.html';
+			}
+	} catch (error) {
+			console.error('Error fetching geolocation data:', error);
+
+			window.location.href = '/en/index.html';
+	}
+}
+
+
+redirectToLocalizedSite();
+
+
+function checkScreenSize() {
+	if (window.innerWidth < 768) {
+	
+			document.body.style.overflow = 'hidden';
+
+	
+			const warningBox = document.createElement('div');
+			warningBox.style.position = 'fixed';
+			warningBox.style.top = '0';
+			warningBox.style.left = '0';
+			warningBox.style.width = '100%';
+			warningBox.style.height = '100%';
+			warningBox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+			warningBox.style.color = 'white';
+			warningBox.style.display = 'flex';
+			warningBox.style.justifyContent = 'center';
+			warningBox.style.alignItems = 'center';
+			warningBox.style.zIndex = '10000';
+			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Wechseln Sie auf ein größeren Bildschirm, um diese Seite zu nutzen.</div>';
+
+			
+			document.body.appendChild(warningBox);
+	}
+}
+
+
+window.onload = checkScreenSize;
