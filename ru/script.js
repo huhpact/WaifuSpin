@@ -238,7 +238,7 @@ function checkScreenSize() {
 			warningBox.style.justifyContent = 'center';
 			warningBox.style.alignItems = 'center';
 			warningBox.style.zIndex = '10000';
-			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Switch to a larger screen to use this page.</div>';
+			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Чтобы использовать эту страницу, переключитесь на более крупный экран.</div>';
 
 			
 			document.body.appendChild(warningBox);
