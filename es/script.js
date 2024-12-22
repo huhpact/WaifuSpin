@@ -3,18 +3,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const promos = [
 			{
-					title: "Tombolas & Courses",
-					description: "Participez au tirage au sort pour gagner 75K chaque semaine. Et gagnez gros lors des courses quotidiennes.",
+					title: "Rifas y carreras",
+					description: "Entra en el sorteo para ganar 75.000 cada semana. Y gana a lo grande en las carreras diarias.",
 					media: "/assets/image.png",
 			},
 			{
-					title: "Promotions",
-					description: "Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.",
+					title: "Ofertas especiales",
+					description: "Aproveche al máximo nuestras promociones de casino y bonos de apuestas deportivas, que se actualizan semanalmente.",
 					media: "/assets/image copy.png",
 			},
 			{
-					title: "Haut retour aux joueurs (RTP)",
-					description: "Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.",
+					title: "Alta respuesta de los jugadores (RTP)",
+					description: "Con porcentajes de RTP mejorados, tienes la oportunidad de ganar a lo grande cada vez que juegues.",
 					media: "/assets/image copy 2.png",
 			},
 	];
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" Masqué"];
+  const users = [" oculto"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -147,7 +147,7 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
+	onlineUsersElement.textContent = `${randomUsers} usuario en línea`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	
 	const text = supportHeading.innerHTML;
-	supportHeading.innerHTML = text.replace('votre langue', '<span>votre langue</span>');
+	supportHeading.innerHTML = text.replace('su idioma', '<span>su idioma</span>');
 });
 
 let currentFeatureIndex = 0;
@@ -219,40 +219,6 @@ async function fetchBitcoinRate() {
 
 window.onload = fetchBitcoinRate;
 
-async function redirectToLocalizedSite() {
-	try {
-			
-			const response = await fetch('https://ipapi.co/json/'); 
-			const data = await response.json();
-			const countryCode = data.country_code;
-
-		
-			const redirectionRules = {
-					DE: '/de/index.html',
-					FR: '/index.html',
-					ES: '/es/index.html',
-					GB: '/en/index.html',
-					US: '/en/index.html',
-					RU: '/ru/index.html',
-			};
-
-			
-			if (redirectionRules[countryCode]) {
-					window.location.href = redirectionRules[countryCode];
-			} else {
-	
-					window.location.href = '/en/index.html';
-			}
-	} catch (error) {
-			console.error('Error fetching geolocation data:', error);
-
-			window.location.href = '/en/index.html';
-	}
-}
-
-
-redirectToLocalizedSite();
-
 
 function checkScreenSize() {
 	if (window.innerWidth < 768) {
@@ -272,7 +238,7 @@ function checkScreenSize() {
 			warningBox.style.justifyContent = 'center';
 			warningBox.style.alignItems = 'center';
 			warningBox.style.zIndex = '10000';
-			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Passez à un écran plus grand pour utiliser cette page.</div>';
+			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Switch to a larger screen to use this page.</div>';
 
 			
 			document.body.appendChild(warningBox);
@@ -303,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	document.getElementById('decline-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365); 
+			document.cookie = "cookies-accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365);
 			hideBanner();
 	});
 });
