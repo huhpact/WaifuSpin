@@ -15,26 +15,42 @@
   <link rel="stylesheet" href="assets/XmsArEE.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 	<script src="assets/scripts.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="1009685799218-rq6p52ng2h171st5bh65uba76uaiieac.apps.googleusercontent.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
 </head>
 <body>
+  
 	<header>
-    <div class="burger-menu">
-      <i class='bx bx-menu'></i>
-    </div>
-    <img src="assets/logo.png" alt="WaifuSpin Logo" class="logo">
-    <div class="login-reg">
-      <a href="login.html" class="login">Se connecter</a>
-      <a href="register.html" class="register">S'inscrire</a>
+    <div class="header-content">
+      <div class="burger-logo">
+        <div class="burger-menu">
+          <i class='bx bx-menu'></i>
+        </div>
+        <img src="assets/logo (1).png" alt="WaifuSpin Logo" class="logo">
+      </div>
+      <div class="login-reg">
+        <a href="login.html" class="login">Se connecter</a>
+        <button class="sign-up" style="margin-left: 10px;">
+          S'inscrire
+          <div class="arrow-wrapper-sign-up">
+              <div class="arrow-sign-up"></div>
+      
+          </div>
+      </button>
+      </div>
     </div>
   </header>
+  
+  
+  
 
-  <!-- Sidebar -->
   <aside class="sidebar">
     <ul>
       <li><i class='bx bxs-gift'></i> Promotions</li>
       <li><i class='bx bxs-business'></i> Affilié</li>
+      <hr>
       <li><i class='bx bxs-trophy'></i> Club VIP</li>
       <li><i class='bx bxs-news'></i> Nouveautés</li>
       <li><i class='bx bx-support'></i> Service client en direct</li>
@@ -50,9 +66,8 @@
       </li>
     </ul>
   </aside>
-
-  <!-- Overlay -->
   <div class="overlay"></div>
+  
 
 
 
@@ -60,14 +75,21 @@
         <div class="bg-logopic"></div>
         <div class="left-align">
             <h1>Un Casino en ligne et un site de paris inégalés</h1>
-            <a href="register.html" class="cta-button">S'inscrire</a>
+            <button class="sign-up">
+              S'inscrire
+              <div class="arrow-wrapper-sign-up">
+                  <div class="arrow-sign-up"></div>
+          
+              </div>
+          </button>
         </div>
         <div class="picture-right">
-            <img src="assets/main.png" alt="Right-Side-Picture" class="right-img">
+            <img src="assets/start-mot.png" alt="Right-Side-Picture" class="right-img">
         </div>
     </section>
-
+   
     <div class="banner">
+      <br>
 			<div class="banner-wrapper">
 					<img src="assets/Kick_logo.svg.png" alt="Sponsor 1">
 					<img src="assets/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="Sponsor 2">
@@ -103,9 +125,11 @@
     </div>
 </section>
 
+
+
 <section class="payment">
 	<div class="payment-img">
-			<img src="assets/cryptocurrency_illustrations_by_superrgb.gif" alt="Crypto">
+			<img src="assets/ezgif-4-dd88bfb6f8.gif" alt="Crypto">
 	</div>
 	<div class="payment-text">
 			<h2>Tranquillité d'esprit avec plusieurs cryptomonnaies et devises locales</h2>
@@ -115,57 +139,216 @@
 
 
 <section class="vip">
-	<div class="vip-stake-section">
-		<div class="vip-stake-header">
-			<h1>Pariez plus et voyez vos récompenses croître en tant que VIP Stake</h1>
-			<p>Entrez dans un monde d'avantages uniques, de services personnalisés et de bonus exclusifs, uniquement en tant que VIP Stake.</p>
-			<button class="vip-button">Devenez un VIP</button>
-		</div>
-		<div class="vip-stake-features">
-			<div class="feature">
-				<h2>Des bonus toutes les semaines</h2>
-				<p>Chaque semaine de chaque mois, vous serez récompensé par un bonus basé sur vos derniers jeux. Plus vous misez, plus les bonus sont élevés.</p>
-			</div>
-			<div class="feature">
-				<h2>Votre propre hôte VIP</h2>
-				<p>Profitez d'un accès exclusif à un hôte VIP dévoué qui vous soutiendra et répondra à vos besoins en matière de paris.</p>
-			</div>
-			<div class="feature">
-				<h2>Paiements pour le niveau supérieur</h2>
-				<p>Soyez payé chaque fois que vous atteignez un nouveau niveau. Plus vous montez, plus les niveaux sont intéressants.</p>
-			</div>
-			<div class="feature">
-				<h2>Bonus de Jeu Récents</h2>
-				<p>Vous cherchez à récupérer vos paris non fructueux? Stake offre de l'argent sur vos pertes chaque fois que vous montez de niveau.</p>
-			</div>
-		</div>
-	</div>
-	
+  <div class="vip-section">
+      <div class="vip-header">
+          <h1>Pariez plus et voyez vos récompenses croître en tant que VIP Stake</h1>
+          <p>Entrez dans un monde d'avantages uniques, de services personnalisés et de bonus exclusifs, uniquement en tant que VIP Stake.</p>
+          <button class="vip-btn">Devenez un VIP</button>
+      </div>
+      <div class="vip-features">
+          <div class="feature-container">
+              <div class="feature-image">
+                  <img src="assets/rocket-start.gif" alt="Bonus hebdomadaires">
+              </div>
+              <div class="feature">
+                  <h2>Des bonus toutes les semaines</h2>
+                  <p>Chaque semaine de chaque mois, vous serez récompensé par un bonus basé sur vos derniers jeux. Plus vous misez, plus les bonus sont élevés.</p>
+              </div>
+          </div>
+         
+          <div class="feature-container">
+              <div class="feature">
+                  <h2>Votre propre hôte VIP</h2>
+                  <p>Profitez d'un accès exclusif à un hôte VIP dévoué qui vous soutiendra et répondra à vos besoins en matière de paris.</p>
+              </div>
+              <div class="feature-image">
+                  <img src="assets/support-vip.gif" alt="Hôte VIP">
+              </div>
+          </div>
+          
+          <div class="feature-container">
+              <div class="feature-image">
+                  <img src="image3.jpg" alt="Paiements">
+              </div>
+              <div class="feature">
+                  <h2>Paiements pour le niveau supérieur</h2>
+                  <p>Soyez payé chaque fois que vous atteignez un nouveau niveau. Plus vous montez, plus les niveaux sont intéressants.</p>
+              </div>
+          </div>
+          
+          <div class="feature-container">
+              <div class="feature">
+                  <h2>Bonus de Jeu Récents</h2>
+                  <p>Vous cherchez à récupérer vos paris non fructueux? Stake offre de l'argent sur vos pertes chaque fois que vous montez de niveau.</p>
+              </div>
+              <div class="feature-image">
+                  <img src="image4.jpg" alt="Bonus de jeu récents">
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
+
+
+
 
 <section class="support">
-	<h2 class="support-left-h2">Notre équipe d'assistance parle votre langue</h2>
-	<p class="support-left-p">Obtenez une assistance 24/7 de notre équipe de support client en direct dans votre langue maternelle.</p>
-	<img src="#" alt="Support's always there for you" class="support-right-img">
+  <div class="support-container">
+      <div class="support-left">
+        <h2 id="support-heading">Notre équipe d'assistance parle votre langue</h2>
+          <p>Obtenez une assistance 24/7 de notre équipe de support client en direct dans votre langue maternelle.</p>
+          <div class="support-actions">
+            <button class="button-support">
+              Assistance
+              <div class="star-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+      </div>
+      <div class="support-right">
+          <img src="assets/Illustration_sans_titre.png" alt="Support's always there for you" class="support-img">
+      </div>
+  </div>
+  
+  
 </section>
 
-    <section class="stats">
-        <h2>Regardez l'action des paris en cours</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Jeu</th>
-                    <th>Utilisateur</th>
-                    <th>Temps</th>
-                    <th>Montant (€)</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
+
+<section class="stats">
+  <h2>Regardez l'action des paris en cours</h2>
+  <div class="online-indicator">
+    <span class="blink"></span>
+  </div>
+    <span id="online-users">Loading...</span>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Jeu</th>
+        <th>Utilisateur</th>
+        <th>Temps</th>
+        <th>Montant (€)</th>
+      </tr>
+    </thead>
+    <tbody id="stats-data"></tbody>
+  </table>
+</section>
+
 
     <footer>
-        <img src="assets/logo.png" alt="WaifuSpin Logo" class="footer-logo">
+        <img src="assets/logo (1).png" alt="WaifuSpin Logo" class="footer-logo">
         <p>© WaifuSpin | Tous Droits Réservés.</p>
         <div class="social-icons">
             <i class='bx bxl-facebook'></i>
