@@ -3,18 +3,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const promos = [
 			{
-					title: "Tombolas & Courses",
-					description: "Participez au tirage au sort pour gagner 75K chaque semaine. Et gagnez gros lors des courses quotidiennes.",
+					title: "Tombolas & Wettläufe",
+					description: "Nehmen Sie an der Verlosung teil, um jede Woche 75K zu gewinnen. Und gewinnen Sie bei den täglichen Rennen groß.",
 					media: "/assets/image.png",
 			},
 			{
-					title: "Promotions",
-					description: "Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.",
+					title: "Sonderangebote",
+					description: "Machen Sie das Beste aus unseren Casino-Aktionen und Sportwetten-Boni, die wöchentlich aktualisiert werden.",
 					media: "/assets/image copy.png",
 			},
 			{
-					title: "Haut retour aux joueurs (RTP)",
-					description: "Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.",
+					title: "Hohe Spielerrückmeldung (RTP)",
+					description: "Mit verbesserten RTP-Prozentsätzen haben Sie bei jedem Spiel die Chance auf einen großen Gewinn.",
 					media: "/assets/image copy 2.png",
 			},
 	];
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" Masqué"];
+  const users = [" Anonym"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -147,7 +147,7 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
+	onlineUsersElement.textContent = `${randomUsers} Nutzer online`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	
 	const text = supportHeading.innerHTML;
-	supportHeading.innerHTML = text.replace('votre langue', '<span>votre langue</span>');
+	supportHeading.innerHTML = text.replace('Ihre Sprache', '<span>Ihre Sprache</span>');
 });
 
 let currentFeatureIndex = 0;
@@ -219,40 +219,6 @@ async function fetchBitcoinRate() {
 
 window.onload = fetchBitcoinRate;
 
-async function redirectToLocalizedSite() {
-	try {
-			
-			const response = await fetch('https://ipapi.co/json/'); 
-			const data = await response.json();
-			const countryCode = data.country_code;
-
-		
-			const redirectionRules = {
-					DE: '/de/index.html',
-					FR: '/index.html',
-					ES: '/es/index.html',
-					GB: '/en/index.html',
-					US: '/en/index.html',
-					RU: '/ru/index.html',
-			};
-
-			
-			if (redirectionRules[countryCode]) {
-					window.location.href = redirectionRules[countryCode];
-			} else {
-	
-					window.location.href = '/en/index.html';
-			}
-	} catch (error) {
-			console.error('Error fetching geolocation data:', error);
-
-			window.location.href = '/en/index.html';
-	}
-}
-
-
-redirectToLocalizedSite();
-
 
 function checkScreenSize() {
 	if (window.innerWidth < 768) {
@@ -272,7 +238,7 @@ function checkScreenSize() {
 			warningBox.style.justifyContent = 'center';
 			warningBox.style.alignItems = 'center';
 			warningBox.style.zIndex = '10000';
-			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Passez à un écran plus grand pour utiliser cette page.</div>';
+			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Wechseln Sie auf ein größeren Bildschirm, um diese Seite zu nutzen.</div>';
 
 			
 			document.body.appendChild(warningBox);
