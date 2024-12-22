@@ -3,22 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Google Login</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #1e0132;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            position: relative;
+        }
+
+        .logo {
+            height: 40px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+            }
+
+        header, footer {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(90deg, #2b134b, #1b1035);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
+
+        .login-container {
+            background: rgba(50, 0, 70, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(150, 0, 250, 0.9);
+            text-align: center;
+            width: 300px;
+            margin: auto;
+            position: relative;
+        }
+
+        .login-container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .login-container input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(150, 0, 250, 0.9);
+        }
+
+        .login-container .error {
+            color: #ff6be6;
+            font-size: 0.9em;
+            margin-top: -5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: linear-gradient(90deg, rgba(150, 0, 250, 1) 0%, rgba(250, 0, 150, 1) 100%);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .login-container button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(150, 0, 250, 0.9);
+        }
+
+        .login-container p {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .login-container a {
+            color: #ff6be6;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .side-images {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            pointer-events: none;
+        }
+
+        .side-images img {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+    </style>
 </head>
 <body>
     <header>
+        <div class="header-content">
+          <div class="burger-logo">
+            <div class="burger-menu">
+              <i class='bx bx-menu'></i>
+            </div>
+            <img src="/assets/logo (1).png" alt="WaifuSpin Logo" class="logo">
+          </div>
+        </div>
+      </header>
+
+    <div class="login-container">
         <h1>Login</h1>
-    </header>
-    <main>
-        <form action="/login" method="POST">
-            <label for="username">Benutzername:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Passwort:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Einloggen</button>
-        </form>
-        <p>Noch kein Konto? <a href="register.html">Registrieren</a></p>
-    </main>
+        <div id="g_id_onload"
+             data-client_id="1009685799218-rq6p52ng2h171st5bh65uba76uaiieac.apps.googleusercontent.com"
+             data-context="signin"
+             data-ux_mode="popup"
+             data-callback="handleCredentialResponse"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin" data-locale="fr"
+             data-type="standard" 
+             data-shape="rectangular" 
+             data-theme="outline" 
+             data-text="signin_with" 
+             data-size="large">
+        </div>
+    </div>
+
+    <div class="side-images">
+        <img src="/path/to/left-image.jpg" alt="Left image">
+        <img src="/path/to/right-image.jpg" alt="Right image">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Login Page</p>
+    </footer>
+
+    <script>
+        // Google Sign-In Callback
+async function handleCredentialResponse(response) {
+    // Decode JWT token
+    const user = parseJwt(response.credential);
+    const email = user.email;
+
+    console.log("User email:", email);
+
+    // Send email to Google Sheets
+    const spreadsheetId = "YOUR_SPREADSHEET_ID";
+    const apiKey = "YOUR_API_KEY";
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${apiKey}`;
+
+    const body = {
+        values: [[email, "0"]], // Initial balance set to 0
+    };
+
+    try {
+        const result = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+        });
+
+        if (result.ok) {
+            alert("Login successful! Redirecting...");
+            // Redirect to the desired page
+            window.location.href = "/en/dashboard.html";
+        } else {
+            console.error("Error saving data:", await result.text());
+        }
+    } catch (error) {
+        console.error("Request failed:", error);
+    }
+}
+
+// JWT Decoder
+function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
+
+    </script>
 </body>
 </html>
