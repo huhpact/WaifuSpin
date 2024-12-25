@@ -3,84 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaifuSpin</title>
+    <title>WaifuSpin - Site non disponible</title>
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        .logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-        }
-
-        .user-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .user-box {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: #222;
-            border: 1px solid #444;
-            border-radius: 5px;
-            padding: 20px;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .user-box input {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background: #111;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .user-box button {
-            width: 100%;
-            padding: 10px;
-            background: #444;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .user-box button:hover {
-            background: #555;
-        }
-
-        .user-icon.active + .user-box {
-            display: block;
-        }
-
-        .user-icon {
-            pointer-events: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="/s-pwsite/IytMczQ.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const userIcon = document.querySelector('.user-icon');
@@ -104,7 +30,7 @@
             if (username === 'admin' && password === 'schmerzen') {
                 window.location.href = "/fr/index.html";
             } else {
-                alert('Invalid username or password.');
+                alert("Nom d'utilisateur ou mot de passe incorrect.");
             }
         }
     </script>
@@ -115,9 +41,9 @@
     <i class="bx bx-user user-icon"></i>
 
     <div class="user-box">
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="validateLogin()">Login</button>
+        <input type="text" id="username" placeholder="Nom d'utilisateur">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button onclick="validateLogin()">Se connecter</button>
     </div>
 </body>
 </html>

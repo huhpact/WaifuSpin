@@ -1,22 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WaifuSpin: Page d'accueil</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/xZFQwV1.css">
+    <script src="/assets/dashboard.js"></script>
+
 </head>
 <body>
     <header>
-        <h1>Hallo, [Benutzername]</h1>
-        <nav>
-            <a href="blackjack.html">Blackjack</a>
-            <a href="slots.html">Slots</a>
-            <a href="roulette.html">Roulette</a>
-        </nav>
+        <div class="header-content">
+            <div class="burger-logo">
+                <div class="burger-menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+                <img src="/assets/logo.png" alt="WaifuSpin Logo" class="logo">
+            </div>
+            <div class="balance-box">
+                <span id="balance">Solde: 100€</span>
+                <button id="recharge-button">Portemonnaie</button>
+            </div>
+            <div class="header-icons">
+                <i class='bx bx-user' id="user-icon"></i>
+                <i class='bx bx-bell' id="notification-icon"></i>
+            </div>
+        </div>
     </header>
+
+    <div id="recharge-popup" class="hidden">
+        <h4>Recharger votre compte</h4>
+        <ul>
+            <li><button data-amount="10">10€</button></li>
+            <li><button data-amount="20">20€</button></li>
+            <li><button data-amount="50">50€</button></li>
+            <li><button data-amount="100">100€</button></li>
+            <li><button data-amount="200">200€</button></li>
+            <li><button data-amount="500">500€</button></li>
+        </ul>
+        <button id="close-recharge-popup">Fermer</button>
+    </div>
+      
+      <div id="cookie-banner">
+        <h4>Paramètres des cookies</h4>
+        <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
+        <button id="accept-cookies">Accepter</button>
+        <button id="decline-cookies">Refuser</button>
+    </div>
+      
+    
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#"><i class='bx bxs-gift'></i> Promotions</a></li>
+          <li><a href="#"><i class='bx bxs-business'></i> Affilié</a></li>
+          <hr>
+          <li><a href="#"><i class='bx bxs-trophy'></i> Club VIP</a></li>
+          <li><a href="#"><i class='bx bxs-news'></i> Nouveautés</a></li>
+          <li><a href="#"><i class='bx bx-support'></i> Service client en direct</a></li>
+          <li class="language-dropdown">
+            <i class='bx bx-world'></i> Langue
+            <ul class="dropdown">
+              <li><a href="/en/dashboard.html">English</a></li>
+              <li><a href="/de/dashboard.html">Deutsch</a></li>
+              <li><a href="/fr/dashboard.html">Français</a></li>
+              <li><a href="/ru/dashboard.html">Русский</a></li>
+              <li><a href="/es/dashboard.html">Español</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <div class="overlay"></div>
+      
     <main>
-        <h2>Wähle dein Spiel</h2>
+        <div class="presentation">
+            <div class="user-vip-presentation-left">
+                <h1>//User//</h1>
+                <p>Votre Progression VIP</p>
+                <progress id="vip-progress" max="100" value="40"></progress>
+            </div>
+            <div class="img-presentation-right">
+                <img src="/assets/waifu1.png" alt="Waifu 1">
+                <img src="/assets/waifu2.png" alt="Waifu 2">
+            </div>
+        </div>
+
+        <hr class="neon-divider">
+
+        <div class="games-presentation-div-main">
+            <h2><i class='bx bxs-game'></i> Jeux Populaires</h2>
+            <div class="scroll-bar-to-right-img-rep">
+                <img src="/assets/game1.png" alt="Game 1">
+                <img src="/assets/game2.png" alt="Game 2">
+                <img src="/assets/game3.png" alt="Game 3">
+                <img src="/assets/game4.png" alt="Game 4">
+            </div>
+        </div>
+
+        <div class="courses-tombolas-div">
+            <div class="highlight-tombola">
+                <h2><i class='bx bxs-trophy'></i> Tombola</h2>
+                <button id="ranking-button">Classement</button>
+                <div class="progress-left-round">
+                    <progress max="100" value="75"></progress>
+                    <p>1 Jour, 12 Heures</p>
+                </div>
+                <hr class="neon-divider">
+                <button id="enter-tombola">Entrer</button>
+            </div>
+        </div>
+
+    
+    <section class="stats">
+        <h2>Regardez l'action des paris en cours</h2>
+        <div class="online-indicator">
+          <span class="blink"></span>
+        </div>
+          <span id="online-users">Loading...</span>
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Jeu</th>
+              <th>Utilisateur</th>
+              <th>Temps</th>
+              <th>Montant (€)</th>
+            </tr>
+          </thead>
+          <tbody id="stats-data"></tbody>
+        </table>
+      </section>
     </main>
+
+    <footer>
+        <div class="logo-footer1">
+          <img src="/assets/logo (1).png" alt="Waifuspin Logo">
+      </div>
+  
+      <div class="container">
+  
+          <div class="section">
+              <h4>Casino</h4>
+              <ul>
+                  <li><a href="#">Jeux de Casino</a></li>
+                  <li><a href="#">Machines à Sous</a></li>
+                  <li><a href="#">Casino en direct</a></li>
+                  <li><a href="#">Roulette</a></li>
+                  <li><a href="#">Blackjack</a></li>
+                  <li><a href="#">Fournisseurs</a></li>
+                  <li><a href="#">Promos & Compétitions</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>Support</h4>
+              <ul>
+                  <li><a href="#">Centre d'Aide</a></li>
+                  <li><a href="#">Équité</a></li>
+                  <li><a href="#">Ligne d'assistance pour les problèmes de jeu</a></li>
+                  <li><a href="#">Service client en direct</a></li>
+                  <li><a href="#">Auto-Exclusion</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>À propos de nous</h4>
+              <ul>
+                  <li><a href="#">Club VIP</a></li>
+                  <li><a href="#">Affilié</a></li>
+                  <li><a href="#">Politique de Confidentialité</a></li>
+                  <li><a href="#">Politique LBC</a></li>
+                  <li><a href="#">Conditions d'Utilisation</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>Informations sur les paiements</h4>
+              <ul>
+                  <li><a href="#">Dépôts & Retraits</a></li>
+                  <li><a href="#">Guide sur les devises</a></li>
+                  <li><a href="#">Guide sur la crypto</a></li>
+                  <li><a href="#">Crypto supportée</a></li>
+                  <li><a href="#">Comment utiliser le coffre</a></li>
+                  <li><a href="#">Combien parier</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>Guides pratiques</h4>
+              <ul>
+                  <li><a href="#">Guides pratiques</a></li>
+                  <li><a href="#">Guide du casino en ligne</a></li>
+                  <li><a href="#">Guide des paris sportifs</a></li>
+                  <li><a href="#">Comment diffuser des sports en direct</a></li>
+                  <li><a href="#">Guide VIP de WaifuSpin</a></li>
+                  <li><a href="#">Guide sur l'avantage de la maison</a></li>
+              </ul>
+  
+              <div class="language-selector">
+                  <select>
+                      <option value="fr">Français</option>
+                      <option value="en">English</option>
+                  </select>
+              </div>
+  
+              <div class="currency-selector">
+                  <select>
+                      <option value="decimal">Décimale</option>
+                      <option value="fractional">Fractionnelle</option>
+                      <option value="american">Américaine</option>
+                  </select>
+              </div>
+  
+            
+              <div class="btc-rate">1 BTC = Loading...</div>
+          </div>
+      </div>
+  
+  
+      <div class="copyright">
+          &copy; 2024 Waifuspin.com | Tous Droits Réservés.
+      </div>
+      </footer>
 </body>
 </html>
