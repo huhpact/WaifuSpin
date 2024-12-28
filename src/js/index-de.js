@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			{
 					title: "Tombolas & Wettläufe",
 					description: "Nehmen Sie an der Verlosung teil, um jede Woche 75K zu gewinnen. Und gewinnen Sie bei den täglichen Rennen groß.",
-					media: "/assets/image.png",
+					media: "/public/images/win.png",
 			},
 			{
 					title: "Sonderangebote",
 					description: "Machen Sie das Beste aus unseren Casino-Aktionen und Sportwetten-Boni, die wöchentlich aktualisiert werden.",
-					media: "/assets/image copy.png",
+					media: "/public/images/cards.png",
 			},
 			{
 					title: "Hohe Spielerrückmeldung (RTP)",
 					description: "Mit verbesserten RTP-Prozentsätzen haben Sie bei jedem Spiel die Chance auf einen großen Gewinn.",
-					media: "/assets/image copy 2.png",
+					media: "/public/images/rtp.png",
 			},
 	];
 
