@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Dashboard</title>
+    <link rel="stylesheet" href="/assets/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.svg" alt="Casino Logo">
+        </div>
+        <div class="header-icons">
+            <div class="icon-wrapper">
+                <i class='bx bx-user'></i>
+                <div class="dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+            <div class="icon-wrapper">
+                <i class='bx bx-bell'></i>
+                <div class="dropdown">
+                    <p>No new notifications</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-overview">
+            <div class="vip-status">
+                <h2>VIP Status</h2>
+                <div class="vip-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <p>Level 3 - Gold</p>
+                </div>
+                <div class="vip-benefits">
+                    <h3>Benefits</h3>
+                    <ul>
+                        <li>5% Cashback</li>
+                        <li>Weekly Bonus</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="balance-section">
+                <div class="balance-box">
+                    <h2>Balance</h2>
+                    <p class="balance">$1,000.00</p>
+                    <button class="deposit-btn">Deposit</button>
+                </div>
+            </div>
+            <div class="featured-images">
+                <div class="featured-image">
+                    <img src="featured1.jpg" alt="Featured 1">
+                </div>
+                <div class="featured-image">
+                    <img src="featured2.jpg" alt="Featured 2">
+                </div>
+            </div>
+        </section>
+
+        <section class="games-section">
+            <h2>Popular Games</h2>
+            <div class="games-grid">
+                <!-- Games will be added dynamically via JavaScript -->
+            </div>
+        </section>
+
+        <section class="tombola-section">
+            <h2>Active Events</h2>
+            <div class="tombola-grid">
+                <!-- Tombola events will be added dynamically via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <div class="deposit-modal" id="depositModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Deposit Funds</h2>
+            <p>Select an amount to deposit via PayPal</p>
+            <div class="deposit-options">
+                <div class="deposit-card" data-amount="10">
+                    <h3>$10</h3>
+                    <p>Quick Deposit</p>
+                </div>
+                <div class="deposit-card" data-amount="25">
+                    <h3>$25</h3>
+                    <p>Popular</p>
+                </div>
+                <div class="deposit-card" data-amount="50">
+                    <h3>$50</h3>
+                    <p>Best Value</p>
+                </div>
+                <div class="deposit-card" data-amount="100">
+                    <h3>$100</h3>
+                    <p>High Roller</p>
+                </div>
+                <div class="deposit-card" data-amount="250">
+                    <h3>$250</h3>
+                    <p>VIP</p>
+                </div>
+                <div class="deposit-card" data-amount="500">
+                    <h3>$500</h3>
+                    <p>Premium</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/en/dashboard.js"></script>
+</body>
+</html>
