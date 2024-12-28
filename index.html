@@ -1,1 +1,465 @@
-<script>document.write(unescape("%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0A%20%20%20%20%3Ctitle%3EAccess%20Denied%3C/title%3E%0A%20%20%20%20%3Clink%20rel%3D%22icon%22%20href%3D%22favicon.ico%22%3E%0A%20%20%20%20%3Cstyle%3E%0A%09%09%09*%20%7B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20padding%3A%200%3B%0A%20%20%20%20box-sizing%3A%20border-box%3B%0A%7D%0A%0Abody%20%7B%0A%20%20%20%20font-family%3A%20%27Arial%27%2C%20sans-serif%3B%0A%20%20%20%20background-color%3A%20%23333%3B%0A%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20height%3A%20100vh%3B%0A%20%20%20%20margin%3A%200%3B%0A%7D%0A%0A.container%20%7B%0A%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20max-width%3A%20800px%3B%0A%20%20%20%20background-color%3A%20%23222%3B%0A%20%20%20%20padding%3A%2030px%3B%0A%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20box-shadow%3A%200%204px%2015px%20rgba%280%2C%200%2C%200%2C%200.7%29%3B%0A%20%20%20%20border%3A%202px%20solid%20%23FF0000%3B%20/*%20Red%20border%20for%20emphasis%20*/%0A%7D%0A%0A.logo%20img%20%7B%0A%20%20%20%20width%3A%20180px%3B%0A%20%20%20%20margin-bottom%3A%2030px%3B%0A%7D%0A%0Ah1%20%7B%0A%20%20%20%20font-size%3A%2050px%3B%0A%20%20%20%20font-weight%3A%20bold%3B%0A%20%20%20%20color%3A%20%23FF0000%3B%20/*%20Red%20for%20severity%20*/%0A%20%20%20%20text-transform%3A%20uppercase%3B%0A%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20border-bottom%3A%203px%20solid%20%23FF0000%3B%0A%20%20%20%20padding-bottom%3A%2010px%3B%0A%7D%0A%0Ap%20%7B%0A%20%20%20%20font-size%3A%2020px%3B%0A%20%20%20%20line-height%3A%201.6%3B%0A%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20color%3A%20%23ccc%3B%0A%7D%0A%0A.ip-info%2C%0A.timestamp%20%7B%0A%20%20%20%20font-size%3A%2018px%3B%0A%20%20%20%20color%3A%20%2300FF00%3B%20/*%20Green%20for%20IP%20and%20time%20info%2C%20for%20serious%20security%20look%20*/%0A%7D%0A%0A.warning%20%7B%0A%20%20%20%20font-size%3A%2022px%3B%0A%20%20%20%20color%3A%20%23FFCC00%3B%20/*%20Yellow%20for%20the%20warning%20message%20*/%0A%20%20%20%20font-weight%3A%20bold%3B%0A%20%20%20%20margin-top%3A%2030px%3B%0A%7D%0A%0A.legal-notice%20%7B%0A%20%20%20%20font-size%3A%2018px%3B%0A%20%20%20%20color%3A%20%23FF6347%3B%20/*%20Tomato%20color%20for%20legal%20notice%20*/%0A%20%20%20%20font-style%3A%20italic%3B%0A%20%20%20%20margin-top%3A%2020px%3B%0A%7D%0A%0Astrong%20%7B%0A%20%20%20%20font-weight%3A%20bold%3B%0A%7D%0A%0Aa%20%7B%0A%20%20%20%20color%3A%20%2300BFFF%3B%0A%20%20%20%20text-decoration%3A%20none%3B%0A%7D%0A%0Aa%3Ahover%20%7B%0A%20%20%20%20text-decoration%3A%20underline%3B%0A%7D%0A%09%09%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%09%3Cdiv%20class%3D%22container%22%3E%0A%09%09%3Cdiv%20class%3D%22logo%22%3E%0A%09%09%09%09%3Cimg%20src%3D%22/public/images/logo.png%22%20alt%3D%22Official%20Logo%22%3E%0A%09%09%3C/div%3E%0A%09%09%3Cdiv%20class%3D%22message%22%3E%0A%09%09%09%09%3Ch1%3EAccess%20Denied%3C/h1%3E%0A%09%09%09%09%3Cp%3EYour%20IP%20address%20has%20been%20flagged%20due%20to%20unauthorized%20access%20or%20modifications.%20Your%20attempt%20to%20reach%20this%20website%20has%20been%20blocked.%3C/p%3E%0A%09%09%09%09%3Cp%20class%3D%22ip-info%22%3E%3Cstrong%3EBlocked%20IP%3A%3C/strong%3E%20%3Cspan%20id%3D%22ip-utilisateur%22%3ELoading...%3C/span%3E%3C/p%3E%0A%09%09%09%09%3Cp%20class%3D%22timestamp%22%3E%3Cstrong%3EDate/Time%3A%3C/strong%3E%20%3Cspan%20id%3D%22timestamp%22%3ELoading...%3C/span%3E%3C/p%3E%0A%09%09%09%09%3Cp%20class%3D%22warning%22%3EThis%20action%20has%20been%20logged%20for%20security%20and%20legal%20purposes.%20Any%20further%20attempts%20to%20access%20this%20site%20may%20be%20reported%20to%20the%20appropriate%20authorities.%3C/p%3E%0A%09%09%09%09%3Cp%20class%3D%22legal-notice%22%3EUnauthorized%20access%20to%20this%20system%20is%20a%20violation%20of%20federal%20law.%20You%20may%20be%20subject%20to%20prosecution%20and%20penalties%20under%20applicable%20laws.%3C/p%3E%0A%09%09%09%09%3Cp%3E%3Cstrong%3EIf%20you%20believe%20this%20is%20a%20mistake%2C%20please%20contact%20the%20website%20administrator%20immediately.%3C/strong%3E%3C/p%3E%0A%09%09%3C/div%3E%0A%3C/div%3E%0A%0A%20%20%20%20%3Cscript%3E%0A%09document.addEventListener%28%22DOMContentLoaded%22%2C%20function%28%29%20%7B%0A%20%20%20%20obtenirIPUtilisateur%28function%28ip%29%20%7B%0A%20%20%20%20%20%20%20%20//%20Display%20the%20user%20IP%20in%20the%20page%0A%20%20%20%20%20%20%20%20var%20ipUtilisateurElement%20%3D%20document.getElementById%28%22ip-utilisateur%22%29%3B%0A%20%20%20%20%20%20%20%20ipUtilisateurElement.textContent%20%3D%20ip%3B%0A%0A%20%20%20%20%20%20%20%20//%20Display%20the%20current%20timestamp%0A%20%20%20%20%20%20%20%20var%20currentTimestamp%20%3D%20new%20Date%28%29.toLocaleString%28%29%3B%0A%20%20%20%20%20%20%20%20var%20timestampElement%20%3D%20document.getElementById%28%22timestamp%22%29%3B%0A%20%20%20%20%20%20%20%20timestampElement.textContent%20%3D%20currentTimestamp%3B%0A%20%20%20%20%7D%29%3B%0A%7D%29%3B%0A%0Afunction%20obtenirIPUtilisateur%28callback%29%20%7B%0A%20%20%20%20//%20Fetch%20the%20user%27s%20IP%20address%20from%20the%20ipify%20API%0A%20%20%20%20fetch%28%27https%3A//api.ipify.org%3Fformat%3Djson%27%29%0A%20%20%20%20%20%20%20%20.then%28response%20%3D%3E%20response.json%28%29%29%20%20//%20Parse%20the%20response%20as%20JSON%0A%20%20%20%20%20%20%20%20.then%28data%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20Pass%20the%20IP%20to%20the%20callback%20function%0A%20%20%20%20%20%20%20%20%20%20%20%20callback%28data.ip%29%3B%0A%20%20%20%20%20%20%20%20%7D%29%0A%20%20%20%20%20%20%20%20.catch%28error%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20If%20there%27s%20an%20error%2C%20display%20a%20fallback%20message%0A%20%20%20%20%20%20%20%20%20%20%20%20console.error%28%22Erreur%20lors%20de%20la%20requ%EAte%20%3A%20%22%2C%20error%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20callback%28%22Impossible%20d%27obtenir%20l%27adresse%20IP%22%29%3B%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%7D%0A%0A%09%09%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E%0A"));</script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <!--Google Site Vérification-->
+  <meta name="application-name" content="WaifuSpin" />
+  <meta property="og:url" content="https://waifuspin.com" />
+  <meta property="og:site_name" content="WaifuSpin Paradise" />
+  <title>WaifuSpin Paradise - Jouez et Pariez en ligne</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
+  <link rel="stylesheet" href="/build/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+	<script src="/build/index.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="1009685799218-rq6p52ng2h171st5bh65uba76uaiieac.apps.googleusercontent.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  
+	<header>
+    <div class="header-content">
+      <div class="burger-logo">
+        <div class="burger-menu">
+          <i class='bx bx-menu'></i>
+        </div>
+        <a href="index.html"><img src="/public/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+      </div>
+      <div class="login-reg">
+        <a href="/src/locales/fr/login.html" class="login">Se connecter</a>
+        <a href="/src/locales/fr/login.html"><button class="sign-up" style="margin-left: 10px;">
+          S'inscrire
+          <div class="arrow-wrapper-sign-up">
+              <div class="arrow-sign-up"></div>
+      
+          </div>
+      </button></a>
+      </div>
+    </div>
+  </header>
+  
+  <div id="cookie-banner">
+    <h4>Paramètres des cookies</h4>
+    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
+    <button id="accept-cookies">Accepter</button>
+    <button id="decline-cookies">Refuser</button>
+</div>
+  
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#"><i class='bx bxs-gift'></i> Promotions</a></li>
+      <li><a href="#"><i class='bx bxs-business'></i> Affilié</a></li>
+      <hr>
+      <li><a href="#"><i class='bx bxs-trophy'></i> Club VIP</a></li>
+      <li><a href="#"><i class='bx bxs-news'></i> Nouveautés</a></li>
+      <li><a href="#"><i class='bx bx-support'></i> Service client en direct</a></li>
+      <li class="language-dropdown">
+        <i class='bx bx-world'></i> Langue
+        <ul class="dropdown">
+          <li><a href="/src/locales/en/index.html">English</a></li>
+          <li><a href="/src/locales/de/index.html">Deutsch</a></li>
+          <li><a href="/src/locales/fr/index.html">Français</a></li>
+          <li><a href="/src/locales/ru/index.html">Русский</a></li>
+          <li><a href="/src/locales/es/index.html">Español</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="overlay"></div>
+  
+
+
+
+    <section class="home">
+        <div class="bg-logopic"></div>
+        <div class="left-align">
+            <h1>Un Casino en ligne et un site de paris inégalés</h1>
+            <a href="/src/locales/fr/login.html"><button class="sign-up">
+              S'inscrire
+              <div class="arrow-wrapper-sign-up">
+                  <div class="arrow-sign-up"></div>
+          
+              </div>
+          </button>
+        </a>
+        </div>
+        <div class="picture-right">
+            <img src="/public/images/start-mot.png" alt="Right-Side-Picture" class="right-img">
+        </div>
+    </section>
+   
+    <div class="banner">
+      <br>
+			<div class="banner-wrapper">
+					<img src="/public/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+					<img src="/public/images/Logo_da_Rolex.png" alt="Rolex">
+					<img src="/public/images/Kick_logo.svg.png" alt="Kick">
+					<img src="/public/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+					<img src="/public/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+					<img src="/public/images/Dubai_official_logo.svg.png" alt="Dubai">
+					<img src="/public/images/Wirecard_Logo.svg" alt="Wirecard">
+					<img src="/public/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+					<img src="/public/images/Logo_da_Rolex.png" alt="Rolex">
+					<img src="/public/images/Kick_logo.svg.png" alt="Kick">
+					<img src="/public/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+					<img src="/public/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+					<img src="/public/images/Dubai_official_logo.svg.png" alt="Dubai">
+					<img src="/public/images/Wirecard_Logo.svg" alt="Wirecard">
+			</div>
+	</div>
+	
+	<section class="promo-gallery">
+    <div class="promo-container">
+        <button class="nav-arrow left-arrow">&lsaquo;</button>
+        <div class="promo-content">
+            <div class="promo-info">
+                <h3>Promo 1</h3>
+                <p>Profitez de nos meilleures offres!</p>
+            </div>
+            <div class="promo-media">
+                <img src="/public/images/win.png" alt="Promo 1">
+            </div>
+        </div>
+        <button class="nav-arrow right-arrow">&rsaquo;</button>
+    </div>
+</section>
+
+
+
+<section class="payment">
+	<div class="payment-img">
+			<img src="/public/images/ezgif-4-dd88bfb6f8.gif" alt="Crypto">
+	</div>
+	<div class="payment-text">
+			<h2>Tranquillité d'esprit avec plusieurs cryptomonnaies et devises locales</h2>
+			<p>Faites l'expérience de dépôts sécurisés et de retraits instantanés dans 20 cryptomonnaies et 7 devises locales. Tout cela sans minimums, avec des méthodes de paiement flexibles et un coffre-fort en ligne sécurisé.</p>
+	</div>
+</section>
+
+<div class="neon-divider"></div>
+
+
+<section class="vip">
+  <div class="vip-section">
+    <div class="vip-header">
+      <h1>
+        Pariez plus et voyez vos récompenses croître en tant que WaifuSpin
+      </h1>
+      <p>Entrez dans un monde d'avantages uniques, de services personnalisés et de bonus exclusifs, uniquement en tant que VIP WaifuSpin.</p>
+      <button class="vip-btn">Devenez un VIP</button>
+    </div>
+    
+      <div class="container">
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <h2 class="bonus">Des bonus toutes les semaines</h2>
+              <p class="bonus">Chaque semaine de chaque mois, vous serez récompensé par un bonus basé sur vos derniers jeux. Plus vous misez, plus les bonus sont élevés.</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <h2>Bonus</h2>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <h2 class="hote">Votre propre hôte VIP</h2>
+              <p class="hote">Profitez d'un accès exclusif à un hôte VIP dévoué qui vous soutiendra et répondra à vos besoins en matière de paris.              </p>
+            </div>
+          </div>
+          <div class="face face2">
+            <h2>Hôte</h2>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <h2 class="niveau">Paiements pour le niveau supérieur</h2>
+              <p class="niveau">Soyez payé chaque fois que vous atteignez un nouveau niveau. Plus vous montez, plus les niveaux sont intéressants.</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <h2>Niveau</h2>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <h2 class="jeux">Bonus de Jeu Récents</h2>
+              <p class="jeux">Vous cherchez à récupérer vos paris non fructueux? WaifuSpin offre de l'argent sur vos pertes chaque fois que vous montez de niveau.</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <h2>Jeux</h2>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+<section class="support">
+  <div class="support-container">
+      <div class="support-left">
+        <h2 id="support-heading">Notre équipe d'assistance parle votre langue</h2>
+          <p>Obtenez une assistance 24/7 de notre équipe de support client en direct dans votre langue maternelle.</p>
+          <div class="support-actions">
+            <button class="button-support">
+              Assistance
+              <div class="star-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path
+                      class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+      </div>
+      <div class="support-right">
+          <img src="/public/images/support.png" alt="Support's always there for you" class="support-img">
+      </div>
+  </div>
+  
+  
+</section>
+
+
+<section class="stats">
+  <h2>Regardez l'action des paris en cours</h2>
+  <div class="online-indicator">
+    <span class="blink"></span>
+  </div>
+    <span id="online-users">Loading...</span>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Jeu</th>
+        <th>Utilisateur</th>
+        <th>Temps</th>
+        <th>Montant (€)</th>
+      </tr>
+    </thead>
+    <tbody id="stats-data"></tbody>
+  </table>
+</section>
+
+
+    <footer>
+      <div class="logo-footer1">
+        <img src="/public/images/logo.png" alt="Waifuspin Logo">
+    </div>
+
+    <div class="container">
+
+        <div class="section">
+            <h4>Casino</h4>
+            <ul>
+                <li><a href="#">Jeux de Casino</a></li>
+                <li><a href="#">Machines à Sous</a></li>
+                <li><a href="#">Casino en direct</a></li>
+                <li><a href="#">Roulette</a></li>
+                <li><a href="#">Blackjack</a></li>
+                <li><a href="#">Fournisseurs</a></li>
+                <li><a href="#">Promos & Compétitions</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Centre d'Aide</a></li>
+                <li><a href="#">Équité</a></li>
+                <li><a href="#">Ligne d'assistance pour les problèmes de jeu</a></li>
+                <li><a href="#">Service client en direct</a></li>
+                <li><a href="#">Auto-Exclusion</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h4>À propos de nous</h4>
+            <ul>
+                <li><a href="#">Club VIP</a></li>
+                <li><a href="#">Affilié</a></li>
+                <li><a href="#">Politique de Confidentialité</a></li>
+                <li><a href="#">Politique LBC</a></li>
+                <li><a href="#">Conditions d'Utilisation</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h4>Informations sur les paiements</h4>
+            <ul>
+                <li><a href="#">Dépôts & Retraits</a></li>
+                <li><a href="#">Guide sur les devises</a></li>
+                <li><a href="#">Guide sur la crypto</a></li>
+                <li><a href="#">Crypto supportée</a></li>
+                <li><a href="#">Comment utiliser le coffre</a></li>
+                <li><a href="#">Combien parier</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h4>Guides pratiques</h4>
+            <ul>
+                <li><a href="#">Guides pratiques</a></li>
+                <li><a href="#">Guide du casino en ligne</a></li>
+                <li><a href="#">Guide des paris sportifs</a></li>
+                <li><a href="#">Comment diffuser des sports en direct</a></li>
+                <li><a href="#">Guide VIP de WaifuSpin</a></li>
+                <li><a href="#">Guide sur l'avantage de la maison</a></li>
+            </ul>
+
+            <div class="language-selector">
+                <select>
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+
+            <div class="currency-selector">
+                <select>
+                    <option value="decimal">Décimale</option>
+                    <option value="fractional">Fractionnelle</option>
+                    <option value="american">Américaine</option>
+                </select>
+            </div>
+
+          
+            <div class="btc-rate">1 BTC = Loading...</div>
+        </div>
+    </div>
+
+
+    <div class="copyright">
+        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
+    </div>
+    </footer>
+    
+</body>
+</html>
