@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			{
 					title: "Rifas y carreras",
 					description: "Entra en el sorteo para ganar 75.000 cada semana. Y gana a lo grande en las carreras diarias.",
-					media: "/assets/image.png",
+					media: "/public/images/win.png",
 			},
 			{
 					title: "Ofertas especiales",
 					description: "Aproveche al máximo nuestras promociones de casino y bonos de apuestas deportivas, que se actualizan semanalmente.",
-					media: "/assets/image copy.png",
+					media: "/public/images/cards.png",
 			},
 			{
 					title: "Alta respuesta de los jugadores (RTP)",
 					description: "Con porcentajes de RTP mejorados, tienes la oportunidad de ganar a lo grande cada vez que juegues.",
-					media: "/assets/image copy 2.png",
+					media: "/public/images/rtp.png",
 			},
 	];
 
@@ -238,7 +238,7 @@ function checkScreenSize() {
 			warningBox.style.justifyContent = 'center';
 			warningBox.style.alignItems = 'center';
 			warningBox.style.zIndex = '10000';
-			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Switch to a larger screen to use this page.</div>';
+			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Cambie a una pantalla más grande para utilizar esta página.</div>';
 
 			
 			document.body.appendChild(warningBox);

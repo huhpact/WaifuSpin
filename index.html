@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -9,12 +9,12 @@
   <meta name="application-name" content="WaifuSpin" />
   <meta property="og:url" content="https://waifuspin.com" />
   <meta property="og:site_name" content="WaifuSpin Paradise" />
-  <title>WaifuSpin Paradise - Jugar y apostar en línea</title>
+  <title>WaifuSpin Paradise - Jouez et Pariez en ligne</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
-  <link rel="stylesheet" href="/src/css/XmsArEE.css" />
+  <link rel="stylesheet" href="/build/index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-	<script src="/src/js/index-es.js"></script>
+	<script src="/build/index.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="1009685799218-rq6p52ng2h171st5bh65uba76uaiieac.apps.googleusercontent.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,12 +28,12 @@
         <div class="burger-menu">
           <i class='bx bx-menu'></i>
         </div>
-        <img src="/public/images/logo.png" alt="WaifuSpin Logo" class="logo">
+        <a href="index.html"><img src="/public/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
       <div class="login-reg">
-        <a href="login.html" class="login">Conectarse</a>
-        <a href="login.html"><button class="sign-up" style="margin-left: 10px;">
-          Inscríbete
+        <a href="/src/locales/fr/login.html" class="login">Se connecter</a>
+        <a href="/src/locales/fr/login.html"><button class="sign-up" style="margin-left: 10px;">
+          S'inscrire
           <div class="arrow-wrapper-sign-up">
               <div class="arrow-sign-up"></div>
       
@@ -43,33 +43,33 @@
     </div>
   </header>
   
-  
   <div id="cookie-banner">
-    <h4>Configuración de cookies</h4>
-    <p>Este sitio web utiliza cookies para que usted tenga la mejor experiencia en nuestro sitio web.</p>
-    <button id="accept-cookies">Acepte</button>
-    <button id="decline-cookies">Rechazar</button>
+    <h4>Paramètres des cookies</h4>
+    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
+    <button id="accept-cookies">Accepter</button>
+    <button id="decline-cookies">Refuser</button>
 </div>
+  
 
   <aside class="sidebar">
-		<ul>
-			<li><a href="#"><i class='bx bxs-gift'></i> Promociones</a></li>
-			<li><a href="#"><i class='bx bxs-business'></i> Afiliado</a></li>
-			<hr>
-			<li><a href="#"><i class='bx bxs-trophy'></i> Club VIP</a></li>
-			<li><a href="#"><i class='bx bxs-news'></i> Noticias</a></li>
-			<li><a href="#"><i class='bx bx-support'></i> Atención al cliente en directo</a></li>
-			<li class="language-dropdown">
-			<i class='bx bx-world'> Idioma</i> 
-			<ul class="dropdown">
-        <li><a href="/src/locales/en/index.html">English</a></li>
-        <li><a href="/src/locales/de/index.html">Deutsch</a></li>
-        <li><a href="/src/locales/fr/index.html">Français</a></li>
-        <li><a href="/src/locales/ru/index.html">Русский</a></li>
-        <li><a href="/src/locales/es/index.html">Español</a></li>
-			</ul>
-			</li>
-		</ul>
+    <ul>
+      <li><a href="#"><i class='bx bxs-gift'></i> Promotions</a></li>
+      <li><a href="#"><i class='bx bxs-business'></i> Affilié</a></li>
+      <hr>
+      <li><a href="#"><i class='bx bxs-trophy'></i> Club VIP</a></li>
+      <li><a href="#"><i class='bx bxs-news'></i> Nouveautés</a></li>
+      <li><a href="#"><i class='bx bx-support'></i> Service client en direct</a></li>
+      <li class="language-dropdown">
+        <i class='bx bx-world'></i> Langue
+        <ul class="dropdown">
+          <li><a href="/src/locales/en/index.html">English</a></li>
+          <li><a href="/src/locales/de/index.html">Deutsch</a></li>
+          <li><a href="/src/locales/fr/index.html">Français</a></li>
+          <li><a href="/src/locales/ru/index.html">Русский</a></li>
+          <li><a href="/src/locales/es/index.html">Español</a></li>
+        </ul>
+      </li>
+    </ul>
   </aside>
   <div class="overlay"></div>
   
@@ -79,14 +79,15 @@
     <section class="home">
         <div class="bg-logopic"></div>
         <div class="left-align">
-            <h1>Un sitio de apuestas y casino en línea sin igual</h1>
-            <button class="sign-up">
-              Inscríbete
+            <h1>Un Casino en ligne et un site de paris inégalés</h1>
+            <a href="/src/locales/fr/login.html"><button class="sign-up">
+              S'inscrire
               <div class="arrow-wrapper-sign-up">
                   <div class="arrow-sign-up"></div>
           
               </div>
           </button>
+        </a>
         </div>
         <div class="picture-right">
             <img src="/public/images/start-mot.png" alt="Right-Side-Picture" class="right-img">
@@ -96,20 +97,20 @@
     <div class="banner">
       <br>
 			<div class="banner-wrapper">
-        <img src="/public/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
-        <img src="/public/images/Logo_da_Rolex.png" alt="Rolex">
-        <img src="/public/images/Kick_logo.svg.png" alt="Kick">
-        <img src="/public/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
-        <img src="/public/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
-        <img src="/public/images/Dubai_official_logo.svg.png" alt="Dubai">
-        <img src="/public/images/Wirecard_Logo.svg" alt="Wirecard">
-        <img src="/public/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
-        <img src="/public/images/Logo_da_Rolex.png" alt="Rolex">
-        <img src="/public/images/Kick_logo.svg.png" alt="Kick">
-        <img src="/public/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
-        <img src="/public/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
-        <img src="/public/images/Dubai_official_logo.svg.png" alt="Dubai">
-        <img src="/public/images/Wirecard_Logo.svg" alt="Wirecard">
+					<img src="/public/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+					<img src="/public/images/Logo_da_Rolex.png" alt="Rolex">
+					<img src="/public/images/Kick_logo.svg.png" alt="Kick">
+					<img src="/public/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+					<img src="/public/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+					<img src="/public/images/Dubai_official_logo.svg.png" alt="Dubai">
+					<img src="/public/images/Wirecard_Logo.svg" alt="Wirecard">
+					<img src="/public/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+					<img src="/public/images/Logo_da_Rolex.png" alt="Rolex">
+					<img src="/public/images/Kick_logo.svg.png" alt="Kick">
+					<img src="/public/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+					<img src="/public/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+					<img src="/public/images/Dubai_official_logo.svg.png" alt="Dubai">
+					<img src="/public/images/Wirecard_Logo.svg" alt="Wirecard">
 			</div>
 	</div>
 	
@@ -118,8 +119,8 @@
         <button class="nav-arrow left-arrow">&lsaquo;</button>
         <div class="promo-content">
             <div class="promo-info">
-                <h3>Ofertas</h3>
-                <p>¡Aproveche nuestras mejores ofertas!</p>
+                <h3>Promo 1</h3>
+                <p>Profitez de nos meilleures offres!</p>
             </div>
             <div class="promo-media">
                 <img src="/public/images/win.png" alt="Promo 1">
@@ -136,8 +137,8 @@
 			<img src="/public/images/ezgif-4-dd88bfb6f8.gif" alt="Crypto">
 	</div>
 	<div class="payment-text">
-			<h2>Tranquilidad con múltiples criptomonedas y monedas locales</h2>
-			<p>Experimente depósitos seguros y retiradas instantáneas en 20 criptodivisas y 7 monedas locales. Todo ello sin importes mínimos, con métodos de pago flexibles y una caja fuerte segura en línea.</p>
+			<h2>Tranquillité d'esprit avec plusieurs cryptomonnaies et devises locales</h2>
+			<p>Faites l'expérience de dépôts sécurisés et de retraits instantanés dans 20 cryptomonnaies et 7 devises locales. Tout cela sans minimums, avec des méthodes de paiement flexibles et un coffre-fort en ligne sécurisé.</p>
 	</div>
 </section>
 
@@ -148,10 +149,10 @@
   <div class="vip-section">
     <div class="vip-header">
       <h1>
-        Apueste más y vea cómo crecen sus recompensas como WaifuSpin.
+        Pariez plus et voyez vos récompenses croître en tant que WaifuSpin
       </h1>
-      <p>Entra en un mundo de ventajas únicas, servicios personalizados y bonificaciones exclusivas, sólo como VIP de WaifuSpin.</p>
-      <button class="vip-btn">Hazte VIP</button>
+      <p>Entrez dans un monde d'avantages uniques, de services personnalisés et de bonus exclusifs, uniquement en tant que VIP WaifuSpin.</p>
+      <button class="vip-btn">Devenez un VIP</button>
     </div>
     
       <div class="container">
@@ -160,12 +161,12 @@
           <div class="face face1">
             <div class="content">
               <span class="stars"></span>
-              <h2 class="bonus">Bonificaciones semanales</h2>
-              <p class="bonus">Cada semana de cada mes serás recompensado con una bonificación basada en tus últimas partidas. Cuanto más apuestes, mayor será la bonificación.</p>
+              <h2 class="bonus">Des bonus toutes les semaines</h2>
+              <p class="bonus">Chaque semaine de chaque mois, vous serez récompensé par un bonus basé sur vos derniers jeux. Plus vous misez, plus les bonus sont élevés.</p>
             </div>
           </div>
           <div class="face face2">
-            <h2>Bono</h2>
+            <h2>Bonus</h2>
           </div>
         </div>
       
@@ -173,12 +174,12 @@
           <div class="face face1">
             <div class="content">
               <span class="stars"></span>
-              <h2 class="hote">Su propio anfitrión VIP</h2>
-              <p class="hote">Disfrute de acceso exclusivo a un anfitrión VIP dedicado que le apoyará y atenderá sus necesidades de apuestas.</p>
+              <h2 class="hote">Votre propre hôte VIP</h2>
+              <p class="hote">Profitez d'un accès exclusif à un hôte VIP dévoué qui vous soutiendra et répondra à vos besoins en matière de paris.              </p>
             </div>
           </div>
           <div class="face face2">
-            <h2>Ayuda</h2>
+            <h2>Hôte</h2>
           </div>
         </div>
       
@@ -186,12 +187,12 @@
           <div class="face face1">
             <div class="content">
               <span class="stars"></span>
-              <h2 class="niveau">Pagos para el siguiente nivel</h2>
-              <p class="niveau">Cobra cada vez que alcances un nuevo nivel. Cuanto más alto subas, más interesantes serán los niveles.</p>
+              <h2 class="niveau">Paiements pour le niveau supérieur</h2>
+              <p class="niveau">Soyez payé chaque fois que vous atteignez un nouveau niveau. Plus vous montez, plus les niveaux sont intéressants.</p>
             </div>
           </div>
           <div class="face face2">
-            <h2>Nivel</h2>
+            <h2>Niveau</h2>
           </div>
         </div>
 
@@ -199,12 +200,12 @@
           <div class="face face1">
             <div class="content">
               <span class="stars"></span>
-              <h2 class="jeux">Últimos bonos de partido</h2>
-              <p class="jeux">WaifuSpin te ofrece dinero en tus pérdidas cada vez que subas de nivel.</p>
+              <h2 class="jeux">Bonus de Jeu Récents</h2>
+              <p class="jeux">Vous cherchez à récupérer vos paris non fructueux? WaifuSpin offre de l'argent sur vos pertes chaque fois que vous montez de niveau.</p>
             </div>
           </div>
           <div class="face face2">
-            <h2>Juego</h2>
+            <h2>Jeux</h2>
           </div>
         </div>
       </div>
@@ -217,11 +218,11 @@
 <section class="support">
   <div class="support-container">
       <div class="support-left">
-        <h2 id="support-heading">Nuestro equipo de asistencia habla su idioma</h2>
-          <p>Obtenga asistencia ininterrumpida de nuestro equipo de atención al cliente en su lengua materna.</p>
+        <h2 id="support-heading">Notre équipe d'assistance parle votre langue</h2>
+          <p>Obtenez une assistance 24/7 de notre équipe de support client en direct dans votre langue maternelle.</p>
           <div class="support-actions">
             <button class="button-support">
-              Ayuda
+              Assistance
               <div class="star-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -349,7 +350,7 @@
 
 
 <section class="stats">
-  <h2>Eche un vistazo a las promociones de apuestas actuales</h2>
+  <h2>Regardez l'action des paris en cours</h2>
   <div class="online-indicator">
     <span class="blink"></span>
   </div>
@@ -358,10 +359,10 @@
   <table>
     <thead>
       <tr>
-        <th>Juego</th>
-        <th>Usuario</th>
-        <th>Hora</th>
-        <th>Importe (€)</th>
+        <th>Jeu</th>
+        <th>Utilisateur</th>
+        <th>Temps</th>
+        <th>Montant (€)</th>
       </tr>
     </thead>
     <tbody id="stats-data"></tbody>
@@ -379,59 +380,59 @@
         <div class="section">
             <h4>Casino</h4>
             <ul>
-                <li><a href="#">juegos de casino</a></li>
-                <li><a href="#">Máquinas tragaperras</a></li>
-                <li><a href="#">Casino en vivo</a></li>
+                <li><a href="#">Jeux de Casino</a></li>
+                <li><a href="#">Machines à Sous</a></li>
+                <li><a href="#">Casino en direct</a></li>
                 <li><a href="#">Roulette</a></li>
                 <li><a href="#">Blackjack</a></li>
-                <li><a href="#">Proveedor</a></li>
-                <li><a href="#">Promociones y concursos</a></li>
+                <li><a href="#">Fournisseurs</a></li>
+                <li><a href="#">Promos & Compétitions</a></li>
             </ul>
         </div>
 
         <div class="section">
-            <h4>Ayuda</h4>
+            <h4>Support</h4>
             <ul>
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="#">Equidad</a></li>
-                <li><a href="#">Línea directa para problemas con el juego</a></li>
-                <li><a href="#">Atención al cliente en directo</a></li>
-                <li><a href="#">Autoexclusión</a></li>
+                <li><a href="#">Centre d'Aide</a></li>
+                <li><a href="#">Équité</a></li>
+                <li><a href="#">Ligne d'assistance pour les problèmes de jeu</a></li>
+                <li><a href="#">Service client en direct</a></li>
+                <li><a href="#">Auto-Exclusion</a></li>
             </ul>
         </div>
 
         <div class="section">
-            <h4>Quiénes somos</h4>
+            <h4>À propos de nous</h4>
             <ul>
                 <li><a href="#">Club VIP</a></li>
-                <li><a href="#">Afiliado</a></li>
-                <li><a href="#">Política de privacidad</a></li>
-                <li><a href="#">Política de LBC</a></li>
-                <li><a href="#">Condiciones de uso</a></li>
+                <li><a href="#">Affilié</a></li>
+                <li><a href="#">Politique de Confidentialité</a></li>
+                <li><a href="#">Politique LBC</a></li>
+                <li><a href="#">Conditions d'Utilisation</a></li>
             </ul>
         </div>
 
         <div class="section">
-            <h4>Información sobre los pagos</h4>
+            <h4>Informations sur les paiements</h4>
             <ul>
-                <li><a href="#">Depósitos y retiradas</a></li>
-                <li><a href="#">Guía de divisas</a></li>
-                <li><a href="#">Guía de criptomonedas</a></li>
-                <li><a href="#">Criptografía compatible</a></li>
-                <li><a href="#">Cómo utilizar el cofre</a></li>
-                <li><a href="#">¿Cuánto apostar?</a></li>
+                <li><a href="#">Dépôts & Retraits</a></li>
+                <li><a href="#">Guide sur les devises</a></li>
+                <li><a href="#">Guide sur la crypto</a></li>
+                <li><a href="#">Crypto supportée</a></li>
+                <li><a href="#">Comment utiliser le coffre</a></li>
+                <li><a href="#">Combien parier</a></li>
             </ul>
         </div>
 
         <div class="section">
-            <h4>Guías prácticas</h4>
+            <h4>Guides pratiques</h4>
             <ul>
-                <li><a href="#">Guías prácticas</a></li>
-                <li><a href="#">Guía de casinos en línea</a></li>
-                <li><a href="#">Guía de apuestas deportivas</a></li>
-                <li><a href="#">Cómo retransmitir deporte en directo</a></li>
-                <li><a href="#">WaifuSpin-VIP-Guía</a></li>
-                <li><a href="#">Guía de la ventaja de jugar en casa</a></li>
+                <li><a href="#">Guides pratiques</a></li>
+                <li><a href="#">Guide du casino en ligne</a></li>
+                <li><a href="#">Guide des paris sportifs</a></li>
+                <li><a href="#">Comment diffuser des sports en direct</a></li>
+                <li><a href="#">Guide VIP de WaifuSpin</a></li>
+                <li><a href="#">Guide sur l'avantage de la maison</a></li>
             </ul>
 
             <div class="language-selector">
@@ -443,9 +444,9 @@
 
             <div class="currency-selector">
                 <select>
-                    <option value="decimal">Decimal</option>
-                    <option value="fractional">Fraccional</option>
-                    <option value="american">Americana</option>
+                    <option value="decimal">Décimale</option>
+                    <option value="fractional">Fractionnelle</option>
+                    <option value="american">Américaine</option>
                 </select>
             </div>
 
@@ -456,8 +457,9 @@
 
 
     <div class="copyright">
-        &copy; 2024 Waifuspin.com | Todos los derechos reservados.
+        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
     </div>
     </footer>
+    
 </body>
 </html>

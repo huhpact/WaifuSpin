@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			{
 					title: "Розыгрыши и гонки",
 					description: "Участвуйте в розыгрыше 75 000 каждую неделю. И выигрывайте крупные суммы в ежедневных гонках.",
-					media: "/assets/image.png",
+					media: "/public/images/win.png",
 			},
 			{
 					title: "Специальные предложения",
 					description: "Воспользуйтесь нашими акциями для казино и бонусами для ставок на спорт, которые обновляются еженедельно.",
-					media: "/assets/image copy.png",
+					media: "/public/images/cards.png",
 			},
 			{
 					title: "Высокая реакция игрока (RTP)",
 					description: "Благодаря улучшенному проценту RTP у вас есть шанс выиграть по-крупному каждый раз, когда вы играете.",
-					media: "/assets/image copy 2.png",
+					media: "/public/images/rtp.png",
 			},
 	];
 
