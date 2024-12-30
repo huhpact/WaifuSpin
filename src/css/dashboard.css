@@ -1,272 +1,142 @@
-:root {
-	--primary: #2a0a4a;
-	--secondary: #4a1b7a;
-	--accent: #9d4edd;
-	--text: #ffffff;
-	--neon-glow: 0 0 10px rgba(157, 78, 221, 0.5);
+.bitcoin-dashboard {
+	padding: 2rem;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+.bitcoin-dashboard.visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
-body {
-	font-family: 'Inter', sans-serif;
-	background: var(--primary);
-	color: var(--text);
-	min-height: 100vh;
-}
-
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 2rem;
-	background: var(--secondary);
-	box-shadow: var(--neon-glow);
-}
-
-.logo img {
-	height: 40px;
-}
-
-.header-icons {
-	display: flex;
-	gap: 1.5rem;
-}
-
-.icon-wrapper {
-	position: relative;
-	cursor: pointer;
-}
-
-.icon-wrapper i {
-	font-size: 1.5rem;
-	color: var(--text);
-	transition: color 0.3s ease;
-}
-
-.icon-wrapper:hover i {
-	color: var(--accent);
-}
-
-.dropdown {
-	position: absolute;
-	top: 100%;
-	right: 0;
-	background: var(--secondary);
-	border-radius: 8px;
-	padding: 1rem;
-	min-width: 200px;
-	display: none;
-	box-shadow: var(--neon-glow);
-}
-
-.icon-wrapper:hover .dropdown {
-	display: block;
-}
-
-.dropdown a {
-	display: block;
-	color: var(--text);
-	text-decoration: none;
-	padding: 0.5rem;
-	transition: color 0.3s ease;
-}
-
-.dropdown a:hover {
-	color: var(--accent);
-}
-
-main {
+.dashboard-container {
+	background: var(--card-bg);
+	border-radius: 1rem;
 	padding: 2rem;
 	max-width: 1200px;
 	margin: 0 auto;
-}
-
-.dashboard-overview {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 2rem;
-	margin-bottom: 3rem;
-}
-
-.vip-status, .balance-box, .featured-image {
-	background: var(--secondary);
-	border-radius: 12px;
-	padding: 1.5rem;
-	box-shadow: var(--neon-glow);
-}
-
-.vip-progress {
-	margin: 1rem 0;
-}
-
-.progress-bar {
-	height: 10px;
-	background: var(--primary);
-	border-radius: 5px;
-	overflow: hidden;
-	margin: 0.5rem 0;
-}
-
-.progress {
-	height: 100%;
-	background: var(--accent);
-	transition: width 0.3s ease;
-}
-
-.balance-box {
-	text-align: center;
-}
-
-.balance {
-	font-size: 2.5rem;
-	margin: 1rem 0;
-	color: var(--accent);
-	text-shadow: var(--neon-glow);
-}
-
-.deposit-btn {
-	background: var(--accent);
-	color: var(--text);
-	border: none;
-	padding: 0.8rem 2rem;
-	border-radius: 25px;
-	cursor: pointer;
-	font-size: 1rem;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.deposit-btn:hover {
-	transform: translateY(-2px);
-	box-shadow: var(--neon-glow);
-}
-
-.featured-image img {
-	width: 100%;
-	height: 150px;
-	object-fit: cover;
-	border-radius: 8px;
-	margin-bottom: 1rem;
-}
-
-.games-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	gap: 1.5rem;
-	margin: 2rem 0;
-}
-
-.game-card {
 	position: relative;
 	overflow: hidden;
-	border-radius: 12px;
+}
+
+.dashboard-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 200%;
+	height: 100%;
+	background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 215, 0, 0.1),
+			transparent
+	);
+	animation: shine 3s infinite;
+}
+
+@keyframes shine {
+	to {
+			left: 100%;
+	}
+}
+
+.price-info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	margin-bottom: 2rem;
+	align-items: center;
+}
+
+.price-details {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	font-size: 1.2rem;
+}
+
+.current-price, .price-change {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 0.5rem;
 	transition: transform 0.3s ease;
 }
 
-.game-card img {
-	width: 100%;
-	height: 250px;
-	object-fit: cover;
+.current-price:hover, .price-change:hover {
+	transform: translateX(10px);
 }
 
-.game-overlay {
-	position: absolute;
-	bottom: -100%;
-	left: 0;
-	right: 0;
-	background: rgba(42, 10, 74, 0.9);
+.price-change.positive {
+	color: #28a745;
+}
+
+.price-change.negative {
+	color: #dc3545;
+}
+
+.chart-container {
+	background: rgba(0, 0, 0, 0.2);
 	padding: 1rem;
-	transition: bottom 0.3s ease;
+	border-radius: 0.5rem;
+	height: 300px;
 }
 
-.game-card:hover {
-	transform: translateY(-5px);
+
+.animate-on-scroll {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.game-card:hover .game-overlay {
-	bottom: 0;
+.animate-on-scroll.visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
-.tombola-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 1.5rem;
-	margin: 2rem 0;
+
+.dashboard-container {
+	position: relative;
 }
 
-.tombola-card {
-	background: var(--secondary);
-	border-radius: 12px;
-	padding: 1.5rem;
-	box-shadow: var(--neon-glow);
-}
-
-.tombola-progress {
-	height: 8px;
-	background: var(--primary);
-	border-radius: 4px;
-	margin: 1rem 0;
-	overflow: hidden;
-}
-
-.tombola-progress .progress {
-	height: 100%;
-	background: var(--accent);
-}
-
-.deposit-modal {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.8);
-	z-index: 1000;
-}
-
-.modal-content {
+.dashboard-container::after {
+	content: '';
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: var(--secondary);
-	padding: 2rem;
-	border-radius: 12px;
-	max-width: 800px;
-	width: 90%;
+	inset: 0;
+	border: 2px solid transparent;
+	border-radius: 1rem;
+	background: linear-gradient(45deg, #ffd700, #ffa500, #ffd700) border-box;
+	mask: 
+			linear-gradient(#fff 0 0) padding-box,
+			linear-gradient(#fff 0 0);
+	-webkit-mask: 
+			linear-gradient(#fff 0 0) padding-box,
+			linear-gradient(#fff 0 0);
+	-webkit-mask-composite: destination-out;
+	mask-composite: exclude;
+	animation: borderRotate 4s linear infinite;
 }
 
-.close-btn {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	font-size: 1.5rem;
-	cursor: pointer;
-	color: var(--text);
+@keyframes borderRotate {
+	from {
+			transform: rotate(0deg);
+	}
+	to {
+			transform: rotate(360deg);
+	}
 }
 
-.deposit-options {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.crypto-balance {
+	display: flex;
+	align-items: center;
 	gap: 1rem;
-	margin-top: 2rem;
-}
-
-.deposit-card {
-	background: var(--primary);
+	background: rgba(255, 255, 255, 0.1);
 	padding: 1.5rem;
-	border-radius: 8px;
-	text-align: center;
-	cursor: pointer;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.deposit-card:hover {
-	transform: translateY(-5px);
-	box-shadow: var(--neon-glow);
+	border-radius: 1rem;
+	position: relative;
+	overflow: hidden;
 }
