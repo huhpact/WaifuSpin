@@ -68,3 +68,61 @@ header {
 	display: flex;
   gap: 10px;
 }
+
+.sign-up {
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  padding: 1em 1.8em;
+  background:  #645bff;
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+	
+}
+
+.sign-up .arrow-wrapper-sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up .arrow-sign-up {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background:  #645bff;
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.sign-up .arrow-sign-up::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid white;
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.sign-up:hover {
+  background-color: #d500f9;
+}
+
+.sign-up:hover .arrow-sign-up {
+  background: white;
+}
+
+.sign-up:hover .arrow-sign-up:before {
+  right: 0;
+}

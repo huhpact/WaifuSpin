@@ -1,140 +1,195 @@
-document.addEventListener('DOMContentLoaded', () => {
-  new AnimationController();
-  new Modal();
-});
-
-class Modal {
+class AnimationController {
   constructor() {
-    this.modal = null;
-    this.overlay = null;
-    this.closeButton = null;
-    this.init();
+      this.initPreloader();
+      this.initCursor();
+      this.initViewportAnimations();
+      this.initParticles();
+      this.initCharAnimation();
+      this.initStats();
+      this.initModals();
+      this.initMobileMenu();
   }
 
-  init() {
-    // Create modal elements
-    this.modal = document.createElement('div');
-    this.modal.className = 'modal';
-    this.overlay = document.createElement('div');
-    this.overlay.className = 'modal-overlay';
-    
-    // Add close button
-    this.closeButton = document.createElement('button');
-    this.closeButton.className = 'modal-close';
-    this.closeButton.innerHTML = '×';
-    
-    // Event listeners
-    this.closeButton.addEventListener('click', () => this.close());
-    this.overlay.addEventListener('click', () => this.close());
-    
-    // Add to DOM
-    this.modal.appendChild(this.closeButton);
-    document.body.appendChild(this.overlay);
-    document.body.appendChild(this.modal);
-    
-    // Hide initially
-    this.close();
+  initPreloader() {
+      window.addEventListener('load', () => {
+          const preloader = document.querySelector('.preloader');
+          preloader.classList.add('hidden');
+      });
   }
 
-  open(content) {
-    this.modal.innerHTML = content;
-    this.modal.appendChild(this.closeButton);
-    this.modal.classList.add('active');
-    this.overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  initCursor() {
+      const cursor = document.querySelector('.custom-cursor');
+      
+      document.addEventListener('mousemove', (e) => {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top = e.clientY + 'px';
+      });
+
+      document.addEventListener('mousedown', () => cursor.classList.add('active'));
+      document.addEventListener('mouseup', () => cursor.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('button, a');
+      buttons.forEach(button => {
+          button.addEventListener('mouseenter', () => cursor.classList.add('active'));
+          button.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+      });
   }
 
-  close() {
-    this.modal.classList.remove('active');
-    this.overlay.classList.remove('active');
-    document.body.style.overflow = '';
+  initViewportAnimations() {
+      const options = {
+          threshold: 0.2,
+          rootMargin: '50px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+              }
+          });
+      }, options);
+
+      document.querySelectorAll('[data-animation]').forEach(el => {
+          observer.observe(el);
+      });
+  }
+
+  initParticles() {
+      const particles = document.querySelector('.particles');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.cssText = `
+              width: ${Math.random() * 3}px;
+              height: ${Math.random() * 3}px;
+              background: rgba(255, 215, 0, ${Math.random() * 0.5});
+              left: ${Math.random() * 100}%;
+              top: ${Math.random() * 100}%;
+              animation: particleFloat ${5 + Math.random() * 10}s linear infinite;
+              animation-delay: -${Math.random() * 10}s;
+          `;
+          particles.appendChild(particle);
+      }
+  }
+
+  initCharAnimation() {
+      document.querySelectorAll('[data-animation="chars"]').forEach(element => {
+          const text = element.textContent;
+          element.textContent = '';
+          
+          [...text].forEach((char, index) => {
+              const span = document.createElement('span');
+              span.textContent = char;
+              span.style.animationDelay = `${index * 0.1}s`;
+              span.className = 'char-animate';
+              element.appendChild(span);
+          });
+      });
+  }
+
+  initStats() {
+      const stats = document.querySelectorAll('.stat__number');
+      
+      const animateValue = (element, start, end, duration) => {
+          const range = end - start;
+          const increment = range / (duration / 16);
+          let current = start;
+          
+          const update = () => {
+              element.textContent = Math.floor(current).toLocaleString();
+              current += increment;
+              
+              if (current <= end) {
+                  requestAnimationFrame(update);
+              } else {
+                  element.textContent = end.toLocaleString();
+              }
+          };
+          
+          update();
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  const target = entry.target;
+                  const value = parseInt(target.dataset.value);
+                  animateValue(target, 0, value, 2000);
+                  observer.unobserve(target);
+              }
+          });
+      }, { threshold: 0.5 });
+
+      stats.forEach(stat => observer.observe(stat));
+  }
+
+  initModals() {
+      const modals = document.querySelectorAll('.modal');
+      const triggers = document.querySelectorAll('.modal-trigger');
+      const closeButtons = document.querySelectorAll('.modal-close');
+
+      triggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+              const modalId = trigger.dataset.modal + 'Modal';
+              const modal = document.getElementById(modalId);
+              modal.classList.add('active');
+          });
+      });
+
+      closeButtons.forEach(button => {
+          button.addEventListener('click', () => {
+              const modal = button.closest('.modal');
+              modal.classList.remove('active');
+          });
+      });
+
+      modals.forEach(modal => {
+          modal.addEventListener('click', (e) => {
+              if (e.target === modal) {
+                  modal.classList.remove('active');
+              }
+          });
+      });
+  }
+
+  initMobileMenu() {
+      const toggle = document.querySelector('.nav__toggle');
+      const menu = document.querySelector('.nav__menu');
+      
+      toggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (e) => {
+          if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+              menu.classList.remove('active');
+          }
+      });
+
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+          link.addEventListener('click', () => {
+              menu.classList.remove('active');
+          });
+      });
   }
 }
 
-// Initialize modal
-const modal = new Modal();
-
-// Add click handlers to CTA buttons
-document.querySelectorAll('.cta-button').forEach(button => {
-  button.addEventListener('click', () => {
-    modal.open(`
-      <h2>Join VIP Club</h2>
-      <form class="vip-form">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <button type="submit" class="cta-button">Submit Application</button>
-      </form>
-    `);
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+          target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      }
   });
 });
 
-export class AnimationController {
-  constructor() {
-    this.initObservers();
-    this.initParallax();
-  }
-
-  initObservers() {
-    const fadeOptions = { threshold: 0.2, rootMargin: '50px' };
-    const scaleOptions = { threshold: 0.1 };
-
-    this.fadeObserver = new IntersectionObserver(
-      (entries) => this.handleFadeEntries(entries),
-      fadeOptions
-    );
-
-    this.scaleObserver = new IntersectionObserver(
-      (entries) => this.handleScaleEntries(entries),
-      scaleOptions
-    );
-
-    this.observeElements();
-  }
-
-  observeElements() {
-    document.querySelectorAll('[data-animation="fade"]')
-      .forEach(el => this.fadeObserver.observe(el));
-    
-    document.querySelectorAll('[data-animation="scale"]')
-      .forEach(el => this.scaleObserver.observe(el));
-  }
-
-  handleFadeEntries(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-visible');
-        this.fadeObserver.unobserve(entry.target);
-      }
-    });
-  }
-
-  handleScaleEntries(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('scale-in-visible');
-        this.scaleObserver.unobserve(entry.target);
-      }
-    });
-  }
-
-  initParallax() {
-    const grid = document.querySelector('.hero__grid');
-    if (!grid) return;
-
-    window.addEventListener('mousemove', (e) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      const xPercent = clientX / innerWidth;
-      const yPercent = clientY / innerHeight;
-      
-      const xOffset = (xPercent - 0.5) * 40;
-      const yOffset = (yPercent - 0.5) * 40;
-      
-      grid.style.transform = `
-        translate(${xOffset}px, ${yOffset}px)
-        scale(1.1)
-      `;
-    });
-  }
-}
+document.addEventListener('DOMContentLoaded', () => {
+  new AnimationController();
+});

@@ -219,35 +219,6 @@ async function fetchBitcoinRate() {
 
 window.onload = fetchBitcoinRate;
 
-
-function checkScreenSize() {
-	if (window.innerWidth < 768) {
-	
-			document.body.style.overflow = 'hidden';
-
-	
-			const warningBox = document.createElement('div');
-			warningBox.style.position = 'fixed';
-			warningBox.style.top = '0';
-			warningBox.style.left = '0';
-			warningBox.style.width = '100%';
-			warningBox.style.height = '100%';
-			warningBox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-			warningBox.style.color = 'white';
-			warningBox.style.display = 'flex';
-			warningBox.style.justifyContent = 'center';
-			warningBox.style.alignItems = 'center';
-			warningBox.style.zIndex = '10000';
-			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Switch to a larger screen to use this page.</div>';
-
-			
-			document.body.appendChild(warningBox);
-	}
-}
-
-
-window.onload = checkScreenSize;
-
 document.addEventListener('DOMContentLoaded', function () {
 	const banner = document.getElementById('cookie-banner');
 
