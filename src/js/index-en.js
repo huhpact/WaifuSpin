@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			{
 					title: "Raffles & races",
 					description: "Enter the draw to win 75K every week. And win big in the daily races.",
-					media: "/assets/image.png",
+					media: "/public/images/win.png",
 			},
 			{
 					title: "Special offers",
 					description: "Make the most of our casino promotions and sports betting bonuses, which are updated weekly.",
-					media: "/assets/image copy.png",
+					media: "/public/images/cards.png",
 			},
 			{
 					title: "High player feedback (RTP)",
 					description: "With improved RTP percentages, you have the chance to win big every time you play.",
-					media: "/assets/image copy 2.png",
+					media: "/public/images/rtp.png",
 			},
 	];
 
