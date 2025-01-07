@@ -123,7 +123,7 @@ document.querySelectorAll('#recharge-popup button[data-amount]').forEach(button 
 				const amount = e.target.getAttribute('data-amount');
 				alert(`Rechargé avec ${amount}€!`);
 				rechargePopup.classList.add('hidden');
-				// Balance aktualisieren (Beispiel, benötigt Session Management)
+	
 				const balanceSpan = document.getElementById('balance');
 				balanceSpan.textContent = `Solde: ${parseInt(balanceSpan.textContent.split(' ')[1]) + parseInt(amount)}€`;
 		});
