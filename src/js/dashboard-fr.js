@@ -129,13 +129,13 @@ document.querySelectorAll('#recharge-popup button[data-amount]').forEach(button 
 		});
 });
 
-// Tombola: Enter Button
+
 const enterButton = document.getElementById('enter-tombola');
 enterButton.addEventListener('click', () => {
 		enterButton.textContent = "Entré";
 });
 
-// Ranking Popup (Mocked)
+
 const rankingButton = document.getElementById('ranking-button');
 rankingButton.addEventListener('click', () => {
 		alert("Classement:\n1. User123\n2. WaifuFan\n3. KawaiiLover");
