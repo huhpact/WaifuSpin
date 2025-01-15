@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			{
 					title: "Tombolas & Courses",
 					description: "Participez au tirage au sort pour gagner 75K chaque semaine. Et gagnez gros lors des courses quotidiennes.",
-					media: "/public/images/win.png",
+					media: "/images/win.png",
 			},
 			{
 					title: "Promotions",
 					description: "Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.",
-					media: "/public/images/cards.png",
+					media: "/images/cards.png",
 			},
 			{
 					title: "Haut retour aux joueurs (RTP)",
 					description: "Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.",
-					media: "/public/images/rtp.png",
+					media: "/images/rtp.png",
 			},
 	];
 
