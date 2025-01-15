@@ -1,8 +1,0 @@
-<!--
-*****************************************************************************************
-* Ce code est la propriété exclusive de huh(pact). Toute modification,                  *
-* reproduction ou utilisation non autorisée constitue une violation des droits d'auteur *
-* et sera poursuivie en justice conformément aux articles L335-2 et suivants du Code de *
-* la Propriété Intellectuelle. Aucune tolérance ne sera accordée.                       *
-*****************************************************************************************
--->
