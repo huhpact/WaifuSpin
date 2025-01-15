@@ -1,4 +1,16 @@
-
+:root {
+  --primary-bg: #13111C;
+  --secondary-bg: #1E1B2E;
+  --accent-cyan: #00F5FF;
+  --accent-pink: #FF1493;
+  --text-primary: #ffffff;
+  --text-secondary: #B8B8B8;
+  --gradient-main: linear-gradient(135deg, #00F5FF, #FF1493);
+  --gradient-hover: linear-gradient(135deg, #FF1493, #00F5FF);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --card-border: 1px solid rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(30, 27, 46, 0.95);
+}
 body {
 	margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: #1b1035; color: #fff;
 }
@@ -8,7 +20,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background: linear-gradient(90deg, #2b134b, #1b1035);
+  background-color: var(--primary-bg);
+	color: var(--text-primary);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   color: #fff;
   z-index: 1001;
@@ -22,6 +35,34 @@ header {
   align-items: center;
   width: 100%;
 	
+}
+
+.stars, .twinkling {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.stars {
+	background: #13111C url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
+	z-index: -2;
+}
+
+.twinkling {
+	background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
+	z-index: -1;
+	animation: move-twinkle-back 200s linear infinite;
+	opacity: 0.5;
+}
+
+@keyframes move-twinkle-back {
+	from {background-position: 0 0;}
+	to {background-position: -10000px 5000px;}
 }
 
 .burger-logo {
@@ -59,9 +100,6 @@ header {
   background: #ff7de3;
 }
 
-
-
-
 .burger-menu {
 	font-size: 1.8rem;
 	cursor: pointer;
@@ -83,7 +121,7 @@ header {
   left: -100%; 
   width: 300px;
   height: calc(100vh - 70px); 
-  background: linear-gradient(180deg, #1b1035, #4a148c);
+  background: linear-gradient(180deg, var(--primary-bg), var(--secondary-bg));
   color: #fff;
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.7);
   transition: left 0.4s ease, opacity 0.3s ease;
@@ -125,7 +163,7 @@ header {
 
 .language-dropdown ul.dropdown {
   display: none;
-  background: rgba(64, 0, 128, 0.95);
+  background: var(--secondary-bg);
   padding: 10px;
   border-radius: 5px;
   margin-top: 5px;
@@ -689,7 +727,7 @@ footer .social-icons a:hover {
 hr {
 	border: none;
 	height: 1px;
-	background-color: #5a0e8d;
+	background-color: #bcbcbc;
 	margin: 40px 0;
 }
 

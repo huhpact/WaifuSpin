@@ -1,10 +1,15 @@
+:root {
+  --primary-bg: #13111C;
+	--secondary-bg: #1E1B2E;
+}
+
 .sidebar {
   position: fixed;
   top: 70px; 
   left: -100%; 
   width: 300px;
   height: calc(100vh - 70px); 
-  background: linear-gradient(180deg, #1b1035, #4a148c);
+  background: linear-gradient(180deg, var(--primary-bg), var(--secondary-bg));
   color: #fff;
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.7);
   transition: left 0.4s ease, opacity 0.3s ease;
@@ -27,6 +32,14 @@
   margin: 0;
 }
 
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: #bcbcbc;
+	margin: 40px 0;
+}
+
 .sidebar ul li {
   padding: 10px 15px;
   font-size: 1.2rem;
@@ -46,7 +59,7 @@
 
 .language-dropdown ul.dropdown {
   display: none;
-  background: rgba(64, 0, 128, 0.95);
+  background: var(--secondary-bg);
   padding: 10px;
   border-radius: 5px;
   margin-top: 5px;
