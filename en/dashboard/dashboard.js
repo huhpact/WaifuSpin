@@ -1,4 +1,3 @@
-// State
 let userBalances = {
     BTC: 0,
     ETH: 0,
@@ -8,13 +7,13 @@ let userBalances = {
 
 let selectedCrypto = 'BTC';
 const cryptoPrices = {
-    BTC: 45000,  // Fallback prices
+    BTC: 45000,  // Fallback prix
     ETH: 2500,
     SOL: 100,
     XRP: 0.5
 };
 
-// DOM Elements
+
 const balanceElement = document.getElementById('balanceAmount');
 const balanceCryptoIcon = document.getElementById('balanceCryptoIcon');
 const cryptoGrid = document.getElementById('cryptoGrid');
@@ -24,15 +23,12 @@ const loginForm = document.getElementById('loginForm');
 const playNowBtn = document.getElementById('playNowBtn');
 const learnMoreBtn = document.getElementById('learnMoreBtn');
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initializeUI();
     fetchCryptoPrices();
 });
 
-// UI Initialization
 function initializeUI() {
-    // Button listeners
     playNowBtn.addEventListener('click', () => {
         loginModal.style.display = 'block';
     });
@@ -41,35 +37,28 @@ function initializeUI() {
         document.querySelector('.features').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Initialize deposit buttons
     document.querySelectorAll('.amount-btn').forEach(btn => {
         btn.addEventListener('click', handleDeposit);
     });
 
-    // Initialize crypto options
     document.querySelectorAll('.crypto-option').forEach(option => {
         option.addEventListener('click', handleCryptoSelection);
     });
 
-    // Initialize withdrawal form
     withdrawalForm.addEventListener('submit', handleWithdrawal);
 
-    // Close modal when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
         }
     });
 
-    // Login form submission
     loginForm.addEventListener('submit', handleLogin);
 
-    // Initialize crypto grid
     initializeCryptoGrid();
     updateBalance();
 }
 
-// Deposit Handler
 function handleDeposit(e) {
     const amount = parseFloat(e.target.dataset.amount);
     const cryptoAmount = amount / cryptoPrices[selectedCrypto];
@@ -78,7 +67,6 @@ function handleDeposit(e) {
     showNotification(`Deposited ${cryptoAmount.toFixed(8)} ${selectedCrypto}! 🎉`);
 }
 
-// Crypto Selection Handler
 function handleCryptoSelection(e) {
     document.querySelectorAll('.crypto-option').forEach(opt => opt.classList.remove('active'));
     e.currentTarget.classList.add('active');
@@ -86,7 +74,6 @@ function handleCryptoSelection(e) {
     updateBalance();
 }
 
-// Withdrawal Handler
 function handleWithdrawal(e) {
     e.preventDefault();
     const amount = parseFloat(document.getElementById('withdrawAmount').value);
@@ -108,15 +95,6 @@ function handleWithdrawal(e) {
     e.target.reset();
 }
 
-// Login Handler
-function handleLogin(e) {
-    e.preventDefault();
-    loginModal.style.display = 'none';
-    document.getElementById('username').textContent = 'Player123';
-    showNotification('Successfully logged in! 🎮');
-}
-
-// Crypto Price Tracking
 function initializeCryptoGrid() {
     const coins = [
         { symbol: 'BTC', name: 'Bitcoin', logo: 'https://cryptologos.cc/logos/bitcoin-btc-logo.svg' },
@@ -152,7 +130,6 @@ async function fetchCryptoPrices() {
         updatePriceDisplay();
     } catch (error) {
         console.warn('Using fallback prices due to API error:', error);
-        // Continue using fallback prices
         updatePriceDisplay();
     }
 }
@@ -166,14 +143,12 @@ function updatePriceDisplay() {
     });
 }
 
-// Balance Management
 function updateBalance() {
     balanceElement.textContent = `${userBalances[selectedCrypto].toFixed(8)} ${selectedCrypto}`;
     document.getElementById('availableBalance').textContent = 
         `${userBalances[selectedCrypto].toFixed(8)} ${selectedCrypto}`;
 }
 
-// Utility Functions
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
@@ -192,7 +167,6 @@ function isValidAddress(address) {
     return address.length >= 26 && address.length <= 35;
 }
 
-// Animation Observer
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
