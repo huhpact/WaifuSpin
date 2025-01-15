@@ -26,7 +26,6 @@ body {
 	overflow-x: hidden;
 }
 
-/* Background Animation */
 .stars, .twinkling {
 	position: fixed;
 	top: 0;
@@ -55,7 +54,6 @@ body {
 	to { background-position: -10000px 5000px; }
 }
 
-/* Navbar */
 .navbar {
 	display: flex;
 	align-items: center;
@@ -146,7 +144,6 @@ body {
 	margin-top: 0.5rem;
 }
 
-/* Hero Section */
 .hero {
 	padding: 8rem 2rem 4rem;
 	text-align: center;
@@ -176,7 +173,6 @@ body {
 	justify-content: center;
 }
 
-/* Features Section */
 .features {
 	padding: 4rem 2rem;
 	display: grid;
@@ -212,7 +208,6 @@ body {
 	color: var(--text-secondary);
 }
 
-/* Transaction Section */
 .transaction-section {
 	padding: 4rem 2rem;
 	background: rgba(26, 31, 46, 0.5);
@@ -296,7 +291,6 @@ body {
 	transform: translateY(-2px);
 }
 
-/* Form Styles */
 .form-group {
 	margin-bottom: 1.5rem;
 }
@@ -329,7 +323,6 @@ body {
 	color: var(--text-secondary);
 }
 
-/* Games Section */
 .games {
 	padding: 4rem 2rem;
 }
@@ -394,7 +387,6 @@ body {
 	transform: scale(1.1);
 }
 
-/* Crypto Tracker */
 .crypto-tracker {
 	padding: 4rem 2rem;
 	background: rgba(26, 31, 46, 0.5);
@@ -436,7 +428,6 @@ body {
 	font-size: 1.1rem;
 }
 
-/* Buttons */
 .btn {
 	padding: 0.75rem 1.5rem;
 	border-radius: var(--radius);
@@ -479,7 +470,6 @@ body {
 	box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
 }
 
-/* Modal */
 .modal {
 	display: none;
 	position: fixed;
@@ -523,7 +513,6 @@ body {
 	outline: none;
 }
 
-/* Footer */
 footer {
 	background: var(--surface);
 	padding: 4rem 2rem 2rem;
@@ -561,7 +550,6 @@ footer {
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Notifications */
 .notification {
 	position: fixed;
 	bottom: 20px;
@@ -589,7 +577,6 @@ footer {
 	border-left: 4px solid var(--error);
 }
 
-/* Animations */
 @keyframes fadeIn {
 	from { opacity: 0; transform: translateY(10px); }
 	to { opacity: 1; transform: translateY(0); }
@@ -600,7 +587,6 @@ footer {
 	animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
 	.hero-title {
 			font-size: 2rem;
