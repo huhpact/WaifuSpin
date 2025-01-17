@@ -360,7 +360,7 @@ header .login-reg a {
 }
 
 header .login-reg a:hover {
-	color: #ff7de3;
+	color: var(--accent);
 }
 
 .register-btn {
