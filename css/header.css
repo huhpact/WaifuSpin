@@ -3,6 +3,20 @@
   color: #fff;
 }
 
+:root {
+  --primary-bg: #13111C;
+  --secondary-bg: #1E1B2E;
+  --accent-cyan: #00F5FF;
+  --accent-pink: #FF1493;
+  --text-primary: #ffffff;
+  --text-secondary: #B8B8B8;
+  --gradient-main: linear-gradient(135deg, #00F5FF, #FF1493);
+  --gradient-hover: linear-gradient(135deg, #FF1493, #00F5FF);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --card-border: 1px solid rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(30, 27, 46, 0.95);
+}
+
 header {
   display: flex;
   align-items: center;
@@ -47,6 +61,7 @@ header {
 .burger-menu {
 	font-size: 1.8rem;
 	cursor: pointer;
+  color: rgb(61, 106, 255);
 }
 
 

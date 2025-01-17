@@ -1,10 +1,10 @@
 :root {
   --color-bg: #1b1035;
-  --color-primary: #ffd700;
-  --color-secondary: #ff9d00;
+  --color-primary: rgb(61, 106, 255);
+  --color-secondary: #6200ff;
   --color-text: #ffffff;
   --color-text-muted: rgba(255, 255, 255, 0.7);
-  --gradient-gold: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   --shadow-gold: 0 0 20px rgba(255, 215, 0, 0.3);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -47,7 +47,7 @@
 .custom-cursor {
   width: 20px;
   height: 20px;
-  background: var(--gradient-gold);
+  background: var(--gradient);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;

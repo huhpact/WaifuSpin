@@ -21,6 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/loading-cursor.css">
   <script src="/js/loading-cursor.js"></script>
+  <script type="module" src="/js/time-bar-section.js"></script>
   <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
@@ -80,7 +81,6 @@
 
 
     <section class="home">
-        <div class="bg-logopic"></div>
         <div class="left-align">
             <h1>Un Casino en ligne et un site de paris inégalés</h1>
             <a href="/fr/login/login.html"><button class="sign-up">
@@ -145,76 +145,52 @@
 	</div>
 </section>
 
-<div class="neon-divider"></div>
 
 
 <section class="vip">
   <div class="vip-section">
     <div class="vip-header">
       <h1>
-        Pariez plus et voyez vos récompenses croître en tant que WaifuSpin
+        Profitez des meilleurs cotes avec des jeux offrant jusqu'à 99,5 % de retour au joueur
       </h1>
-      <p>Entrez dans un monde d'avantages uniques, de services personnalisés et de bonus exclusifs, uniquement en tant que VIP WaifuSpin.</p>
       <a href="/fr/vip/vip.html"><button class="vip-btn">Devenez un VIP</button></a>
     </div>
-    
-      <div class="container">
 
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="bonus">Des bonus toutes les semaines</h2>
-              <p class="bonus">Chaque semaine de chaque mois, vous serez récompensé par un bonus basé sur vos derniers jeux. Plus vous misez, plus les bonus sont élevés.</p>
-            </div>
-          </div>
-          <div class="face face2">
-            <h2>Bonus</h2>
-          </div>
-        </div>
-      
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="hote">Votre propre hôte VIP</h2>
-              <p class="hote">Profitez d'un accès exclusif à un hôte VIP dévoué qui vous soutiendra et répondra à vos besoins en matière de paris.              </p>
-            </div>
-          </div>
-          <div class="face face2">
-            <h2>Hôte</h2>
-          </div>
-        </div>
-      
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="niveau">Paiements pour le niveau supérieur</h2>
-              <p class="niveau">Soyez payé chaque fois que vous atteignez un nouveau niveau. Plus vous montez, plus les niveaux sont intéressants.</p>
-            </div>
-          </div>
-          <div class="face face2">
-            <h2>Niveau</h2>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="jeux">Bonus de Jeu Récents</h2>
-              <p class="jeux">Vous cherchez à récupérer vos paris non fructueux? WaifuSpin offre de l'argent sur vos pertes chaque fois que vous montez de niveau.</p>
-            </div>
+    <div id="app">
+      <div class="vip-container">
+        <div class="vip-features">
+          <div class="vip-feature-box" data-index="0">
+            <h2>Boosts de bonus</h2>
+            <p class="vip-feature-description">Les boosts hebdomadaires et les bonus mensuels signifient que vous serez récomposé à mesure que vous jouez </p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
-          <div class="face face2">
-            <h2>Jeux</h2>
+          <div class="vip-feature-box" data-index="1">
+            <h2>Tombolas & Courses</h2>
+            <p class="vip-feature-description">Seamlessly integrate with all major cloud providers. Our platform ensures your data is secure, accessible, and synchronized across all your devices and services.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
+          <div class="vip-feature-box" data-index="2">
+            <h2>Promotions</h2>
+            <p class="vip-feature-description">Leverage the power of artificial intelligence to automate repetitive tasks. Our AI engine learns from your patterns and optimizes workflows automatically.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+          </div>
+          <div class="vip-feature-box" data-index="3">
+            <h2>Haut retour aux joueurs (RTP)</h2>
+            <p class="vip-feature-description">Enterprise-grade security with end-to-end encryption. Keep your data protected with our advanced security protocols and compliance standards.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+          </div>
+        </div>
+        <div class="vip-image-container">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000" alt="Feature 1" class="vip-feature-image active" data-index="0">
+          <img src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?auto=format&fit=crop&w=1000" alt="Feature 2" class="vip-feature-image" data-index="1">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000" alt="Feature 3" class="vip-feature-image" data-index="2">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000" alt="Feature 4" class="vip-feature-image" data-index="3">
         </div>
       </div>
-  </div>
-</section>
+    </div>
 
+  </section>
 
 
 
