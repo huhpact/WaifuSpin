@@ -23,12 +23,15 @@
   <script src="/js/loading-cursor.js"></script>
   <script type="module" src="/js/time-bar-section.js"></script>
   <link rel="stylesheet" href="/css/header.css">
+  <script src="/js/sidebar-cookie-btc.js"></script>
+  <link rel="stylesheet" href="/css/cookie.css">
 </head>
 <body>
   <div class="stars"></div>
   <div class="twinkling"></div>
   <div class="preloader">
-    <div class="spinner"></div>
+  <div class="spinner"></div>
+  <div class="transition-element"></div>
 </div>
 
 <div class="custom-cursor"></div>
@@ -76,26 +79,20 @@
     </ul>
   </aside>
   <div class="overlay"></div>
-  
 
-
-
-    <section class="home">
-        <div class="left-align">
-            <h1>Un Casino en ligne et un site de paris inégalés</h1>
-            <a href="/fr/login/login.html"><button class="sign-up">
-              S'inscrire
-              <div class="arrow-wrapper-sign-up">
-                  <div class="arrow-sign-up"></div>
-          
-              </div>
-          </button>
-        </a>
+  <section class="hero-section">
+    <div class="grid-overlay"></div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-h1">Là où les rêves d'anime rencontrent la fortune</h1>
+            <p class="hero-p">Vivez l'aventure du casino le plus kawaii avec des machines à sous et des jeux exclusifs sur le thème des dessins animés. Rejoignez notre communauté de joueurs qui ont découvert une nouvelle façon de tourner!</p>
+            <a href="/fr/login/login.html"><button class="sign-up-btn">Commencez votre voyage</button></a>
         </div>
-        <div class="picture-right">
-            <img src="/images/main-pic-index.png" alt="Right-Side-Picture" class="right-img">
+        <div class="hero-image">
+            <img src="/images/main-pic-index.png" alt="main-pic-index">
         </div>
-    </section>
+    </div>
+</section>
    
     <div class="banner">
       <br>
@@ -153,7 +150,6 @@
       <h1>
         Profitez des meilleurs cotes avec des jeux offrant jusqu'à 99,5 % de retour au joueur
       </h1>
-      <a href="/fr/vip/vip.html"><button class="vip-btn">Devenez un VIP</button></a>
     </div>
 
 
@@ -162,30 +158,30 @@
         <div class="vip-features">
           <div class="vip-feature-box" data-index="0">
             <h2>Boosts de bonus</h2>
-            <p class="vip-feature-description">Les boosts hebdomadaires et les bonus mensuels signifient que vous serez récomposé à mesure que vous jouez </p>
+            <p class="vip-feature-description">Les boosts hebdomadaires et les bonus mensuels signifient que vous serez récomposé à mesure que vous jouez aux meilleurs jeux de casino et pariez sur vos sports préférés.</p>
             <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
           <div class="vip-feature-box" data-index="1">
             <h2>Tombolas & Courses</h2>
-            <p class="vip-feature-description">Seamlessly integrate with all major cloud providers. Our platform ensures your data is secure, accessible, and synchronized across all your devices and services.</p>
+            <p class="vip-feature-description">Participez au tirage au sort pour gagner 75k in BTC chaque semaine; Et gagner gros lors des courses quotidiennes.</p>
             <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
           <div class="vip-feature-box" data-index="2">
             <h2>Promotions</h2>
-            <p class="vip-feature-description">Leverage the power of artificial intelligence to automate repetitive tasks. Our AI engine learns from your patterns and optimizes workflows automatically.</p>
+            <p class="vip-feature-description">Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.</p>
             <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
           <div class="vip-feature-box" data-index="3">
             <h2>Haut retour aux joueurs (RTP)</h2>
-            <p class="vip-feature-description">Enterprise-grade security with end-to-end encryption. Keep your data protected with our advanced security protocols and compliance standards.</p>
+            <p class="vip-feature-description">Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.</p>
             <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
         </div>
         <div class="vip-image-container">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000" alt="Feature 1" class="vip-feature-image active" data-index="0">
-          <img src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?auto=format&fit=crop&w=1000" alt="Feature 2" class="vip-feature-image" data-index="1">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000" alt="Feature 3" class="vip-feature-image" data-index="2">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000" alt="Feature 4" class="vip-feature-image" data-index="3">
+          <video src="/videos/bonus.webm" autoplay loop muted playsinline alt="Feature 1" class="vip-feature-image active" data-index="0"></video>
+          <video src="/videos/promotions.webm" autoplay loop muted playsinline alt="Feature 2" class="vip-feature-image" data-index="1"></video>
+          <video src="/videos/raffles.webm" autoplay loop muted playsinline alt="Feature 3" class="vip-feature-image" data-index="2"></video>
+          <video src="/videos/rtp.webm" autoplay loop muted playsinline alt="Feature 4" class="vip-feature-image" data-index="3"></video>
         </div>
       </div>
     </div>
@@ -200,123 +196,7 @@
         <h2 id="support-heading">Notre équipe d'assistance parle votre langue</h2>
           <p>Obtenez une assistance 24/7 de notre équipe de support client en direct dans votre langue maternelle.</p>
           <div class="support-actions">
-            <a href="/fr/support/support.html"><button class="button-support">
-              Assistance
-              <div class="star-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-            </button></a>
+            <a href="/fr/support/support.html"><button class="button-support">Assistance<div class="star-1"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-2"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-3"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-4"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-5"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-6"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div></button></a>
           </div>
       </div>
       <div class="support-right">
@@ -431,7 +311,8 @@
             <div class="btc-rate">1 BTC = Loading...</div>
         </div>
     </div>
-
+    <hr>
+    
 
     <div class="copyright">
         &copy; 2024 Waifuspin.com | Tous Droits Réservés.

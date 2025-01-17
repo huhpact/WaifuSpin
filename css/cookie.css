@@ -1,0 +1,49 @@
+:root {
+  --primary-bg: #13111C;
+  --secondary-bg: #1E1B2E;
+  --accent: rgb(61, 106, 255);
+  --text-clr: rgba(255, 255, 255, 0.7);
+  --gradient: linear-gradient(90deg, #5f94ff, #0900ab);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --card-border: 1px solid rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(30, 27, 46, 0.95);
+}
+
+#cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  padding: 20px;
+  background-color: var(--secondary-bg);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--accent);
+  z-index: 1000;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+#cookie-banner.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+}
+#cookie-banner h4 {
+  margin: 0 0 10px;
+}
+#cookie-banner p {
+  margin: 0 0 15px;
+  font-size: 14px;
+}
+#cookie-banner button {
+  background-color: var(--accent);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+#cookie-banner button:hover {
+  background-color: #223fff;
+}

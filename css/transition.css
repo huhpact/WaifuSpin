@@ -1,0 +1,98 @@
+.transition-element {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	pointer-events: none;
+}
+
+.transition-element .transition-layer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform: translateY(100%);
+	transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.transition-element .layer-1 {
+	background: #000;
+	z-index: 3;
+}
+
+.transition-element .layer-2 {
+	background: var(--darkest-blue);
+	transition-delay: 0.1s;
+	z-index: 2;
+}
+
+.transition-element .layer-3 {
+	background: var(--dark-blue);
+	transition-delay: 0.2s;
+	z-index: 1;
+}
+
+.transition-element.active .transition-layer {
+	transform: translateY(0%);
+}
+
+.transition-element .transition-image {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 300px;
+	transform: translate(-50%, -50%) scale(0);
+	z-index: 4;
+	border-radius: 20px;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.transition-element.active .transition-image {
+	transform: translate(-50%, -50%) scale(1);
+	opacity: 1;
+}
+
+.transition-element .transition-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1.2);
+	transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.transition-element.active .transition-image img {
+	transform: scale(1);
+}
+
+.transition-element .ripple {
+	position: absolute;
+	border: 2px solid var(--primary-blue);
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.transition-element.active .ripple {
+	animation: rippleEffect 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes rippleEffect {
+	0% {
+			width: 0;
+			height: 0;
+			opacity: 1;
+	}
+	100% {
+			width: 200vw;
+			height: 200vw;
+			opacity: 0;
+	}
+}

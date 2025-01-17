@@ -154,30 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	updateOnlineUsers();
 });
 
-function handleIntersection(entries) {
-	entries.forEach(entry => {
-		const target = entry.target.querySelector('span');
-		if (entry.isIntersecting) {
-			target.classList.add('highlight');
-		} else {
-			target.classList.remove('highlight');
-		}
-	});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-	updateOnlineUsers();
-
-
-	const supportHeading = document.getElementById('support-heading');
-	const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
-	observer.observe(supportHeading);
-
-	
-	const text = supportHeading.innerHTML;
-	supportHeading.innerHTML = text.replace('votre langue', '<span>votre langue</span>');
-});
-
 let currentFeatureIndex = 0;
 const features = document.querySelectorAll(".feature");
 

@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #1b1035;
+  --color-bg: #13111C;
   --color-primary: rgb(61, 106, 255);
   --color-secondary: #6200ff;
   --color-text: #ffffff;
@@ -69,4 +69,14 @@
     cursor: auto;
   }
   
+}
+
+@media (max-width: 1024px) {
+  .custom-cursor {
+    display: none;
+  }
+
+  * {
+    cursor: auto;
+  }
 }
