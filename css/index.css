@@ -4,9 +4,6 @@
   --accent: rgb(61, 106, 255);
   --text-clr: rgba(255, 255, 255, 0.7);
   --gradient: linear-gradient(90deg, #5f94ff, #0900ab);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --card-border: 1px solid rgba(255, 255, 255, 0.05);
-  --glass-bg: rgba(30, 27, 46, 0.95);
 }
 
 ::selection {
@@ -181,7 +178,7 @@ header {
 .register-btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: #d500f9;
+  background: var(--accent);
   border-radius: 50px;
   text-decoration: none;
   color: #fff;
