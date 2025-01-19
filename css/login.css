@@ -11,6 +11,10 @@
   color: #fff;
 }
 
+* {
+  cursor: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -82,7 +86,6 @@ body {
 
 .burger-menu {
 	font-size: 1.8rem;
-	cursor: pointer;
 }
 
 
@@ -127,7 +130,6 @@ body {
 .sidebar ul li {
   padding: 10px 15px;
   font-size: 1.2rem;
-  cursor: pointer;
   border-radius: 8px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -297,7 +299,6 @@ main {
   color: var(--text-clr);
   font-family: inherit;
   font-weight: 600;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,7 +329,6 @@ main {
   border: none;
   color: var(--accent);
   font-family: inherit;
-  cursor: pointer;
   transition: color 0.3s;
 }
 

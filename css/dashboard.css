@@ -17,6 +17,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	cursor: none;
 }
 
 body {
@@ -87,7 +88,6 @@ body {
 	align-items: center;
 	gap: 0.5rem;
 	position: relative;
-	cursor: pointer;
 }
 
 .nav-balance:hover .balance-dropdown {
@@ -113,7 +113,6 @@ body {
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.75rem 1rem;
-	cursor: pointer;
 	border-radius: var(--radius);
 	transition: background-color 0.2s;
 }
@@ -132,7 +131,6 @@ body {
 	align-items: center;
 	gap: 0.5rem;
 	position: relative;
-	cursor: pointer;
 }
 
 .avatar {
@@ -278,7 +276,6 @@ body {
 	background: transparent;
 	color: var(--text);
 	font-weight: 600;
-	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
@@ -307,7 +304,6 @@ body {
 	border-radius: var(--radius);
 	background: rgba(255, 255, 255, 0.1);
 	color: var(--text);
-	cursor: pointer;
 	transition: all 0.3s ease;
 	min-width: 120px;
 }
@@ -497,7 +493,6 @@ body {
 	border-radius: var(--radius);
 	border: none;
 	font-weight: 500;
-	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
@@ -524,7 +519,6 @@ body {
 	border-radius: var(--radius);
 	border: none;
 	font-weight: 600;
-	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
