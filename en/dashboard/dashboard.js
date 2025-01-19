@@ -7,20 +7,16 @@ let userBalances = {
 
 let selectedCrypto = 'BTC';
 const cryptoPrices = {
-    BTC: 45000,  // Fallback prix
+    BTC: 45000,
     ETH: 2500,
     SOL: 100,
     XRP: 0.5
 };
 
-
 const balanceElement = document.getElementById('balanceAmount');
 const balanceCryptoIcon = document.getElementById('balanceCryptoIcon');
 const cryptoGrid = document.getElementById('cryptoGrid');
 const withdrawalForm = document.getElementById('withdrawalForm');
-const loginModal = document.getElementById('loginModal');
-const loginForm = document.getElementById('loginForm');
-const playNowBtn = document.getElementById('playNowBtn');
 const learnMoreBtn = document.getElementById('learnMoreBtn');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,10 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeUI() {
-    playNowBtn.addEventListener('click', () => {
-        loginModal.style.display = 'block';
-    });
-    
     learnMoreBtn.addEventListener('click', () => {
         document.querySelector('.features').scrollIntoView({ behavior: 'smooth' });
     });
@@ -45,15 +37,17 @@ function initializeUI() {
         option.addEventListener('click', handleCryptoSelection);
     });
 
-    withdrawalForm.addEventListener('submit', handleWithdrawal);
-
-    window.addEventListener('click', (e) => {
-        if (e.target === loginModal) {
-            loginModal.style.display = 'none';
-        }
+    document.querySelectorAll('.dropdown-option').forEach(option => {
+        option.addEventListener('click', handleCryptoSelection);
     });
 
-    loginForm.addEventListener('submit', handleLogin);
+    withdrawalForm.addEventListener('submit', handleWithdrawal);
+
+    document.querySelectorAll('.btn-play').forEach(btn => {
+        btn.addEventListener('click', () => {
+            showNotification('Game launching... 🎮');
+        });
+    });
 
     initializeCryptoGrid();
     updateBalance();
@@ -68,10 +62,12 @@ function handleDeposit(e) {
 }
 
 function handleCryptoSelection(e) {
+    const crypto = e.currentTarget.dataset.crypto;
     document.querySelectorAll('.crypto-option').forEach(opt => opt.classList.remove('active'));
-    e.currentTarget.classList.add('active');
-    selectedCrypto = e.currentTarget.dataset.crypto;
+    document.querySelector(`.crypto-option[data-crypto="${crypto}"]`).classList.add('active');
+    selectedCrypto = crypto;
     updateBalance();
+    balanceCryptoIcon.src = `https://cryptologos.cc/logos/${crypto.toLowerCase()}-${crypto.toLowerCase()}-logo.svg`;
 }
 
 function handleWithdrawal(e) {
@@ -103,6 +99,7 @@ function initializeCryptoGrid() {
         { symbol: 'XRP', name: 'XRP', logo: 'https://cryptologos.cc/logos/xrp-xrp-logo.svg' }
     ];
 
+    cryptoGrid.innerHTML = '';
     coins.forEach(coin => {
         const card = document.createElement('div');
         card.className = 'crypto-card';
@@ -121,13 +118,14 @@ async function fetchCryptoPrices() {
     try {
         const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,ripple&vs_currencies=usd');
         const data = await response.json();
-        
+
         if (data.bitcoin) cryptoPrices.BTC = data.bitcoin.usd;
         if (data.ethereum) cryptoPrices.ETH = data.ethereum.usd;
         if (data.solana) cryptoPrices.SOL = data.solana.usd;
         if (data.ripple) cryptoPrices.XRP = data.ripple.usd;
-        
+
         updatePriceDisplay();
+        setInterval(fetchCryptoPrices, 60000);
     } catch (error) {
         console.warn('Using fallback prices due to API error:', error);
         updatePriceDisplay();
@@ -153,10 +151,10 @@ function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
     setTimeout(() => notification.classList.add('show'), 100);
-    
+
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => notification.remove(), 300);
@@ -181,3 +179,14 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.feature-card, .game-card, .crypto-card').forEach(el => {
     observer.observe(el);
 });
+
+async function fetchBitcoinRate() {
+	try {
+			const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
+			const data = await response.json();
+			const rate = parseFloat(data.bpi.USD.rate.replace(',', ''));
+			document.querySelector('.btc-rate').textContent = `1 BTC = $${rate.toFixed(2)}`;
+	} catch (error) {
+			console.error('Error fetching Bitcoin rate:', error);
+	}
+}
