@@ -12,22 +12,6 @@
 	--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
-	cursor: none;
-}
-
-body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-	background: var(--background);
-	color: var(--text);
-	line-height: 1.6;
-	overflow-x: hidden;
-}
-
 .stars, .twinkling {
 	position: fixed;
 	top: 0;
@@ -40,7 +24,7 @@ body {
 }
 
 .stars {
-	background: #0F1624 url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
+	background: #13111C url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
 	z-index: -2;
 }
 
@@ -52,8 +36,28 @@ body {
 }
 
 @keyframes move-twinkle-back {
-	from { background-position: 0 0; }
-	to { background-position: -10000px 5000px; }
+	from {background-position: 0 0;}
+	to {background-position: -10000px 5000px;}
+}
+
+
+::selection {
+  background: rgba(61, 106, 255, 0.2);
+  color: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+	background: var(--background);
+	color: var(--text);
+	line-height: 1.6;
+	min-height: 100vh;
 }
 
 .navbar {
@@ -63,118 +67,20 @@ body {
 	padding: 1rem 2rem;
 	background: rgba(26, 31, 46, 0.95);
 	backdrop-filter: blur(10px);
-	box-shadow: var(--shadow);
 	position: fixed;
 	width: 100%;
 	top: 0;
 	z-index: 1000;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-  height: 40px;
-  transition: transform 0.3s ease;
+	height: 40px;
+	transition: transform 0.3s ease;
 }
 
 .logo:hover {
 	transform: scale(1.1);
-}
-
-.nav-balance {
-	background: rgba(255, 255, 255, 0.1);
-	padding: 0.5rem 1rem;
-	border-radius: var(--radius);
-	font-weight: 500;
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	position: relative;
-}
-
-.nav-balance:hover .balance-dropdown {
-	display: block;
-	animation: fadeIn 0.3s ease-out;
-}
-
-.balance-dropdown {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background: var(--surface);
-	border-radius: var(--radius);
-	padding: 0.5rem;
-	margin-top: 0.5rem;
-	min-width: 200px;
-	box-shadow: var(--shadow);
-}
-
-.dropdown-option {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.75rem 1rem;
-	border-radius: var(--radius);
-	transition: background-color 0.2s;
-}
-
-.dropdown-option:hover {
-	background: rgba(255, 255, 255, 0.1);
-}
-
-.crypto-icon {
-	width: 20px;
-	height: 20px;
-}
-
-.nav-profile {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	position: relative;
-}
-
-.avatar {
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	background: var(--primary);
-}
-
-.nav-profile:hover .profile-dropdown {
-	display: block;
-	animation: fadeIn 0.3s ease-out;
-}
-
-.profile-dropdown {
-	display: none;
-	position: absolute;
-	top: 100%;
-	right: 0;
-	background: var(--surface);
-	border-radius: var(--radius);
-	padding: 0.5rem;
-	margin-top: 0.5rem;
-	min-width: 200px;
-	box-shadow: var(--shadow);
-}
-
-.dropdown-item {
-	display: block;
-	padding: 0.75rem 1rem;
-	color: var(--text);
-	text-decoration: none;
-	border-radius: var(--radius);
-	transition: background-color 0.2s;
-}
-
-.dropdown-item:hover {
-	background: rgba(255, 255, 255, 0.1);
-}
-
-.dropdown-item.logout {
-	color: var(--error);
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
-	margin-top: 0.5rem;
 }
 
 .hero {
@@ -241,118 +147,131 @@ body {
 	color: var(--text-secondary);
 }
 
-.transaction-section {
-	padding: 4rem 2rem;
-	background: rgba(26, 31, 46, 0.5);
-	backdrop-filter: blur(10px);
+.nav-balance {
+	position: relative;
+	transition: transform 0.2s ease;
 }
 
-.transaction-container {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
-}
-
-.deposit-section, .withdrawal-section {
-	background: var(--surface);
-	padding: 2rem;
-	border-radius: var(--radius);
-	box-shadow: var(--shadow);
-}
-
-.amount-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1rem;
-	margin: 1.5rem 0;
-}
-
-.amount-btn {
-	padding: 1rem;
-	border: 2px solid var(--primary);
-	border-radius: var(--radius);
-	background: transparent;
-	color: var(--text);
-	font-weight: 600;
-	transition: all 0.3s ease;
-}
-
-.amount-btn:hover {
-	background: var(--primary);
+.nav-balance:hover {
 	transform: translateY(-2px);
 }
 
-.crypto-selection {
-	margin-bottom: 2rem;
-}
-
-.crypto-options {
-	display: flex;
-	gap: 1rem;
-	margin-top: 1rem;
-	flex-wrap: wrap;
-}
-
-.crypto-option {
+.balance-display {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	padding: 0.75rem 1rem;
-	border: 2px solid transparent;
-	border-radius: var(--radius);
+	gap: 0.75rem;
 	background: rgba(255, 255, 255, 0.1);
-	color: var(--text);
+	padding: 0.75rem 1.25rem;
+	border-radius: var(--radius);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	transition: all 0.3s ease;
-	min-width: 120px;
 }
 
-.crypto-option img {
-	width: 20px;
-	height: 20px;
+.balance-display:hover {
+	background: rgba(255, 255, 255, 0.15);
+	border-color: rgba(255, 255, 255, 0.2);
 }
 
-.crypto-option.active {
-	border-color: var(--primary);
-	background: rgba(108, 99, 255, 0.2);
+.crypto-icon {
+	width: 24px;
+	height: 24px;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-.crypto-option:hover {
+#balanceAmount {
+	font-weight: 600;
+	font-size: 1.1rem;
+	color: var(--text);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.crypto-symbol {
+	color: var(--text-secondary);
+	font-weight: 500;
+}
+
+.balance-dropdown {
+	display: none;
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	left: 0;
+	background: var(--surface);
+	border-radius: var(--radius);
+	padding: 0.5rem;
+	min-width: 250px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+	from {
+			opacity: 0;
+			transform: translateY(-10px);
+	}
+	to {
+			opacity: 1;
+			transform: translateY(0);
+	}
+}
+
+.nav-balance:hover .balance-dropdown {
+	display: block;
+}
+
+.dropdown-option {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-radius: var(--radius);
+	transition: all 0.2s ease;
+}
+
+.dropdown-option:hover {
+	background: rgba(255, 255, 255, 0.1);
+	transform: translateX(5px);
+}
+
+.dropdown-option img {
+	width: 24px;
+	height: 24px;
+}
+
+.balance-amount {
+	font-weight: 600;
+	color: var(--text);
+	margin-right: auto;
+}
+
+.nav-profile {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.5rem 1rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: var(--radius);
+	transition: all 0.3s ease;
+}
+
+.nav-profile:hover {
+	background: rgba(255, 255, 255, 0.15);
 	transform: translateY(-2px);
 }
 
-.form-group {
-	margin-bottom: 1.5rem;
-}
-
-.form-group label {
-	display: block;
-	margin-bottom: 0.5rem;
-	color: var(--text-secondary);
-}
-
-.form-group input {
-	width: 100%;
-	padding: 0.75rem;
-	border: 2px solid rgba(255, 255, 255, 0.1);
-	border-radius: var(--radius);
-	background: rgba(255, 255, 255, 0.05);
+#username {
+	font-weight: 500;
 	color: var(--text);
-	transition: all 0.3s ease;
 }
 
-.form-group input:focus {
-	border-color: var(--primary);
-	outline: none;
+.avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: var(--primary);
+	box-shadow: 0 2px 6px rgba(108, 99, 255, 0.3);
 }
 
-.available-balance {
-	display: block;
-	margin-top: 0.5rem;
-	font-size: 0.9rem;
-	color: var(--text-secondary);
-}
 
 .games {
 	padding: 4rem 2rem;
@@ -435,15 +354,187 @@ body {
 	transform: scale(1.1);
 }
 
+.transaction-section {
+	padding: 8rem 2rem 4rem;
+	background: linear-gradient(to bottom, transparent, rgba(26, 31, 46, 0.5));
+}
+
+.transaction-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
+.deposit-section, .withdrawal-section {
+	background: var(--surface);
+	padding: 2rem;
+	border-radius: var(--radius);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	color: var(--text);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+	font-size: 1.2rem;
+	color: var(--text-secondary);
+	margin-bottom: 1rem;
+}
+
+.currency-selector {
+	margin-bottom: 2rem;
+}
+
+.crypto-options {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.crypto-option {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem;
+	background: rgba(255, 255, 255, 0.1);
+	border: 2px solid transparent;
+	border-radius: var(--radius);
+	transition: all 0.3s ease;
+}
+
+.crypto-option:hover {
+	background: rgba(255, 255, 255, 0.15);
+	transform: translateY(-2px);
+}
+
+.crypto-option.active {
+	border-color: var(--primary);
+	background: rgba(108, 99, 255, 0.2);
+	box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
+}
+
+.crypto-option img {
+	width: 24px;
+	height: 24px;
+}
+
+.crypto-option span {
+	font-weight: 500;
+	color: var(--text);
+}
+
+.amount-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.amount-btn {
+	padding: 1rem;
+	background: transparent;
+	border: 2px solid var(--primary);
+	color: var(--text);
+	font-weight: 600;
+	border-radius: var(--radius);
+	transition: all 0.3s ease;
+}
+
+.amount-btn:hover {
+	background: var(--primary);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.exchange-info {
+	margin-top: 1.5rem;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: var(--radius);
+	font-size: 1.1rem;
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#exchangeAmount {
+	font-weight: 600;
+	color: var(--primary);
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: var(--text-secondary);
+	font-weight: 500;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	background: rgba(255, 255, 255, 0.1);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: var(--radius);
+	color: var(--text);
+	font-size: 1rem;
+	transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+	outline: none;
+	border-color: var(--primary);
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.available-balance {
+	display: block;
+	margin-top: 0.5rem;
+	color: var(--text-secondary);
+	font-size: 0.9rem;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	font-weight: 600;
+	border-radius: var(--radius);
+	transition: all 0.3s ease;
+	border: none;
+	font-size: 1rem;
+	text-align: center;
+	width: 100%;
+}
+
+.btn-primary {
+	background: var(--primary);
+	color: var(--text);
+}
+
+.btn-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
 .crypto-tracker {
 	padding: 4rem 2rem;
 	background: rgba(26, 31, 46, 0.5);
-	backdrop-filter: blur(10px);
 }
 
 .crypto-tracker h2 {
 	text-align: center;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 	font-size: 2rem;
 	background: linear-gradient(45deg, var(--primary), var(--accent));
 	-webkit-background-clip: text;
@@ -456,7 +547,7 @@ body {
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2rem;
 	max-width: 1200px;
-	margin: 2rem auto 0;
+	margin: 0 auto;
 }
 
 .crypto-card {
@@ -465,13 +556,15 @@ body {
 	border-radius: var(--radius);
 	display: flex;
 	align-items: center;
-	gap: 1rem;
-	transition: transform 0.3s ease;
-	box-shadow: var(--shadow);
+	gap: 1.5rem;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .crypto-card:hover {
 	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .crypto-info {
@@ -479,52 +572,15 @@ body {
 }
 
 .crypto-info h3 {
+	font-size: 1.25rem;
 	margin-bottom: 0.5rem;
 	color: var(--primary);
 }
 
 .crypto-price {
-	color: var(--text-secondary);
 	font-size: 1.1rem;
-}
-
-.btn {
-	padding: 0.75rem 1.5rem;
-	border-radius: var(--radius);
-	border: none;
-	font-weight: 500;
-	transition: all 0.3s ease;
-}
-
-.btn:hover {
-	transform: translateY(-2px);
-	box-shadow: var(--shadow);
-}
-
-.btn-primary {
-	background: var(--primary);
-	color: var(--text);
-}
-
-.btn-secondary {
-	background: transparent;
-	border: 2px solid var(--primary);
-	color: var(--primary);
-}
-
-.btn-play {
-	background: var(--accent);
-	color: var(--text);
-	padding: 0.75rem 2rem;
-	border-radius: var(--radius);
-	border: none;
 	font-weight: 600;
-	transition: all 0.3s ease;
-}
-
-.btn-play:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+	color: var(--text);
 }
 
 .notification {
@@ -535,16 +591,20 @@ body {
 	border-radius: var(--radius);
 	background: var(--surface);
 	color: var(--text);
-	box-shadow: var(--shadow);
-	transform: translateY(100px);
-	opacity: 0;
-	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	z-index: 1000;
+	animation: slideIn 0.3s ease;
 }
 
-.notification.show {
-	transform: translateY(0);
-	opacity: 1;
+@keyframes slideIn {
+	from {
+			transform: translateX(100%);
+			opacity: 0;
+	}
+	to {
+			transform: translateX(0);
+			opacity: 1;
+	}
 }
 
 .notification.success {
@@ -555,39 +615,33 @@ body {
 	border-left: 4px solid var(--error);
 }
 
-@keyframes fadeIn {
-	from { opacity: 0; transform: translateY(10px); }
-	to { opacity: 1; transform: translateY(0); }
+@media (max-width: 1200px) {
+	.transaction-container {
+			padding: 0 1rem;
+	}
 }
 
-.animate-fade-in {
-	opacity: 0;
-	animation: fadeIn 0.5s ease-out forwards;
+@media (max-width: 992px) {
+	.crypto-options {
+			grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media (max-width: 768px) {
-	.hero-title {
-			font-size: 2rem;
-	}
-	
-	.hero-subtitle {
-			font-size: 1rem;
-	}
-	
 	.transaction-container {
 			grid-template-columns: 1fr;
 	}
 	
-	.crypto-options {
-			flex-wrap: wrap;
-	}
-	
-	.crypto-option {
-			flex: 1 1 calc(50% - 0.5rem);
-	}
-	
 	.nav-balance {
 			display: none;
+	}
+	
+	.amount-grid {
+			grid-template-columns: repeat(2, 1fr);
+	}
+	
+	h2 {
+			font-size: 1.5rem;
 	}
 }
 
@@ -596,28 +650,21 @@ body {
 			padding: 1rem;
 	}
 	
-	.nav-brand {
-			font-size: 1.2rem;
-	}
-	
-	.hero {
-			padding: 6rem 1rem 3rem;
-	}
-	
-	.features {
-			padding: 2rem 1rem;
-	}
-	
 	.amount-grid {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr;
 	}
 	
-	.crypto-option {
-			flex: 1 1 100%;
+	.crypto-options {
+			grid-template-columns: 1fr;
 	}
 	
-	.hero-cta {
-			flex-direction: column;
-			gap: 1rem;
+	.crypto-card {
+			padding: 1rem;
+	}
+	
+	.notification {
+			left: 20px;
+			right: 20px;
+			text-align: center;
 	}
 }
