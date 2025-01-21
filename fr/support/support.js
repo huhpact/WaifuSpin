@@ -1,5 +1,5 @@
 const OPENAI_API_KEY = 'hier muss ich api noch adden , er commited sonst nicht'; 
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions--- auch den adden';
+const OPENAI_API_URL = 'auch den adden';
 
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
