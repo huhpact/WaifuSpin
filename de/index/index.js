@@ -3,19 +3,19 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const promos = [
 			{
-					title: "Tombolas & Wettläufe",
+					title: "Tombolas & Rennen",
 					description: "Nehmen Sie an der Verlosung teil, um jede Woche 75K zu gewinnen. Und gewinnen Sie bei den täglichen Rennen groß.",
-					media: "/public/images/win.png",
+					media: "/images/win.png",
 			},
 			{
 					title: "Sonderangebote",
 					description: "Machen Sie das Beste aus unseren Casino-Aktionen und Sportwetten-Boni, die wöchentlich aktualisiert werden.",
-					media: "/public/images/cards.png",
+					media: "/images/cards.png",
 			},
 			{
 					title: "Hohe Spielerrückmeldung (RTP)",
 					description: "Mit verbesserten RTP-Prozentsätzen haben Sie bei jedem Spiel die Chance auf einen großen Gewinn.",
-					media: "/public/images/rtp.png",
+					media: "/images/rtp.png",
 			},
 	];
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" Anonym"];
+  const users = [" Versteckt"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -154,30 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	updateOnlineUsers();
 });
 
-function handleIntersection(entries) {
-	entries.forEach(entry => {
-		const target = entry.target.querySelector('span');
-		if (entry.isIntersecting) {
-			target.classList.add('highlight');
-		} else {
-			target.classList.remove('highlight');
-		}
-	});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-	updateOnlineUsers();
-
-
-	const supportHeading = document.getElementById('support-heading');
-	const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
-	observer.observe(supportHeading);
-
-	
-	const text = supportHeading.innerHTML;
-	supportHeading.innerHTML = text.replace('Ihre Sprache', '<span>Ihre Sprache</span>');
-});
-
 let currentFeatureIndex = 0;
 const features = document.querySelectorAll(".feature");
 
@@ -236,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); 
+			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
 			hideBanner();
 	});
 
