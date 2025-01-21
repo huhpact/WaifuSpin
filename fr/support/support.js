@@ -1,5 +1,5 @@
-const OPENAI_API_KEY = 'hier muss ich api noch adden , er commited sonst nicht'; 
-const OPENAI_API_URL = 'auch den adden';
+const OPENAI_API_KEY = ''; 
+const OPENAI_API_URL = '';
 
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
