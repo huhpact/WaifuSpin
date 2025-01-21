@@ -1,4 +1,5 @@
-// hier api key definieren 
+const OPENAI_API_KEY = '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'; 
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
