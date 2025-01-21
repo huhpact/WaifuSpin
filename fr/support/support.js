@@ -1,5 +1,4 @@
-const OPENAI_API_KEY = ''; 
-const OPENAI_API_URL = '';
+// hier api key definieren 
 
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
