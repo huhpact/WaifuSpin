@@ -21,11 +21,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/loading-cursor.css">
   <script src="/js/loading-cursor.js"></script>
-</head>
+  <script type="module" src="/js/time-bar-section.js"></script>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/cookie.css">
+  <script src="/js/loading-cursor.js"></script>
 <body>
-  
+  <div class="stars"></div>
+  <div class="twinkling"></div>
   <div class="preloader">
-    <div class="spinner"></div>
+  <div class="spinner"></div>
 </div>
 
 <div class="custom-cursor"></div>
@@ -39,84 +43,73 @@
         <a href="#"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
       <div class="login-reg">
-        <a href="/de/login/login.html" class="login">Einloggen</a>
-        <a href="/de/login/login.html"><button class="sign-up" style="margin-left: 10px;">
-          Registrieren
-          <div class="arrow-wrapper-sign-up">
-              <div class="arrow-sign-up"></div>
-      
-          </div>
-      </button></a>
+        <a href="/de/login/login.html" class="login">Login</a>
+        <a href="/de/login/login.html"><button class="sign-up-btn">Registrieren</button></a>
       </div>
     </div>
   </header>
   
-  
+  <div id="cookie-banner">
+    <h4>Cookie-Einstellungen</h4>
+    <p>Diese Seite verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Seite haben.</p>
+    <button id="accept-cookies">Akzeptieren</button>
+    <button id="decline-cookies">Ablehnen</button>
+</div>
   
 
   <aside class="sidebar">
-		<ul>
-			<li><a href="/de/promotions/promotions.html"><i class='bx bxs-gift'></i> Aktionen</a></li>
-			<li><a href="/de/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affiliate</a></li>
-			<hr>
-			<li><a href="/de/vip/vip.html"><i class='bx bxs-trophy'></i> VIP-Club</a></li>
-			<li><a href="/de/news/news.html"><i class='bx bxs-news'></i> Neuigkeiten</a></li>
-			<li><a href="/de/support/support.html"><i class='bx bx-support'></i> Live-Kundenservice</a></li>
-			<li class="language-dropdown">
-			<i class='bx bx-world'> Sprache</i> 
-			<ul class="dropdown">
-        <li><a href="/en/index/index.html">English</a></li>
-        <li><a href="#">Deutsch</a></li>
-        <li><a href="/fr/index/index.html">Français</a></li>
-        <li><a href="/ru/index/index.html">Русский</a></li>
-			</ul>
-			</li>
-		</ul>
+    <ul>
+      <li><a href="/de/promotions/promotions.html"><i class='bx bxs-gift'></i> Sonderangebote</a></li>
+      <li><a href="/de/affiliates/afiiliates.html"><i class='bx bxs-business'></i> Affiliates</a></li>
+      <hr>
+      <li><a href="/de/vip/vip.html"><i class='bx bxs-trophy'></i> VIP-Club</a></li>
+      <li><a href="/de/news/news.html"><i class='bx bxs-news'></i> Neuigkeiten</a></li>
+      <li><a href="/de/support/support.html"><i class='bx bx-support'></i> Live-Kundenservice</a></li>
+      <li class="language-dropdown">
+        <i class='bx bx-world'></i> Sprache
+        <ul class="dropdown">
+          <li><a href="/en/index/index.html">English</a></li>
+          <li><a href="#">Deutsch</a></li>
+          <li><a href="/fr/index/index.html">Français</a></li>
+          <li><a href="/ru/index/index.html">Русский</a></li>
+        </ul>
+      </li>
+    </ul>
   </aside>
   <div class="overlay"></div>
-  
-  <div id="cookie-banner">
-    <h4>Cookie Einstellungen</h4>
-    <p>Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website erhalten.</p>
-    <button id="accept-cookies">Annehmen</button>
-    <button id="decline-cookies">Ablehnen</button>
-</div>
 
+  <section class="hero-section">
+    <div class="grid-overlay"></div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-h1">Wo Anime-Träume auf das Glück treffen</h1>
+            <p class="hero-p">Erleben Sie das Abenteuer des kawaiitischsten Kasinos mit exklusiven Spielautomaten und Spielen im Zeichen von Cartoons. Schließen Sie sich unserer Gemeinschaft von Spielern an, die eine neue Art des Drehens entdeckt haben!
 
-    <section class="home">
-        <div class="bg-logopic"></div>
-        <div class="left-align">
-            <h1>Ein unübertroffenes Online-Casino und eine Wettseite</h1>
-            <button class="sign-up">
-              Registrieren
-              <div class="arrow-wrapper-sign-up">
-                  <div class="arrow-sign-up"></div>
-          
-              </div>
-          </button>
+            <a href="/de/login/login.html"><button class="sign-up-btn">Beginnen Sie Ihre Reise</button></a>
         </div>
-        <div class="picture-right">
-            <img src="/images/start-mot.png" alt="Right-Side-Picture" class="right-img">
+        <div class="hero-image">
+            <img src="/images/main-pic-index.png" alt="main-pic-index">
         </div>
-    </section>
+    </div>
+</section>
    
     <div class="banner">
       <br>
 			<div class="banner-wrapper">
-        <img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
-        <img src="/images/Logo_da_Rolex.png" alt="Rolex">
-        <img src="/images/Kick_logo.svg.png" alt="Kick">
-        <img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
-        <img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
-        <img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
-        <img src="/images/Wirecard_Logo.svg" alt="Wirecard">
-        <img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
-        <img src="/images/Logo_da_Rolex.png" alt="Rolex">
-        <img src="/images/Kick_logo.svg.png" alt="Kick">
-        <img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
-        <img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
-        <img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
-        <img src="/images/Wirecard_Logo.svg" alt="Wirecard">
+					<img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+					<img src="/images/Logo_da_Rolex.png" alt="Rolex">
+					<img src="/images/Kick_logo.svg.png" alt="Kick">
+					<img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+					<img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+					<img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
+					<img src="/images/Wirecard_Logo.svg" alt="Wirecard">
+					<img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+					<img src="/images/Logo_da_Rolex.png" alt="Rolex">
+					<img src="/images/Kick_logo.svg.png" alt="Kick">
+					<img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+					<img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+					<img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
+					<img src="/images/Wirecard_Logo.svg" alt="Wirecard">
 			</div>
 	</div>
 	
@@ -125,8 +118,8 @@
         <button class="nav-arrow left-arrow">&lsaquo;</button>
         <div class="promo-content">
             <div class="promo-info">
-                <h3>Angebote</h3>
-                <p>Nutzen Sie unsere besten Angebote!</p>
+                <h3>Promo 1</h3>
+                <p>Profitez de nos meilleures offres!</p>
             </div>
             <div class="promo-media">
                 <img src="/images/win.png" alt="Promo 1">
@@ -144,80 +137,55 @@
 	</div>
 	<div class="payment-text">
 			<h2>Seelenfrieden mit mehreren Kryptowährungen und lokalen Währungen</h2>
-			<p>Erleben Sie sichere Einzahlungen und sofortige Abhebungen in 20 Kryptowährungen und 7 Lokalwährungen. All das ohne Mindestbeträge, mit flexiblen Zahlungsmethoden und einem sicheren Online-Tresor.</p>
+			<p>Erleben Sie sichere Einzahlungen und sofortige Abhebungen in 20 Kryptowährungen und 7 Lokalwährungen. All das ohne Mindestbeträge, mit flexiblen Zahlungsmethoden und einer sicheren Online-Wallet.</p>
 	</div>
 </section>
 
-<div class="neon-divider"></div>
 
 
 <section class="vip">
   <div class="vip-section">
     <div class="vip-header">
       <h1>
-        Wetten Sie mehr und sehen Sie, wie Ihre Belohnungen als WaifuSpin wachsen.
+        Genießen Sie die besten Quoten mit Spielen, die bis zu 99,5 % Rendite für den Spieler bieten.
       </h1>
-      <p>Betreten Sie eine Welt voller einzigartiger Vorteile, personalisierter Dienstleistungen und exklusiver Boni, nur als WaifuSpin-VIP.</p>
-      <a href="/de/vip/vip.html"><button class="vip-btn">VIP werden</button></a>
     </div>
-    
-      <div class="container">
 
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="bonus">Wöchentliche Boni</h2>
-              <p class="bonus">Jede Woche in jedem Monat werden Sie mit einem Bonus belohnt, der auf Ihren letzten Spielen basiert. Je mehr Sie setzen, desto höher ist der Bonus.</p>
-            </div>
-          </div>
-          <div class="face face2">
-            <h2>Bonus</h2>
-          </div>
-        </div>
-      
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="hote">Ihr eigener VIP-Gastgeber</h2>
-              <p class="hote">Genießen Sie den exklusiven Zugang zu einem engagierten VIP-Host, der Sie unterstützt und auf Ihre Wettbedürfnisse eingeht.</p>
-            </div>
-          </div>
-          <div class="face face2">
-            <h2>Host</h2>
-          </div>
-        </div>
-      
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="niveau">Zahlungen für die nächste Stufe</h2>
-              <p class="niveau">Werden Sie jedes Mal bezahlt, wenn Sie eine neue Stufe erreichen. Je höher Sie aufsteigen, desto interessanter werden die Levels.</p>
-            </div>
-          </div>
-          <div class="face face2">
-            <h2>Level</h2>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <span class="stars"></span>
-              <h2 class="jeux">Neueste Spielboni</h2>
-              <p class="jeux">WaifuSpin bietet Ihnen bei jedem Levelaufstieg Geld auf Ihre Verluste an.</p>
-            </div>
+    <div id="app">
+      <div class="vip-container">
+        <div class="vip-features">
+          <div class="vip-feature-box" data-index="0">
+            <h2>Bonus-Boosts</h2>
+            <p class="vip-feature-description">Wöchentliche Boosts und monatliche Boni bedeuten, dass Sie belohnt werden, während Sie die besten Casinospiele spielen und auf Ihre Lieblingssportarten wetten.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
-          <div class="face face2">
-            <h2>Spiele</h2>
+          <div class="vip-feature-box" data-index="1">
+            <h2>Tombolas & Rennen</h2>
+            <p class="vip-feature-description">Nehmen Sie an der Verlosung teil, um jede Woche 75k in BTC zu gewinnen; und verdienen Sie bei den täglichen Rennen viel Geld.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
           </div>
+          <div class="vip-feature-box" data-index="2">
+            <h2>Sonderangebote</h2>
+            <p class="vip-feature-description">Machen Sie das Beste aus unseren Casino-Aktionen und Sportwetten-Boni, die wöchentlich aktualisiert werden.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+          </div>
+          <div class="vip-feature-box" data-index="3">
+            <h2>Hohe Spielerrückmeldung (RTP)</h2>
+            <p class="vip-feature-description">Mit verbesserten RTP-Prozentsätzen haben Sie bei jedem Spiel die Chance auf einen großen Gewinn.</p>
+            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+          </div>
+        </div>
+        <div class="vip-image-container">
+          <video src="/videos/bonus.webm" autoplay loop muted playsinline alt="Feature 1" class="vip-feature-image active" data-index="0"></video>
+          <video src="/videos/promotions.webm" autoplay loop muted playsinline alt="Feature 2" class="vip-feature-image" data-index="1"></video>
+          <video src="/videos/raffles.webm" autoplay loop muted playsinline alt="Feature 3" class="vip-feature-image" data-index="2"></video>
+          <video src="/videos/rtp.webm" autoplay loop muted playsinline alt="Feature 4" class="vip-feature-image" data-index="3"></video>
         </div>
       </div>
-  </div>
-</section>
+    </div>
 
+  </section>
 
 
 
@@ -227,123 +195,7 @@
         <h2 id="support-heading">Unser Support-Team spricht Ihre Sprache</h2>
           <p>Erhalten Sie 24/7-Unterstützung von unserem Live-Kundensupportteam in Ihrer Muttersprache.</p>
           <div class="support-actions">
-            <a href="/de/support/support.html"><button class="button-support">
-              Support
-              <div class="star-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="star-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xml:space="preserve"
-                  version="1.1"
-                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                  viewBox="0 0 784.11 815.53"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs></defs>
-                  <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <path
-                      class="fil0"
-                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-            </button></a>
+            <a href="/de/support/support.html"><button class="button-support">Support<div class="star-1"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-2"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-3"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-4"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-5"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-6"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div></button></a>
           </div>
       </div>
       <div class="support-right">
@@ -356,7 +208,7 @@
 
 
 <section class="stats">
-  <h2>Sehen Sie sich die aktuelle Wettaktionen an</h2>
+  <h2>Sehen Sie sich die aktuelle Wettaktion an</h2>
   <div class="online-indicator">
     <span class="blink"></span>
   </div>
@@ -367,7 +219,7 @@
       <tr>
         <th>Spiel</th>
         <th>Nutzer</th>
-        <th>Uhrzeit</th>
+        <th>Zeit</th>
         <th>Betrag (€)</th>
       </tr>
     </thead>
@@ -386,60 +238,49 @@
         <div class="section">
             <h4>Casino</h4>
             <ul>
-                <li><a href="#">Casino-Spiele</a></li>
-                <li><a href="#">Spielautomaten</a></li>
-                <li><a href="#">Live-Casino</a></li>
-                <li><a href="#">Roulette</a></li>
-                <li><a href="#">Blackjack</a></li>
-                <li><a href="#">Anbieter</a></li>
-                <li><a href="#">Promotions & Wettbewerbe</a></li>
+                <li><a href="/de/casino-games/casino-games.html">Casino-Spiele</a></li>
+                <li><a href="/de/slots-guide/slots-guide.html">Slot-Maschinen</a></li>
+                <li><a href="/de/live-casino/live-casino.html">Live Casino</a></li>
+                <li><a href="/de/lucky-wheel-guide/lucky-wheel-guide.html">Glücksrad</a></li>
+                <li><a href="/de/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
+                <li><a href="/de/provider/provider.html">Anbieter</a></li>
+                <li><a href="/de/promotions-and-competitions/promotions-and-competitions.html">Promotions & Wettbewerbe</a></li>
             </ul>
         </div>
 
         <div class="section">
             <h4>Support</h4>
             <ul>
-                <li><a href="#">Hilfe-Center</a></li>
-                <li><a href="#">Fairness</a></li>
-                <li><a href="#">Hotline für Spielprobleme</a></li>
-                <li><a href="#">Live-Kundenservice</a></li>
-                <li><a href="#">Selbstausschluss</a></li>
+                <li><a href="/de/help-center/help-center.html">Hilfe-Center</a></li>
+                <li><a href="/de/hotline-for-game-problems/hotline-for-game-problems.html">Hotline für Spielprobleme</a></li>
+                <li><a href="/de/support/support.html">Live-Kundenservice</a></li>
+                <li><a href="/de/self-exclusion/self-exclusion.html">Selbstausschluss</a></li>
             </ul>
         </div>
 
         <div class="section">
             <h4>Über uns</h4>
             <ul>
-                <li><a href="#">VIP-Club</a></li>
-                <li><a href="#">Affiliate</a></li>
-                <li><a href="#">Datenschutzrichtlinie</a></li>
-                <li><a href="#">LBC-Politik</a></li>
-                <li><a href="#">Nutzungsbedingungen</a></li>
+                <li><a href="/de/vip/vip.html">VIP Club</a></li>
+                <li><a href="/de/affiliates/affiliates.html">Affiliates</a></li>
+                <li><a href="/de/privacy-policy/privacy-policy">Datenschutzrichtlinie</a></li>
+                <li><a href="/de/lbc-policy/lbc-policy.html">LBC-Politik</a></li>
+                <li><a href="/de/terms-of-use/terms-of-use.html">Nutzungsbedingungen</a></li>
             </ul>
         </div>
 
         <div class="section">
             <h4>Informationen zu Zahlungen</h4>
             <ul>
-                <li><a href="#">Einzahlungen & Abhebungen</a></li>
-                <li><a href="#">Leitfaden zu Währungen</a></li>
-                <li><a href="#">Leitfaden zu Krypto</a></li>
-                <li><a href="#">Unterstützte Krypto</a></li>
-                <li><a href="#">Wie man die Truhe benutzt</a></li>
-                <li><a href="#">Wie viel wetten?</a></li>
+                <li><a href="/de/deposits-and-withdrawals/deposits-and-withdrawals.html">Einzahlungen & Abhebungen</a></li>
+                <li><a href="/de/guide-to-currencies/guide-to-currencies.html">Leitfaden zu Währungen</a></li>
+                <li><a href="/de/guide-to-crypto/guide-to-crypto.html">Leitfaden zu Krypto</a></li>
+                <li><a href="/de/supported-crypto/supported-crypto.html">Unterstützte Krypto</a></li>
+                <li><a href="/de/how-much-to-bet/how-much-to-bet.html">Wie viel wetten</a></li>
             </ul>
         </div>
 
         <div class="section">
-            <h4>Praktische Leitfäden</h4>
-            <ul>
-                <li><a href="#">Praktische Leitfäden</a></li>
-                <li><a href="#">Online-Casino-Leitfaden</a></li>
-                <li><a href="#">Leitfaden für Sportwetten</a></li>
-                <li><a href="#">Wie man Live-Sport überträgt</a></li>
-                <li><a href="#">WaifuSpin-VIP-Guide</a></li>
-                <li><a href="#">Leitfaden zum Heimvorteil</a></li>
-            </ul>
 
             <div class="language-selector">
                 <select>
@@ -450,9 +291,9 @@
 
             <div class="currency-selector">
                 <select>
-                    <option value="decimal">Dezimal</option>
-                    <option value="fractional">Fraktional</option>
-                    <option value="american">Amerikanisch</option>
+                    <option value="decimal">Décimale</option>
+                    <option value="fractional">Fractionnelle</option>
+                    <option value="american">Américaine</option>
                 </select>
             </div>
 
@@ -460,11 +301,13 @@
             <div class="btc-rate">1 BTC = Loading...</div>
         </div>
     </div>
-
+    <hr>
+    
 
     <div class="copyright">
-        &copy; 2024 Waifuspin.com | Alle Rechte vorbehalten.
+        &copy; 2025 Waifuspin.com | Alle Rechte vorbehalten.
     </div>
     </footer>
+    
 </body>
 </html>
