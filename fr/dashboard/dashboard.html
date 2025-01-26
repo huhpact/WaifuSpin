@@ -31,7 +31,6 @@
         
         <div class="nav-balance">
             <div class="balance-display">
-                <img src="/images/bitcoin-btc-logo.svg" alt="BTC" class="crypto-icon" id="balanceCryptoIcon">
                 <span id="balanceAmount">0.00000000</span>
                 <span class="crypto-symbol">BTC</span>
             </div>
@@ -61,7 +60,7 @@
 
         <div class="nav-profile">
             <span id="username">Utilisateur</span>
-            <div class="avatar"></div>
+           <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
         </div>
     </nav>
 
@@ -119,12 +118,12 @@
                         </div>
                     </div>
                     <div class="amount-grid">
-                        <button class="amount-btn" data-amount="10">$10</button>
-                        <button class="amount-btn" data-amount="25">$25</button>
-                        <button class="amount-btn" data-amount="50">$50</button>
-                        <button class="amount-btn" data-amount="100">$100</button>
-                        <button class="amount-btn" data-amount="250">$250</button>
-                        <button class="amount-btn" data-amount="500">$500</button>
+                        <a class="amount-btn" data-amount="10" href="https://buy.stripe.com/8wM15P1sk5Hg5W0bII">$10</a>
+                        <a class="amount-btn" data-amount="25" href="https://buy.stripe.com/eVa5m5fjaglU1FK146">$25</a>
+                        <a class="amount-btn" data-amount="50" href="https://buy.stripe.com/00gbKtgned9IdoseUX">$50</a>
+                        <a class="amount-btn" data-amount="100" href="https://buy.stripe.com/28og0Jgne7Po7049AE">$100</a>
+                        <a class="amount-btn" data-amount="250" href="https://buy.stripe.com/00g15P4EwedMesw28d">$250</a>
+                        <a class="amount-btn" data-amount="500" href="https://buy.stripe.com/6oE15Pfja8Tsesw5kq">$500</a>
                     </div>
                 </div>
 
@@ -134,26 +133,26 @@
                         <h3>Sélectionner Crypto 🪙</h3>
                         <div class="crypto-options withdraw-options">
                             <button class="crypto-option active" data-crypto="BTC">
-                                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="BTC">
+                                <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
                                 <span>BTC</span>
                             </button>
                             <button class="crypto-option" data-crypto="ETH">
-                                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="ETH">
+                                <img src="/images/ethereum-eth-logo.svg" alt="ETH">
                                 <span>ETH</span>
                             </button>
                             <button class="crypto-option" data-crypto="SOL">
-                                <img src="https://cryptologos.cc/logos/solana-sol-logo.svg" alt="SOL">
+                                <img src="/images/solana-sol-logo.svg" alt="SOL">
                                 <span>SOL</span>
                             </button>
                             <button class="crypto-option" data-crypto="XRP">
-                                <img src="https://cryptologos.cc/logos/xrp-xrp-logo.svg" alt="XRP">
+                                <img src="/images/xrp-xrp-logo.svg" alt="XRP">
                                 <span>XRP</span>
                             </button>
                         </div>
                     </div>
                     <form id="withdrawalForm">
                         <div class="form-group">
-                            <label>Amount</label>
+                            <label>Montant</label>
                             <input type="number" id="withdrawAmount" step="0.00000001" required>
                             <span class="available-balance">Disponible: <span id="availableBalance">0.00000000 BTC</span></span>
                         </div>
@@ -291,6 +290,7 @@
                   <h4>Support</h4>
                   <ul>
                       <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
+                      <li><a href="/fr/fairness/fairness.html">Fairness</a></li>
                       <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
                       <li><a href="/fr/support/support.html">Service client en direct</a></li>
                       <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>

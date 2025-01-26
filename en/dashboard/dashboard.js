@@ -124,7 +124,7 @@ function handleWithdrawal(e) {
     const address = document.getElementById('walletAddress').value;
 
     if (amount > userBalances[selectedCrypto]) {
-        showNotification('Insufficient balance!', 'error');
+        showNotification('Bilan insuffisant!', 'error');
         return;
     }
 
@@ -136,11 +136,11 @@ function handleWithdrawal(e) {
     userBalances[selectedCrypto] -= amount;
     updateBalanceDisplay();
     updateAvailableBalance();
-    showNotification(`Withdrawn ${amount.toFixed(8)} ${selectedCrypto}!`);
+    showNotification(`Retiré ${amount.toFixed(8)} ${selectedCrypto}!`);
     e.target.reset();
 }
 
-function showNotification(message, type = 'success') {
+function showNotification(message, type = 'succès') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;

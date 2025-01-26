@@ -193,7 +193,6 @@ header {
 
 .burger-menu {
 	font-size: 1.8rem;
-	cursor: pointer;
 }
 
 
@@ -238,7 +237,6 @@ header {
 .sidebar ul li {
   padding: 10px 15px;
   font-size: 1.2rem;
-  cursor: pointer;
   border-radius: 8px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -608,7 +606,6 @@ footer select {
     padding: 8px;
     border-radius: 4px;
     border: solid 1px black;
-    cursor: pointer;
     width: 50%;
 }
 
@@ -817,7 +814,6 @@ footer .social-icons a:hover {
 	border-radius: 30px;
 	border: none;
 	margin-bottom: 20px;
-	cursor: pointer;
 	transition: background-color 0.3s ease, transform 0.3s ease;
 	text-transform: uppercase;
 }
@@ -1302,7 +1298,6 @@ a {
   padding: 10px 20px;
   color: white;
   font-size: 14px;
-  cursor: pointer;
   border-radius: 5px;
   margin-right: 10px;
   transition: background-color 0.3s;
