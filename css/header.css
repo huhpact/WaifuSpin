@@ -141,3 +141,8 @@ header {
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
