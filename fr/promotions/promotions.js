@@ -54,34 +54,6 @@ function animateNumber(element, endValue) {
 	requestAnimationFrame(updateNumber);
 }
 
-let lastScroll = 0;
-let scrollTimeout;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-	const currentScroll = window.pageYOffset;
-	
-	clearTimeout(scrollTimeout);
-	
-	if (currentScroll <= 0) {
-			header.classList.remove('scroll-up');
-			header.classList.remove('scroll-down');
-			return;
-	}
-	
-	if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-			header.classList.remove('scroll-up');
-			header.classList.add('scroll-down');
-	} else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-			header.classList.remove('scroll-down');
-			header.classList.add('scroll-up');
-	}
-
-	scrollTimeout = setTimeout(() => {
-			lastScroll = currentScroll;
-	}, 50);
-});
-
 document.querySelectorAll('.promo-card .cta-btn').forEach(button => {
 	button.addEventListener('click', function() {
 			const promoCode = this.parentElement.querySelector('.promo-code').textContent;

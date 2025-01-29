@@ -1,195 +1,142 @@
-class AnimationController {
-  constructor() {
-      this.initPreloader();
-      this.initCursor();
-      this.initViewportAnimations();
-      this.initParticles();
-      this.initCharAnimation();
-      this.initStats();
-      this.initModals();
-      this.initMobileMenu();
-  }
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
 
-  initPreloader() {
-      window.addEventListener('load', () => {
-          const preloader = document.querySelector('.preloader');
-          preloader.classList.add('hidden');
-      });
-  }
-
-  initCursor() {
-      const cursor = document.querySelector('.custom-cursor');
-      
-      document.addEventListener('mousemove', (e) => {
-          cursor.style.left = e.clientX + 'px';
-          cursor.style.top = e.clientY + 'px';
-      });
-
-      document.addEventListener('mousedown', () => cursor.classList.add('active'));
-      document.addEventListener('mouseup', () => cursor.classList.remove('active'));
-
-      const buttons = document.querySelectorAll('button, a');
-      buttons.forEach(button => {
-          button.addEventListener('mouseenter', () => cursor.classList.add('active'));
-          button.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-      });
-  }
-
-  initViewportAnimations() {
-      const options = {
-          threshold: 0.2,
-          rootMargin: '50px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.classList.add('is-visible');
-              }
-          });
-      }, options);
-
-      document.querySelectorAll('[data-animation]').forEach(el => {
-          observer.observe(el);
-      });
-  }
-
-  initParticles() {
-      const particles = document.querySelector('.particles');
-      const particleCount = 50;
-
-      for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement('div');
-          particle.className = 'particle';
-          particle.style.cssText = `
-              width: ${Math.random() * 3}px;
-              height: ${Math.random() * 3}px;
-              background: rgba(255, 215, 0, ${Math.random() * 0.5});
-              left: ${Math.random() * 100}%;
-              top: ${Math.random() * 100}%;
-              animation: particleFloat ${5 + Math.random() * 10}s linear infinite;
-              animation-delay: -${Math.random() * 10}s;
-          `;
-          particles.appendChild(particle);
-      }
-  }
-
-  initCharAnimation() {
-      document.querySelectorAll('[data-animation="chars"]').forEach(element => {
-          const text = element.textContent;
-          element.textContent = '';
-          
-          [...text].forEach((char, index) => {
-              const span = document.createElement('span');
-              span.textContent = char;
-              span.style.animationDelay = `${index * 0.1}s`;
-              span.className = 'char-animate';
-              element.appendChild(span);
-          });
-      });
-  }
-
-  initStats() {
-      const stats = document.querySelectorAll('.stat__number');
-      
-      const animateValue = (element, start, end, duration) => {
-          const range = end - start;
-          const increment = range / (duration / 16);
-          let current = start;
-          
-          const update = () => {
-              element.textContent = Math.floor(current).toLocaleString();
-              current += increment;
-              
-              if (current <= end) {
-                  requestAnimationFrame(update);
-              } else {
-                  element.textContent = end.toLocaleString();
-              }
-          };
-          
-          update();
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  const target = entry.target;
-                  const value = parseInt(target.dataset.value);
-                  animateValue(target, 0, value, 2000);
-                  observer.unobserve(target);
-              }
-          });
-      }, { threshold: 0.5 });
-
-      stats.forEach(stat => observer.observe(stat));
-  }
-
-  initModals() {
-      const modals = document.querySelectorAll('.modal');
-      const triggers = document.querySelectorAll('.modal-trigger');
-      const closeButtons = document.querySelectorAll('.modal-close');
-
-      triggers.forEach(trigger => {
-          trigger.addEventListener('click', () => {
-              const modalId = trigger.dataset.modal + 'Modal';
-              const modal = document.getElementById(modalId);
-              modal.classList.add('active');
-          });
-      });
-
-      closeButtons.forEach(button => {
-          button.addEventListener('click', () => {
-              const modal = button.closest('.modal');
-              modal.classList.remove('active');
-          });
-      });
-
-      modals.forEach(modal => {
-          modal.addEventListener('click', (e) => {
-              if (e.target === modal) {
-                  modal.classList.remove('active');
-              }
-          });
-      });
-  }
-
-  initMobileMenu() {
-      const toggle = document.querySelector('.nav__toggle');
-      const menu = document.querySelector('.nav__menu');
-      
-      toggle.addEventListener('click', () => {
-          menu.classList.toggle('active');
-      });
-
-      document.addEventListener('click', (e) => {
-          if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-              menu.classList.remove('active');
-          }
-      });
-
-      const links = menu.querySelectorAll('a');
-      links.forEach(link => {
-          link.addEventListener('click', () => {
-              menu.classList.remove('active');
-          });
-      });
-  }
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-          target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-          });
-      }
-  });
+            if (entry.target.classList.contains('stat-item')) {
+                const progressBar = entry.target.querySelector('.progress-bar');
+                if (progressBar) {
+                    setTimeout(() => {
+                        progressBar.style.width = '100%';
+                    }, 200);
+                }
+            }
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '50px'
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  new AnimationController();
+document.querySelectorAll('.benefit-card, .plan-card, .review-card, .stat-item').forEach((el) => {
+    observer.observe(el);
+});
+
+function animateNumber(element, target) {
+    let current = 0;
+    const duration = 2000;
+    const startTime = performance.now();
+    
+    function easeOutQuart(x) {
+        return 1 - Math.pow(1 - x, 4);
+    }
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const easedProgress = easeOutQuart(progress);
+        current = Math.floor(easedProgress * target);
+        
+        element.textContent = current.toLocaleString();
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.querySelectorAll('.stat-number').forEach((stat, index) => {
+                setTimeout(() => {
+                    const target = parseInt(stat.dataset.value);
+                    animateNumber(stat, target);
+                }, index * 200);
+            });
+            statsObserver.disconnect();
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+statsObserver.observe(document.querySelector('.stats'));
+
+document.addEventListener('mousemove', (e) => {
+    const floatingElements = document.querySelectorAll('.float-element');
+    
+    floatingElements.forEach(element => {
+        const speed = element.dataset.speed || 1;
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
+        
+        element.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('mousemove', (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        button.style.setProperty('--x', x + 'px');
+        button.style.setProperty('--y', y + 'px');
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
+document.querySelectorAll('.benefit-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const deltaX = (x - centerX) / 15;
+        const deltaY = (y - centerY) / 15;
+        
+        card.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translate(0, 0)';
+    });
+});
+
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('div');
+        ripple.classList.add('ripple');
+        
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        
+        button.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 1000);
+    });
 });

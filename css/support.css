@@ -21,75 +21,82 @@ body {
 }
 
 .hero {
-	height: 60vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	position: relative;
-	margin-top: 60px;
-	overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8rem 10%;
+  position: relative;
+  overflow: hidden;
+  gap: 4rem;
 }
 
-.hero-grid {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-image: 
-			linear-gradient(rgba(95, 148, 255, 0.1) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(95, 148, 255, 0.1) 1px, transparent 1px);
-	background-size: 20px 20px;
-	opacity: 0.3;
-	z-index: 1;
-	animation: gridFloat 20s linear infinite;
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, var(--accent), transparent 70%);
+  opacity: 0.1;
+  filter: blur(100px);
+  animation: pulse 8s ease-in-out infinite;
 }
 
-@keyframes gridFloat {
-	0% { transform: translateY(0); }
-	100% { transform: translateY(-20px); }
+.hero-x {
+	width: 50%;
+
 }
 
 .hero h1 {
-	font-size: 4rem;
-	background: var(--gradient);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	margin-bottom: 1rem;
-	position: relative;
-	z-index: 2;
-	animation: heroText 1s ease-out;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  position: relative;
 }
 
-@keyframes heroText {
-	0% { transform: translateY(30px); opacity: 0; }
-	100% { transform: translateY(0); opacity: 1; }
+.floating-cards {
+  flex: 1;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+  display: grid;
+  place-items: center;
 }
 
-.hero p {
-	font-size: 1.2rem;
-	position: relative;
-	z-index: 2;
-	max-width: 600px;
-	animation: heroText 1s ease-out 0.2s backwards;
+.card {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
 }
 
-.hero-glow {
-	position: absolute;
-	width: 800px;
-	height: 800px;
-	background: var(--accent);
-	filter: blur(180px);
-	opacity: 0.15;
-	animation: float 8s ease-in-out infinite;
+.card:nth-child(1) {
+  transform: translateX(-50%) translateY(-20%) rotate(-15deg);
+  background-image: url('https://placewaifu.com/image/250/350');
+  z-index: 1;
 }
 
-@keyframes float {
-	0%, 100% { transform: translateY(0) scale(1); }
-	50% { transform: translateY(-20px) scale(1.05); }
+.card:nth-child(2) {
+  background-image: url('https://placewaifu.com/image/251/350');
+  z-index: 2;
+}
+
+.card:nth-child(3) {
+  transform: translateX(50%) translateY(20%) rotate(15deg);
+  background-image: url('https://placewaifu.com/image/252/350');
+  z-index: 3;
 }
 
 .support-section {

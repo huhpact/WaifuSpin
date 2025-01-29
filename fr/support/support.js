@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = 'hier muss ich api noch adden , er commited sonst nicht'; 
+const OPENAI_API_KEY = 'hier muss salem api noch adden , er commited sonst nicht'; 
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
 const chatMessages = document.getElementById('chatMessages');
@@ -125,4 +125,13 @@ userInput.addEventListener('keypress', (e) => {
 userInput.addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+			});
+	});
 });
