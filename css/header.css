@@ -1,15 +1,12 @@
 :root {
   --primary-bg: #13111C;
   --secondary-bg: #1E1B2E;
-  --accent-cyan: #00F5FF;
-  --accent-pink: #FF1493;
-  --text-primary: #ffffff;
-  --text-secondary: #B8B8B8;
-  --gradient-main: linear-gradient(135deg, #00F5FF, #FF1493);
-  --gradient-hover: linear-gradient(135deg, #FF1493, #00F5FF);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --card-border: 1px solid rgba(255, 255, 255, 0.05);
-  --glass-bg: rgba(30, 27, 46, 0.95);
+  --accent: rgb(61, 106, 255);
+}
+
+::selection {
+  background: rgba(61, 106, 255, 0.2);
+  color: #fff;
 }
 
 header {
@@ -49,7 +46,6 @@ header {
   display: flex;
 	flex-shrink: 0;
   gap: 15px;
-	margin-right: 30px;
 	align-items: baseline;
 }
 
@@ -145,4 +141,14 @@ header {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+.login {
+  color: #fff;
+  padding-right: 5px;
+  transition: all 0.3s ease;
+}
+
+.login:hover {
+  color: var(--accent);
 }

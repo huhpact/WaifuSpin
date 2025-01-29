@@ -1,75 +1,96 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+			});
+	});
+});
 
-  const emojis = ['💰', '💎', '🎰', '🌟', '💵'];
-  const heroSection = document.querySelector('.hero');
-  
-  function createFloatingElement() {
-    const emoji = document.createElement('div');
-    emoji.className = 'floating-element';
-    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    
-    emoji.style.left = `${Math.random() * 100}vw`;
-    emoji.style.setProperty('--translate-x', `${Math.random() * 200 - 100}px`);
-    emoji.style.setProperty('--rotate', `${Math.random() * 360}deg`);
-    
-    heroSection.appendChild(emoji);
-    
+const observerOptions = {
+	threshold: 0.2,
+	rootMargin: '0px'
+};
 
-    emoji.addEventListener('animationend', () => emoji.remove());
-  }
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+			if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					
+					if (entry.target.classList.contains('stat')) {
+							const numberElement = entry.target.querySelector('.stat-number');
+							if (numberElement) {
+									const endValue = parseInt(numberElement.getAttribute('data-value'));
+									animateNumber(numberElement, endValue);
+							}
+					}
+			}
+	});
+}, observerOptions);
 
+document.querySelectorAll('.feature-card, .stat, .features h2').forEach(el => {
+	observer.observe(el);
+});
 
-  setInterval(createFloatingElement, 1000);
+function animateNumber(element, endValue) {
+	const duration = 2000;
+	const startValue = 0;
+	const startTime = performance.now();
+	
+	function updateNumber(currentTime) {
+			const elapsed = currentTime - startTime;
+			const progress = Math.min(elapsed / duration, 1);
+			
+			const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+			
+			const currentValue = Math.floor(startValue + (endValue - startValue) * easeOutQuart);
+			element.textContent = currentValue.toLocaleString();
+			
+			if (progress < 1) {
+					requestAnimationFrame(updateNumber);
+			}
+	}
+	
+	requestAnimationFrame(updateNumber);
+}
 
+let lastScroll = 0;
+let scrollTimeout;
+const header = document.querySelector('header');
 
-  const copyButton = document.getElementById('copyButton');
-  const refLink = document.getElementById('refLink');
+window.addEventListener('scroll', () => {
+	const currentScroll = window.pageYOffset;
+	
+	clearTimeout(scrollTimeout);
+	
+	if (currentScroll <= 0) {
+			header.classList.remove('scroll-up');
+			header.classList.remove('scroll-down');
+			return;
+	}
+	
+	if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+			header.classList.remove('scroll-up');
+			header.classList.add('scroll-down');
+	} else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+			header.classList.remove('scroll-down');
+			header.classList.add('scroll-up');
+	}
 
-  copyButton.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(refLink.value);
-      copyButton.textContent = 'Copied!';
-      copyButton.style.background = 'linear-gradient(45deg, var(--gold), var(--accent-gold))';
-      
-      setTimeout(() => {
-        copyButton.textContent = 'Copy Link';
-        copyButton.style.background = '';
-      }, 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
-      refLink.select();
-      document.execCommand('copy');
-    }
-  });
+	scrollTimeout = setTimeout(() => {
+			lastScroll = currentScroll;
+	}, 50);
+});
 
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-
-  document.querySelectorAll('.tutorial-box, .creator-card').forEach(el => {
-    observer.observe(el);
-  });
+document.querySelectorAll('.promo-card .cta-btn').forEach(button => {
+	button.addEventListener('click', function() {
+			const promoCode = this.parentElement.querySelector('.promo-code').textContent;
+			navigator.clipboard.writeText(promoCode).then(() => {
+					const originalText = this.textContent;
+					this.textContent = 'Copied!';
+					setTimeout(() => {
+							this.textContent = originalText;
+					}, 2000);
+			});
+	});
 });

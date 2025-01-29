@@ -3,63 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaifuSpin - Next Gen Casino Gaming</title>
+    <title>WaifuSpin Promotions - Spin in Style</title>
     <link rel="stylesheet" href="/css/promotions.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/bg-animation.css">
     <link rel="stylesheet" href="/css/cookie.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/loading-cursor.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/scrollbar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
 </head>
 <body>
-    <header>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+  
+  <div class="custom-cursor"></div>
+
+  <header>
     <div class="header-content">
       <div class="burger-logo">
         <div class="burger-menu">
           <i class='bx bx-menu'></i>
         </div>
-        <a href="index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+        <a href="#"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
       <div class="login-reg">
-        <a href="login.html" class="login">Log in</a>
-        <a href="login.html"><button class="sign-up" style="margin-left: 10px;">
-          Sign Up
-          <div class="arrow-wrapper-sign-up">
-              <div class="arrow-sign-up"></div>
-      
-          </div>
-      </button></a>
+        <a href="/fr/login/login.html" class="login">Se connecter</a>
+        <a href="/fr/login/login.html"><button class="sign-up-btn">S'inscrire</button></a>
       </div>
     </div>
   </header>
   
   <div id="cookie-banner">
-    <h4>Cookie settings</h4>
-    <p>This website uses cookies to ensure you get the best experience on our website.</p>
-    <button id="accept-cookies">Accept</button>
-    <button id="decline-cookies">Decline</button>
+    <h4>Paramètres des cookies</h4>
+    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
+    <button id="accept-cookies">Accepter</button>
+    <button id="decline-cookies">Refuser</button>
 </div>
   
 
   <aside class="sidebar">
-		<ul>
-			<li><a href="/en/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
-			<li><a href="/en/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affiliate</a></li>
-			<hr>
-			<li><a href="/en/vip/vip.html"><i class='bx bxs-trophy'></i> VIP-Club</a></li>
-			<li><a href="/en/news/news.html"><i class='bx bxs-news'></i> News</a></li>
-			<li><a href="/en/support/support.html"><i class='bx bx-support'></i> Live customer service</a></li>
-			<li class="language-dropdown">
-			<i class='bx bx-world'> Language</i> 
-			<ul class="dropdown">
-        <li><a href="#">English</a></li>
-        <li><a href="/de/index/index.html">Deutsch</a></li>
-        <li><a href="/fr/index/index.html">Français</a></li>
-        <li><a href="/ru/index/index.html">Русский</a></li>
-			</ul>
-			</li>
-		</ul>
+    <ul>
+      <li><a href="/en/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
+      <li><a href="/fr/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affilié</a></li>
+      <hr>
+      <li><a href="/fr/vip/vip.html"><i class='bx bxs-trophy'></i> Club VIP</a></li>
+      <li><a href="/fr/news/news.html"><i class='bx bxs-news'></i> Nouveautés</a></li>
+      <li><a href="/fr/support/support.html"><i class='bx bx-support'></i> Service client en direct</a></li>
+      <li class="language-dropdown">
+        <i class='bx bx-world'></i> Langue
+        <ul class="dropdown">
+          <li><a href="/en/affiliates/affiliates.html">English</a></li>
+          <li><a href="/de/affiliates/affiliates.html">Deutsch</a></li>
+          <li><a href="#">Français</a></li>
+          <li><a href="/ru/affiliates/affiliates.html">Русский</a></li>
+        </ul>
+      </li>
+    </ul>
   </aside>
   <div class="overlay"></div>
 
@@ -67,163 +72,170 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Experience Next-Gen Casino Gaming</h1>
-                <p class="hero-subtitle">Join the revolution in online gaming with WaifuSpin</p>
-                <button class="button cta-button">Start Playing Now</button>
+                <p>Join the most immersive anime-themed casino platform with exclusive rewards and stunning visuals</p><br>
+                <a href="/fr/login/login.html"><button class="sign-up-btn">Start Your Journey</button></a>
             </div>
-            <div class="bonus-container">
-                <div class="bonus-box">
-                    <h2>Invite & Earn</h2>
-                    <div class="bonus-amount">$10 USD</div>
-                    <p>For every friend you invite</p>
-                    <small>*Bedingungen gelten</small>
+            <div class="floating-cards">
+                <div class="card" data-tilt></div>
+                <div class="card" data-tilt></div>
+                <div class="card" data-tilt></div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Exclusive Benefits</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎰</div>
+                    <h3>Premium Games</h3>
+                    <p>Access to exclusive anime-themed slots and table games with stunning visuals</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Daily Rewards</h3>
+                    <p>Claim exciting bonuses and free spins every day you log in</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>VIP Program</h3>
+                    <p>Join our elite club for exclusive perks and personalized rewards</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Gaming</h3>
+                    <p>Advanced encryption and fair play certification for peace of mind</p>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="tutorial">
-            <h2>How It Works</h2>
-            <div class="tutorial-boxes">
-                <div class="tutorial-box">
-                    <div class="step">1</div>
-                    <h3>Sign Up</h3>
-                    <p>Create your account in seconds</p>
+        <section id="promotions" class="promotions">
+            <h2>Special Promotions</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <img src="/images/google.webp" alt="Google Play" class="partner-logo">
+                    <h3>Google Play Credits</h3>
+                    <p>Get $50 Google Play credit on your first deposit</p>
+                    <div class="promo-code">WAIFUGOOGLE50</div>
+                    <button class="cta-btn">Copy Code</button>
                 </div>
-                <div class="tutorial-box">
-                    <div class="step">2</div>
-                    <h3>Share Link</h3>
-                    <p>Invite friends using your unique code</p>
+                <div class="promo-card">
+                    <img src="/images/crunchyroll.png" alt="Crunchyroll" class="partner-logo">
+                    <h3>Crunchyroll Premium</h3>
+                    <p>3 months of Crunchyroll Premium for free</p>
+                    <div class="promo-code">WAIFUROLL3</div>
+                    <button class="cta-btn">Copy Code</button>
                 </div>
-                <div class="tutorial-box">
-                    <div class="step">3</div>
-                    <h3>Get Rewarded</h3>
-                    <p>Earn $10 for each friend who joins</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="referral" class="share-section">
-            <div class="share-content">
-                <h2>Share & Earn Together</h2>
-                <div class="share-cards">
-                    <div class="share-card">
-                        <div class="share-stats">
-                            <div class="stat">
-                                <span class="stat-value">150+</span>
-                                <span class="stat-label">Active Players</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">$5K+</span>
-                                <span class="stat-label">Paid Out</span>
-                            </div>
-                        </div>
-                        <div class="share-box">
-                            <input type="text" id="refLink" readonly value="https://waifuspin.com/ref/USER123">
-                            <button id="copyButton" class="button">Copy Link</button>
-                        </div>
-                    </div>
-                    <div class="share-card rewards">
-                        <h3>Rewards Tiers</h3>
-                        <div class="tier">
-                            <span class="tier-name">Bronze</span>
-                            <span class="tier-value">5 Referrals</span>
-                            <div class="tier-bonus">+$25 Bonus</div>
-                        </div>
-                        <div class="tier">
-                            <span class="tier-name">Silver</span>
-                            <span class="tier-value">15 Referrals</span>
-                            <div class="tier-bonus">+$100 Bonus</div>
-                        </div>
-                        <div class="tier">
-                            <span class="tier-name">Gold</span>
-                            <span class="tier-value">50 Referrals</span>
-                            <div class="tier-bonus">+$500 Bonus</div>
-                        </div>
-                    </div>
+                <div class="promo-card">
+                    <img src="/images/discord.svg" alt="Discord Nitro" class="partner-logo">
+                    <h3>Discord Nitro</h3>
+                    <p>1 month of Discord Nitro with $100+ deposits</p>
+                    <div class="promo-code">WAIFUNITRO1</div>
+                    <button class="cta-btn">Copy Code</button>
                 </div>
             </div>
         </section>
 
-        <section id="creators" class="creators-section">
-            <h2>For Creators & Companies</h2>
-            <div class="creators-grid">
-                <div class="creator-feature">
-                    <div class="feature-content">
-                        <h3>Custom Partnership Programs</h3>
-                        <p>Tailored collaboration opportunities for your audience</p>
-                        <ul class="feature-list">
-                            <li>Custom referral codes</li>
-                            <li>Higher commission rates</li>
-                            <li>Dedicated support team</li>
-                        </ul>
-                        <button class="button creator-button">Apply Now</button>
-                    </div>
-                    <div class="feature-stats">
-                        <div class="stat">
-                            <span class="stat-number">25%</span>
-                            <span class="stat-text">Revenue Share</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-text">Support</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="creator-cards">
-                    <div class="creator-card">
-                        <div class="card-header">
-                            <h4>Influencer</h4>
-                            <span class="commission">20% Commission</span>
-                        </div>
-                        <ul>
-                            <li>Custom landing pages</li>
-                            <li>Real-time analytics</li>
-                            <li>Marketing materials</li>
-                        </ul>
-                        <button class="button">Join Program</button>
-                    </div>
-                    <div class="creator-card featured">
-                        <div class="card-header">
-                            <h4>Company</h4>
-                            <span class="commission">Custom Rates</span>
-                        </div>
-                        <ul>
-                            <li>API Integration</li>
-                            <li>White-label solution</li>
-                            <li>Priority support</li>
-                        </ul>
-                        <button class="button">Contact Us</button>
-                    </div>
-                </div>
+        <section class="statistics">
+            <div class="stat">
+                <span class="stat-number" data-value="20000">0</span>
+                <span class="stat-label">Active Players</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-value="6">0</span>
+                <span class="stat-label">Exclusive Games</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-value="100">0</span>
+                <span class="stat-label">Payout Rate %</span>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>WaifuSpin</h4>
-                <p>The next generation of online casino gaming</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="#terms">Terms & Conditions</a>
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#support">Support</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <a href="#discord">Discord</a>
-                <a href="#twitter">Twitter</a>
-                <a href="#telegram">Telegram</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 WaifuSpin. All rights reserved.</p>
-        </div>
-    </footer>
+        <div class="logo-footer1">
+          <img src="/images/logo.png" alt="Waifuspin Logo">
+      </div>
+  
+      <div class="container">
+  
+          <div class="section">
+              <h4>Casino</h4>
+              <ul>
+                  <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
+                  <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
+                  <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
+                  <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
+                  <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
+                  <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
+                  <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>Support</h4>
+              <ul>
+                  <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
+                  <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
+                  <li><a href="/fr/support/support.html">Service client en direct</a></li>
+                  <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>À propos de nous</h4>
+              <ul>
+                  <li><a href="/fr/vip/vip.html">Club VIP</a></li>
+                  <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
+                  <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
+                  <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
+                  <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+              <h4>Informations sur les paiements</h4>
+              <ul>
+                  <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
+                  <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
+                  <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
+                  <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
+                  <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
+              </ul>
+          </div>
+  
+          <div class="section">
+  
+              <div class="language-selector">
+                  <select>
+                      <option value="fr">Français</option>
+                      <option value="en">English</option>
+                  </select>
+              </div>
+  
+              <div class="currency-selector">
+                  <select>
+                      <option value="decimal">Décimale</option>
+                      <option value="fractional">Fractionnelle</option>
+                      <option value="american">Américaine</option>
+                  </select>
+              </div>
+  
+            
+              <div class="btc-rate">1 BTC = Loading...</div>
+          </div>
+      </div>
+      <hr>
+      
+  
+      <div class="copyright">
+          &copy; 2024 Waifuspin.com | Tous Droits Réservés.
+      </div>
+      </footer>
 
     <script src="/en/promotions/promotions.js"></script>
-    <script src="/js/sidebar-btc-cookie.js"></script>
-    
+    <script src="/js/cookie.js"></script>
+    <script src="/js/footer-btc.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/loading-cursor.js"></script>
 </body>
 </html>
