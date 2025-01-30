@@ -88,7 +88,12 @@
         }
     </style>
     <script>
-        function redirectBasedOnLanguage() {
+        function redirect() {
+            if (window.innerWidth <= 768) {  
+                window.location.href = "/en/mobile/access-denied.html"; 
+                return;
+            }
+
             const userLanguage = navigator.language || navigator.languages[0]; 
             const languageCode = userLanguage.split('-')[0]; 
 
@@ -111,7 +116,7 @@
             }
         }
 
-        window.onload = redirectBasedOnLanguage;
+        window.onload = redirect;
     </script>
 </head>
 <body>
