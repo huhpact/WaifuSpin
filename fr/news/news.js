@@ -5,7 +5,7 @@ const newsData = [
 			user: "huh(pact)",
 			date: "2025-01-30",
 			description: "Découvrez l'excitation de notre dernier jeu de machines à sous sur le thème des dessins animés, mettant en scène vos waifus préférés !",
-			more: "Rejoignez-nous maintenant et obtenez 1 tour gratuits sur notre nouveau jeu! Notre dernier jeu de machines à sous associe de superbes dessins d'anime à des mécanismes de jeu passionnants. Les caractéristiques incluent :\n- Plusieurs tours de bonus\N- Des jackpots progressifs\n- Des multiplicateurs de tours gratuits\n- Un système unique de collection de waifu\nNe manquez pas cette incroyable expérience de jeu!"
+			more: "Rejoignez-nous maintenant et obtenez 1 tour gratuits sur notre nouveau jeu! Notre dernier jeu de machines à sous associe de superbes dessins d'anime à des mécanismes de jeu passionnants. Les caractéristiques incluent :\n- Plusieurs tours de bonus\n- Des jackpots progressifs\n- Des multiplicateurs de tours gratuits\n- Un système unique de collection de waifu\nNe manquez pas cette incroyable expérience de jeu!"
 	},
 	{
 			id: 2,
