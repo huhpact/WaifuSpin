@@ -1,134 +1,104 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const hero = document.querySelector('.hero');
-	let lastScrollY = window.scrollY;
-	
-	window.addEventListener('scroll', () => {
-			const currentScrollY = window.scrollY;
-
-			if (hero.getBoundingClientRect().bottom > 0) {
-					const opacity = 1 - (currentScrollY / hero.offsetHeight);
-					hero.style.transform = `translateY(${currentScrollY * 0.5}px)`;
-					hero.style.opacity = Math.max(opacity, 0);
-			}
-			
-			document.querySelectorAll('.game-detail-section').forEach(section => {
-					const rect = section.getBoundingClientRect();
-					if (rect.top < window.innerHeight && rect.bottom > 0) {
-							const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-							section.style.backgroundPositionY = `${progress * 50}%`;
-							
-							if (progress > 0.2 && !section.classList.contains('active')) {
-									section.classList.add('active');
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+			if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					
+					const section = entry.target.closest('.game-section');
+					if (section) {
+							const preview = section.querySelector('.game-preview');
+							if (preview) {
+									preview.style.transform = 'translateZ(30px)';
 							}
 					}
-			});
-			
-			lastScrollY = currentScrollY;
+			}
 	});
+}, {
+	threshold: [0.1, 0.5, 1],
+	rootMargin: '-50px'
+});
 
-	const createParticle = () => {
-			const particle = document.createElement('div');
-			particle.classList.add('particle');
-			particle.style.left = Math.random() * 100 + 'vw';
-			particle.style.animationDuration = Math.random() * 3 + 2 + 's';
-			document.body.appendChild(particle);
+document.querySelectorAll('.game-content').forEach(content => {
+	observer.observe(content);
+});
 
-			setTimeout(() => {
-					particle.remove();
-			}, 5000);
-	};
+document.querySelectorAll('.play-btn').forEach(button => {
+	button.addEventListener('mouseover', () => {
+			button.style.transform = 'translateY(-5px)';
+	});
+	
+	button.addEventListener('mouseout', () => {
+			button.style.transform = 'translateY(0)';
+	});
+	
+	button.addEventListener('click', (e) => {
+			const rect = button.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
+			
+			const ripple = document.createElement('span');
+			ripple.style.left = `${x}px`;
+			ripple.style.top = `${y}px`;
+			ripple.classList.add('ripple');
+			
+			button.appendChild(ripple);
+			
+			setTimeout(() => ripple.remove(), 1000);
+			
+			// Add click animation
+			button.style.transform = 'scale(0.95)';
+			setTimeout(() => button.style.transform = '', 150);
+	});
+});
 
-	setInterval(createParticle, 300);
-
-	const observerOptions = {
-			threshold: 0.2,
-			rootMargin: '0px'
-	};
-
+// Stats counter animation
+const stats = document.querySelectorAll('.stat-value');
+stats.forEach(stat => {
+	const target = parseFloat(stat.textContent.replace(/[^0-9.]/g, ''));
+	let current = 0;
+	const increment = target / 100;
+	const duration = 2000; // 2 seconds
+	const steps = 100;
+	const step = duration / steps;
+	
+	function updateCounter() {
+			current += increment;
+			if (current < target) {
+					if (stat.textContent.includes('€')) {
+							stat.textContent = '€' + Math.floor(current) + 'K';
+					} else if (stat.textContent.includes('%')) {
+							stat.textContent = Math.floor(current * 10) / 10 + '%';
+					} else {
+							stat.textContent = Math.floor(current) + 'M+';
+					}
+					setTimeout(updateCounter, step);
+			}
+	}
+	
+	// Start animation when stat comes into view
 	const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 					if (entry.isIntersecting) {
-							entry.target.classList.add('active');
-
-							if (entry.target.classList.contains('game-detail-section')) {
-									const features = entry.target.querySelectorAll('.feature');
-									features.forEach((feature, index) => {
-											setTimeout(() => {
-													feature.classList.add('fade-in');
-											}, index * 200);
-									});
-
-									const stats = entry.target.querySelectorAll('.stat');
-									stats.forEach((stat, index) => {
-											setTimeout(() => {
-													stat.classList.add(index % 2 === 0 ? 'slide-in-left' : 'slide-in-right');
-											}, (features.length * 200) + (index * 200));
-									});
-							}
-					}
-			});
-	}, observerOptions);
-
-	document.querySelectorAll('.game-detail-section').forEach(section => {
-			observer.observe(section);
-	});
-
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-					e.preventDefault();
-					const target = document.querySelector(this.getAttribute('href'));
-					if (target) {
-							target.scrollIntoView({
-									behavior: 'smooth',
-									block: 'start'
-							});
+							updateCounter();
+							observer.unobserve(entry.target);
 					}
 			});
 	});
+	
+	observer.observe(stat);
+});
 
-	document.querySelectorAll('button').forEach(button => {
-			button.addEventListener('mousemove', (e) => {
-					const rect = button.getBoundingClientRect();
-					const x = e.clientX - rect.left;
-					const y = e.clientY - rect.top;
-					
-					button.style.setProperty('--x', `${x}px`);
-					button.style.setProperty('--y', `${y}px`);
-			});
-	});
-
-	document.querySelectorAll('.game-card').forEach(card => {
-			card.addEventListener('mouseenter', () => {
-					const content = card.querySelector('.game-content');
-					content.style.transform = 'scale(1.1)';
-			});
-
-			card.addEventListener('mouseleave', () => {
-					const content = card.querySelector('.game-content');
-					content.style.transform = 'scale(1)';
-			});
-
-			card.addEventListener('click', (e) => {
-					if (!e.target.classList.contains('play-button')) {
-							const rect = card.getBoundingClientRect();
-							const x = e.clientX - rect.left;
-							const y = e.clientY - rect.top;
-							
-							const ripple = document.createElement('div');
-							ripple.classList.add('ripple');
-							ripple.style.left = `${x}px`;
-							ripple.style.top = `${y}px`;
-							
-							card.appendChild(ripple);
-							
-							setTimeout(() => ripple.remove(), 600);
+// Add scroll-based parallax
+window.addEventListener('scroll', () => {
+	const sections = document.querySelectorAll('.game-section');
+	sections.forEach(section => {
+			const rect = section.getBoundingClientRect();
+			const scrollPercent = (window.innerHeight - rect.top) / window.innerHeight;
+			
+			if (scrollPercent > 0 && scrollPercent < 1) {
+					const bg = section.querySelector('.parallax-bg');
+					if (bg) {
+							bg.style.transform = `translateY(${scrollPercent * 50}px) scale(1.2)`;
 					}
-			});
-	});
-
-	document.querySelectorAll('.game-detail-section').forEach(section => {
-			const content = section.querySelector('.game-detail-content');
-			content.style.opacity = '0';
-			content.style.transform = 'translateY(50px)';
+			}
 	});
 });
