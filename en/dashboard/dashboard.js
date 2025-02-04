@@ -129,7 +129,7 @@ function handleWithdrawal(e) {
     }
 
     if (!isValidAddress(address)) {
-        showNotification('Invalid wallet address!', 'error');
+        showNotification('Adresse invalide du portefeuille!', 'error');
         return;
     }
 

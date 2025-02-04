@@ -3,19 +3,19 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const promos = [
 			{
-					title: "Розыгрыши и гонки",
-					description: "Участвуйте в розыгрыше 75 000 каждую неделю. И выигрывайте крупные суммы в ежедневных гонках.",
-					media: "/public/images/win.png",
+					title: "Tombolas & Courses",
+					description: "Participez au tirage au sort pour gagner 75K chaque semaine. Et gagnez gros lors des courses quotidiennes.",
+					media: "/images/win.png",
 			},
 			{
-					title: "Специальные предложения",
-					description: "Воспользуйтесь нашими акциями для казино и бонусами для ставок на спорт, которые обновляются еженедельно.",
-					media: "/public/images/cards.png",
+					title: "Promotions",
+					description: "Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.",
+					media: "/images/cards.png",
 			},
 			{
-					title: "Высокая реакция игрока (RTP)",
-					description: "Благодаря улучшенному проценту RTP у вас есть шанс выиграть по-крупному каждый раз, когда вы играете.",
-					media: "/public/images/rtp.png",
+					title: "Haut retour aux joueurs (RTP)",
+					description: "Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.",
+					media: "/images/rtp.png",
 			},
 	];
 
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const games = ["Блэкджек", "Слоты", "Рулетка"];
-  const users = [" скрытый"];
+  const games = ["Blackjack", "Slots", "Roulette"];
+  const users = [" Masqué"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -147,35 +147,11 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} онлайн-пользователь`;
+	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 	updateOnlineUsers();
-});
-
-function handleIntersection(entries) {
-	entries.forEach(entry => {
-		const target = entry.target.querySelector('span');
-		if (entry.isIntersecting) {
-			target.classList.add('highlight');
-		} else {
-			target.classList.remove('highlight');
-		}
-	});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-	updateOnlineUsers();
-
-
-	const supportHeading = document.getElementById('support-heading');
-	const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
-	observer.observe(supportHeading);
-
-	
-	const text = supportHeading.innerHTML;
-	supportHeading.innerHTML = text.replace('вашем языке', '<span>вашем языке</span>');
 });
 
 let currentFeatureIndex = 0;
@@ -220,34 +196,6 @@ async function fetchBitcoinRate() {
 window.onload = fetchBitcoinRate;
 
 
-function checkScreenSize() {
-	if (window.innerWidth < 768) {
-	
-			document.body.style.overflow = 'hidden';
-
-	
-			const warningBox = document.createElement('div');
-			warningBox.style.position = 'fixed';
-			warningBox.style.top = '0';
-			warningBox.style.left = '0';
-			warningBox.style.width = '100%';
-			warningBox.style.height = '100%';
-			warningBox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-			warningBox.style.color = 'white';
-			warningBox.style.display = 'flex';
-			warningBox.style.justifyContent = 'center';
-			warningBox.style.alignItems = 'center';
-			warningBox.style.zIndex = '10000';
-			warningBox.innerHTML = '<div style="text-align: center; font-size: 1.5rem;">Чтобы использовать эту страницу, переключитесь на более крупный экран.</div>';
-
-			
-			document.body.appendChild(warningBox);
-	}
-}
-
-
-window.onload = checkScreenSize;
-
 document.addEventListener('DOMContentLoaded', function () {
 	const banner = document.getElementById('cookie-banner');
 
@@ -264,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); 
+			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
 			hideBanner();
 	});
 

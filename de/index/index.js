@@ -3,18 +3,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const promos = [
 			{
-					title: "Tombolas & Rennen",
-					description: "Nehmen Sie an der Verlosung teil, um jede Woche 75K zu gewinnen. Und gewinnen Sie bei den täglichen Rennen groß.",
+					title: "Tombolas & Courses",
+					description: "Participez au tirage au sort pour gagner 75K chaque semaine. Et gagnez gros lors des courses quotidiennes.",
 					media: "/images/win.png",
 			},
 			{
-					title: "Sonderangebote",
-					description: "Machen Sie das Beste aus unseren Casino-Aktionen und Sportwetten-Boni, die wöchentlich aktualisiert werden.",
+					title: "Promotions",
+					description: "Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.",
 					media: "/images/cards.png",
 			},
 			{
-					title: "Hohe Spielerrückmeldung (RTP)",
-					description: "Mit verbesserten RTP-Prozentsätzen haben Sie bei jedem Spiel die Chance auf einen großen Gewinn.",
+					title: "Haut retour aux joueurs (RTP)",
+					description: "Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.",
 					media: "/images/rtp.png",
 			},
 	];
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" Versteckt"];
+  const users = [" Masqué"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -147,7 +147,7 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} Nutzer online`;
+	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

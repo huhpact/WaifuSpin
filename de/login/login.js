@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			setTimeout(() => {
 					isLogin = !isLogin;
-					formTitle.textContent = isLogin ? 'Willkommen zurück' : 'Einen Account erstellen';
-					toggleText.firstChild.textContent = isLogin ? "Sie haben noch keinen Account? " : 'Sie haben bereits ein Konto? ';
-					toggleBtn.textContent = isLogin ? "Registrieren" : "Login";
-					submitBtn.textContent = isLogin ? "Login" : "Registrieren";
+					formTitle.textContent = isLogin ? 'Bon retour' : 'Créer un compte';
+					toggleText.firstChild.textContent = isLogin ? "Vous n'avez pas encore de compte? " : 'Vous avez déjà un compte? ';
+					toggleBtn.textContent = isLogin ? "S'inscrire" : "Se connecter";
+					submitBtn.textContent = isLogin ? "Se connecter" : "S'inscrire";
 					nameInput.style.display = isLogin ? 'none' : 'block';
 					
 					formContainer.classList.remove('animating');

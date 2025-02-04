@@ -1,247 +1,137 @@
-export function initFAQ() {
-	document.querySelectorAll('.faq-question').forEach(question => {
-			question.addEventListener('click', () => {
-					const faqItem = question.parentElement;
-					const isActive = faqItem.classList.contains('active');
+const OPENAI_API_KEY = 'hier muss salem api noch adden , er commited sonst nicht'; 
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
-					document.querySelectorAll('.faq-item').forEach(item => {
-							item.classList.remove('active');
-							item.style.height = null;
-					});
+const chatMessages = document.getElementById('chatMessages');
+const userInput = document.getElementById('userInput');
+const sendButton = document.getElementById('sendMessage');
+const faqItems = document.querySelectorAll('.faq-item');
 
-					if (!isActive) {
-							faqItem.classList.add('active');
-							const answer = faqItem.querySelector('.faq-answer');
-							answer.style.height = answer.scrollHeight + 'px';
-					}
-			});
-	});
+window.addEventListener('DOMContentLoaded', () => {
+    addMessage("Bonjour ! Bienvenue à l'assistance WaifuSpin. Comment puis-je vous aider aujourd'hui ? 🎮", false);
+    initFAQ();
+});
+
+async function sendToOpenAI(message) {
+    try {
+        const response = await fetch(OPENAI_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${OPENAI_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "gpt-4-turbo-preview",
+                messages: [{
+                    role: 'system',
+                    content: 'You are a helpful customer support agent for WaifuSpin, a crypto casino. Be professional, friendly, and knowledgeable about cryptocurrency, gambling, and account security. Keep responses concise and helpful. Never break character and you speak french.'
+                }, {
+                    role: 'user',
+                    content: message
+                }],
+                max_tokens: 150,
+                temperature: 0.7
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('API request failed');
+        }
+
+        const data = await response.json();
+        return data.choices[0].message.content;
+    } catch (error) {
+        console.error('Error:', error);
+        return "Je vous prie de m'excuser, mais je n'arrive pas à me connecter à notre système. Veuillez réessayer dans un instant.";
+    }
 }
 
-const responses = [
-	{
-			text: "Thank you for reaching out! How can I assist you today?",
-			type: "greeting"
-	},
-	{
-			text: "I understand your concern. This seems like a complex issue. Would you like me to connect you with our specialized support team?",
-			type: "escalation"
-	},
-	{
-			text: "That's a great question! Here's what you need to know...",
-			type: "info"
-	},
-	{
-			text: "I'm looking into this for you. One moment please.",
-			type: "processing"
-	},
-	{
-			text: "This seems like a situation that requires more detailed assistance. Would you like me to arrange a call with our support team?",
-			type: "escalation"
-	},
-	{
-			text: "For this specific case, it would be best to speak with our dedicated support team. Would you like me to create a priority ticket for you?",
-			type: "escalation"
-	},
-	{
-			text: "Let me guide you through the basic troubleshooting steps first.",
-			type: "help"
-	},
-	{
-			text: "I appreciate your patience. Given the complexity, I recommend speaking directly with our technical team.",
-			type: "escalation"
-	}
-];
-
-export function initChat() {
-	const chatMessages = document.getElementById('chatMessages');
-	const userInput = document.getElementById('userInput');
-	const sendButton = document.getElementById('sendButton');
-
-	function addMessage(message, isUser) {
-			const messageDiv = document.createElement('div');
-			messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-			
-			if (!isUser) {
-					const botProfile = document.createElement('div');
-					botProfile.className = 'bot-profile';
-					botProfile.innerHTML = `
-							<img src="https://api.dicebear.com/7.x/bottts/svg?seed=support" alt="Support Bot">
-					`;
-					messageDiv.appendChild(botProfile);
-			}
-			
-			const messageContent = document.createElement('div');
-			messageContent.className = 'message-content';
-			messageContent.textContent = message.text || message;
-			messageDiv.appendChild(messageContent);
-		
-			messageDiv.style.opacity = '0';
-			messageDiv.style.transform = 'translateY(20px)';
-			
-			chatMessages.appendChild(messageDiv);
-
-			requestAnimationFrame(() => {
-					messageDiv.style.opacity = '1';
-					messageDiv.style.transform = 'translateY(0)';
-			});
-			
-			chatMessages.scrollTop = chatMessages.scrollHeight;
-	}
-
-	function getRandomResponse() {
-			return responses[Math.floor(Math.random() * responses.length)];
-	}
-
-	function handleSendMessage() {
-			const message = userInput.value.trim();
-			if (message) {
-					addMessage(message, true);
-					userInput.value = '';
-	
-					const typingIndicator = document.createElement('div');
-					typingIndicator.className = 'typing-indicator';
-					typingIndicator.innerHTML = '<span></span><span></span><span></span>';
-					chatMessages.appendChild(typingIndicator);
-	
-					setTimeout(() => {
-							typingIndicator.remove();
-							addMessage(getRandomResponse(), false);
-					}, 1500);
-			}
-	}
-
-	sendButton.addEventListener('click', handleSendMessage);
-	userInput.addEventListener('keypress', (e) => {
-			if (e.key === 'Enter') {
-					handleSendMessage();
-			}
-	});
+function addMessage(content, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user' : 'agent'}`;
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    
+    if (!isUser) {
+        const typing = document.createElement('div');
+        typing.className = 'typing';
+        for (let i = 0; i < 3; i++) {
+            const dot = document.createElement('span');
+            typing.appendChild(dot);
+        }
+        messageContent.appendChild(typing);
+        
+        setTimeout(() => {
+            typing.remove();
+            messageContent.innerHTML = `<p>${content}</p>`;
+        }, 1500);
+    } else {
+        messageContent.innerHTML = `<p>${content}</p>`;
+    }
+    
+    messageDiv.appendChild(messageContent);
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-export function initNumberAnimation() {
-	const numbers = document.querySelectorAll('.number');
-	
-	const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-					if (entry.isIntersecting) {
-							const target = parseInt(entry.target.getAttribute('data-target'));
-							const duration = 1500; 
-							const steps = 30; 
-							let current = 0;
-						
-							const easeOutQuart = t => 1 - (--t) * t * t * t;
-							
-							let startTime = null;
-							
-							function animate(currentTime) {
-									if (!startTime) startTime = currentTime;
-									const progress = Math.min((currentTime - startTime) / duration, 1);
-									
-									current = Math.floor(target * easeOutQuart(progress));
-									entry.target.textContent = current;
-									
-									if (progress < 1) {
-											requestAnimationFrame(animate);
-									} else {
-											entry.target.textContent = target;
-									}
-							}
-							
-							requestAnimationFrame(animate);
-							observer.unobserve(entry.target);
-					}
-			});
-	}, { threshold: 0.5 });
-
-	numbers.forEach(number => observer.observe(number));
+async function handleSendMessage() {
+    const message = userInput.value.trim();
+    if (message) {
+        addMessage(message, true);
+        userInput.value = '';
+        
+        const response = await sendToOpenAI(message);
+        addMessage(response);
+    }
 }
 
-// Smooth scroll for navigation links
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        
+        answer.style.height = '0px';
+        
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.height = '0px';
+                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            item.classList.toggle('active');
+            answer.style.height = isOpen ? '0px' : `${answer.scrollHeight}px`;
+            icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+        });
+    });
+}
+
+sendButton.addEventListener('click', handleSendMessage);
+
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        handleSendMessage();
+    }
+});
+
+userInput.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 	anchor.addEventListener('click', function (e) {
 			e.preventDefault();
-			const target = document.querySelector(this.getAttribute('href'));
-			if (target) {
-					const headerOffset = 80;
-					const elementPosition = target.getBoundingClientRect().top;
-					const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-					window.scrollTo({
-							top: offsetPosition,
-							behavior: 'smooth'
-					});
-			}
-	});
-});
-
-// Initialize all features
-document.addEventListener('DOMContentLoaded', () => {
-	initNumberAnimation();
-	initChat();
-	initFAQ();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector('.burger-menu');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.overlay');
-
-  const toggleSidebar = () => {
-    const isActive = sidebar.classList.contains('active');
-    sidebar.classList.toggle('active', !isActive);
-    overlay.classList.toggle('active', !isActive);
-  };
-
-  const closeSidebar = (event) => {
-    const isClickInsideSidebar = sidebar.contains(event.target);
-    const isClickOnBurger = burgerMenu.contains(event.target);
-    if (!isClickInsideSidebar && !isClickOnBurger) {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-    }
-  };
-
-  burgerMenu.addEventListener('click', toggleSidebar);
-  overlay.addEventListener('click', closeSidebar);
-  document.addEventListener('click', closeSidebar); 
-});
-
-async function fetchBitcoinRate() {
-	try {
-			const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
-			const data = await response.json();
-			const rate = parseFloat(data.bpi.USD.rate.replace(',', ''));
-			document.querySelector('.btc-rate').textContent = `1 BTC = $${rate.toFixed(2)}`;
-	} catch (error) {
-			console.error('Error fetching Bitcoin rate:', error);
-	}
-}
-
-window.onload = fetchBitcoinRate;
-
-document.addEventListener('DOMContentLoaded', function () {
-	const banner = document.getElementById('cookie-banner');
-
-
-	if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
-			banner.style.display = 'none';
-	}
-
-	function hideBanner() {
-			banner.classList.add('hidden');
-			setTimeout(() => {
-					banner.style.display = 'none';
-			}, 500); 
-	}
-
-	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
-			hideBanner();
-	});
-
-	document.getElementById('decline-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365); 
-			hideBanner();
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+			});
 	});
 });

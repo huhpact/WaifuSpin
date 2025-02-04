@@ -44,19 +44,17 @@ document.querySelectorAll('.play-btn').forEach(button => {
 			
 			setTimeout(() => ripple.remove(), 1000);
 			
-			// Add click animation
 			button.style.transform = 'scale(0.95)';
 			setTimeout(() => button.style.transform = '', 150);
 	});
 });
 
-// Stats counter animation
 const stats = document.querySelectorAll('.stat-value');
 stats.forEach(stat => {
 	const target = parseFloat(stat.textContent.replace(/[^0-9.]/g, ''));
 	let current = 0;
 	const increment = target / 100;
-	const duration = 2000; // 2 seconds
+	const duration = 2000; 
 	const steps = 100;
 	const step = duration / steps;
 	
@@ -73,8 +71,7 @@ stats.forEach(stat => {
 					setTimeout(updateCounter, step);
 			}
 	}
-	
-	// Start animation when stat comes into view
+
 	const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 					if (entry.isIntersecting) {
@@ -87,7 +84,6 @@ stats.forEach(stat => {
 	observer.observe(stat);
 });
 
-// Add scroll-based parallax
 window.addEventListener('scroll', () => {
 	const sections = document.querySelectorAll('.game-section');
 	sections.forEach(section => {

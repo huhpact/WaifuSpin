@@ -3,19 +3,19 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const promos = [
 			{
-					title: "Raffles & races",
-					description: "Enter the draw to win 75K every week. And win big in the daily races.",
-					media: "/public/images/win.png",
+					title: "Tombolas & Courses",
+					description: "Participez au tirage au sort pour gagner 75K chaque semaine. Et gagnez gros lors des courses quotidiennes.",
+					media: "/images/win.png",
 			},
 			{
-					title: "Special offers",
-					description: "Make the most of our casino promotions and sports betting bonuses, which are updated weekly.",
-					media: "/public/images/cards.png",
+					title: "Promotions",
+					description: "Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.",
+					media: "/images/cards.png",
 			},
 			{
-					title: "High player feedback (RTP)",
-					description: "With improved RTP percentages, you have the chance to win big every time you play.",
-					media: "/public/images/rtp.png",
+					title: "Haut retour aux joueurs (RTP)",
+					description: "Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.",
+					media: "/images/rtp.png",
 			},
 	];
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" hidden"];
+  const users = [" Masqué"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -147,35 +147,11 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} user online`;
+	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 	updateOnlineUsers();
-});
-
-function handleIntersection(entries) {
-	entries.forEach(entry => {
-		const target = entry.target.querySelector('span');
-		if (entry.isIntersecting) {
-			target.classList.add('highlight');
-		} else {
-			target.classList.remove('highlight');
-		}
-	});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-	updateOnlineUsers();
-
-
-	const supportHeading = document.getElementById('support-heading');
-	const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
-	observer.observe(supportHeading);
-
-	
-	const text = supportHeading.innerHTML;
-	supportHeading.innerHTML = text.replace('your language', '<span>your language</span>');
 });
 
 let currentFeatureIndex = 0;
@@ -219,6 +195,7 @@ async function fetchBitcoinRate() {
 
 window.onload = fetchBitcoinRate;
 
+
 document.addEventListener('DOMContentLoaded', function () {
 	const banner = document.getElementById('cookie-banner');
 
@@ -235,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); 
+			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
 			hideBanner();
 	});
 
