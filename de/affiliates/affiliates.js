@@ -38,24 +38,24 @@ window.addEventListener('scroll', () => {
 
 const faqData = [
     {
-        question: "Comment puis-je adhérer au programme d'affiliation?",
-        answer: "Il vous suffit de cliquer sur le bouton « Dévenir Affilié » et de suivre notre procédure d'inscription simplifiée. Notre équipe examinera votre demande dans les 24 heures et vous recevrez un accès immédiat à notre tableau de bord d'affilié après approbation."
+        question: "Wie kann ich mich am Partnerprogramm beteiligen?",
+        answer: "Klicken Sie einfach auf die Schaltfläche „Affiliate werden“ und folgen Sie unserem vereinfachten Anmeldeverfahren. Unser Team wird Ihren Antrag innerhalb von 24 Stunden prüfen und Sie erhalten nach der Genehmigung sofortigen Zugang zu unserem Affiliate-Dashboard."
     },
     {
-        question: "Quand et comment suis-je payé?",
-        answer: "Nous traitons les paiements automatiquement le 1er de chaque mois pour les gains du mois précédent. Nous prenons en charge plusieurs options de paiement en crypto-monnaies, notamment BTC, ETH, SOL et XRP, avec des transferts instantanés et seulement 1% de frais de traitement."
+        question: "Wann und wie werde ich bezahlt?",
+        answer: "Wir verarbeiten Zahlungen automatisch am 1. eines jeden Monats für die Gewinne des Vormonats. Wir unterstützen mehrere Zahlungsoptionen für Kryptowährungen, darunter BTC, ETH, SOL und XRP, mit sofortiger Überweisung und nur 1% Bearbeitungsgebühr."
     },
     {
-        question: "Quel est le seuil minimum de paiement?",
-        answer: "Notre seuil de paiement minimum est de 100 $ pour toutes les crypto-monnaies prises en charge. Une fois ce seuil atteint, vos gains sont automatiquement traités dans le cycle de paiement suivant."
+        question: "Wie hoch ist die Mindestgrenze für die Auszahlung?",
+        answer: "Unsere Mindestauszahlungsschwelle liegt bei 100 $ für alle unterstützten Kryptowährungen. Sobald diese Schwelle erreicht ist, werden Ihre Gewinne automatisch im nächsten Auszahlungszyklus verarbeitet."
     },
     {
-        question: "Comment la part des recettes est-elle calculée?",
-        answer: "Le partage des revenus est calculé sur la base du revenu net des jeux (RNJ) généré par les joueurs que vous avez recommandés. Notre système à plusieurs niveaux offre jusqu'à 45 % de part de revenus, les taux augmentant en fonction de vos performances mensuelles."
+        question: "Wie wird der Anteil der Einnahmen berechnet?",
+        answer: "Die Umsatzbeteiligung wird auf der Grundlage des Nettospielertrags (NSR) berechnet, der von den von Ihnen empfohlenen Spielern erwirtschaftet wird. Unser mehrstufiges System bietet einen Einkommensanteil von bis zu 45%, wobei die Raten je nach Ihrer monatlichen Leistung steigen."
     },
     {
-        question: "Comment suivez-vous les recommandations?",
-        answer: "Nous utilisons une technologie de suivi avancée avec une durée de cookie de 365 jours. Toutes les activités des joueurs sont suivies en temps réel via notre tableau de bord d'affiliation sécurisé, ce qui garantit une transparence totale."
+        question: "Wie befolgen Sie die Empfehlungen?",
+        answer: "Wir verwenden eine fortschrittliche Tracking-Technologie mit einer Cookie-Laufzeit von 365 Tagen. Alle Aktivitäten der Spieler werden in Echtzeit über unser sicheres Affiliate-Dashboard verfolgt, wodurch eine vollständige Transparenz gewährleistet ist."
     }
 ];
 
