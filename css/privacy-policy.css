@@ -1,0 +1,145 @@
+:root {
+  --primary-bg: #13111C;
+  --secondary-bg: #1E1B2E;
+  --accent: rgb(61, 106, 255);
+  --text-clr: rgba(255, 255, 255, 0.7);
+  --gradient: linear-gradient(90deg, #5f94ff, #0900ab);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-clr);
+  line-height: 1.6;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  background: var(--secondary-bg);
+  min-height: 500px;
+  padding-top: 6rem;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+	background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.policy-section {
+  background: var(--secondary-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.policy-section:hover {
+  transform: translateY(-5px);
+}
+
+.policy-section h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ul ul {
+  margin-top: 0.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  color: #fff;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .hero-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .policy-section {
+    padding: 1.5rem;
+  }
+}
