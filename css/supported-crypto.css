@@ -1,0 +1,596 @@
+:root {
+	--primary-bg: #13111C;
+	--secondary-bg: #1E1B2E;
+	--accent: rgb(61, 106, 255);
+	--text-clr: rgba(255, 255, 255, 0.7);
+	--gradient: linear-gradient(90deg, #5f94ff, #0900ab);
+	--card-bg: rgba(255, 255, 255, 0.05);
+	--glow: 0 0 20px rgba(95, 148, 255, 0.3);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--primary-bg);
+	color: var(--text-clr);
+	line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.glowing-circle {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background: var(--gradient);
+	border-radius: 50%;
+	filter: blur(100px);
+	opacity: 0.1;
+	animation: pulse 4s ease-in-out infinite;
+}
+
+.floating-crypto {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.floating-crypto i, .floating-crypto img {
+	position: absolute;
+	font-size: 2rem;
+	opacity: 0.2;
+	animation: float 10s infinite;
+}
+
+.floating-crypto i:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.floating-crypto i:nth-child(2) { top: 60%; left: 80%; animation-delay: -2s; }
+.floating-crypto img:nth-child(3) { top: 30%; left: 70%; animation-delay: -4s; }
+.floating-crypto img:nth-child(4) { top: 70%; left: 30%; animation-delay: -6s; }
+
+.hero-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--gradient);
+	opacity: 0.1;
+	transform: skewY(-12deg);
+	transform-origin: 0;
+	z-index: -1;
+}
+
+.hero-content {
+	text-align: center;
+	max-width: 1200px;
+	padding: 0 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.hero h1 {
+	font-size: 4rem;
+	margin-bottom: 1rem;
+	background: var(--gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+}
+
+.hero h1::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 4px;
+	background: var(--gradient);
+	border-radius: 2px;
+}
+
+.hero p {
+	font-size: 1.5rem;
+	margin-bottom: 3rem;
+	opacity: 0.8;
+}
+
+.hero-stats {
+	display: flex;
+	justify-content: center;
+	gap: 4rem;
+	margin-top: 3rem;
+}
+
+.stat-circle {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+.stat-circle svg {
+	width: 100px;
+	height: 100px;
+	transform: rotate(-90deg);
+}
+
+.stat-circle circle {
+	fill: none;
+	stroke-width: 4;
+	stroke-linecap: round;
+	cx: 50;
+	cy: 50;
+	r: 40;
+}
+
+.stat-circle circle:first-child {
+	stroke: rgba(255, 255, 255, 0.1);
+}
+
+.stat-circle circle:last-child {
+	stroke: var(--accent);
+	stroke-dasharray: 251.2;
+	stroke-dashoffset: 251.2;
+	animation: circle-animation 2s ease forwards;
+}
+
+.crypto-options {
+	margin-top: 30px;
+}
+/* Crypto Section */
+.crypto-section {
+	padding: 100px 20px;
+	background-color: var(--secondary-bg);
+	position: relative;
+	overflow: hidden;
+}
+
+.crypto-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 3rem auto;
+}
+
+.crypto-card {
+	perspective: 1000px;
+	height: 300px;
+}
+
+.crypto-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.crypto-card:hover .crypto-card-inner {
+	transform: rotateY(180deg);
+}
+
+.crypto-front, .crypto-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	background: var(--card-bg);
+	border-radius: 15px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: var(--glow);
+}
+
+.crypto-back {
+	transform: rotateY(180deg);
+	justify-content: center;
+}
+
+.crypto-card i, .crypto-card .crypto-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	background: var(--gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.crypto-card .crypto-icon {
+	width: 48px;
+	height: 48px;
+}
+
+.crypto-icon1 { height: 60px; padding: 10px; }
+
+h2 {
+	background: var(--gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.price-tag {
+	margin-top: auto;
+	text-align: center;
+}
+
+.price {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: white;
+	display: block;
+}
+
+.change {
+	font-size: 0.9rem;
+}
+
+.change.positive { color: #00ff9d; }
+.change.negative { color: #ff4b4b; }
+
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	width: 100%;
+}
+
+.stat-item {
+	text-align: center;
+	padding: 0.5rem;
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: 8px;
+}
+
+.stat-item .label {
+	font-size: 0.8rem;
+	opacity: 0.7;
+}
+
+.stat-item .value {
+	font-size: 1rem;
+	color: white;
+	font-weight: bold;
+}
+
+.process-section {
+	padding: 100px 20px;
+	position: relative;
+}
+
+.process-timeline {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 0;
+	display: flex;
+	padding-left: 60px;
+	justify-content: center;
+}
+
+.timeline-line {
+	position: absolute;
+	top: 0;
+	right: calc(50% + 200px);
+	width: 4px;
+	height: 100%;
+	background: var(--gradient);
+	transform-origin: top;
+	animation: grow-line 2s ease forwards;
+}
+
+.timeline-line::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 12px;
+	height: 12px;
+	background: var(--accent);
+	border-radius: 50%;
+	animation: pulse 2s infinite;
+}
+
+.process-steps {
+	position: relative;
+	width: 400px;
+}
+
+.step {
+	opacity: 0;
+	transform: translateX(50px);
+	animation: slide-in 0.6s ease forwards;
+}
+
+.step:nth-child(1) { animation-delay: 0.2s; }
+.step:nth-child(2) { animation-delay: 0.4s; }
+.step:nth-child(3) { animation-delay: 0.6s; }
+.step:nth-child(4) { animation-delay: 0.8s; }
+
+.step-content {
+	position: relative;
+	background: var(--card-bg);
+	padding: 2rem;
+	border-radius: 15px;
+	margin: 2rem 0;
+	box-shadow: var(--glow);
+	transition: transform 0.3s;
+}
+
+.step-content:hover {
+	transform: translateX(-10px);
+}
+
+.step-content::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	width: 30px;
+	height: 2px;
+	background: var(--gradient);
+	transform: translateY(-50%);
+}
+
+.features-section {
+	padding: 100px 20px;
+	background-color: var(--secondary-bg);
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.feature-card {
+	background: var(--card-bg);
+	border-radius: 15px;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--glow);
+}
+
+.feature-icon {
+	width: 60px;
+	height: 60px;
+	background: var(--gradient);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+.feature-icon i {
+	font-size: 1.5rem;
+	color: white;
+}
+
+.feature-list {
+	list-style: none;
+	margin-top: 1rem;
+}
+
+.feature-list li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.feature-list i {
+	color: #00ff9d;
+}
+
+.speed-meter {
+	height: 8px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+	margin-top: 1rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.meter-fill {
+	height: 100%;
+	background: var(--gradient);
+	width: 0%;
+	animation: fill-meter 2s ease-out forwards;
+}
+
+.speed-label {
+	display: block;
+	text-align: center;
+	margin-top: 0.5rem;
+	font-size: 0.8rem;
+	opacity: 0.7;
+}
+
+.currency-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.currency-grid span {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 0.3rem;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+.live-transactions {
+	padding: 100px 20px;
+	background: var(--primary-bg);
+}
+
+.transaction-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+}
+
+.transaction-feed {
+	background: var(--card-bg);
+	border-radius: 15px;
+	padding: 2rem;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+}
+
+.transaction-stats {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.stat-box {
+	background: var(--card-bg);
+	border-radius: 15px;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.stat-box h4 {
+	font-size: 0.9rem;
+	opacity: 0.7;
+	margin-bottom: 0.5rem;
+}
+
+.volume-value, .users-value, .time-value {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.volume-chart, .users-chart {
+	height: 40px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+}
+
+.processing-indicator {
+	width: 100%;
+	height: 4px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+}
+
+.processing-indicator::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 30%;
+	background: var(--gradient);
+	animation: processing 2s ease-in-out infinite;
+}
+
+@keyframes grow-line {
+	from {
+			transform: scaleY(0);
+	}
+	to {
+			transform: scaleY(1);
+	}
+}
+
+@keyframes pulse {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.1); }
+	100% { transform: scale(1); }
+}
+
+@keyframes float {
+	0% { transform: translate(0, 0); }
+	50% { transform: translate(20px, -20px); }
+	100% { transform: translate(0, 0); }
+}
+
+@keyframes circle-animation {
+	to { stroke-dashoffset: 50; }
+}
+
+@keyframes bounce {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+}
+
+@keyframes fill-meter {
+	to { width: 90%; }
+}
+
+@keyframes processing {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(400%); }
+}
+
+@keyframes slideUp {
+	from {
+			opacity: 0;
+			transform: translateY(30px);
+	}
+	to {
+			opacity: 1;
+			transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.animate-slide-up {
+	animation: slideUp 0.6s ease forwards;
+}
+
+.animate-slide-up-delay {
+	animation: slideUp 0.6s ease forwards;
+	animation-delay: 0.2s;
+	opacity: 0;
+}
+
+.animate-fade-in {
+	animation: fadeIn 1s ease forwards;
+	animation-delay: 0.4s;
+	opacity: 0;
+} 
