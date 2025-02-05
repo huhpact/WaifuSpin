@@ -7,6 +7,8 @@
 	--transition-duration: 0.6s;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,7 +16,7 @@
 }
 
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
 	line-height: 1.6;
 	color: var(--text-clr);
 	background-color: var(--primary-bg);

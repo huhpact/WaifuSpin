@@ -38,24 +38,24 @@ window.addEventListener('scroll', () => {
 
 const faqData = [
     {
-        question: "Comment puis-je adhérer au programme d'affiliation?",
-        answer: "Il vous suffit de cliquer sur le bouton « Dévenir Affilié » et de suivre notre procédure d'inscription simplifiée. Notre équipe examinera votre demande dans les 24 heures et vous recevrez un accès immédiat à notre tableau de bord d'affilié après approbation."
+        question: "どうすればアフィリエイト・プログラムに参加できますか？",
+        answer: "アフィリエイトになる」ボタンをクリックし、簡単な登録手続きを行ってください。24時間以内に審査が行われ、承認されるとすぐにアフィリエイト・ダッシュボードにアクセスできるようになります。"
     },
     {
-        question: "Quand et comment suis-je payé?",
-        answer: "Nous traitons les paiements automatiquement le 1er de chaque mois pour les gains du mois précédent. Nous prenons en charge plusieurs options de paiement en crypto-monnaies, notamment BTC, ETH, SOL et XRP, avec des transferts instantanés et seulement 1% de frais de traitement."
+        question: "給料はいつ、どのように支払われますか？",
+        answer: "毎月1日に、前月の収益に対して自動的に支払いが行われます。BTC、ETH、SOL、XRPを含む複数の暗号通貨の支払いオプションをサポートし、即時送金とわずか1%の処理手数料を実現しています。"
     },
     {
-        question: "Quel est le seuil minimum de paiement?",
-        answer: "Notre seuil de paiement minimum est de 100 $ pour toutes les crypto-monnaies prises en charge. Une fois ce seuil atteint, vos gains sont automatiquement traités dans le cycle de paiement suivant."
+        question: "最低支払基準額はいくらですか？",
+        answer: "当社の最低ペイアウト基準額は、サポートされているすべての暗号通貨で100ドルです。このしきい値に達すると、賞金は自動的に次の支払いサイクルに処理されます。当社の最低支払いしきい値は、サポートされているすべての暗号通貨で100ドルです。このしきい値に達すると、賞金は自動的に次の支払いサイクルに処理されます。"
     },
     {
-        question: "Comment la part des recettes est-elle calculée?",
-        answer: "Le partage des revenus est calculé sur la base du revenu net des jeux (RNJ) généré par les joueurs que vous avez recommandés. Notre système à plusieurs niveaux offre jusqu'à 45 % de part de revenus, les taux augmentant en fonction de vos performances mensuelles."
+        question: "レベニューシェアはどのように計算されるのですか？",
+        answer: "レベニューシェアは、あなたが紹介したプレーヤーが生み出したネットゲーミングレベニュー（NGR）に基づいて計算されます。当社の段階的なシステムでは、最大45％の収益シェアが提供され、毎月のパフォーマンスに応じてレートが上がります。"
     },
     {
-        question: "Comment suivez-vous les recommandations?",
-        answer: "Nous utilisons une technologie de suivi avancée avec une durée de cookie de 365 jours. Toutes les activités des joueurs sont suivies en temps réel via notre tableau de bord d'affiliation sécurisé, ce qui garantit une transparence totale."
+        question: "どのように勧告に従うのか？",
+        answer: "クッキーの有効期間は365日です。すべてのプレイヤーの活動は、当社の安全なアフィリエイトダッシュボードを通じてリアルタイムで追跡され、完全な透明性を確保します。"
     }
 ];
 

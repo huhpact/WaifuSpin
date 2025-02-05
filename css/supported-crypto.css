@@ -8,6 +8,8 @@
 	--glow: 0 0 20px rgba(95, 148, 255, 0.3);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -15,13 +17,12 @@
 }
 
 body {
-	font-family: 'Inter', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
 	background-color: var(--primary-bg);
 	color: var(--text-clr);
 	line-height: 1.6;
 }
 
-/* Hero Section */
 .hero {
 	position: relative;
 	height: 100vh;
@@ -152,7 +153,7 @@ body {
 .crypto-options {
 	margin-top: 30px;
 }
-/* Crypto Section */
+
 .crypto-section {
 	padding: 100px 20px;
 	background-color: var(--secondary-bg);

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" Masqué"];
+  const games = ["ブラックジャック", "スロット", "ルーレット・ホイール"];
+  const users = [" 覆面"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -77,7 +77,7 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
+	onlineUsersElement.textContent = `${randomUsers} オンラインユーザー`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

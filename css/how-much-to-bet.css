@@ -8,6 +8,8 @@
 	--neon-shadow: 0 0 10px var(--accent);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -20,7 +22,7 @@ html {
 }
 
 body {
-	font-family: 'Inter', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
 	background-color: var(--primary-bg);
 	color: var(--text-clr);
 	line-height: 1.6;

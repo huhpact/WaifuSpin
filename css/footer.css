@@ -9,6 +9,8 @@
     --glass-bg: rgba(30, 27, 46, 0.95);
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 footer {
   background: var(--primary-bg);
     padding: 40px 20px;

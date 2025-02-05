@@ -12,6 +12,8 @@
 	--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 .stars, .twinkling {
 	position: fixed;
 	top: 0;
@@ -50,7 +52,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
 	scroll-behavior: smooth;
 }
 

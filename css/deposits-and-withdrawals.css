@@ -6,11 +6,13 @@
   --gradient: linear-gradient(90deg, #5f94ff, #0900ab);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
 }
 
 body {

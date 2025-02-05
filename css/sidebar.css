@@ -3,6 +3,8 @@
 	--secondary-bg: #1E1B2E;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 .sidebar {
   position: fixed;
   top: 70px; 

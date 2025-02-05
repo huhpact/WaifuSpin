@@ -6,6 +6,8 @@
   --gradient: linear-gradient(90deg, #5f94ff, #0900ab);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -72,7 +74,7 @@
 body {
   background-color: var(--primary-bg);
   color: var(--text-clr);
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }

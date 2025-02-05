@@ -9,6 +9,8 @@
   color: #fff;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
 header {
   display: flex;
   align-items: center;
