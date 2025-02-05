@@ -6,48 +6,48 @@ AOS.init({
 
 const quizQuestions = [
 	{
-			question: "Combien de fois vous arrive-t-il de jouer plus longtemps que prévu?",
+			question: "Wie oft kommt es vor, dass Sie länger spielen als geplant?",
 			options: [
-					"Jamais",
-					"Parfois",
-					"Souvent",
-					"Presque toujours"
+					"Nie",
+					"Manchmal",
+					"Oft",
+					"Fast immer"
 			]
 	},
 	{
-			question: "Avez-vous déjà caché votre activité de joueur à d'autres personnes?",
+			question: "Haben Sie jemals vor anderen Personen verheimlicht, dass Sie ein Spieler sind?",
 			options: [
-					"Jamais",
-					"Rarement",
-					"Parfois",
-					"Souvent"
+					"Nie",
+					"Selten",
+					"Manchmal",
+					"Oft"
 			]
 	},
 	{
-			question: "Combien de fois dépensez-vous plus que vous ne pouvez vous le permettre pour des jeux?",
+			question: "Wie oft geben Sie mehr Geld für Spiele aus, als Sie sich leisten können?",
 			options: [
-					"Jamais",
-					"Occasionnellement",
-					"Fréquemment",
-					"Très fréquemment"
+					"Nie",
+					"Gelegentlich",
+					"Regelmäßig",
+					"Sehr regelmäßig"
 			]
 	},
 	{
-			question: "Vous sentez-vous mal à l'aise lorsque vous essayez de réduire votre consommation de jeux?",
+			question: "Fühlen Sie sich unwohl, wenn Sie versuchen, Ihren Spielkonsum zu reduzieren?",
 			options: [
-					"Pas du tout",
-					"Légèrement",
-					"Modérément",
-					"Sévèrement"
+					"Überhaupt nicht",
+					"Leicht",
+					"Joa",
+					"Schon stark"
 			]
 	},
 	{
-			question: "Le jeu vous a-t-il déjà fait manquer des échéances ou des rendez-vous importants?",
+			question: "Haben Sie durch das Spielen schon einmal wichtige Termine oder Verabredungen verpasst?",
 			options: [
-					"Jamais",
-					"Une ou deux fois",
-					"Plusieurs fois",
-					"Fréquemment"
+					"Nie",
+					"Ein oder zwei Mal",
+					"mehrere Male",
+					"Regelmäßig"
 			]
 	}
 ];
@@ -89,8 +89,8 @@ function showQuestion() {
 					</div>
 			</div>
 			<div class="quiz-navigation">
-					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">Précédent</button>' : ''}
-					<button onclick="nextQuestion()" class="primary-button">Suivant</button>
+					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">Vorherige</button>' : ''}
+					<button onclick="nextQuestion()" class="primary-button">Nächste</button>
 			</div>
 	`;
 	quizContent.innerHTML = html;
@@ -105,7 +105,7 @@ function selectOption(index) {
 
 function nextQuestion() {
 	if (typeof answers[currentQuestion] === 'undefined') {
-			alert('Veuillez sélectionner une option avant de continuer');
+			alert('Bitte wählen Sie eine Option, bevor Sie fortfahren');
 			return;
 	}
 	currentQuestion++;
@@ -124,16 +124,16 @@ function showResults() {
 
 	switch(riskLevel) {
 			case 'low':
-					message = "Vos habitudes de jeu semblent être sous contrôle.";
-					recommendations = "Continuez à surveiller votre temps de jeu et à maintenir des limites saines.";
+					message = "Ihre Spielgewohnheiten scheinen unter Kontrolle zu sein.";
+					recommendations = "Achten Sie weiterhin auf Ihre Spielzeit und halten Sie sich an gesunde Grenzen.";
 					break;
 			case 'moderate':
-					message = "Vous risquez de développer des habitudes de jeu problématiques.";
-					recommendations = "Envisagez de fixer des limites plus strictes et de suivre vos dépenses liées aux jeux.";
+					message = "Es besteht die Gefahr, dass Sie problematische Spielgewohnheiten entwickeln.";
+					recommendations = "Ziehen Sie in Erwägung, strengere Grenzen zu setzen und Ihre Ausgaben für das Spielen zu überwachen.";
 					break;
 			case 'high':
-					message = "Vos réponses indiquent des préoccupations potentielles liées aux jeux.";
-					recommendations = "Nous vous recommandons vivement de contacter notre équipe d'assistance pour obtenir une aide personnalisée.";
+					message = "Ihre Antworten weisen auf potenzielle Bedenken im Zusammenhang mit Spielen hin.";
+					recommendations = "Wir empfehlen Ihnen dringend, sich an unser Support-Team zu wenden, um persönliche Hilfe zu erhalten.";
 					break;
 	}
 
@@ -143,8 +143,8 @@ function showResults() {
 					<p>${message}</p>
 					<p class="recommendations">${recommendations}</p>
 					<div class="quiz-navigation">
-							<button onclick="closeQuiz()" class="primary-button">Fermer</button>
-							<button onclick="startChat()" class="secondary-button">S'adresser à l'assistance</button>
+							<button onclick="closeQuiz()" class="primary-button">Schließen</button>
+							<button onclick="startChat()" class="secondary-button">Sich an den Support wenden</button>
 					</div>
 			</div>
 	`;
@@ -168,7 +168,7 @@ window.addEventListener('click', (e) => {
 });
 
 function startChat() {
-	alert("Se connecter à l'assistance en direct...");
+	alert("Verbindung zum Live-Support...");
 }
 
 document.querySelectorAll('button').forEach(button => {

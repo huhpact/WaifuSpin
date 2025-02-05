@@ -115,7 +115,7 @@ function handleDeposit(amount) {
     const cryptoAmount = amount / cryptoPrices[selectedCrypto];
     userBalances[selectedCrypto] += cryptoAmount;
     updateBalanceDisplay();
-    showNotification(`Deposited ${cryptoAmount.toFixed(8)} ${selectedCrypto}!`);
+    showNotification(`Hinterlegt ${cryptoAmount.toFixed(8)} ${selectedCrypto}!`);
 }
 
 function handleWithdrawal(e) {
@@ -124,12 +124,12 @@ function handleWithdrawal(e) {
     const address = document.getElementById('walletAddress').value;
 
     if (amount > userBalances[selectedCrypto]) {
-        showNotification('Bilan insuffisant!', 'error');
+        showNotification('Unzureichende Bilanz!', 'error');
         return;
     }
 
     if (!isValidAddress(address)) {
-        showNotification('Adresse invalide du portefeuille!', 'error');
+        showNotification('Ungültige Adresse der Wallet!', 'error');
         return;
     }
 

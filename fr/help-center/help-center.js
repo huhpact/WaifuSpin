@@ -66,8 +66,8 @@ searchBar.addEventListener('input', (e) => {
         if (!found) {
             searchResults.innerHTML = `
                 <div class="faq-item">
-                    <div class="faq-question">No results found</div>
-                    <div class="faq-answer">Try searching with different keywords.</div>
+                    <div class="faq-question">Aucun résulatat trouvé</div>
+                    <div class="faq-answer">Essayez avec d'autres mots.</div>
                 </div>
             `;
         }

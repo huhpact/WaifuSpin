@@ -1,27 +1,27 @@
 const newsData = [
 	{
 			id: 1,
-			title: "WaifuSpin lance une nouvelle machine à sous",
+			title: "WaifuSpin bringt einen neuen Spielautomaten heraus",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Découvrez l'excitation de notre dernier jeu de machines à sous sur le thème des dessins animés, mettant en scène vos waifus préférés !",
-			more: "Rejoignez-nous maintenant et obtenez 1 tour gratuits sur notre nouveau jeu! Notre dernier jeu de machines à sous associe de superbes dessins d'anime à des mécanismes de jeu passionnants. Les caractéristiques incluent :\n- Plusieurs tours de bonus\n- Des jackpots progressifs\n- Des multiplicateurs de tours gratuits\n- Un système unique de collection de waifu\nNe manquez pas cette incroyable expérience de jeu!"
+			description: "Erleben Sie die Spannung unseres neuesten Spielautomaten-Spiels mit Cartoon-Thema, in dem Ihre Lieblingswaifus im Mittelpunkt stehen!",
+			more: "Melden Sie sich jetzt bei uns an und erhalten Sie 1 Freispiel für unser neues Spiel! Unser neuestes Spielautomaten-Spiel vereint wunderschöne Anime-Zeichnungen mit spannenden Spielmechanismen. Zu den Features gehören:- Mehrere Bonusrunden- Progressive Jackpots- Multiplikatoren für Gratisdrehs- Ein einzigartiges Waifu-Sammelsystem- Verpassen Sie nicht dieses unglaubliche Spielerlebnis!"
 	},
 	{
 			id: 2,
-			title: "Bonus de week-end spécial",
+			title: "Spezieller Wochenendbonus",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Doublez vos dépôts ce week-end grâce à notre événement bonus spécial!",
-			more: "Préparez-vous à un week-end de bonus extraordinaires:\n- 100% de bonus sur dépôt jusqu'à 1000$\n- 50 tours gratuits sur une sélection de jeux\n- Tournoi spécial avec une cagnotte de 10 000$\n- Récompenses VIP exclusives\n- La promotion se déroule du vendredi 00:00 au dimanche 23:59. Les termes et conditions s'appliquent."
+			description: "Verdoppeln Sie Ihre Einzahlungen an diesem Wochenende mit unserem speziellen Bonus-Event!",
+			more: "Bereiten Sie sich auf ein Wochenende voller außergewöhnlicher Boni vor:\n 100% Einzahlungsbonus bis zu $1000\n 50 Freispiele für ausgewählte Spiele\n Spezielles Turnier mit einem Preispool von $10.000\n Exklusive VIP Belohnungen\n Die Aktion läuft von Freitag 00:00 bis Sonntag 23:59. Es gelten die Allgemeinen Geschäftsbedingungen."
 	},
 	{
 			id: 3,
-			title: "Nouveaux modes de paiement",
+			title: "Neue Zahlungsmethoden",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Nous avons ajouté de nouvelles méthodes de paiement pratiques pour nos joueurs.",
-			more: "Nous sommes ravis d'annoncer de nouvelles options de paiement:\n- Principales cryptocurrencies (BTC, ETH, XRP, SOL)\n- Portefeuilles électroniques populaires\n- Virements bancaires instantanés\n- Solutions de paiement mobile\n- Toutes les nouvelles méthodes de paiement offrent un traitement instantané et des frais peu élevés!"
+			description: "Wir haben neue, bequeme Zahlungsmethoden für unsere Spieler hinzugefügt.",
+			more: "Wir freuen uns, neue Zahlungsmöglichkeiten bekannt geben zu können: \n Die wichtigsten Kryptowährungen (BTC, ETH, XRP, SOL) \n Beliebte elektronische Geldbörsen \n Sofortige Banküberweisungen \n Mobile Zahlungslösungen \n Alle neuen Zahlungsmethoden bieten eine sofortige Bearbeitung und niedrige Gebühren!"
 	}
 ];
 
@@ -39,7 +39,7 @@ function createNewsHTML(newsItem) {
 							<span class="news-date">${formatDate(newsItem.date)}</span>
 					</div>
 					<p class="news-description">${newsItem.description}</p>
-					<button class="news-more" onclick="openModal(${newsItem.id})">Read More</button>
+					<button class="news-more" onclick="openModal(${newsItem.id})">Mehr lesen</button>
 			</article>
 	`;
 }

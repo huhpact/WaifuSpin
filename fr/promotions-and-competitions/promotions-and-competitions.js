@@ -79,7 +79,7 @@ document.querySelectorAll('button').forEach(button => {
 					this.classList.contains('draw-btn')) {
 					
 					const originalText = this.textContent;
-					this.textContent = 'Entered!';
+					this.textContent = 'Inscrit!';
 					this.classList.add('entered');
 
 					const card = this.closest('.giveaway-card');
@@ -89,14 +89,14 @@ document.querySelectorAll('button').forEach(button => {
 					setTimeout(() => {
 							card.style.transform = '';
 							const prizes = [
-									'50 Free Spins',
+									'50 tours gratuits',
 									'$100 Bonus',
-									'Premium Waifu Card',
-									'VIP Status Upgrade',
-									'100% Deposit Bonus'
+									'Carte Premium Waifu',
+									'Mise à niveau du statut VIP',
+									'Bonus de dépôt de 100'
 							];
 							const prize = prizes[Math.floor(Math.random() * prizes.length)];
-							alert(`🎉 Congratulations! You won ${prize}!`);
+							alert(`🎉 Félicitations ! Vous avez gagné ${prize}!`);
 					}, 1000);
 			}
 	});
