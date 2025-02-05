@@ -7,7 +7,7 @@ const sendButton = document.getElementById('sendMessage');
 const faqItems = document.querySelectorAll('.faq-item');
 
 window.addEventListener('DOMContentLoaded', () => {
-    addMessage("Bonjour ! Bienvenue à l'assistance WaifuSpin. Comment puis-je vous aider aujourd'hui ? 🎮", false);
+    addMessage("こんにちは！WaifuSpinサポートへようこそ。本日はどのようなご用件でしょうか？ 🎮", false);
     initFAQ();
 });
 
@@ -23,7 +23,7 @@ async function sendToOpenAI(message) {
                 model: "gpt-4-turbo-preview",
                 messages: [{
                     role: 'system',
-                    content: 'You are a helpful customer support agent for WaifuSpin, a crypto casino. Be professional, friendly, and knowledgeable about cryptocurrency, gambling, and account security. Keep responses concise and helpful. Never break character and you speak french.'
+                    content: 'You are a helpful customer support agent for WaifuSpin, a crypto casino. Be professional, friendly, and knowledgeable about cryptocurrency, gambling, and account security. Keep responses concise and helpful. Never break character and you speak japanese.'
                 }, {
                     role: 'user',
                     content: message
@@ -41,7 +41,7 @@ async function sendToOpenAI(message) {
         return data.choices[0].message.content;
     } catch (error) {
         console.error('Error:', error);
-        return "Je vous prie de m'excuser, mais je n'arrive pas à me connecter à notre système. Veuillez réessayer dans un instant.";
+        return "申し訳ありませんが、システムに接続できません。しばらくしてからもう一度お試しください。";
     }
 }
 

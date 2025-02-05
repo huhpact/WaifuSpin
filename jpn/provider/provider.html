@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaifuSpin Provider - Nos Providers Exclusifs</title>
+    <title>WaifuSpin プロバイダー - 当社の独占プロバイダー</title>
     <link rel="stylesheet" href="/css/provider.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -25,53 +25,63 @@
 
 <div class="custom-cursor"></div>
   
-	<header>
+<header>
     <div class="header-content">
       <div class="burger-logo">
         <div class="burger-menu">
           <i class='bx bx-menu'></i>
         </div>
-        <a href="/fr/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+        <a href="/jpn/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
       <div class="login-reg">
-        <a href="/fr/login/login.html" class="login">Se connecter</a>
-        <a href="/fr/login/login.html"><button class="sign-up-btn">S'inscrire</button></a>
+        <a href="/jpn/login/login.html" class="login">ログイン</a>
+        <a href="/jpn/login/login.html"><button class="sign-up-btn">登録する</button></a>
       </div>
     </div>
   </header>
   
-  <div id="cookie-banner">
-    <h4>Paramètres des cookies</h4>
-    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
-    <button id="accept-cookies">Accepter</button>
-    <button id="decline-cookies">Refuser</button>
+<div id="cookie-banner" class="hidden">
+    <div class="cookie-content">
+        <div class="cookie-header">
+            <div class="cookie-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+            </div>
+            <h4>クッキー設定</h4>
+        </div>
+        <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
+        <div class="button-group">
+            <button id="decline-cookies">廃棄物</button>
+            <button id="accept-cookies">受け入れる</button>
+        </div>
+    </div>
 </div>
   
 
   <aside class="sidebar">
     <ul>
-      <li><a href="/fr/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
-      <li><a href="/fr/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affilié</a></li>
+      <li><a href="/jpn/promotions/promotions.html"><i class='bx bxs-gift'></i> プロモーション</a></li>
+      <li><a href="/jpn/affiliates/affiliates.html"><i class='bx bxs-business'></i>所属</a></li>
       <hr>
-      <li><a href="/fr/vip/vip.html"><i class='bx bxs-trophy'></i> Club VIP</a></li>
-      <li><a href="/fr/news/news.html"><i class='bx bxs-news'></i> Nouveautés</a></li>
-      <li><a href="/fr/support/support.html"><i class='bx bx-support'></i> Service client en direct</a></li>
+      <li><a href="/jpn/vip/vip.html"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
+      <li><a href="/jpn/news/news.html"><i class='bx bxs-news'></i> ニュース</a></li>
+      <li><a href="/jpn/support/support.html"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
       <li class="language-dropdown">
-        <i class='bx bx-world'></i> Langue
+        <i class='bx bx-world'></i> 言語
         <ul class="dropdown">
           <li><a href="/en/provider/provider.html">English</a></li>
           <li><a href="/de/provider/provider.html">Deutsch</a></li>
-          <li><a href="#">Français</a></li>
-          <li><a href="/jpn/casino-games/casino-games.html">日本語</a></li>
+          <li><a href="/fr/provider/provider.html">Français</a></li>
+          <li><a href="#">日本語</a></li>
         </ul>
       </li>
     </ul>
   </aside>
   <div class="overlay"></div>
 
+
     <section class="hero-minimal">
-        <h1 class="gradient-text">Nos Providers Exclusifs</h1>
-        <p class="hero-subtitle">Une expérience de jeu unique, créée par des passionnés</p>
+        <h1 class="gradient-text">専属プロバイダー</h1>
+        <p class="hero-subtitle">熱狂的なファンによるユニークなゲーム体験</p>
     </section>
 
     <section class="providers-showcase">
@@ -80,12 +90,12 @@
                 <i class="fas fa-crown"></i>
             </div>
             <div class="card-content">
-                <h3 class="gradient-text">WaifuGames Studio</h3>
-                <p class="provider-description">Notre studio phare, créateur de jeux uniques mêlant innovation et tradition. Chaque slot est une œuvre d'art minutieusement conçue par notre équipe d'experts.</p>
+                <h3 class="gradient-text">WaifuGamesスタジオ</h3>
+                <p class="provider-description">当社のフラッグシップスタジオであり、革新と伝統を融合させたユニークなゲームのクリエーターです。各スロットは、当社の専門家チームによって細心の注意を払って設計された芸術作品です。</p>
                 <ul class="provider-features">
-                    <li><i class="fas fa-check"></i> RTP moyen de 97.5%</li>
-                    <li><i class="fas fa-check"></i> Volatilité personnalisable</li>
-                    <li><i class="fas fa-check"></i> Mécaniques exclusives</li>
+                    <li><i class="fas fa-check"></i> 平均RTPは97.5%。</li>
+                    <li><i class="fas fa-check"></i> カスタマイズ可能なボラティリティ</li>
+                    <li><i class="fas fa-check"></i> 専用メカニック</li>
                 </ul>
                 <div class="game-preview">
                     <div class="game-item">
@@ -106,11 +116,11 @@
             </div>
             <div class="card-content">
                 <h3 class="gradient-text">WaifuClassics</h3>
-                <p class="provider-description">Redécouvrez les jeux de table classiques avec une touche unique. Roulette, Blackjack et Baccarat réinventés dans un style anime captivant.</p>
+                <p class="provider-description">ユニークなひねりを加えたクラシックなテーブルゲームを再発見してください。ルーレット、ブラックジャック、バカラが魅惑的なアニメスタイルで生まれ変わりました。</p>
                 <ul class="provider-features">
-                    <li><i class="fas fa-check"></i> Tables en direct 24/7</li>
-                    <li><i class="fas fa-check"></i> Croupiers professionnels</li>
-                    <li><i class="fas fa-check"></i> Ambiance immersive</li>
+                    <li><i class="fas fa-check"></i> 年中無休のライブテーブル</li>
+                    <li><i class="fas fa-check"></i> プロのクルーピアー</li>
+                    <li><i class="fas fa-check"></i> 没入感のある雰囲気</li>
                 </ul>
                 <div class="game-preview">
                     <div class="game-item">
@@ -131,11 +141,11 @@
             </div>
             <div class="card-content">
                 <h3 class="gradient-text">WaifuCrash</h3>
-                <p class="provider-description">Des jeux crash révolutionnaires avec des graphismes anime époustouflants et des multiplicateurs explosifs.</p>
+                <p class="provider-description">アニメのようなグラフィックと爆発的なマルチプライヤーで、革命的なクラッシュゲーム。</p>
                 <ul class="provider-features">
-                    <li><i class="fas fa-check"></i> Multiplicateurs jusqu'à x1000</li>
-                    <li><i class="fas fa-check"></i> Animations fluides</li>
-                    <li><i class="fas fa-check"></i> Mode multijoueur</li>
+                    <li><i class="fas fa-check"></i> 最大1000倍のマルチプライヤー</li>
+                    <li><i class="fas fa-check"></i> 流体アニメーション</li>
+                    <li><i class="fas fa-check"></i> マルチプレイヤーモード</li>
                 </ul>
                 <div class="game-preview">
                     <div class="game-item">
@@ -155,102 +165,104 @@
         <div class="stat-card">
             <i class="fas fa-gamepad"></i>
             <span class="stat-number">6+</span>
-            <span class="stat-label">Jeux Exclusifs</span>
+            <span class="stat-label">独占ゲーム</span>
         </div>
         <div class="stat-card">
             <i class="fas fa-users"></i>
             <span class="stat-number">2+</span>
-            <span class="stat-label">Développeurs Passionnés</span>
+            <span class="stat-label">情熱的な開発者たち</span>
         </div>
         <div class="stat-card">
             <i class="fas fa-trophy"></i>
             <span class="stat-number">97.5%</span>
-            <span class="stat-label">RTP Moyen</span>
+            <span class="stat-label">平均RTP</span>
         </div>
     </section>
 
-		<footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
+	
+<footer>
+    <div class="logo-footer1">
+      <img src="/images/logo.png" alt="Waifuspin Logo">
+  </div>
 
-    <div class="container">
+  <div class="container">
 
-        <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
-            </ul>
-        </div>
+      <div class="section">
+          <h4>カジノ</h4>
+          <ul>
+              <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
+              <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
+              <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
+              <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
+              <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
+              <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
+              <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
+          </ul>
+      </div>
 
-        <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
-            </ul>
-        </div>
+      <div class="section">
+          <h4>サポート</h4>
+          <ul>
+              <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
+              <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
+              <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
+              <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
+          </ul>
+      </div>
 
-        <div class="section">
-            <h4>À propos de nous</h4>
-            <ul>
-                <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
-            </ul>
-        </div>
+      <div class="section">
+          <h4>会社概要</h4>
+          <ul>
+              <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
+              <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
+              <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
+              <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
+              <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
+          </ul>
+      </div>
 
-        <div class="section">
-            <h4>Informations sur les paiements</h4>
-            <ul>
-                <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
-            </ul>
-        </div>
+      <div class="section">
+          <h4>お支払いについて</h4>
+          <ul>
+              <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
+              <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
+              <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
+              <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
+              <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
+          </ul>
+      </div>
 
-        <div class="section">
+      <div class="section">
 
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
+          <div class="language-selector">
+              <select>
+                  <option value="fr">Français</option>
+                  <option value="en">English</option>
+              </select>
+          </div>
 
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Décimale</option>
-                    <option value="fractional">Fractionnelle</option>
-                    <option value="american">Américaine</option>
-                </select>
-            </div>
+          <div class="currency-selector">
+              <select>
+                  <option value="decimal">小数点以下</option>
+                  <option value="fractional">フラクショナル</option>
+                  <option value="american">アメリカン</option>
+              </select>
+          </div>
 
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
-    
+        
+          <div class="btc-rate">1 BTC = Loading...</div>
+      </div>
+  </div>
+  <hr>
+  
 
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
-    </div>
-    </footer>
+  <div class="copyright">
+      &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
+  </div>
+  </footer>
 
-    <script src="/fr/provider/provider.js"></script>
+
+    <script src="/jpn/provider/provider.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>

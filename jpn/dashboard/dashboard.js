@@ -124,12 +124,12 @@ function handleWithdrawal(e) {
     const address = document.getElementById('walletAddress').value;
 
     if (amount > userBalances[selectedCrypto]) {
-        showNotification('Bilan insuffisant!', 'error');
+        showNotification('結果が不十分！', 'error');
         return;
     }
 
     if (!isValidAddress(address)) {
-        showNotification('Adresse invalide du portefeuille!', 'error');
+        showNotification('無効なウォレットアドレスです！', 'error');
         return;
     }
 

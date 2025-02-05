@@ -1,27 +1,27 @@
 const newsData = [
 	{
 			id: 1,
-			title: "WaifuSpin lance une nouvelle machine à sous",
+			title: "WaifuSpinが新しいスロットマシンを発表",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Découvrez l'excitation de notre dernier jeu de machines à sous sur le thème des dessins animés, mettant en scène vos waifus préférés !",
-			more: "Rejoignez-nous maintenant et obtenez 1 tour gratuits sur notre nouveau jeu! Notre dernier jeu de machines à sous associe de superbes dessins d'anime à des mécanismes de jeu passionnants. Les caractéristiques incluent :\n- Plusieurs tours de bonus\n- Des jackpots progressifs\n- Des multiplicateurs de tours gratuits\n- Un système unique de collection de waifu\nNe manquez pas cette incroyable expérience de jeu!"
+			description: "アニメをテーマにした最新スロットゲームの興奮をお楽しみください！",
+			more: "今すぐ参加して、新作ゲームの1フリースピンをゲットしよう！当社の最新スロットゲームは、美しいアニメのアートワークとエキサイティングなゲームプレイの仕組みが組み合わされています。特徴 - 複数のボーナスラウンド - プログレッシブジャックポット - フリースピンのマルチプライヤー - ユニークなwaifuコレクションシステム - この素晴らしいゲーム体験をお見逃しなく！"
 	},
 	{
 			id: 2,
-			title: "Bonus de week-end spécial",
+			title: "週末特別ボーナス",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Doublez vos dépôts ce week-end grâce à notre événement bonus spécial!",
-			more: "Préparez-vous à un week-end de bonus extraordinaires:\n- 100% de bonus sur dépôt jusqu'à 1000$\n- 50 tours gratuits sur une sélection de jeux\n- Tournoi spécial avec une cagnotte de 10 000$\n- Récompenses VIP exclusives\n- La promotion se déroule du vendredi 00:00 au dimanche 23:59. Les termes et conditions s'appliquent."
+			description: "今週末のスペシャル・ボーナス・イベントで、ご入金が2倍に！",
+			more: "最高$1,000までの100%入金ボーナス- 選択されたゲームで50回のフリースピン- 賞金総額$10,000の特別トーナメント- 特別VIP特典- プロモーションは金曜日00:00から日曜日23:59まで。利用規約が適用されます。"
 	},
 	{
 			id: 3,
-			title: "Nouveaux modes de paiement",
+			title: "新しい支払い方法",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Nous avons ajouté de nouvelles méthodes de paiement pratiques pour nos joueurs.",
-			more: "Nous sommes ravis d'annoncer de nouvelles options de paiement:\n- Principales cryptocurrencies (BTC, ETH, XRP, SOL)\n- Portefeuilles électroniques populaires\n- Virements bancaires instantanés\n- Solutions de paiement mobile\n- Toutes les nouvelles méthodes de paiement offrent un traitement instantané et des frais peu élevés!"
+			description: "プレーヤーの皆様にとって便利な新しい支払い方法を追加しました。",
+			more: "主要な暗号通貨（BTC、ETH、XRP、SOL） - 人気の電子ウォレット - インスタント銀行振込 - モバイル決済ソリューション - すべての新しい決済方法は、インスタント処理と低手数料を提供します！"
 	}
 ];
 
@@ -35,11 +35,11 @@ function createNewsHTML(newsItem) {
 			<article class="news-item">
 					<h2 class="news-title">${newsItem.title}</h2>
 					<div class="news-meta">
-							<span class="news-user">Par ${newsItem.user}</span>
+							<span class="news-user">による ${newsItem.user}</span>
 							<span class="news-date">${formatDate(newsItem.date)}</span>
 					</div>
 					<p class="news-description">${newsItem.description}</p>
-					<button class="news-more" onclick="openModal(${newsItem.id})">Read More</button>
+					<button class="news-more" onclick="openModal(${newsItem.id})">続きを読む</button>
 			</article>
 	`;
 }

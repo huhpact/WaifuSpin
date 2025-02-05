@@ -59,7 +59,7 @@ document.querySelectorAll('.promo-card .cta-btn').forEach(button => {
 			const promoCode = this.parentElement.querySelector('.promo-code').textContent;
 			navigator.clipboard.writeText(promoCode).then(() => {
 					const originalText = this.textContent;
-					this.textContent = 'Copied!';
+					this.textContent = 'コピー!';
 					setTimeout(() => {
 							this.textContent = originalText;
 					}, 2000);

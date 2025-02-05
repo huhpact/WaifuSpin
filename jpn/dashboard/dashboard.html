@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaifuSpin | Dashboard</title>
+    <title>WaifuSpin - ダッシュボード</title>
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/cookie.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -19,15 +19,24 @@
     <div class="stars"></div>
     <div class="twinkling"></div>
 
-    <div id="cookie-banner">
-        <h4>Paramètres des cookies</h4>
-        <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
-        <button id="accept-cookies">Accepter</button>
-        <button id="decline-cookies">Refuser</button>
+    <div id="cookie-banner" class="hidden">
+        <div class="cookie-content">
+            <div class="cookie-header">
+                <div class="cookie-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+                </div>
+                <h4>クッキー設定</h4>
+            </div>
+            <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
+            <div class="button-group">
+                <button id="decline-cookies">廃棄物</button>
+                <button id="accept-cookies">受け入れる</button>
+            </div>
+        </div>
     </div>
 
     <nav class="navbar">
-        <a href="/fr/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
+        <a href="/jpn/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
         
         <div class="nav-balance">
             <div class="balance-display">
@@ -59,45 +68,45 @@
         </div>
 
         <div class="nav-profile">
-            <span id="username">Utilisateur</span>
+            <span id="username">ユーザー</span>
            <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
         </div>
     </nav>
 
     <main>
         <section class="hero">
-            <h1 class="hero-title">Bienvenue dans l'avenir des jeux</h1>
-            <p class="hero-subtitle">Expérimentez des jeux cryptographiques transparents avec des dépôts et des retraits instantanés.</p>
+            <h1 class="hero-title">ゲームの未来へようこそ</h1>
+            <p class="hero-subtitle">即時入出金で透明な暗号化ゲームを体験してください。</p>
             <div class="hero-cta">
-                <a href="#games"><button class="btn btn-primary" id="playNowBtn">Jouer maintenant 🎮</button></a>
-                <a href="/fr/casino-games/casino-games.html"><button class="btn btn-secondary" id="learnMoreBtn">En Savoir Plus 📚</button></a>
+                <a href="#games"><button class="btn btn-primary" id="playNowBtn">今すぐプレイ 🎮</button></a>
+                <a href="/jpn/casino-games/casino-games.html"><button class="btn btn-secondary" id="learnMoreBtn">詳細はこちら 📚</button></a>
             </div>
         </section>
 
         <section class="features">
             <div class="feature-card">
                 <div class="feature-icon">🎮</div>
-                <h3>Jeu instantané</h3>
-                <p>Aucun téléchargement n'est nécessaire. Jouez directement dans votre navigateur.</p>
+                <h3>インスタント・ゲーム</h3>
+                <p>ダウンロード不要。ブラウザで直接再生。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💎</div>
-                <h3>Récompenses en crypto-monnaie</h3>
-                <p>Gagnez des crypto-monnaies tout en jouant à vos jeux préférés.</p>
+                <h3>暗号通貨の報酬</h3>
+                <p>お気に入りのゲームをプレイしながら暗号通貨を獲得しよう。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>Plate-forme sécurisée</h3>
-                <p>Vos fonds sont en sécurité grâce à notre système de sécurité avancé.</p>
+                <h3>セキュアなプラットフォーム</h3>
+                <p>高度なセキュリティシステムにより、お客様の資金は安全です。</p>
             </div>
         </section>
 
         <section class="transaction-section">
             <div class="transaction-container">
                 <div class="deposit-section">
-                    <h2>Dépôt rapide 💰</h2>
+                    <h2>クイック入金 💰</h2>
                     <div class="currency-selector">
-                        <h3>Sélectionner la devise à déposer</h3>
+                        <h3>預入通貨を選択する</h3>
                         <div class="crypto-options">
                             <button class="crypto-option active" data-crypto="BTC">
                                 <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
@@ -128,9 +137,9 @@
                 </div>
 
                 <div class="withdrawal-section">
-                    <h2>Retrait 💸</h2>
+                    <h2>退会 💸</h2>
                     <div class="crypto-selection">
-                        <h3>Sélectionner Crypto 🪙</h3>
+                        <h3>暗号を選択 🪙</h3>
                         <div class="crypto-options withdraw-options">
                             <button class="crypto-option active" data-crypto="BTC">
                                 <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
@@ -152,30 +161,30 @@
                     </div>
                     <form id="withdrawalForm">
                         <div class="form-group">
-                            <label>Montant</label>
+                            <label>金額</label>
                             <input type="number" id="withdrawAmount" step="0.00000001" required>
-                            <span class="available-balance">Disponible: <span id="availableBalance">0.00000000 BTC</span></span>
+                            <span class="available-balance">下記にて入手可能: <span id="availableBalance">0.00000000 BTC</span></span>
                         </div>
                         <div class="form-group">
-                            <label>Adresse du portefeuille</label>
+                            <label>ポートフォリオのアドレス</label>
                             <input type="text" id="walletAddress" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Se retirer 🚀</button>
+                        <button type="submit" class="btn btn-primary">辞退 🚀</button>
                     </form>
                 </div>
             </div>
         </section>
 
         <section class="games" id="games">
-            <h2>Jeux en vedette 🎲</h2>
+            <h2>注目のゲーム 🎲</h2>
             <div class="games-grid">
                 <div class="game-card">
                     <img src="/images/blackjack.jpg" alt="Blackjack" class="game-image">
                     <div class="game-overlay">
                         <div class="game-info">
-                            <h3>Blackjack</h3>
-                            <p>Jouez et gagnez du crypto instantanément!</p>
-                            <a href="/fr/blackjack/blackjack.html"><button class="btn btn-play">Jouer maintenant!</button></a>
+                            <h3>ブラックジャック</h3>
+                            <p>プレイして即座に暗号を獲得</p>
+                            <a href="/jpn/blackjack/blackjack.html"><button class="btn btn-play">今すぐプレイ</button></a>
                         </div>
                     </div>
                 </div>
@@ -183,9 +192,9 @@
                     <img src="/images/slots.webp" alt="Slots" class="game-image">
                     <div class="game-overlay">
                         <div class="game-info">
-                            <h3>Slots</h3>
-                            <p>Un jeu de casino plein d'action</p>
-                           <a href="/fr/slots/slots.html"><button class="btn btn-play">Jouer maintenant</button></a>
+                            <h3>スロット</h3>
+                            <p>アクション満載のカジノゲーム</p>
+                           <a href="/jpn/slots/slots.html"><button class="btn btn-play">今すぐプレイ</button></a>
                         </div>
                     </div>
                 </div>
@@ -193,9 +202,9 @@
                     <img src="/images/lucky-wheel.jpg" alt="Lucky Wheel" class="game-image">
                     <div class="game-overlay">
                         <div class="game-info">
-                            <h3>Roue de la chance</h3>
-                            <p>La chance est-elle de votre côté ?</p>
-                            <a href="/fr/lucky-wheel/lucky-wheel.html"><button class="btn btn-play">Jouer maintenant</button></a>
+                            <h3>幸運の輪</h3>
+                            <p>運は味方するか？</p>
+                            <a href="/jpn/lucky-wheel/lucky-wheel.html"><button class="btn btn-play">今すぐプレイ</button></a>
                         </div>
                     </div>
                 </div>
@@ -203,9 +212,9 @@
                     <img src="/images/double-or-nth.jpg" alt="Double or Nothing" class="game-image">
                     <div class="game-overlay">
                         <div class="game-info">
-                            <h3>Double ou rien</h3>
-                            <p>Pouvez-vous le doubler ou êtes-vous un perdant ?</p>
-                           <a href="/fr/double-or-nothing/double-or-nothing.html"><button class="btn btn-play">Jouer maintenant</button></a> 
+                            <h3>ダブル・オア・ナッシング</h3>
+                            <p>彼を追い越せるか、それとも敗者か？</p>
+                           <a href="/jpn/double-or-nothing/double-or-nothing.html"><button class="btn btn-play">今すぐプレイ</button></a> 
                         </div>
                     </div>
                 </div>
@@ -213,9 +222,9 @@
                     <img src="/images/mines.png" alt="Mines" class="game-image">
                     <div class="game-overlay">
                         <div class="game-info">
-                            <h3>Mines</h3>
-                            <p>Ne marchez pas sur la mine!</p>
-                            <a href="/fr/mines/mines.html"><button class="btn btn-play">Jouer maintenant</button></a>
+                            <h3>鉱山</h3>
+                            <p>地雷を踏むな</p>
+                            <a href="/jpn/mines/mines.html"><button class="btn btn-play">今すぐプレイ</button></a>
                         </div>
                     </div>
                 </div>
@@ -223,9 +232,9 @@
                     <img src="/images/limbo.webp" alt="Limbo" class="game-image">
                     <div class="game-overlay">
                         <div class="game-info">
-                            <h3>Limbo</h3>
-                            <p>Obtenez le plus grand multiplicateur!</p>
-                            <a href="/fr/limbo/limbo.html"><button class="btn btn-play">Jouer maintenant</button></a>
+                            <h3>リンボ</h3>
+                            <p>最大の倍率を得る！</p>
+                            <a href="/jpn/limbo/limbo.html"><button class="btn btn-play">今すぐプレイ</button></a>
                         </div>
                     </div>
                 </div>
@@ -233,7 +242,7 @@
         </section>
 
         <section class="crypto-tracker">
-            <h2>Prix des crypto-monnaies en direct  📈</h2>
+            <h2>暗号通貨のライブ価格  📈</h2>
             <div class="crypto-grid">
                 <div class="crypto-card" data-crypto="BTC">
                     <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="BTC" class="crypto-icon">
@@ -274,48 +283,47 @@
           <div class="container">
       
               <div class="section">
-                  <h4>Casino</h4>
+                  <h4>カジノ</h4>
                   <ul>
-                      <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                      <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                      <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                      <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                      <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                      <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                      <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
+                      <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
+                      <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
+                      <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
+                      <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
+                      <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
+                      <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
+                      <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
                   </ul>
               </div>
       
               <div class="section">
-                  <h4>Support</h4>
+                  <h4>サポート</h4>
                   <ul>
-                      <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                      <li><a href="/fr/fairness/fairness.html">Fairness</a></li>
-                      <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                      <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                      <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
+                      <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
+                      <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
+                      <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
+                      <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
                   </ul>
               </div>
       
               <div class="section">
-                  <h4>À propos de nous</h4>
+                  <h4>会社概要</h4>
                   <ul>
-                      <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                      <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                      <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                      <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                      <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
+                      <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
+                      <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
+                      <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
+                      <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
+                      <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
                   </ul>
               </div>
       
               <div class="section">
-                  <h4>Informations sur les paiements</h4>
+                  <h4>お支払いについて</h4>
                   <ul>
-                      <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                      <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                      <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                      <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                      <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
+                      <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
+                      <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
+                      <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
+                      <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
+                      <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
                   </ul>
               </div>
       
@@ -330,9 +338,9 @@
       
                   <div class="currency-selector">
                       <select>
-                          <option value="decimal">Décimale</option>
-                          <option value="fractional">Fractionnelle</option>
-                          <option value="american">Américaine</option>
+                          <option value="decimal">小数点以下</option>
+                          <option value="fractional">フラクショナル</option>
+                          <option value="american">アメリカン</option>
                       </select>
                   </div>
       
@@ -344,12 +352,13 @@
           
       
           <div class="copyright">
-              &copy; 2024 Waifuspin.com | Tous Droits Réservés.
+              &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
           </div>
           </footer>
+    
     </main>
 
-    <script src="/fr/dashboard/dashboard.js"></script>
+    <script src="/jpn/dashboard/dashboard.js"></script>
     <script src="/js/loading-cursor.js"></script>
     <script src="/js/cookie.js"></script>
 </body>

@@ -113,7 +113,7 @@ function updateSimulationChart(results) {
         data: {
             labels: Array.from({ length: results.length }, (_, i) => i),
             datasets: [{
-                label: 'Le bankroll au fil du temps',
+                label: 'バンクロールの経年変化',
                 data: results,
                 borderColor: 'rgb(61, 106, 255)',
                 tension: 0.4,

@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			setTimeout(() => {
 					isLogin = !isLogin;
-					formTitle.textContent = isLogin ? 'Bon retour' : 'Créer un compte';
-					toggleText.firstChild.textContent = isLogin ? "Vous n'avez pas encore de compte? " : 'Vous avez déjà un compte? ';
-					toggleBtn.textContent = isLogin ? "S'inscrire" : "Se connecter";
-					submitBtn.textContent = isLogin ? "Se connecter" : "S'inscrire";
+					formTitle.textContent = isLogin ? 'おかえりなさい' : 'アカウントの作成';
+					toggleText.firstChild.textContent = isLogin ? "まだアカウントをお持ちでないですか？" : 'すでにアカウントをお持ちですか？ ';
+					toggleBtn.textContent = isLogin ? "登録する" : "ログイン";
+					submitBtn.textContent = isLogin ? "ログイン" : "登録する";
 					nameInput.style.display = isLogin ? 'none' : 'block';
 					
 					formContainer.classList.remove('animating');
@@ -103,32 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			input.addEventListener('blur', () => {
 					input.parentElement.style.transform = 'scale(1)';
 			});
-	});
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-	const banner = document.getElementById('cookie-banner');
-
-
-	if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
-			banner.style.display = 'none';
-	}
-
-	function hideBanner() {
-			banner.classList.add('hidden');
-			setTimeout(() => {
-					banner.style.display = 'none';
-			}, 500); 
-	}
-
-	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
-			hideBanner();
-	});
-
-	document.getElementById('decline-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365); 
-			hideBanner();
 	});
 });
 

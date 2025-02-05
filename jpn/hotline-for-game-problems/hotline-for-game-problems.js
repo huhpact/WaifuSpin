@@ -6,48 +6,48 @@ AOS.init({
 
 const quizQuestions = [
 	{
-			question: "Combien de fois vous arrive-t-il de jouer plus longtemps que prévu?",
+			question: "予定より長くプレーすることはよくありますか？",
 			options: [
-					"Jamais",
-					"Parfois",
-					"Souvent",
-					"Presque toujours"
+					"決して",
+					"時々",
+					"しばしば",
+					"ほとんど常に"
 			]
 	},
 	{
-			question: "Avez-vous déjà caché votre activité de joueur à d'autres personnes?",
+			question: "ギャンブルを他人に隠したことがありますか？",
 			options: [
-					"Jamais",
-					"Rarement",
-					"Parfois",
-					"Souvent"
+					"決して",
+					"めったにない",
+					"時々",
+					"しばしば"
 			]
 	},
 	{
-			question: "Combien de fois dépensez-vous plus que vous ne pouvez vous le permettre pour des jeux?",
+			question: "余裕のないほどゲームに費やすことはよくある？",
 			options: [
-					"Jamais",
-					"Occasionnellement",
-					"Fréquemment",
-					"Très fréquemment"
+					"決して",
+					"時々",
+					"頻繁に",
+					"非常に頻繁に"
 			]
 	},
 	{
-			question: "Vous sentez-vous mal à l'aise lorsque vous essayez de réduire votre consommation de jeux?",
+			question: "ゲームを減らそうとすることに抵抗を感じますか？",
 			options: [
-					"Pas du tout",
-					"Légèrement",
-					"Modérément",
-					"Sévèrement"
+					"まったく",
+					"わずかに",
+					"ほどほどに",
+					"ひどく"
 			]
 	},
 	{
-			question: "Le jeu vous a-t-il déjà fait manquer des échéances ou des rendez-vous importants?",
+			question: "ギャンブルのせいで、重要な締め切りや約束を逃したことはありますか？",
 			options: [
-					"Jamais",
-					"Une ou deux fois",
-					"Plusieurs fois",
-					"Fréquemment"
+					"決して",
+					"一度か二度",
+					"数回",
+					"頻繁に"
 			]
 	}
 ];
@@ -89,8 +89,8 @@ function showQuestion() {
 					</div>
 			</div>
 			<div class="quiz-navigation">
-					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">Précédent</button>' : ''}
-					<button onclick="nextQuestion()" class="primary-button">Suivant</button>
+					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">前へ</button>' : ''}
+					<button onclick="nextQuestion()" class="primary-button">次のページ</button>
 			</div>
 	`;
 	quizContent.innerHTML = html;
@@ -105,7 +105,7 @@ function selectOption(index) {
 
 function nextQuestion() {
 	if (typeof answers[currentQuestion] === 'undefined') {
-			alert('Veuillez sélectionner une option avant de continuer');
+			alert('続行する前にオプションを選択してください');
 			return;
 	}
 	currentQuestion++;
@@ -124,16 +124,16 @@ function showResults() {
 
 	switch(riskLevel) {
 			case 'low':
-					message = "Vos habitudes de jeu semblent être sous contrôle.";
-					recommendations = "Continuez à surveiller votre temps de jeu et à maintenir des limites saines.";
+					message = "あなたのギャンブル癖はコントロールできているようだ。";
+					recommendations = "プレー時間を監視し、健康的な制限を維持し続ける。";
 					break;
 			case 'moderate':
-					message = "Vous risquez de développer des habitudes de jeu problématiques.";
-					recommendations = "Envisagez de fixer des limites plus strictes et de suivre vos dépenses liées aux jeux.";
+					message = "ギャンブル依存症になる危険性があります。";
+					recommendations = "限度額を厳しく設定し、ギャンブルの出費を記録することを検討してください。";
 					break;
 			case 'high':
-					message = "Vos réponses indiquent des préoccupations potentielles liées aux jeux.";
-					recommendations = "Nous vous recommandons vivement de contacter notre équipe d'assistance pour obtenir une aide personnalisée.";
+					message = "あなたの回答は、ゲームに関する潜在的な懸念を示しています。";
+					recommendations = "弊社サポートチームまでお問い合わせください。";
 					break;
 	}
 
@@ -143,8 +143,8 @@ function showResults() {
 					<p>${message}</p>
 					<p class="recommendations">${recommendations}</p>
 					<div class="quiz-navigation">
-							<button onclick="closeQuiz()" class="primary-button">Fermer</button>
-							<button onclick="startChat()" class="secondary-button">S'adresser à l'assistance</button>
+							<button onclick="closeQuiz()" class="primary-button">閉じる</button>
+							<button onclick="startChat()" class="secondary-button">お問い合わせ</button>
 					</div>
 			</div>
 	`;
@@ -168,7 +168,7 @@ window.addEventListener('click', (e) => {
 });
 
 function startChat() {
-	alert("Se connecter à l'assistance en direct...");
+	alert("ライブサポートに接続...");
 }
 
 document.querySelectorAll('button').forEach(button => {
