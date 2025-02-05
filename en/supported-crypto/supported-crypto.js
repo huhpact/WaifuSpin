@@ -52,7 +52,7 @@ function createParticles() {
 function createTransactionFeed() {
 	const feed = document.querySelector('.transaction-feed');
 	const currencies = ['BTC', 'ETH', 'SOL', 'XRP'];
-	const types = ['Depôt', 'Retrait', 'Conversion'];
+	const types = ['Deposit', 'Withdrawal', 'Conversion'];
 
 	function createTransaction() {
 			const transaction = document.createElement('div');

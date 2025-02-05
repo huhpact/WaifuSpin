@@ -6,48 +6,48 @@ AOS.init({
 
 const quizQuestions = [
 	{
-			question: "Combien de fois vous arrive-t-il de jouer plus longtemps que prévu?",
+			question: "How often do you play longer than planned?",
 			options: [
-					"Jamais",
-					"Parfois",
-					"Souvent",
-					"Presque toujours"
+					"Never",
+					"Sometimes",
+					"Often",
+					"Almost always"
 			]
 	},
 	{
-			question: "Avez-vous déjà caché votre activité de joueur à d'autres personnes?",
+			question: "Have you ever hidden your gaming activity from others?",
 			options: [
-					"Jamais",
-					"Rarement",
-					"Parfois",
-					"Souvent"
+					"Never",
+					"Rarely",
+					"Sometimes",
+					"Often"
 			]
 	},
 	{
-			question: "Combien de fois dépensez-vous plus que vous ne pouvez vous le permettre pour des jeux?",
+			question: "How often do you spend more than you can afford on games?",
 			options: [
-					"Jamais",
-					"Occasionnellement",
-					"Fréquemment",
-					"Très fréquemment"
+					"Never",
+					"Occasionally",
+					"Frequently",
+					"Very frequently"
 			]
 	},
 	{
-			question: "Vous sentez-vous mal à l'aise lorsque vous essayez de réduire votre consommation de jeux?",
+			question: "Do you feel uncomfortable when you try to reduce your gaming time?",
 			options: [
-					"Pas du tout",
-					"Légèrement",
-					"Modérément",
-					"Sévèrement"
+					"Not at all",
+					"Slightly",
+					"Moderately",
+					"Severely"
 			]
 	},
 	{
-			question: "Le jeu vous a-t-il déjà fait manquer des échéances ou des rendez-vous importants?",
+			question: "Has gaming ever caused you to miss important deadlines or appointments?",
 			options: [
-					"Jamais",
-					"Une ou deux fois",
-					"Plusieurs fois",
-					"Fréquemment"
+					"Never",
+					"Once or twice",
+					"Several times",
+					"Frequently"
 			]
 	}
 ];
@@ -89,8 +89,8 @@ function showQuestion() {
 					</div>
 			</div>
 			<div class="quiz-navigation">
-					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">Précédent</button>' : ''}
-					<button onclick="nextQuestion()" class="primary-button">Suivant</button>
+					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">Previous</button>' : ''}
+					<button onclick="nextQuestion()" class="primary-button">Next</button>
 			</div>
 	`;
 	quizContent.innerHTML = html;
@@ -105,7 +105,7 @@ function selectOption(index) {
 
 function nextQuestion() {
 	if (typeof answers[currentQuestion] === 'undefined') {
-			alert('Veuillez sélectionner une option avant de continuer');
+			alert('Please select an option before continuing');
 			return;
 	}
 	currentQuestion++;
@@ -124,27 +124,27 @@ function showResults() {
 
 	switch(riskLevel) {
 			case 'low':
-					message = "Vos habitudes de jeu semblent être sous contrôle.";
-					recommendations = "Continuez à surveiller votre temps de jeu et à maintenir des limites saines.";
+					message = "Your gaming habits seem to be under control.";
+					recommendations = "Continue to monitor your gaming time and maintain healthy limits.";
 					break;
 			case 'moderate':
-					message = "Vous risquez de développer des habitudes de jeu problématiques.";
-					recommendations = "Envisagez de fixer des limites plus strictes et de suivre vos dépenses liées aux jeux.";
+					message = "You are at risk of developing problematic gaming habits.";
+					recommendations = "Consider setting stricter limits and tracking your gaming-related expenses.";
 					break;
 			case 'high':
-					message = "Vos réponses indiquent des préoccupations potentielles liées aux jeux.";
-					recommendations = "Nous vous recommandons vivement de contacter notre équipe d'assistance pour obtenir une aide personnalisée.";
+					message = "Your responses indicate potential gaming-related concerns.";
+					recommendations = "We strongly recommend contacting our support team for personalized help.";
 					break;
 	}
 
 	quizContent.innerHTML = `
 			<div class="quiz-results">
-					<h3>Résultats de l'évaluation</h3>
+					<h3>Assessment Results</h3>
 					<p>${message}</p>
 					<p class="recommendations">${recommendations}</p>
 					<div class="quiz-navigation">
-							<button onclick="closeQuiz()" class="primary-button">Fermer</button>
-							<button onclick="startChat()" class="secondary-button">S'adresser à l'assistance</button>
+							<button onclick="closeQuiz()" class="primary-button">Close</button>
+							<button onclick="startChat()" class="secondary-button">Contact Support</button>
 					</div>
 			</div>
 	`;
@@ -168,7 +168,7 @@ window.addEventListener('click', (e) => {
 });
 
 function startChat() {
-	alert("Se connecter à l'assistance en direct...");
+	alert("Connecting to live support...");
 }
 
 document.querySelectorAll('button').forEach(button => {

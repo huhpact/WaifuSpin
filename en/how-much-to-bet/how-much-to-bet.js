@@ -52,7 +52,7 @@ calculateBtn.addEventListener('click', () => {
     const riskPercentage = parseFloat(riskInput.value);
     
     if (isNaN(bankroll) || bankroll <= 0) {
-        alert('Veuillez saisir un montant de bankroll valide');
+        alert('Please enter an amount of valid bankroll');
         return;
     }
 
@@ -113,7 +113,7 @@ function updateSimulationChart(results) {
         data: {
             labels: Array.from({ length: results.length }, (_, i) => i),
             datasets: [{
-                label: 'Le bankroll au fil du temps',
+                label: 'Bankroll over time',
                 data: results,
                 borderColor: 'rgb(61, 106, 255)',
                 tension: 0.4,

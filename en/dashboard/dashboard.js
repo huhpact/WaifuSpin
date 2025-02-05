@@ -124,12 +124,12 @@ function handleWithdrawal(e) {
     const address = document.getElementById('walletAddress').value;
 
     if (amount > userBalances[selectedCrypto]) {
-        showNotification('Bilan insuffisant!', 'error');
+        showNotification('insuffiant funds', 'error');
         return;
     }
 
     if (!isValidAddress(address)) {
-        showNotification('Adresse invalide du portefeuille!', 'error');
+        showNotification('Invalid wallet adress', 'error');
         return;
     }
 
@@ -140,7 +140,7 @@ function handleWithdrawal(e) {
     e.target.reset();
 }
 
-function showNotification(message, type = 'succès') {
+function showNotification(message, type = 'Success') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;

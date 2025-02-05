@@ -1,158 +1,134 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const formContainer = document.querySelector('.form-container');
-	const formTitle = document.getElementById('formTitle');
-	const authForm = document.getElementById('authForm');
-	const toggleBtn = document.querySelector('.toggle-btn');
-	const toggleText = document.querySelector('.toggle-text');
-	const submitBtn = document.querySelector('.submit-btn span');
-	const nameInput = document.querySelector('.name-input');
-	let isLogin = true;
+	const formulaireConnexion = document.querySelector('.form-box.login');
+	const formulaireInscription = document.querySelector('.form-box.register');
+	const boutonsSwitch = document.querySelectorAll('.switch-btn');
+	const togglesMotDePasse = document.querySelectorAll('.toggle-password');
+	const formulaires = document.querySelectorAll('form');
 
-	
-	const stats = [
-			{ element: document.querySelector('.stat-number'), target: 3, suffix: 'k+' },
-			{ element: document.querySelectorAll('.stat-number')[1], target: 10, suffix: '+' },
-			{ element: document.querySelectorAll('.stat-number')[2], target: 24, suffix: '/7' }
-	];
-	
-	let animated = false;
-	
-	function animateNumber(element, target, duration = 2000) {
-			const start = 0;
-			const increment = target / (duration / 16);
-			let current = start;
-			
-			const updateNumber = () => {
-					current += increment;
-					if (current >= target) {
-							element.textContent = target.toString();
-							return;
-					}
+	boutonsSwitch.forEach(btn => {
+			btn.addEventListener('click', (e) => {
+					e.preventDefault();
+					const cible = btn.dataset.target;
 					
-					if (Number.isInteger(target)) {
-							element.textContent = Math.floor(current).toString();
+					if (cible === 'register') {
+							formulaireConnexion.classList.remove('active');
+							formulaireConnexion.classList.add('inactive');
+							formulaireInscription.classList.add('active');
+							formulaireInscription.classList.remove('inactive');
 					} else {
-							element.textContent = current.toFixed(1);
+							formulaireInscription.classList.remove('active');
+							formulaireInscription.classList.add('inactive');
+							formulaireConnexion.classList.add('active');
+							formulaireConnexion.classList.remove('inactive');
 					}
+			});
+	});
+
+	formulaires.forEach(formulaire => {
+			formulaire.addEventListener('submit', async (e) => {
+					e.preventDefault();
 					
-					requestAnimationFrame(updateNumber);
-			};
-			
-			updateNumber();
-	}
-	
-	function isInViewport(element) {
-			const rect = element.getBoundingClientRect();
-			return (
-					rect.top >= 0 &&
-					rect.left >= 0 &&
-					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-					rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			);
-	}
-	
-	function checkAndAnimateStats() {
-			if (animated) return;
-			
-			const statsSection = document.querySelector('.stats');
-			if (isInViewport(statsSection)) {
-					stats.forEach(stat => {
-							animateNumber(stat.element, stat.target);
-							if (stat.suffix) {
-									setTimeout(() => {
-											stat.element.textContent += stat.suffix;
-									}, 2000);
-							}
+					if (validerFormulaire(formulaire)) {
+							const boutonSubmit = formulaire.querySelector('.submit-btn');
+							boutonSubmit.classList.add('loading');
+
+							await new Promise(resolve => setTimeout(resolve, 2000));
+							
+							boutonSubmit.classList.remove('loading');
+							afficherSucces(formulaire);
+					}
+			});
+
+			const inputs = formulaire.querySelectorAll('input');
+			inputs.forEach(input => {
+					input.addEventListener('input', () => {
+							validerInput(input);
 					});
-					animated = true;
-					window.removeEventListener('scroll', checkAndAnimateStats);
-			}
-	}
-	
-	window.addEventListener('scroll', checkAndAnimateStats);
-	checkAndAnimateStats();
 
-	const toggleForm = () => {
-			formContainer.classList.add('animating');
+					input.addEventListener('blur', () => {
+							validerInput(input);
+					});
+			});
+	});
+
+	function validerFormulaire(formulaire) {
+			let estValide = true;
+			const inputs = formulaire.querySelectorAll('input');
 			
-			setTimeout(() => {
-					isLogin = !isLogin;
-					formTitle.textContent = isLogin ? 'Bon retour' : 'Créer un compte';
-					toggleText.firstChild.textContent = isLogin ? "Vous n'avez pas encore de compte? " : 'Vous avez déjà un compte? ';
-					toggleBtn.textContent = isLogin ? "S'inscrire" : "Se connecter";
-					submitBtn.textContent = isLogin ? "Se connecter" : "S'inscrire";
-					nameInput.style.display = isLogin ? 'none' : 'block';
+			inputs.forEach(input => {
+					if (!validerInput(input)) {
+							estValide = false;
+					}
+			});
+
+			if (formulaire.id === 'registerForm') {
+					const motDePasse = formulaire.querySelector('input[type="password"]');
+					const confirmerMotDePasse = formulaire.querySelectorAll('input[type="password"]')[1];
 					
-					formContainer.classList.remove('animating');
-			}, 300);
-	};
+					if (motDePasse.value !== confirmerMotDePasse.value) {
+							afficherErreur(confirmerMotDePasse, 'Les mots de passe ne correspondent pas');
+							estValide = false;
+					}
+			}
 
-	toggleBtn.addEventListener('click', toggleForm);
+			return estValide;
+	}
 
-	authForm.addEventListener('submit', (e) => {
-			e.preventDefault();
-			console.log('Form submitted:', isLogin ? 'Login' : 'Sign Up');
-	});
-
-	const inputs = document.querySelectorAll('input');
-	inputs.forEach(input => {
-			input.addEventListener('focus', () => {
-					input.parentElement.style.transform = 'scale(1.02)';
-			});
+	function validerInput(input) {
+			const champInput = input.parentElement;
 			
-			input.addEventListener('blur', () => {
-					input.parentElement.style.transform = 'scale(1)';
-			});
-	});
-});
+			champInput.classList.remove('error');
+			const erreurExistante = champInput.querySelector('.error-message');
+			if (erreurExistante) {
+					erreurExistante.remove();
+			}
 
-document.addEventListener('DOMContentLoaded', function () {
-	const banner = document.getElementById('cookie-banner');
+			if (input.value.trim() === '') {
+					afficherErreur(input, 'Ce champ est requis');
+					return false;
+			}
 
+			if (input.type === 'email' && !estEmailValide(input.value)) {
+					afficherErreur(input, 'Veuillez entrer une adresse email valide');
+					return false;
+			}
 
-	if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
-			banner.style.display = 'none';
+			if (input.type === 'password' && input.value.length < 6) {
+					afficherErreur(input, 'Le mot de passe doit contenir au moins 6 caractères');
+					return false;
+			}
+
+			return true;
 	}
 
-	function hideBanner() {
-			banner.classList.add('hidden');
+	function afficherErreur(input, message) {
+			const champInput = input.parentElement;
+			champInput.classList.add('error');
+			
+			const messageErreur = document.createElement('span');
+			messageErreur.classList.add('error-message');
+			messageErreur.textContent = message;
+			champInput.appendChild(messageErreur);
+	}
+
+	function afficherSucces(formulaire) {
+			const boutonSubmit = formulaire.querySelector('.submit-btn');
+			const contenuOriginal = boutonSubmit.innerHTML;
+			
+			boutonSubmit.innerHTML = '<i class="fas fa-check success-checkmark"></i>';
+			boutonSubmit.style.backgroundColor = '#4CAF50';
+			
 			setTimeout(() => {
-					banner.style.display = 'none';
-			}, 500); 
+					boutonSubmit.innerHTML = contenuOriginal;
+					boutonSubmit.style.backgroundColor = '';
+					formulaire.reset();
+			}, 2000);
 	}
 
-	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
-			hideBanner();
-	});
+	function estEmailValide(email) {
+			return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+	}
 
-	document.getElementById('decline-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365); 
-			hideBanner();
-	});
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector('.burger-menu');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.overlay');
-
-  const toggleSidebar = () => {
-    const isActive = sidebar.classList.contains('active');
-    sidebar.classList.toggle('active', !isActive);
-    overlay.classList.toggle('active', !isActive);
-  };
-
-  const closeSidebar = (event) => {
-    const isClickInsideSidebar = sidebar.contains(event.target);
-    const isClickOnBurger = burgerMenu.contains(event.target);
-    if (!isClickInsideSidebar && !isClickOnBurger) {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-    }
-  };
-
-  burgerMenu.addEventListener('click', toggleSidebar);
-  overlay.addEventListener('click', closeSidebar);
-  document.addEventListener('click', closeSidebar); 
+	formulaireConnexion.classList.add('active');
+	formulaireInscription.classList.add('inactive');
 });

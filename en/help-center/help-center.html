@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaifuSpin Centre d'aide - FAQ</title>
+    <title>Waifuspin Help Center - FAQ</title>
     <link rel="stylesheet" href="/css/help-center.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -24,43 +24,52 @@
 
 <div class="custom-cursor"></div>
   
-	<header>
+<header>
     <div class="header-content">
       <div class="burger-logo">
         <div class="burger-menu">
           <i class='bx bx-menu'></i>
         </div>
-        <a href="/fr/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+        <a href="/en/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
       <div class="login-reg">
-        <a href="/fr/login/login.html" class="login">Se connecter</a>
-        <a href="/fr/login/login.html"><button class="sign-up-btn">S'inscrire</button></a>
+        <a href="/en/login/login.html" class="login">Log In</a>
+        <a href="/en/login/login.html"><button class="sign-up-btn">Sign Up</button></a>
       </div>
     </div>
   </header>
   
-  <div id="cookie-banner">
-    <h4>Paramètres des cookies</h4>
-    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
-    <button id="accept-cookies">Accepter</button>
-    <button id="decline-cookies">Refuser</button>
+  <div id="cookie-banner" class="hidden">
+    <div class="cookie-content">
+        <div class="cookie-header">
+            <div class="cookie-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+            </div>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>This site uses cookies to ensure you get the best experience on our website.</p>
+        <div class="button-group">
+            <button id="decline-cookies">Decline</button>
+            <button id="accept-cookies">Accept</button>
+        </div>
+    </div>
 </div>
   
 
   <aside class="sidebar">
     <ul>
-      <li><a href="/fr/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
-      <li><a href="/fr/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affilié</a></li>
+      <li><a href="/en/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
+      <li><a href="/en/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affiliate</a></li>
       <hr>
-      <li><a href="/fr/vip/vip.html"><i class='bx bxs-trophy'></i> Club VIP</a></li>
-      <li><a href="/fr/news/news.html"><i class='bx bxs-news'></i> Nouveautés</a></li>
-      <li><a href="/fr/support/support.html"><i class='bx bx-support'></i> Service client en direct</a></li>
+      <li><a href="/en/vip/vip.html"><i class='bx bxs-trophy'></i> VIP Club</a></li>
+      <li><a href="/en/news/news.html"><i class='bx bxs-news'></i> News</a></li>
+      <li><a href="/en/support/support.html"><i class='bx bx-support'></i> Live Support</a></li>
       <li class="language-dropdown">
-        <i class='bx bx-world'></i> Langue
+        <i class='bx bx-world'></i> Language
         <ul class="dropdown">
-          <li><a href="/en/help-center/help-center.html">English</a></li>
+          <li><a href="#">English</a></li>
           <li><a href="/de/help-center/help-center.html">Deutsch</a></li>
-          <li><a href="#">Français</a></li>
+          <li><a href="/fr/help-center/help-center.html">Français</a></li>
           <li><a href="/jpn/help-center/help-center.html">日本語</a></li>
         </ul>
       </li>
@@ -68,10 +77,11 @@
   </aside>
   <div class="overlay"></div>
 
+
     <section class="hero">
         <div class="hero-content">
-            <h1>Comment pouvons-nous vous aider ?</h1>
-            <p>Trouvez les réponses à toutes vos questions sur le casino WaifuSpin. De la gestion de votre compte à la jouabilité, nous avons tout ce qu'il vous faut.</p>
+            <h1>How can we help you?</h1>
+            <p>Find answers to all your questions about WaifuSpin casino. From managing your account to gameplay, we have everything you need.</p>
         </div>
         <div class="hero-image">
             <img src="/images/anime-casino1.webp" alt="Help Center">
@@ -82,196 +92,197 @@
     </section>
 
     <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Recherche d'aide...">
+        <input type="text" class="search-bar" placeholder="Search for help...">
         <div class="search-results"></div>
     </div>
 
     <nav class="topics-nav">
         <ul class="topics-list">
-            <li><button class="topic-btn active" data-topic="account">Compte</button></li>
-            <li><button class="topic-btn" data-topic="payments">Paiements</button></li>
-            <li><button class="topic-btn" data-topic="games">Jeux</button></li>
+            <li><button class="topic-btn active" data-topic="account">Account</button></li>
+            <li><button class="topic-btn" data-topic="payments">Payments</button></li>
+            <li><button class="topic-btn" data-topic="games">Games</button></li>
             <li><button class="topic-btn" data-topic="bonus">Bonus</button></li>
-            <li><button class="topic-btn" data-topic="security">Sécurité</button></li>
-            <li><button class="topic-btn" data-topic="all">Tout afficher</button></li>
+            <li><button class="topic-btn" data-topic="security">Security</button></li>
+            <li><button class="topic-btn" data-topic="all">Show All</button></li>
         </ul>
     </nav>
 
     <div class="faq-container">
         <div class="faq-section active" data-topic="account">
             <div class="faq-item">
-                <div class="faq-question">Comment créer un compte?</div>
-                <div class="faq-answer">Cliquez sur le bouton « S'inscrire », remplissez vos coordonnées et suivez le processus de vérification.</div>
+                <div class="faq-question">How to create an account?</div>
+                <div class="faq-answer">Click on the "Sign Up" button, fill in your details, and follow the verification process.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Comment puis-je réinitialiser mon mot de passe?</div>
-                <div class="faq-answer">Veuillez contacter notre équipe de support pour réinitialiser votre mot de passe. Vous devez vérifier votre identité.</div>
+                <div class="faq-question">How can I reset my password?</div>
+                <div class="faq-answer">Please contact our support team to reset your password. You will need to verify your identity.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Comment vérifier mon compte?</div>
-                <div class="faq-answer">Soumettez votre pièce d'identité et votre justificatif de domicile à notre équipe d'assistance.</div>
+                <div class="faq-question">How to verify my account?</div>
+                <div class="faq-answer">Submit your ID and proof of address to our support team.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Puis-je avoir plusieurs comptes?</div>
-                <div class="faq-answer">Non, les comptes multiples ne sont pas autorisés. Chaque joueur ne peut avoir qu'un seul compte, car nous offrons des bonus gratuits à chaque joueur, ce qui serait injuste pour les autres joueurs.</div>
+                <div class="faq-question">Can I have multiple accounts?</div>
+                <div class="faq-answer">No, multiple accounts are not allowed. Each player can only have one account as we offer free bonuses to each player, which would be unfair to other players.</div>
             </div>
         </div>
 
         <div class="faq-section" data-topic="payments">
             <div class="faq-item">
-                <div class="faq-question">Quels sont les moyens de paiement acceptés?</div>
-                <div class="faq-answer">Vous pourrez déposer dans toutes les monnaies locales, qui seront ensuite converties en btc, eth, sol ou xrp. Pour retirer de l'argent, vous aurez besoin d'un portefeuille de crypto-monnaie.</div>
+                <div class="faq-question">What payment methods are accepted?</div>
+                <div class="faq-answer">You can deposit in all local currencies, which will then be converted to BTC, ETH, SOL, or XRP. To withdraw money, you will need a cryptocurrency wallet.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Combien de temps durent les retraits?</div>
-                <div class="faq-answer">Les retraits sont généralement traités dans les 24 heures. Les retraits de XRP sont généralement plus rapides.</div>
+                <div class="faq-question">How long do withdrawals take?</div>
+                <div class="faq-answer">Withdrawals are usually processed within 24 hours. XRP withdrawals are generally faster.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Quels sont les montants minimum et maximum des dépôts?</div>
-                <div class="faq-answer">Le dépôt minimum est de 10 $, le dépôt maximum est de 500 $ en une seule fois.</div>
+                <div class="faq-question">What are the minimum and maximum deposit amounts?</div>
+                <div class="faq-answer">The minimum deposit is $10, the maximum deposit is $500 at one time.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Y a-t-il des frais pour les dépôts ou les retraits?</div>
-                <div class="faq-answer">Nous ne facturons pas de frais, mais votre fournisseur de paiement peut avoir ses propres frais.</div>
+                <div class="faq-question">Are there any fees for deposits or withdrawals?</div>
+                <div class="faq-answer">We do not charge any fees, but your payment provider may have its own fees.</div>
             </div>
         </div>
 
         <div class="faq-section" data-topic="games">
             <div class="faq-item">
-                <div class="faq-question">Quels sont les jeux disponibles?</div>
-                <div class="faq-answer">Nous proposons des machines à sous, du blackjack, des mines et des jeux exclusifs sur le thème du waifu.</div>
+                <div class="faq-question">What games are available?</div>
+                <div class="faq-answer">We offer slots, blackjack, mines, and exclusive waifu-themed games.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Puis-je jouer gratuitement?</div>
-                <div class="faq-answer">Non.</div>
+                <div class="faq-question">Can I play for free?</div>
+                <div class="faq-answer">No.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Les jeux sont-ils équitables?</div>
-                <div class="faq-answer">Tous les jeux utilisent des générateurs de nombres aléatoires certifiés et font l'objet d'audits réguliers pour en vérifier l'équité. voir : <a href="/fr/fairness/fairness.html">équité</a></div>
+                <div class="faq-question">Are the games fair?</div>
+                <div class="faq-answer">All games use certified random number generators and are regularly audited for fairness. See: <a href="/en/fairness/fairness.html">fairness</a></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Quels sont les jeux les plus populaires?</div>
-                <div class="faq-answer">Nos jeux les plus populaires sont les machines à sous, le Blackjack Anime et les jeux de mines.</div>
+                <div class="faq-question">What are the most popular games?</div>
+                <div class="faq-answer">Our most popular games are slots, Anime Blackjack, and mines games.</div>
             </div>
         </div>
 
         <div class="faq-section" data-topic="bonus">
             <div class="faq-item">
-                <div class="faq-question">Comment puis-je réclamer mon bonus de bienvenue ?</div>
-                <div class="faq-answer">Le bonus de bienvenue est automatiquement crédité après votre premier dépôt, lorsque vous activez nos codes promotionnels.</div>
+                <div class="faq-question">How can I claim my welcome bonus?</div>
+                <div class="faq-answer">The welcome bonus is automatically credited after your first deposit when you activate our promo codes.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Quelles sont les exigences de mise?</div>
-                <div class="faq-answer">La condition de mise standard est de 35x le montant du bonus.</div>
+                <div class="faq-question">What are the wagering requirements?</div>
+                <div class="faq-answer">The standard wagering requirement is 35x the bonus amount.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Offrez-vous des tours gratuits?</div>
-                <div class="faq-answer">Oui, nous offrons régulièrement des tours gratuits dans le cadre de promotions et du programme VIP.</div>
+                <div class="faq-question">Do you offer free spins?</div>
+                <div class="faq-answer">Yes, we regularly offer free spins as part of promotions and the VIP program.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Comment fonctionne le programme VIP?</div>
-                <div class="faq-answer">Veuillez consulter le lien suivant pour en savoir plus sur notre programme VIP: <a href="/fr/vip/vip.html">Site VIP</a></div>
+                <div class="faq-question">How does the VIP program work?</div>
+                <div class="faq-answer">Please check the following link to learn more about our VIP program: <a href="/en/vip/vip.html">VIP Site</a></div>
             </div>
         </div>
 
         <div class="faq-section" data-topic="security">
             <div class="faq-item">
-                <div class="faq-question">Mes données sont-elles sécurisées?</div>
-                <div class="faq-answer">Oui, vos données de paiement sont cryptées, mais vos données de connexion peuvent être révélées dans le code ou simplement accessibles.</div>
+                <div class="faq-question">Is my data secure?</div>
+                <div class="faq-answer">Yes, your payment data is encrypted, but your login data may be revealed in the code or simply accessible.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Comment prévenir la fraude?</div>
-                <div class="faq-answer">Nous ne faisons pas.</div>
+                <div class="faq-question">How to prevent fraud?</div>
+                <div class="faq-answer">We do not.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Quels outils de jeu responsable proposez-vous?</div>
-                <div class="faq-answer">Nous proposons des limites de dépôt, l'auto-exclusion et des contrôles de réalité pour promouvoir le jeu responsable.</div>
+                <div class="faq-question">What responsible gaming tools do you offer?</div>
+                <div class="faq-answer">We offer deposit limits, self-exclusion, and reality checks to promote responsible gaming.</div>
             </div>
         </div>
     </div>
 
-		<footer>
-      <div class="logo-footer1">
+    <footer>
+        <div class="logo-footer1">
         <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-
-    <div class="container">
-
+      </div>
+    
+      <div class="container">
+    
         <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
-            </ul>
+          <h4>Casino</h4>
+          <ul>
+            <li><a href="/en/casino-games/casino-games.html">Casino Games</a></li>
+            <li><a href="/en/slots-guide/slots-guide.html">Slots</a></li>
+            <li><a href="/en/live-casino/live-casino.html">Live Casino</a></li>
+            <li><a href="/en/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
+            <li><a href="/en/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
+            <li><a href="/en/provider/provider.html">Providers</a></li>
+            <li><a href="/en/promotions-and-competitions/promotions-and-competitions.html">Promotions & Competitions</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
-            </ul>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/en/help-center/help-center.html">Help Center</a></li>
+            <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">Hotline for Game Problems</a></li>
+            <li><a href="/en/support/support.html">Live Customer Service</a></li>
+            <li><a href="/en/self-exclusion/self-exclusion.html">Self-Exclusion</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-            <h4>À propos de nous</h4>
-            <ul>
-                <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
-            </ul>
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="/en/vip/vip.html">VIP Club</a></li>
+            <li><a href="/en/affiliates/affiliates.html">Affiliate</a></li>
+            <li><a href="/en/privacy-policy/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/en/lbc-policy/lbc-policy.html">LBC Policy</a></li>
+            <li><a href="/en/terms-of-use/terms-of-use.html">Terms of Use</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-            <h4>Informations sur les paiements</h4>
-            <ul>
-                <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
-            </ul>
+          <h4>Payment Information</h4>
+          <ul>
+            <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">Deposits & Withdrawals</a></li>
+            <li><a href="/en/guide-to-currencies/guide-to-currencies.html">Currency Guide</a></li>
+            <li><a href="/en/guide-to-crypto/guide-to-crypto.html">Crypto Guide</a></li>
+            <li><a href="/en/supported-crypto/supported-crypto.html">Supported Crypto</a></li>
+            <li><a href="/en/how-much-to-bet/how-much-to-bet.html">How Much to Bet</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Décimale</option>
-                    <option value="fractional">Fractionnelle</option>
-                    <option value="american">Américaine</option>
-                </select>
-            </div>
-
+    
+          <div class="language-selector">
+            <select>
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+    
+          <div class="currency-selector">
+            <select>
+              <option value="decimal">Decimal</option>
+              <option value="fractional">Fractional</option>
+              <option value="american">American</option>
+            </select>
+          </div>
+    
           
-            <div class="btc-rate">1 BTC = Loading...</div>
+          <div class="btc-rate">1 BTC = Loading...</div>
         </div>
-    </div>
-    <hr>
+      </div>
+      <hr>
+      
+    
+      <div class="copyright">
+        &copy; 2024 Waifuspin.com | All Rights Reserved.
+      </div>
+      </footer>
     
 
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
-    </div>
-    </footer>
-
-    <script src="/fr/help-center/help-center.js"></script>
+    <script src="/en/help-center/help-center.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>

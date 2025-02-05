@@ -119,7 +119,7 @@
       flex-direction: column;
   }
   
-  button {
+  #cookie-banner button {
       width: 100%;
   }
 

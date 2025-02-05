@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -8,12 +8,12 @@
   <meta name="application-name" content="WaifuSpin" />
   <meta property="og:url" content="https://waifuspin.com" />
   <meta property="og:site_name" content="WaifuSpin Paradise" />
-  <title>WaifuSpin Paradise - Jouez et Pariez en ligne</title>
+  <title>Waifuspin Paradise - Play and bet online</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
   <link rel="stylesheet" href="/css/index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-	<script src="/fr/index/index.js"></script>
+	<script src="/en/index/index.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="1009685799218-rq6p52ng2h171st5bh65uba76uaiieac.apps.googleusercontent.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,6 +22,7 @@
   <script type="module" src="/js/time-bar-section.js"></script>
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/cookie.css">
+  <script src="/js/cookie.js"></script>
   <script src="/js/loading-cursor.js"></script>
 <body>
   <div class="stars"></div>
@@ -32,261 +33,263 @@
 
 <div class="custom-cursor"></div>
   
-	<header>
-    <div class="header-content">
-      <div class="burger-logo">
-        <div class="burger-menu">
-          <i class='bx bx-menu'></i>
-        </div>
-        <a href="#"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+<header>
+  <div class="header-content">
+    <div class="burger-logo">
+      <div class="burger-menu">
+        <i class='bx bx-menu'></i>
       </div>
-      <div class="login-reg">
-        <a href="/fr/login/login.html" class="login">Se connecter</a>
-        <a href="/fr/login/login.html"><button class="sign-up-btn">S'inscrire</button></a>
-      </div>
+      <a href="#"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
     </div>
-  </header>
-  
-  <div id="cookie-banner">
-    <h4>Paramètres des cookies</h4>
-    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
-    <button id="accept-cookies">Accepter</button>
-    <button id="decline-cookies">Refuser</button>
-</div>
-  
+    <div class="login-reg">
+      <a href="/en/login/login.html" class="login">Log In</a>
+      <a href="/en/login/login.html"><button class="sign-up-btn">Sign Up</button></a>
+    </div>
+  </div>
+</header>
 
-  <aside class="sidebar">
-    <ul>
-      <li><a href="/fr/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
-      <li><a href="/fr/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affilié</a></li>
-      <hr>
-      <li><a href="/fr/vip/vip.html"><i class='bx bxs-trophy'></i> Club VIP</a></li>
-      <li><a href="/fr/news/news.html"><i class='bx bxs-news'></i> Nouveautés</a></li>
-      <li><a href="/fr/support/support.html"><i class='bx bx-support'></i> Service client en direct</a></li>
-      <li class="language-dropdown">
-        <i class='bx bx-world'></i> Langue
-        <ul class="dropdown">
-          <li><a href="/en/index/index.html">English</a></li>
-          <li><a href="/de/index/index.html">Deutsch</a></li>
-          <li><a href="#">Français</a></li>
-          <li><a href="/jpn/index/index.html">日本語</a></li>
-        </ul>
-      </li>
-    </ul>
-  </aside>
-  <div class="overlay"></div>
+<div id="cookie-banner" class="hidden">
+  <div class="cookie-content">
+      <div class="cookie-header">
+          <div class="cookie-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+          </div>
+          <h4>Cookie Settings</h4>
+      </div>
+      <p>This site uses cookies to ensure you get the best experience on our website.</p>
+      <div class="button-group">
+          <button id="decline-cookies">Decline</button>
+          <button id="accept-cookies">Accept</button>
+      </div>
+  </div>
+</div>
+
+
+<aside class="sidebar">
+  <ul>
+    <li><a href="/en/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
+    <li><a href="/en/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affiliate</a></li>
+    <hr>
+    <li><a href="/en/vip/vip.html"><i class='bx bxs-trophy'></i> VIP Club</a></li>
+    <li><a href="/en/news/news.html"><i class='bx bxs-news'></i> News</a></li>
+    <li><a href="/en/support/support.html"><i class='bx bx-support'></i> Live Support</a></li>
+    <li class="language-dropdown">
+      <i class='bx bx-world'></i> Language
+      <ul class="dropdown">
+        <li><a href="#">English</a></li>
+        <li><a href="/de/index/index.html">Deutsch</a></li>
+        <li><a href="/fr/index/index.html">Français</a></li>
+        <li><a href="/jpn/index/index.html">日本語</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+<div class="overlay"></div>
 
   <section class="hero-section">
     <div class="grid-overlay"></div>
     <div class="hero">
-        <div class="hero-content">
-            <h1 class="hero-h1">Là où les rêves d'anime rencontrent la fortune</h1>
-            <p class="hero-p">Vivez l'aventure du casino le plus kawaii avec des machines à sous et des jeux exclusifs sur le thème des dessins animés. Rejoignez notre communauté de joueurs qui ont découvert une nouvelle façon de tourner!</p>
-            <a href="/fr/login/login.html"><button class="sign-up-btn">Commencez votre voyage</button></a>
-        </div>
-        <div class="hero-image">
-            <img src="/images/main-pic-index.png" alt="main-pic-index">
-        </div>
+      <div class="hero-content">
+        <h1 class="hero-h1">Where Anime Dreams Meet Fortune</h1>
+        <p class="hero-p">Experience the most kawaii casino adventure with exclusive anime-themed slots and games. Join our community of players who have discovered a new way to spin!</p>
+        <a href="/en/login/login.html"><button class="sign-up-btn">Start Your Journey</button></a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/main-pic-index.png" alt="main-pic-index">
+      </div>
     </div>
-</section>
-   
-    <div class="banner">
-      <br>
-			<div class="banner-wrapper">
-					<img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
-					<img src="/images/Logo_da_Rolex.png" alt="Rolex">
-					<img src="/images/Kick_logo.svg.png" alt="Kick">
-					<img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
-					<img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
-					<img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
-					<img src="/images/Wirecard_Logo.svg" alt="Wirecard">
-					<img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
-					<img src="/images/Logo_da_Rolex.png" alt="Rolex">
-					<img src="/images/Kick_logo.svg.png" alt="Kick">
-					<img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
-					<img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
-					<img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
-					<img src="/images/Wirecard_Logo.svg" alt="Wirecard">
-			</div>
-	</div>
-	
-<section class="payment">
-	<div class="payment-img">
-			<img src="/images/ezgif-4-dd88bfb6f8.gif" alt="Crypto">
-	</div>
-	<div class="payment-text">
-			<h2>Tranquillité d'esprit avec plusieurs cryptomonnaies et devises locales</h2>
-			<p>Faites l'expérience de dépôts sécurisés et de retraits instantanés dans 20 cryptomonnaies et 7 devises locales. Tout cela sans minimums, avec des méthodes de paiement flexibles et un coffre-fort en ligne sécurisé.</p>
-	</div>
-</section>
+  </section>
 
-
-
-<section class="vip">
-  <div class="vip-section">
-    <div class="vip-header">
-      <h1>
-        Profitez des meilleurs cotes avec des jeux offrant jusqu'à 99,5 % de retour au joueur
-      </h1>
+  <div class="banner">
+    <br>
+    <div class="banner-wrapper">
+      <img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+      <img src="/images/Logo_da_Rolex.png" alt="Rolex">
+      <img src="/images/Kick_logo.svg.png" alt="Kick">
+      <img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+      <img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+      <img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
+      <img src="/images/Wirecard_Logo.svg" alt="Wirecard">
+      <img src="/images/Seal_of_the_United_States_Department_of_Justice.svg.png" alt="US Department of Justice">
+      <img src="/images/Logo_da_Rolex.png" alt="Rolex">
+      <img src="/images/Kick_logo.svg.png" alt="Kick">
+      <img src="/images/Le-Rassemblement-National-Emblem.png" alt="Rassemblement National">
+      <img src="/images/Trump_MAGA_logo_2024.svg.png" alt="MAGA 2024">
+      <img src="/images/Dubai_official_logo.svg.png" alt="Dubai">
+      <img src="/images/Wirecard_Logo.svg" alt="Wirecard">
     </div>
+  </div>
 
+  <section class="payment">
+    <div class="payment-img">
+      <img src="/images/ezgif-4-dd88bfb6f8.gif" alt="Crypto">
+    </div>
+    <div class="payment-text">
+      <h2>Peace of Mind with Multiple Cryptocurrencies and Local Currencies</h2>
+      <p>Experience secure deposits and instant withdrawals in 20 cryptocurrencies and 7 local currencies. All with no minimums, flexible payment methods, and a secure online vault.</p>
+    </div>
+  </section>
 
-    <div id="app">
-      <div class="vip-container">
-        <div class="vip-features">
-          <div class="vip-feature-box" data-index="0">
-            <h2>Boosts de bonus</h2>
-            <p class="vip-feature-description">Les boosts hebdomadaires et les bonus mensuels signifient que vous serez récomposé à mesure que vous jouez aux meilleurs jeux de casino et pariez sur vos sports préférés.</p>
-            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+  <section class="vip">
+    <div class="vip-section">
+      <div class="vip-header">
+        <h1>
+          Enjoy the Best Odds with Games Offering Up to 99.5% Return to Player
+        </h1>
+      </div>
+
+      <div id="app">
+        <div class="vip-container">
+          <div class="vip-features">
+            <div class="vip-feature-box" data-index="0">
+              <h2>Bonus Boosts</h2>
+              <p class="vip-feature-description">Weekly boosts and monthly bonuses mean you'll be rewarded as you play the best casino games and bet on your favorite sports.</p>
+              <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+            </div>
+            <div class="vip-feature-box" data-index="1">
+              <h2>Raffles & Races</h2>
+              <p class="vip-feature-description">Enter the raffle to win 75k in BTC every week; And win big in daily races.</p>
+              <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+            </div>
+            <div class="vip-feature-box" data-index="2">
+              <h2>Promotions</h2>
+              <p class="vip-feature-description">Make the most of our casino promotions and sports betting bonuses that are updated weekly.</p>
+              <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+            </div>
+            <div class="vip-feature-box" data-index="3">
+              <h2>High Return to Player (RTP)</h2>
+              <p class="vip-feature-description">With enhanced RTP percentages, you have a chance to win big every time you play.</p>
+              <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+            </div>
           </div>
-          <div class="vip-feature-box" data-index="1">
-            <h2>Tombolas & Courses</h2>
-            <p class="vip-feature-description">Participez au tirage au sort pour gagner 75k in BTC chaque semaine; Et gagner gros lors des courses quotidiennes.</p>
-            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
+          <div class="vip-image-container">
+            <video src="/videos/bonus.webm" autoplay loop muted playsinline alt="Feature 1" class="vip-feature-image active" data-index="0"></video>
+            <video src="/videos/promotions.webm" autoplay loop muted playsinline alt="Feature 2" class="vip-feature-image" data-index="1"></video>
+            <video src="/videos/raffles.webm" autoplay loop muted playsinline alt="Feature 3" class="vip-feature-image" data-index="2"></video>
+            <video src="/videos/rtp.webm" autoplay loop muted playsinline alt="Feature 4" class="vip-feature-image" data-index="3"></video>
           </div>
-          <div class="vip-feature-box" data-index="2">
-            <h2>Promotions</h2>
-            <p class="vip-feature-description">Profitez au maximum de nos promotions de casino et de nos bonus de paris sportifs qui sont mis à jour chaque semaine.</p>
-            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
-          </div>
-          <div class="vip-feature-box" data-index="3">
-            <h2>Haut retour aux joueurs (RTP)</h2>
-            <p class="vip-feature-description">Avec des pourcentages de RTP améliorés, vous avez une chance de gagner gros à chaque fois que vous jouez.</p>
-            <div class="vip-progress-bar"><div class="vip-progress"></div></div>
-          </div>
-        </div>
-        <div class="vip-image-container">
-          <video src="/videos/bonus.webm" autoplay loop muted playsinline alt="Feature 1" class="vip-feature-image active" data-index="0"></video>
-          <video src="/videos/promotions.webm" autoplay loop muted playsinline alt="Feature 2" class="vip-feature-image" data-index="1"></video>
-          <video src="/videos/raffles.webm" autoplay loop muted playsinline alt="Feature 3" class="vip-feature-image" data-index="2"></video>
-          <video src="/videos/rtp.webm" autoplay loop muted playsinline alt="Feature 4" class="vip-feature-image" data-index="3"></video>
         </div>
       </div>
     </div>
+  </section>
 
+  <section class="support">
+    <div class="support-container">
+      <div class="support-left">
+        <h2 id="support-heading">Our Support Team Speaks Your Language</h2>
+        <p>Get 24/7 support from our live customer support team in your native language.</p>
+        <div class="support-actions"></div>
+          <a href="/en/support/support.html"><button class="button-support">Support<div class="star-1"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-2"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-3"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-4"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-5"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-6"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div></button></a>
+        </div>
+      </div>
+      <div class="support-right">
+        <img src="/images/support.png" alt="Support's always there for you" class="support-img">
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <h2>Watch the Ongoing Betting Action</h2>
+    <div class="online-indicator">
+      <span class="blink"></span>
+    </div>
+    <span id="online-users">Loading...</span>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>User</th>
+          <th>Time</th>
+          <th>Amount (€)</th>
+        </tr>
+      </thead>
+      <tbody id="stats-data"></tbody>
+    </table>
   </section>
 
 
+<footer>
+  <div class="logo-footer1">
+  <img src="/images/logo.png" alt="Waifuspin Logo">
+</div>
 
-<section class="support">
-  <div class="support-container">
-      <div class="support-left">
-        <h2 id="support-heading">Notre équipe d'assistance parle votre langue</h2>
-          <p>Obtenez une assistance 24/7 de notre équipe de support client en direct dans votre langue maternelle.</p>
-          <div class="support-actions">
-            <a href="/fr/support/support.html"><button class="button-support">Assistance<div class="star-1"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-2"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-3"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-4"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-5"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div><div class="star-6"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></g></svg></div></button></a>
-          </div>
-      </div>
-      <div class="support-right">
-          <img src="/images/support.png" alt="Support's always there for you" class="support-img">
-      </div>
+<div class="container">
+
+  <div class="section">
+    <h4>Casino</h4>
+    <ul>
+      <li><a href="/en/casino-games/casino-games.html">Casino Games</a></li>
+      <li><a href="/en/slots-guide/slots-guide.html">Slots</a></li>
+      <li><a href="/en/live-casino/live-casino.html">Live Casino</a></li>
+      <li><a href="/en/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
+      <li><a href="/en/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
+      <li><a href="/en/provider/provider.html">Providers</a></li>
+      <li><a href="/en/promotions-and-competitions/promotions-and-competitions.html">Promotions & Competitions</a></li>
+    </ul>
   </div>
-  
-  
-</section>
 
-
-<section class="stats">
-  <h2>Regardez l'action des paris en cours</h2>
-  <div class="online-indicator">
-    <span class="blink"></span>
+  <div class="section">
+    <h4>Support</h4>
+    <ul>
+      <li><a href="/en/help-center/help-center.html">Help Center</a></li>
+      <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">Hotline for Game Problems</a></li>
+      <li><a href="/en/support/support.html">Live Customer Service</a></li>
+      <li><a href="/en/self-exclusion/self-exclusion.html">Self-Exclusion</a></li>
+    </ul>
   </div>
-    <span id="online-users">Loading...</span>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Jeu</th>
-        <th>Utilisateur</th>
-        <th>Temps</th>
-        <th>Montant (€)</th>
-      </tr>
-    </thead>
-    <tbody id="stats-data"></tbody>
-  </table>
-</section>
+  <div class="section">
+    <h4>About Us</h4>
+    <ul>
+      <li><a href="/en/vip/vip.html">VIP Club</a></li>
+      <li><a href="/en/affiliates/affiliates.html">Affiliate</a></li>
+      <li><a href="/en/privacy-policy/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/en/lbc-policy/lbc-policy.html">LBC Policy</a></li>
+      <li><a href="/en/terms-of-use/terms-of-use.html">Terms of Use</a></li>
+    </ul>
+  </div>
 
+  <div class="section">
+    <h4>Payment Information</h4>
+    <ul>
+      <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">Deposits & Withdrawals</a></li>
+      <li><a href="/en/guide-to-currencies/guide-to-currencies.html">Currency Guide</a></li>
+      <li><a href="/en/guide-to-crypto/guide-to-crypto.html">Crypto Guide</a></li>
+      <li><a href="/en/supported-crypto/supported-crypto.html">Supported Crypto</a></li>
+      <li><a href="/en/how-much-to-bet/how-much-to-bet.html">How Much to Bet</a></li>
+    </ul>
+  </div>
 
-    <footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
+  <div class="section">
+
+    <div class="language-selector">
+      <select>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
     </div>
 
-    <div class="container">
-
-        <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>À propos de nous</h4>
-            <ul>
-                <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Informations sur les paiements</h4>
-            <ul>
-                <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Décimale</option>
-                    <option value="fractional">Fractionnelle</option>
-                    <option value="american">Américaine</option>
-                </select>
-            </div>
-
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
+    <div class="currency-selector">
+      <select>
+        <option value="decimal">Decimal</option>
+        <option value="fractional">Fractional</option>
+        <option value="american">American</option>
+      </select>
     </div>
-    <hr>
+
     
+    <div class="btc-rate">1 BTC = Loading...</div>
+  </div>
+</div>
+<hr>
 
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
-    </div>
-    </footer>
+
+<div class="copyright">
+  &copy; 2024 Waifuspin.com | All Rights Reserved.
+</div>
+</footer>
+
     
 </body>
 </html>

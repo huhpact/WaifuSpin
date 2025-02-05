@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const games = ["Blackjack", "Slots", "Roulette"];
-  const users = [" Masqué"];
+  const users = [" Hidden"];
 
   function generateTableRow() {
     const table = document.getElementById("stats-data");
@@ -77,7 +77,7 @@ function getRandomOnlineUsers(min, max) {
 function updateOnlineUsers() {
 	const onlineUsersElement = document.getElementById('online-users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
-	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
+	onlineUsersElement.textContent = `${randomUsers} users online`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -124,30 +124,3 @@ async function fetchBitcoinRate() {
 }
 
 window.onload = fetchBitcoinRate;
-
-
-document.addEventListener('DOMContentLoaded', function () {
-	const banner = document.getElementById('cookie-banner');
-
-
-	if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
-			banner.style.display = 'none';
-	}
-
-	function hideBanner() {
-			banner.classList.add('hidden');
-			setTimeout(() => {
-					banner.style.display = 'none';
-			}, 500); 
-	}
-
-	document.getElementById('accept-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365);
-			hideBanner();
-	});
-
-	document.getElementById('decline-cookies').addEventListener('click', function () {
-			document.cookie = "cookies-accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365); 
-			hideBanner();
-	});
-});

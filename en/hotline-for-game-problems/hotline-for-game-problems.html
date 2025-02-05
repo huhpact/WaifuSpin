@@ -25,43 +25,52 @@
 
 <div class="custom-cursor"></div>
   
-	<header>
+<header>
     <div class="header-content">
       <div class="burger-logo">
         <div class="burger-menu">
           <i class='bx bx-menu'></i>
         </div>
-        <a href="/fr/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+        <a href="/en/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
       <div class="login-reg">
-        <a href="/fr/login/login.html" class="login">Se connecter</a>
-        <a href="/fr/login/login.html"><button class="sign-up-btn">S'inscrire</button></a>
+        <a href="/en/login/login.html" class="login">Log In</a>
+        <a href="/en/login/login.html"><button class="sign-up-btn">Sign Up</button></a>
       </div>
     </div>
   </header>
   
-  <div id="cookie-banner">
-    <h4>Paramètres des cookies</h4>
-    <p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
-    <button id="accept-cookies">Accepter</button>
-    <button id="decline-cookies">Refuser</button>
+  <div id="cookie-banner" class="hidden">
+    <div class="cookie-content">
+        <div class="cookie-header">
+            <div class="cookie-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+            </div>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>This site uses cookies to ensure you get the best experience on our website.</p>
+        <div class="button-group">
+            <button id="decline-cookies">Decline</button>
+            <button id="accept-cookies">Accept</button>
+        </div>
+    </div>
 </div>
   
 
   <aside class="sidebar">
     <ul>
-      <li><a href="/fr/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
-      <li><a href="/fr/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affilié</a></li>
+      <li><a href="/en/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
+      <li><a href="/en/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affiliate</a></li>
       <hr>
-      <li><a href="/fr/vip/vip.html"><i class='bx bxs-trophy'></i> Club VIP</a></li>
-      <li><a href="/fr/news/news.html"><i class='bx bxs-news'></i> Nouveautés</a></li>
-      <li><a href="/fr/support/support.html"><i class='bx bx-support'></i> Service client en direct</a></li>
+      <li><a href="/en/vip/vip.html"><i class='bx bxs-trophy'></i> VIP Club</a></li>
+      <li><a href="/en/news/news.html"><i class='bx bxs-news'></i> News</a></li>
+      <li><a href="/en/support/support.html"><i class='bx bx-support'></i> Live Support</a></li>
       <li class="language-dropdown">
-        <i class='bx bx-world'></i> Langue
+        <i class='bx bx-world'></i> Language
         <ul class="dropdown">
-          <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">English</a></li>
+          <li><a href="#">English</a></li>
           <li><a href="/de/hotline-for-game-problems/hotline-for-game-problems.html">Deutsch</a></li>
-          <li><a href="#">Français</a></li>
+          <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Français</a></li>
           <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">日本語</a></li>
         </ul>
       </li>
@@ -69,10 +78,11 @@
   </aside>
   <div class="overlay"></div>
 
+
     <div id="quizModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Quiz d'auto-évaluation</h2>
+                <h2>Self-Assessment Quiz</h2>
                 <span class="close-modal">&times;</span>
             </div>
             <div id="quizContent"></div>
@@ -83,17 +93,17 @@
         <div class="hero-bg"></div>
         <nav>
             <div class="emergency-number">
-                Urgence 24/7 : <div class="pulse"></div>
+                Emergency 24/7: <div class="pulse"></div>
                  <span class="highlight">BAKA-911-UWU</span>
             </div>
         </nav>
         
         <div class="hero-content" data-aos="fade-up">
-            <h1>Besoin d'aide ?<br>Nous sommes là <span class="gradient-text">24/7</span></h1>
-            <p class="hero-subtitle">Votre bien-être dans les jeux est important. Bénéficiez d'un soutien immédiat et confidentiel.</p>
+            <h1>Need help?<br>We are here <span class="gradient-text">24/7</span></h1>
+            <p class="hero-subtitle">Your well-being in gaming is important. Get immediate and confidential support.</p>
             <div class="hero-cta">
-                <a href="/fr/support/support.html" class="primary-button">Commencer le chat maintenant</a>
-                <a href="#resources" class="secondary-button">Faire l'évaluation</a>
+                <a href="/en/support/support.html" class="primary-button">Start chat now</a>
+                <a href="#resources" class="secondary-button">Take the assessment</a>
             </div>
         </div>
     </div>
@@ -101,22 +111,22 @@
     <main>
         <section class="quick-help" data-aos="fade-up">
             <div class="section-header">
-                <span class="section-tag">AIDE INSTANTANÉE</span>
-                <h2>Outils d'auto-assistance</h2>
-                <p class="section-subtitle">Prenez le contrôle de vos habitudes de jeu grâce à nos outils</p>
+                <span class="section-tag">INSTANT HELP</span>
+                <h2>Self-Help Tools</h2>
+                <p class="section-subtitle">Take control of your gaming habits with our tools</p>
             </div>
             <div class="cards-container">
                 <div class="glass-card" data-aos="zoom-in">
                     <div class="card-content">
                         <div class="card-icon">🎮</div>
-                        <h3>Fixer des limites</h3>
-                        <p>Personnalisez vos limites de jeu avec nos outils intelligents</p>
+                        <h3>Set Limits</h3>
+                        <p>Customize your gaming limits with our smart tools</p>
                         <ul class="feature-list">
-                            <li>Limites de dépôts quotidiens</li>
-                            <li>Minuteries de session</li>
-                            <li>Périodes de réflexion</li>
+                            <li>Daily deposit limits</li>
+                            <li>Session timers</li>
+                            <li>Cooling-off periods</li>
                         </ul>
-                        <button class="card-button">Configurer maintenant</button>
+                        <button class="card-button">Set up now</button>
                     </div>
                     <div class="card-blur"></div>
                 </div>
@@ -124,14 +134,14 @@
                 <div class="glass-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="card-content">
                         <div class="card-icon">⏰</div>
-                        <h3>Faire une pause</h3>
-                        <p>Prendre du recul et réfléchir avec nos outils de pause</p>
+                        <h3>Take a Break</h3>
+                        <p>Step back and reflect with our break tools</p>
                         <ul class="feature-list">
-                            <li>Auto-exclusion temporaire</li>
-                            <li>Rappels de réalité</li>
-                            <li>Suivi des activités</li>
+                            <li>Temporary self-exclusion</li>
+                            <li>Reality checks</li>
+                            <li>Activity tracking</li>
                         </ul>
-                        <button class="card-button">Activer la pause</button>
+                        <button class="card-button">Activate break</button>
                     </div>
                     <div class="card-blur"></div>
                 </div>
@@ -139,14 +149,14 @@
                 <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="card-content">
                         <div class="card-icon">💬</div>
-                        <h3>Obtenir de l'aide</h3>
-                        <p>Se connecter instantanément à notre réseau de soutien</p>
+                        <h3>Get Help</h3>
+                        <p>Instantly connect to our support network</p>
                         <ul class="feature-list">
-                            <li>Chat en direct 24/7</li>
-                            <li>Conseils professionnels</li>
-                            <li>Soutien communautaire</li>
+                            <li>24/7 live chat</li>
+                            <li>Professional advice</li>
+                            <li>Community support</li>
                         </ul>
-                        <button class="card-button">Se connecter</button>
+                        <button class="card-button">Connect now</button>
                     </div>
                     <div class="card-blur"></div>
                 </div>
@@ -155,182 +165,183 @@
 
         <section class="contact-methods" data-aos="fade-up">
             <div class="section-header">
-                <span class="section-tag">TENDRE LA MAIN</span>
-                <h2>Nous sommes toujours là</h2>
-                <p class="section-subtitle">De multiples façons d'obtenir le soutien dont vous avez besoin, quand vous en avez besoin</p>
+                <span class="section-tag">REACH OUT</span>
+                <h2>We are always here</h2>
+                <p class="section-subtitle">Multiple ways to get the support you need, when you need it</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-item" style="background-image: url('/images/anime1.jpg')">
                     <div class="contact-content">
                         <div class="contact-icon">📞</div>
-                        <h3>Support téléphonique</h3>
+                        <h3>Phone Support</h3>
                         <p class="contact-number">BAKA-911-UWU</p>
-                        <span class="availability">Disponible 24 heures sur 24, 7 jours sur 7</span>
-                        <a href="tel:BAKA-911-UWU" class="contact-button">Appeler maintenant</a>
+                        <span class="availability">Available 24/7</span>
+                        <a href="tel:BAKA-911-UWU" class="contact-button">Call now</a>
                     </div>
                 </div>
 
                 <div class="contact-item" style="background-image: url('/images/anime2.webp')">
                     <div class="contact-content">
                         <div class="contact-icon">💬</div>
-                        <h3>Chat en direct</h3>
-                        <p>Support de la messagerie instantanée</p>
-                        <span class="availability">Réponse en 5 min</span>
-                        <a href="/fr/support/support.html" class="contact-button">Commencer le chat</a>
+                        <h3>Live Chat</h3>
+                        <p>Instant messaging support</p>
+                        <span class="availability">Response in 5 min</span>
+                        <a href="/en/support/support.html" class="contact-button">Start chat</a>
                     </div>
                 </div>
 
                 <div class="contact-item" style="background-image: url('/images/anime3.webp')">
                     <div class="contact-content">
                         <div class="contact-icon">✉️</div>
-                        <h3>Soutien par courriel</h3>
+                        <h3>Email Support</h3>
                         <p>WaifuSpin Support</p>
-                        <span class="availability">Réponse dans les 24 heures</span>
-                        <a href="mailto:huhpact@outlook.fr" class="contact-button">Envoyer un courriel</a>
+                        <span class="availability">Response within 24 hours</span>
+                        <a href="mailto:huhpact@outlook.fr" class="contact-button">Send email</a>
                     </div>
                 </div>
             </div>
         </section>
-				<br>
+                <br>
         <section class="resources" id="resources" data-aos="fade-up">
             <div class="section-header">
-                <span class="section-tag">RESSOURCES</span>
-                <h2>Agir aujourd'hui</h2>
-                <p class="section-subtitle">Outils et ressources pour vous aider à conserver des habitudes de jeu saines</p>
+                <span class="section-tag">RESOURCES</span>
+                <h2>Take Action Today</h2>
+                <p class="section-subtitle">Tools and resources to help you maintain healthy gaming habits</p>
             </div>
             <div class="resources-grid">
                 <article class="resource-card" data-aos="flip-left">
                     <div class="resource-icon">📊</div>
-                    <h3>Auto-évaluation</h3>
-                    <p>Répondez à notre questionnaire confidentiel pour évaluer vos habitudes de jeu.</p>
-                    <button class="resource-button" id="startQuiz">Répondre au quiz</button>
+                    <h3>Self-Assessment</h3>
+                    <p>Take our confidential questionnaire to evaluate your gaming habits.</p>
+                    <button class="resource-button" id="startQuiz">Take the quiz</button>
                 </article>
 
                 <article class="resource-card" data-aos="flip-left" data-aos-delay="100">
                     <div class="resource-icon">👥</div>
-                    <h3>Soutien communautaire</h3>
-                    <p>Rejoignez nos groupes de soutien modérés</p>
-                    <button class="resource-button">Rejoignez-nous</button>
+                    <h3>Community Support</h3>
+                    <p>Join our moderated support groups</p>
+                    <button class="resource-button">Join us</button>
                 </article>
 
                 <article class="resource-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="resource-icon">📚</div>
-                    <h3>Matériel pédagogique</h3>
-                    <p>S'informer sur le jeu responsable</p>
-                    <a href="https://www.americangaming.org/wp-content/uploads/2019/11/RGC-RG-Principles_11-5.pdf" class="resource-button">En savoir plus</a>
+                    <h3>Educational Material</h3>
+                    <p>Learn about responsible gaming</p><br>
+                    <a href="https://www.americangaming.org/wp-content/uploads/2019/11/RGC-RG-Principles_11-5.pdf" class="resource-button">Learn more</a>
                 </article>
             </div>
         </section>
-				<br>
+                <br>
         <section class="social-support" data-aos="fade-up">
             <div class="section-header">
-                <span class="section-tag">CONNECTER</span>
-                <h2>Rejoindre notre communauté</h2>
-                <p class="section-subtitle">Restez connectés et soutenus grâce à nos chaînes sociaux</p>
+                <span class="section-tag">CONNECT</span>
+                <h2>Join Our Community</h2>
+                <p class="section-subtitle">Stay connected and supported through our social channels</p>
             </div>
             <div class="social-grid">
                 <a href="https://www.x.com" class="social-item">
                     <div class="social-icon"><i class='bx bxl-twitter'></i></div>
                     <p>@WaifuSpinHelp</p>
-                    <span class="social-stat">Assistance 24/7</span>
+                    <span class="social-stat">24/7 Support</span>
                 </a>
                 <a href="#" class="social-item">
                     <div class="social-icon"><i class='bx bxl-discord-alt' ></i></div>
-                    <p>Assistance Discord</p>
-                    <span class="social-stat">Réponses rapides</span>
+                    <p>Discord Support</p>
+                    <span class="social-stat">Quick Responses</span>
                 </a>
                 <a href="#" class="social-item">
                     <div class="social-icon"><i class='bx bxl-meta' ></i></div>
-                    <p>Groupe Facebook</p>
-                    <span class="social-stat">Communauté active</span>
+                    <p>Facebook Group</p>
+                    <span class="social-stat">Active Community</span>
                 </a>
             </div>
         </section>
     </main>
 
-		<footer>
-      <div class="logo-footer1">
+	<footer>
+        <div class="logo-footer1">
         <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-
-    <div class="container">
-
+      </div>
+    
+      <div class="container">
+    
         <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
-            </ul>
+          <h4>Casino</h4>
+          <ul>
+            <li><a href="/en/casino-games/casino-games.html">Casino Games</a></li>
+            <li><a href="/en/slots-guide/slots-guide.html">Slots</a></li>
+            <li><a href="/en/live-casino/live-casino.html">Live Casino</a></li>
+            <li><a href="/en/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
+            <li><a href="/en/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
+            <li><a href="/en/provider/provider.html">Providers</a></li>
+            <li><a href="/en/promotions-and-competitions/promotions-and-competitions.html">Promotions & Competitions</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
-            </ul>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/en/help-center/help-center.html">Help Center</a></li>
+            <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">Hotline for Game Problems</a></li>
+            <li><a href="/en/support/support.html">Live Customer Service</a></li>
+            <li><a href="/en/self-exclusion/self-exclusion.html">Self-Exclusion</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-            <h4>À propos de nous</h4>
-            <ul>
-                <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
-            </ul>
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="/en/vip/vip.html">VIP Club</a></li>
+            <li><a href="/en/affiliates/affiliates.html">Affiliate</a></li>
+            <li><a href="/en/privacy-policy/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/en/lbc-policy/lbc-policy.html">LBC Policy</a></li>
+            <li><a href="/en/terms-of-use/terms-of-use.html">Terms of Use</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-            <h4>Informations sur les paiements</h4>
-            <ul>
-                <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
-            </ul>
+          <h4>Payment Information</h4>
+          <ul>
+            <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">Deposits & Withdrawals</a></li>
+            <li><a href="/en/guide-to-currencies/guide-to-currencies.html">Currency Guide</a></li>
+            <li><a href="/en/guide-to-crypto/guide-to-crypto.html">Crypto Guide</a></li>
+            <li><a href="/en/supported-crypto/supported-crypto.html">Supported Crypto</a></li>
+            <li><a href="/en/how-much-to-bet/how-much-to-bet.html">How Much to Bet</a></li>
+          </ul>
         </div>
-
+    
         <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Décimale</option>
-                    <option value="fractional">Fractionnelle</option>
-                    <option value="american">Américaine</option>
-                </select>
-            </div>
-
+    
+          <div class="language-selector">
+            <select>
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+    
+          <div class="currency-selector">
+            <select>
+              <option value="decimal">Decimal</option>
+              <option value="fractional">Fractional</option>
+              <option value="american">American</option>
+            </select>
+          </div>
+    
           
-            <div class="btc-rate">1 BTC = Loading...</div>
+          <div class="btc-rate">1 BTC = Loading...</div>
         </div>
-    </div>
-    <hr>
+      </div>
+      <hr>
+      
+    
+      <div class="copyright">
+        &copy; 2024 Waifuspin.com | All Rights Reserved.
+      </div>
+      </footer>
     
 
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
-    </div>
-    </footer>
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/fr/hotline-for-game-problems/hotline-for-game-problems.js"></script>
+    <script src="/en/hotline-for-game-problems/hotline-for-game-problems.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>

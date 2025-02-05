@@ -1,33 +1,33 @@
 const newsData = [
 	{
 			id: 1,
-			title: "WaifuSpin lance une nouvelle machine à sous",
+			title: "WaifuSpin launches a new slot machine",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Découvrez l'excitation de notre dernier jeu de machines à sous sur le thème des dessins animés, mettant en scène vos waifus préférés !",
-			more: "Rejoignez-nous maintenant et obtenez 1 tour gratuits sur notre nouveau jeu! Notre dernier jeu de machines à sous associe de superbes dessins d'anime à des mécanismes de jeu passionnants. Les caractéristiques incluent :\n- Plusieurs tours de bonus\n- Des jackpots progressifs\n- Des multiplicateurs de tours gratuits\n- Un système unique de collection de waifu\nNe manquez pas cette incroyable expérience de jeu!"
+			description: "Discover the excitement of our latest anime-themed slot machine game, featuring your favorite waifus!",
+			more: "Join us now and get 1 free spin on our new game! Our latest slot machine game combines stunning anime artwork with exciting gameplay mechanics. Features include:\n- Multiple bonus rounds\n- Progressive jackpots\n- Free spin multipliers\n- A unique waifu collection system\nDon't miss this incredible gaming experience!"
 	},
 	{
 			id: 2,
-			title: "Bonus de week-end spécial",
+			title: "Special weekend bonus",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Doublez vos dépôts ce week-end grâce à notre événement bonus spécial!",
-			more: "Préparez-vous à un week-end de bonus extraordinaires:\n- 100% de bonus sur dépôt jusqu'à 1000$\n- 50 tours gratuits sur une sélection de jeux\n- Tournoi spécial avec une cagnotte de 10 000$\n- Récompenses VIP exclusives\n- La promotion se déroule du vendredi 00:00 au dimanche 23:59. Les termes et conditions s'appliquent."
+			description: "Double your deposits this weekend with our special bonus event!",
+			more: "Get ready for a weekend of extraordinary bonuses:\n- 100% deposit bonus up to $1000\n- 50 free spins on a selection of games\n- Special tournament with a $10,000 prize pool\n- Exclusive VIP rewards\n- The promotion runs from Friday 00:00 to Sunday 23:59. Terms and conditions apply."
 	},
 	{
 			id: 3,
-			title: "Nouveaux modes de paiement",
+			title: "New payment methods",
 			user: "huh(pact)",
 			date: "2025-01-30",
-			description: "Nous avons ajouté de nouvelles méthodes de paiement pratiques pour nos joueurs.",
-			more: "Nous sommes ravis d'annoncer de nouvelles options de paiement:\n- Principales cryptocurrencies (BTC, ETH, XRP, SOL)\n- Portefeuilles électroniques populaires\n- Virements bancaires instantanés\n- Solutions de paiement mobile\n- Toutes les nouvelles méthodes de paiement offrent un traitement instantané et des frais peu élevés!"
+			description: "We have added new convenient payment methods for our players.",
+			more: "We are excited to announce new payment options:\n- Major cryptocurrencies (BTC, ETH, XRP, SOL)\n- Popular e-wallets\n- Instant bank transfers\n- Mobile payment solutions\n- All new payment methods offer instant processing and low fees!"
 	}
 ];
 
 function formatDate(dateString) {
 	const options = { year: 'numeric', month: 'long', day: 'numeric' };
-	return new Date(dateString).toLocaleDateString('fr-FR', options);
+	return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
 function createNewsHTML(newsItem) {
@@ -35,7 +35,7 @@ function createNewsHTML(newsItem) {
 			<article class="news-item">
 					<h2 class="news-title">${newsItem.title}</h2>
 					<div class="news-meta">
-							<span class="news-user">Par ${newsItem.user}</span>
+							<span class="news-user">By ${newsItem.user}</span>
 							<span class="news-date">${formatDate(newsItem.date)}</span>
 					</div>
 					<p class="news-description">${newsItem.description}</p>
@@ -71,7 +71,7 @@ function openModal(newsId) {
 	const newsItem = newsData.find(item => item.id === newsId);
 	if (newsItem) {
 			document.getElementById('modalTitle').textContent = newsItem.title;
-			document.getElementById('modalUser').textContent = `Par ${newsItem.user}`;
+			document.getElementById('modalUser').textContent = `By ${newsItem.user}`;
 			document.getElementById('modalDate').textContent = formatDate(newsItem.date);
 			document.getElementById('modalDescription').textContent = newsItem.description;
 			document.getElementById('modalMore').innerHTML = newsItem.more.replace(/\n/g, '<br>');

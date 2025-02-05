@@ -199,33 +199,33 @@ strong {
   font-weight: 600;
 }
 
-ul {
+.content-wrapper ul {
   list-style-position: none;
   margin: 1.5rem 0;
   padding-left: 1rem;
 }
 
-li {
+.content-wrapper li {
   margin-bottom: 0.8rem;
   position: relative;
   padding-left: 1rem;
 }
 
-li::before {
+.content-wrapper li::before {
   content: '•';
   color: var(--accent);
   position: absolute;
   left: -1rem;
 }
 
-a {
+.content-wrapper a {
   color: var(--accent);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
 
-a::after {
+.content-wrapper a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -238,11 +238,11 @@ a::after {
   transition: transform 0.3s ease;
 }
 
-a:hover {
+.content-wrapper a:hover {
   color: white;
 }
 
-a:hover::after {
+.content-wrapper a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }

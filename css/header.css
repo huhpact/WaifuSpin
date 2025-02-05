@@ -145,12 +145,12 @@ a {
   color: #fff;
 }
 
-.login {
+.login a{
   color: #fff;
   padding-right: 5px;
   transition: all 0.3s ease;
 }
 
-.login:hover {
+.login a:hover {
   color: var(--accent);
 }
