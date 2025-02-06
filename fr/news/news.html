@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin News - Restez informé sur notre paradis</title>
-    <link rel="stylesheet" href="/css/news.css">
-		<link rel="stylesheet" href="/css/cookie.css">
-		<link rel="stylesheet" href="/css/header.css">
-		<link rel="stylesheet" href="/css/footer.css">
-		<link rel="stylesheet" href="/css/loading-cursor.css">
-		<link rel="stylesheet" href="/css/sidebar.css">
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" /><link rel="canonical" href="https://waifuspin.com/fr" /><link rel="alternate" hreflang="x-default" href="https://waifuspin.com" hreflang="en" /><meta name="robots" content="index, follow" /><meta name="googlebot" content="index, follow" /><meta name="description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:title" content="WaifuSpin Paradise - Jouez et Pariez en ligne" /><meta property="og:description" content="Pariez, jouez et gagnez ! Sur waifuspin.com, vous trouverez le choix parfait entre le jeu et la compétence." /><meta property="og:url" content="https://waifuspin.com/fr" />
+    <link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/cookie.css" />
+		<link rel="stylesheet" href="/css/header.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/loading-cursor.css" />
+		<link rel="stylesheet" href="/css/sidebar.css" />
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
 </head>
 <body>
 	<div class="preloader">
@@ -35,12 +35,21 @@
 			</div>
 		</header>
 		
-		<div id="cookie-banner">
-			<h4>Paramètres des cookies</h4>
-			<p>Ce site utilise des cookies pour s'assurer que vous bénéficiez de la meilleure expérience sur notre site.</p>
-			<button id="accept-cookies">Accepter</button>
-			<button id="decline-cookies">Refuser</button>
-	</div>
+        <div id="cookie-banner" class="hidden">
+            <div class="cookie-content">
+                <div class="cookie-header">
+                    <div class="cookie-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+                    </div>
+                    <h4>Paramètres des cookies</h4>
+                </div>
+                <p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site web.</p>
+                <div class="button-group">
+                    <button id="decline-cookies">Refuser</button>
+                    <button id="accept-cookies">Accepter</button>
+                </div>
+            </div>
+        </div>
 		
 	
 		<aside class="sidebar">
@@ -68,7 +77,7 @@
         <main>
             <h1>WaifuSpin News</h1>
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search news...">
+                <input type="text" id="searchInput" placeholder="Rechercher des nouvelles...">
                 <div class="search-icon">🔍</div>
             </div>
         </main>
