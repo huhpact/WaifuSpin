@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>PEGI 18</title>
     <style>
         :root {
-            --color-bg: #13111C;
+            --color-bg: black;
             --color-primary: rgb(61, 106, 255);
             --color-secondary: #6200ff;
             --color-text: #ffffff;
             --color-text-muted: rgba(255, 255, 255, 0.7);
-            --gradient: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            --shadow-gold: 0 0 20px rgba(255, 215, 0, 0.3);
-            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             cursor: none;
         }
 
-        .preloader {
+        .video-container {
             position: fixed;
             inset: 0;
             background: var(--color-bg);
@@ -30,65 +26,25 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
+        }
+
+        .video-container.hidden {
+            opacity: 0;
+            visibility: hidden;
             transition: opacity 0.5s, visibility 0.5s;
         }
 
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--color-text-muted);
-            border-top-color: var(--color-primary);
-            border-radius: 50%;
-            animation: spin 1s infinite linear;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.2s;
-        }
-
-        .custom-cursor.active {
-            transform: scale(1.5);
-        }
-
-        @media (max-width: 768px) {
-            .custom-cursor {
-                display: none;
-            }
-
-            * {
-                cursor: auto;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .custom-cursor {
-                display: none;
-            }
-
-            * {
-                cursor: auto;
-            }
+        img {
+            max-width: 80%;
+            max-height: 80%;
         }
     </style>
     <script>
         function redirect() {
+            setTimeout(() => {
+                document.title = "Redirecting...";
+            }, 4500); 
+
             if (window.innerWidth <= 768) {  
                 window.location.href = "/en/mobile/access-denied.html"; 
                 return;
@@ -97,31 +53,35 @@
             const userLanguage = navigator.language || navigator.languages[0]; 
             const languageCode = userLanguage.split('-')[0]; 
 
+            let redirectUrl = "/en/index/index.html";
             switch (languageCode) {
                 case 'fr':
-                    window.location.href = "/fr/index/index.html";
+                    redirectUrl = "/fr/index/index.html";
                     break;
                 case 'de':
-                    window.location.href = "/de/index/index.html";
+                    redirectUrl = "/de/index/index.html";
                     break;
                 case 'ru':
-                    window.location.href = "/ru/index/index.html";
-                    break;
-                case 'en':
-                    window.location.href = "/en/index/index.html";
-                    break;
-                default:
-                    window.location.href = "/en/index/index.html"; 
+                    redirectUrl = "/ru/index/index.html";
                     break;
             }
+
+            setTimeout(() => {
+                document.querySelector('.video-container').classList.add('hidden');
+                window.location.href = redirectUrl;
+            }, 5000);
         }
 
-        window.onload = redirect;
+        document.addEventListener("DOMContentLoaded", () => {
+            redirect();
+        });
     </script>
 </head>
 <body>
-    <div class="preloader">
-        <div class="spinner"></div>
+    <div class="video-container">
+        <img src="/images/pegi-18.avif" alt="Pegi-18">
     </div>
+
+    <a style="display: none;" href="/fr/index/index.html">Index</a>
 </body>
 </html>
