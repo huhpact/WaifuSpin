@@ -227,7 +227,6 @@ h2 {
 .input-field .toggle-password {
   left: auto;
   right: 15px;
-  cursor: pointer;
 }
 
 .focus-border {
@@ -255,7 +254,6 @@ h2 {
   display: flex;
   align-items: center;
   gap: 5px;
-  cursor: pointer;
 }
 
 .remember-forgot input[type="checkbox"] {
@@ -280,7 +278,6 @@ h2 {
   border-radius: 10px;
   color: white;
   font-size: 1rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
