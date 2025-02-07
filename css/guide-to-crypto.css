@@ -17,7 +17,7 @@
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Noto Serif", "Noto Sans JP", "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Kaku Gothic ProN", "Meiryo", "MS PGothic", "MS PMincho", "Tahoma", Geneva, sans-serif;
 	background-color: var(--primary-bg);
 	color: var(--text-clr);
 	line-height: 1.6;

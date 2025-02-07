@@ -16,7 +16,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Shippori Mincho", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Noto Serif", "Noto Sans JP", "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Kaku Gothic ProN", "Meiryo", "MS PGothic", "MS PMincho", "Tahoma", Geneva, sans-serif;
 	line-height: 1.6;
 	color: var(--text-clr);
 	background-color: var(--primary-bg);
