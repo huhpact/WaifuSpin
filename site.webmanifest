@@ -4,7 +4,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#13111C",
-  "theme_color": "rgb(61, 106, 255)",
+  "theme_color": "#13111C",
   "description": "Découvrez une expérience de casino en ligne de pointe avec des dépôts et retraits instantanés.",
   "icons": [
     {
