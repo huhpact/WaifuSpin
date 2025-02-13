@@ -34,3 +34,14 @@ class AnimationController {
 document.addEventListener('DOMContentLoaded', () => {
   new AnimationController();
 });
+
+const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+
+if (isTouchDevice) {
+  document.querySelectorAll('.custom-cursor').forEach(cursor => {
+    cursor.style.display = 'none';
+  });
+  document.querySelectorAll('*').forEach(element => {
+    element.style.cursor = 'auto';
+  });
+}
