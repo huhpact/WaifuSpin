@@ -10,3 +10,7 @@ async function fetchBitcoinRate() {
 }
 
 window.onload = fetchBitcoinRate;
+
+const copyrightElement = document.querySelector('.copyright');
+const currentYear = new Date().getFullYear();
+copyrightElement.innerHTML = `&copy; ${currentYear} Waifuspin.com | Alle Rechte vorbehalten.`;
