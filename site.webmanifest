@@ -1,7 +1,7 @@
 {
   "name": "WaifuSpin",
   "short_name": "WaifuSpin",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#13111C",
   "theme_color": "#13111C",
