@@ -3,7 +3,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
 
-            if (entry.target.classList.contains('stat-item')) {
+            if (entry.target.classList.contains('stat__item')) {
                 const progressBar = entry.target.querySelector('.progress-bar');
                 if (progressBar) {
                     setTimeout(() => {
@@ -18,7 +18,7 @@ const observer = new IntersectionObserver((entries) => {
     rootMargin: '50px'
 });
 
-document.querySelectorAll('.benefit-card, .plan-card, .review-card, .stat-item').forEach((el) => {
+document.querySelectorAll('.benefit__card, .plan__card, .review__card, .stat__item').forEach((el) => {
     observer.observe(el);
 });
 
@@ -51,7 +51,7 @@ function animateNumber(element, target) {
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            document.querySelectorAll('.stat-number').forEach((stat, index) => {
+            document.querySelectorAll('.stat__number').forEach((stat, index) => {
                 setTimeout(() => {
                     const target = parseInt(stat.dataset.value);
                     animateNumber(stat, target);
@@ -67,7 +67,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 statsObserver.observe(document.querySelector('.stats'));
 
 document.addEventListener('mousemove', (e) => {
-    const floatingElements = document.querySelectorAll('.float-element');
+    const floatingElements = document.querySelectorAll('.float__element');
     
     floatingElements.forEach(element => {
         const speed = element.dataset.speed || 1;
@@ -101,7 +101,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-document.querySelectorAll('.benefit-card').forEach(card => {
+document.querySelectorAll('.benefit__card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;

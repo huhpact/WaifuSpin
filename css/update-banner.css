@@ -1,0 +1,128 @@
+:root {
+--primary-bg: #13111C;
+--secondary-bg: #1E1B2E;
+--accent: rgb(61, 106, 255);
+--text-clr: rgba(255, 255, 255, 0.7);
+--gradient: linear-gradient(90deg, #5f94ff, #0900ab);
+--neon-glow: 0 0 10px rgba(95, 148, 255, 0.5),
+						 0 0 20px rgba(95, 148, 255, 0.3),
+						 0 0 30px rgba(95, 148, 255, 0.2),
+						 0 0 40px rgba(95, 148, 255, 0.1);
+--card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.update__notification {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	background: var(--card-gradient);
+	backdrop-filter: blur(20px);
+	border-radius: 15px;
+	padding: 1rem;
+	width: 320px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: var(--neon-glow);
+	transform: translateY(200%);
+	animation: slideIn 0.5s ease-out forwards;
+	z-index: 1000;
+}
+
+.update__notification.hide {
+	animation: slideOut 0.5s ease-in forwards;
+}
+
+.update__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.5rem;
+}
+
+.update__title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: white;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.version__tag {
+	background: var(--gradient);
+	padding: 0.2rem 0.6rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+}
+
+.close__btn {
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+	font-size: 1.2rem;
+	padding: 0.2rem;
+	transition: color 0.3s ease;
+}
+
+.close__btn:hover {
+	color: white;
+}
+
+.update__content {
+	color: var(--text-clr);
+	font-size: 0.9rem;
+}
+
+.update__features {
+	margin: 0.5rem 0;
+}
+
+.update__features span {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.learn__more {
+	display: inline-block;
+	color: var(--accent);
+	text-decoration: none;
+	font-size: 0.8rem;
+	transition: color 0.3s ease;
+}
+
+.learn__more:hover {
+	color: white;
+}
+
+.progress__bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 0 0 15px 15px;
+	overflow: hidden;
+}
+
+.progress {
+	width: 100%;
+	height: 100%;
+	background: var(--gradient);
+	transform-origin: left;
+	animation: progress 5s linear;
+}
+
+@keyframes progress {
+	from { transform: scaleX(1); }
+	to { transform: scaleX(0); }
+}
+
+@keyframes slideIn {
+	from { transform: translateY(200%); }
+	to { transform: translateY(0); }
+}
+
+@keyframes slideOut {
+	from { transform: translateY(0); }
+	to { transform: translateY(200%); }
+}

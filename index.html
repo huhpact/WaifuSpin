@@ -48,7 +48,7 @@
             cursor: none;
         }
 
-        .video-container {
+        .video__container {
             position: fixed;
             inset: 0;
             background: var(--color-bg);
@@ -58,7 +58,7 @@
             z-index: 9999;
         }
 
-        .video-container.hidden {
+        .video__container.hidden {
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.5s, visibility 0.5s;
@@ -83,7 +83,7 @@
             const userLanguage = navigator.language || navigator.languages[0]; 
             const languageCode = userLanguage.split('-')[0]; 
 
-            let redirectUrl = "/en/index/index.html";
+            let redirectUrl = "/fr/index/index.html";
             switch (languageCode) {
                 case 'fr':
                     redirectUrl = "/fr/index/index.html";
@@ -97,7 +97,7 @@
             }
 
             setTimeout(() => {
-                document.querySelector('.video-container').classList.add('hidden');
+                document.querySelector('.video__container').classList.add('hidden');
                 window.location.href = redirectUrl;
             }, 5000);
         }
@@ -111,7 +111,7 @@
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M82DBWFW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="video-container">
+    <div class="video__container">
         <img src="/images/pegi-18.avif" alt="Pegi-18">
     </div>
 

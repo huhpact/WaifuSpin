@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-DE">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin - Dashboard</title>
     <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/css/cookie.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/loading-cursor.css" />
@@ -14,358 +15,228 @@
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
 </head>
 <body>
-
     <div class="preloader">
         <div class="spinner"></div>
       </div>
       
-    <div class="custom-cursor"></div>
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-
-    <div id="cookie-banner" class="hidden">
-        <div class="cookie-content">
-          <div class="cookie-header">
-              <div class="cookie-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-              </div>
-              <h4>Cookie-Einstellungen</h4>
-          </div>
-          <p>Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.</p>
-          <div class="button-group">
-              <button id="decline-cookies">Ablehnen</button>
-              <button id="accept-cookies">Akzeptieren</button>
-          </div>
-        </div>
-      </div>
-
-    <nav class="navbar">
-        <a href="/de/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
+      <div class="custom__cursor"></div>
         
-        <div class="nav-balance">
-            <div class="balance-display">
-                <span id="balanceAmount">0.00000000</span>
-                <span class="crypto-symbol">BTC</span>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/de/index/index.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de"><img src="/images/logo.png" alt="WaifuSpin Logo"></a>
             </div>
-            <div class="balance-dropdown">
-                <div class="dropdown-option" data-crypto="BTC">
-                    <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>BTC</span>
+            <div class="balance">
+                <i class="fas fa-wallet"></i>
+                <span id="userBalance">$0.00</span>
+            </div>
+            <div class="profile">
+                <div class="profile__trigger">
+                    <span id="username">Utilisateur</span>
+                    <img src="/images/anime-default-pfp-7.jpg" alt="Profile" class="profile__pic">
                 </div>
-                <div class="dropdown-option" data-crypto="ETH">
-                    <img src="/images/ethereum-eth-logo.svg" alt="ETH">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>ETH</span>
-                </div>
-                <div class="dropdown-option" data-crypto="SOL">
-                    <img src="/images/solana-sol-logo.svg" alt="SOL">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>SOL</span>
-                </div>
-                <div class="dropdown-option" data-crypto="XRP">
-                    <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>XRP</span>
+                <div class="dropdown">
+                    <button id="notificationsBtn"><i class="fas fa-bell"></i> Benachrichtungen</button>
+                    <button id="settingsBtn"><i class="fas fa-cog"></i> Einstellungen</button>
+                    <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
                 </div>
             </div>
-        </div>
-
-        <div class="nav-profile">
-            <span id="username">Nutzer</span>
-           <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main>
         <section class="hero">
-            <h1 class="hero-title">Willkommen in der Zukunft des Spielens</h1>
-            <p class="hero-subtitle">Erleben Sie transparente Crypto-Spiele mit sofortigen Ein- und Auszahlungen.</p>
-            <div class="hero-cta">
-                <a href="#games"><button class="btn btn-primary" id="playNowBtn">Jetzt Spielen 🎮</button></a>
-                <a href="/de/casino-games/casino-games.html"><button class="btn btn-secondary" id="learnMoreBtn">Mehr erfahren 📚</button></a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <h3>Sofortspiel</h3>
-                <p>Es ist kein Download erforderlich. Spielen Sie direkt in Ihrem Browser.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💎</div>
-                <h3>Belohnungen in Kryptowährung</h3>
-                <p>Verdienen Sie Kryptowährungen, während Sie Ihre Lieblingsspiele spielen.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Sichere Plattform</h3>
-                <p>Ihre Gelder sind dank unseres fortschrittlichen Sicherheitssystems sicher.</p>
-            </div>
-        </section>
-
-        <section class="transaction-section">
-            <div class="transaction-container">
-                <div class="deposit-section">
-                    <h2>Schnelle Einzahlung 💰</h2>
-                    <div class="currency-selector">
-                        <h3>Wählen Sie die Währung, die Sie einzahlen möchten</h3>
-                        <div class="crypto-options">
-                            <button class="crypto-option active" data-crypto="BTC">
-                                <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
-                                <span>BTC</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="ETH">
-                                <img src="/images/ethereum-eth-logo.svg" alt="ETH">
-                                <span>ETH</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="SOL">
-                                <img src="/images/solana-sol-logo.svg" alt="SOL">
-                                <span>SOL</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="XRP">
-                                <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                                <span>XRP</span>
-                            </button>
-                        </div>
+            <div class="greeting__section">
+                <h1 id="greeting">Willkommen zurück</h1>
+                <div class="stats">
+                    <div class="stat__card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Insgesamte Wins</h3>
+                        <p>1,234</p>
                     </div>
-                    <div class="amount-grid">
-                        <a class="amount-btn" data-amount="10" href="https://buy.stripe.com/8wM15P1sk5Hg5W0bII">$10</a>
-                        <a class="amount-btn" data-amount="25" href="https://buy.stripe.com/eVa5m5fjaglU1FK146">$25</a>
-                        <a class="amount-btn" data-amount="50" href="https://buy.stripe.com/00gbKtgned9IdoseUX">$50</a>
-                        <a class="amount-btn" data-amount="100" href="https://buy.stripe.com/28og0Jgne7Po7049AE">$100</a>
-                        <a class="amount-btn" data-amount="250" href="https://buy.stripe.com/00g15P4EwedMesw28d">$250</a>
-                        <a class="amount-btn" data-amount="500" href="https://buy.stripe.com/6oE15Pfja8Tsesw5kq">$500</a>
-                    </div>
-                </div>
-
-                <div class="withdrawal-section">
-                    <h2>Auszahlen 💸</h2>
-                    <div class="crypto-selection">
-                        <h3>Crypto auswählen 🪙</h3>
-                        <div class="crypto-options withdraw-options">
-                            <button class="crypto-option active" data-crypto="BTC">
-                                <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
-                                <span>BTC</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="ETH">
-                                <img src="/images/ethereum-eth-logo.svg" alt="ETH">
-                                <span>ETH</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="SOL">
-                                <img src="/images/solana-sol-logo.svg" alt="SOL">
-                                <span>SOL</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="XRP">
-                                <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                                <span>XRP</span>
-                            </button>
-                        </div>
-                    </div>
-                    <form id="withdrawalForm">
-                        <div class="form-group">
-                            <label>Betrag</label>
-                            <input type="number" id="withdrawAmount" step="0.00000001" required>
-                            <span class="available-balance">Verfügbar: <span id="availableBalance">0.00000000 BTC</span></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Adresse des Portfolios</label>
-                            <input type="text" id="walletAddress" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Auszahlen 🚀</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="games" id="games">
-            <h2>Spiele im Fokus 🎲</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <img src="/images/blackjack.jpg" alt="Blackjack" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>Blackjack</h3>
-                            <p>Spielen Sie und gewinnen Sie sofort Krypto!</p>
-                            <a href="/de/blackjack/blackjack.html"><button class="btn btn-play">Jetzt spielen!</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/slots.webp" alt="Slots" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>Slots</h3>
-                            <p>Ein actionreiches Casinospiel</p>
-                           <a href="/de/slots/slots.html"><button class="btn btn-play">Jetzt spielen</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/lucky-wheel.jpg" alt="Lucky Wheel" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>Glücksrad</h3>
-                            <p>Ist das Glück auf Ihrer Seite?</p>
-                            <a href="/de/lucky-wheel/lucky-wheel.html"><button class="btn btn-play">Jetzt Spielen</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/double-or-nth.jpg" alt="Double or Nothing" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>Double or Nothing</h3>
-                            <p>Können Sie ihn überholen oder sind Sie ein Verlierer?</p>
-                           <a href="/de/double-or-nothing/double-or-nothing.html"><button class="btn btn-play">Jetzt Spielen</button></a> 
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/mines.png" alt="Mines" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>Mines</h3>
-                            <p>Treten Sie nicht auf die Mine!</p>
-                            <a href="/de/mines/mines.html"><button class="btn btn-play">Jetzt Spielen</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/limbo.webp" alt="Limbo" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>Limbo</h3>
-                            <p>Erhalten Sie den größten Multiplikator!</p>
-                            <a href="/de/limbo/limbo.html"><button class="btn btn-play">Jetzt spielen</button></a>
-                        </div>
+                    <div class="stat__card">
+                        <i class="fas fa-coins"></i>
+                        <h3>Grösster Win</h3>
+                        <p>$5,000</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="crypto-tracker">
-            <h2>Live-Preise von Kryptowährungen  📈</h2>
-            <div class="crypto-grid">
-                <div class="crypto-card" data-crypto="BTC">
-                    <img src="/images/bitcoin-btc-logo.svg" alt="BTC" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>Bitcoin</h3>
-                        <div class="crypto-price" id="price-BTC">Loading...</div>
+        <section class="transactions">
+            <div class="deposit">
+                <h2>Einzahlen</h2>
+                <div class="amount__buttons">
+                    <button data-amount="10">$10</button>
+                    <button data-amount="25">$25</button>
+                    <button data-amount="50">$50</button>
+                    <button data-amount="100">$100</button>
+                    <button data-amount="250">$250</button>
+                    <button data-amount="500">$500</button>
+                </div>
+                <p class="remark">Du wirst zu unserem Partner Stripe für eine sichere Transaktion weitergeleitet.</p>
+            </div>
+
+            <div class="withdraw">
+                <h2>Withdraw</h2>
+                <select id="cryptoSelect">
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="sol">Solana (SOL)</option>
+                    <option value="xrp">Ripple (XRP)</option>
+                </select>
+                <input type="text" placeholder="Deine Wallet Addresse" id="walletAddress">
+                <button id="withdrawBtn">Auszahlen</button>
+            </div>
+        </section>
+
+        <section class="games">
+            <h2>Unsere Spiele</h2>
+            <div class="game__grid">
+                <div class="game__card">
+                    <img src="/images/slots-dashboard.jpg" alt="Slots">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/de/slots/slots.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de'">Spielen!</button>
                     </div>
                 </div>
-                <div class="crypto-card" data-crypto="ETH">
-                    <img src="/images/ethereum-eth-logo.svg" alt="ETH" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>Ethereum</h3>
-                        <div class="crypto-price" id="price-ETH">Loading...</div>
+                <div class="game__card">
+                    <img src="/images/limbo-dashboard.webp" alt="Limbo">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/de/limbo/limbo.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de'">Spielen!</button>
                     </div>
                 </div>
-                <div class="crypto-card" data-crypto="SOL">
-                    <img src="/images/solana-sol-logo.svg" alt="SOL" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>Solana</h3>
-                        <div class="crypto-price" id="price-SOL">Loading...</div>
+                <div class="game__card">
+                    <img src="/images/blackjack-dashboard.png" alt="Blackjack">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/de/blackjack/blackjack.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de'">Spielen!</button>
                     </div>
                 </div>
-                <div class="crypto-card" data-crypto="XRP">
-                    <img src="/images/xrp-xrp-logo.svg" alt="XRP" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>XRP</h3>
-                        <div class="crypto-price" id="price-XRP">Loading...</div>
+                <div class="game__card">
+                    <img src="/images/double-or-nth.jpg" alt="Double or Nothing">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/de/double-or-nothing/double-or-nothing.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de'">Spielen!</button>
                     </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/lucky-wheel-dashboard.webp" alt="Lucky Wheel">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/de/lucky-wheel/lucky-wheel.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de'">Spielen!</button>
+                    </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/mines-dashboard.jpg" alt="Mines">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/de/mines/mines.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=de'">Spielen!</button>
+                    </div>
+                </div>
+            </div>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <div class="logo-footer1">
-              <img src="/images/logo.png" alt="Waifuspin Logo">
-          </div>
-      
-          <div class="container">
-      
-              <div class="section">
-                  <h4>Casino</h4>
-                  <ul>
-                      <li><a href="/de/casino-games/casino-games.html">Casino-Spiele</a></li>
-                      <li><a href="/de/slots-guide/slots-guide.html">Slots</a></li>
-                      <li><a href="/de/live-casino/live-casino.html">Live Casino</a></li>
-                      <li><a href="/de/lucky-wheel-guide/lucky-wheel-guide.html">Glücksrad</a></li>
-                      <li><a href="/de/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                      <li><a href="/de/provider/provider.html">Anbieter</a></li>
-                      <li><a href="/de/promotions-and-competitions/promotions-and-competitions.html">Promotions & Wettbewerbe</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-                  <h4>Support</h4>
-                  <ul>
-                      <li><a href="/de/help-center/help-center.html">Hilfe-Center</a></li>
-                      <li><a href="/de/hotline-for-game-problems/hotline-for-game-problems.html">Hotline für Spielprobleme</a></li>
-                      <li><a href="/de/support/support.html">Live-Kundenservice</a></li>
-                      <li><a href="/de/self-exclusion/self-exclusion.html">Selbstausschluss</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-                  <h4>Über uns</h4>
-                  <ul>
-                      <li><a href="/de/vip/vip.html">VIP Club</a></li>
-                      <li><a href="/de/affiliates/affiliates.html">Affiliates</a></li>
-                      <li><a href="/de/privacy-policy/privacy-policy">Datenschutzrichtlinie</a></li>
-                      <li><a href="/de/lbc-policy/lbc-policy.html">LBC-Richtlinie</a></li>
-                      <li><a href="/de/terms-of-use/terms-of-use.html">Nutzungsbedingungen</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-                  <h4>Informationen zu Zahlungen</h4>
-                  <ul>
-                      <li><a href="/de/deposits-and-withdrawals/deposits-and-withdrawals.html">Einzahlungen & Abhebungen</a></li>
-                      <li><a href="/de/guide-to-currencies/guide-to-currencies.html">Leitfaden zu Währungen</a></li>
-                      <li><a href="/de/guide-to-crypto/guide-to-crypto.html">Leitfaden zu Crypto</a></li>
-                      <li><a href="/de/supported-crypto/supported-crypto.html">Unterstützte Crypto-Währungen</a></li>
-                      <li><a href="/de/how-much-to-bet/how-much-to-bet.html">Wie viel wetten</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-      
-                  <div class="language-selector">
-                      <select>
-                          <option value="fr">Français</option>
-                          <option value="en">English</option>
-                      </select>
-                  </div>
-      
-                  <div class="currency-selector">
-                      <select>
-                          <option value="decimal">Dezimal</option>
-                          <option value="fractional">Fraktionell</option>
-                          <option value="american">Amerikanisch</option>
-                      </select>
-                  </div>
-      
-                
-                  <div class="btc-rate">1 BTC = Loading...</div>
-              </div>
-          </div>
-          <hr>
-          
-      
-          <div class="copyright">
-              &copy; 2024 Waifuspin.com | Alle Rechte vorbehalten.
-          </div>
-          </footer>
-    
+        <section class="crypto__prices">
+            <h2>Live Crypto Kurse</h2>
+            <div class="price__grid">
+                <div class="price__card" data-crypto="btc">
+                    <img src="/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="crypto__icon">
+                    <h3>Bitcoin</h3>
+                    <p class="price">Loading...</p>
+                </div>
+                <div class="price__card" data-crypto="eth">
+                    <img src="/images/ethereum-eth-logo.svg" alt="Ethereum" class="crypto__icon">
+                    <h3>Ethereum</h3>
+                    <p class="price">Loading...</p>
+                </div>
+                <div class="price__card" data-crypto="sol">
+                    <img src="/images/solana-sol-logo.svg" alt="Solana" class="crypto__icon">
+                    <h3>Solana</h3>
+                    <p class="price">Loading...</p>
+                </div>
+                <div class="price__card" data-crypto="xrp">
+                    <img src="/images/xrp-xrp-logo.svg" alt="XRP" class="crypto__icon">
+                    <h3>XRP</h3>
+                    <p class="price">Loading...</p>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <div id="notificationsModal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>Benachrichtungen</h2>
+            <div class="notifications__list">
+                <div class="notification">
+                    <i class="fas fa-gift"></i>
+                    <div class="notification__content">
+                        <h4>Willkommens-Bonus verfügbar</h4>
+                        <p>Claim deinen 100% Einzahlungsbonus jetzt!</p>
+                    </div>
+                </div>
+                <div class="notification">
+                    <i class="fas fa-coins"></i>
+                    <div class="notification__content">
+                        <h4>Tägliche Belohnung</h4>
+                        <p>Dein täglicher Bonus ist bereit!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>Einstellungen</h2>
+            <div class="settings__form">
+                <div class="setting__group">
+                    <label>
+                        <span>Email Benachrichtungen</span>
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+                <div class="setting__group">
+                    <label>
+                        <span>Sound Effekte</span>
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+                <div class="setting__group">
+                    <label>
+                        <span>Dark Mode</span>
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="withdrawModal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>Auszahlungs-Bestätigung</h2>
+            <div class="receipt">
+                <div class="receipt__header">
+                    <img src="/images/logo.png" alt="WaifuSpin Logo">
+                    <p>Transaktions-ID: <span id="transactionId"></span></p>
+                </div>
+                <div class="receipt__details">
+                    <p>Betrag: <span id="withdrawAmount"></span></p>
+                    <p>Cryptowährung: <span id="withdrawCrypto"></span></p>
+                    <p>Wallet: <span id="withdrawWallet"></span></p>
+                    <p>Datum: <span id="withdrawDate"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/de/dashboard/dashboard.js"></script>
-    <script src="/js/loading-cursor.js"></script>
     <script src="/js/cookie.js"></script>
+    <script src="/js/footer/footer-de.js"></script>
+    <script src="/js/footer-btc.js"></script>
+    <script src="/js/loading-cursor.js"></script>
 </body>
 </html>

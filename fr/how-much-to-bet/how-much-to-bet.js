@@ -15,7 +15,7 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.1
 });
 
-document.querySelectorAll('.strategy-card, .calculator, .stat-card').forEach(element => {
+document.querySelectorAll('.strategy__card, .calculator, .stat__card').forEach(element => {
     observer.observe(element);
 });
 
@@ -28,10 +28,10 @@ VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
 
 const bankrollInput = document.getElementById('bankroll');
 const riskInput = document.getElementById('risk');
-const riskValue = document.getElementById('risk-value');
-const calculateBtn = document.getElementById('calculate-btn');
-const betAmount = document.getElementById('bet-amount');
-const riskLevel = document.querySelector('.risk-level');
+const riskValue = document.getElementById('risk__value');
+const calculateBtn = document.getElementById('calculate__btn');
+const betAmount = document.getElementById('bet__amount');
+const riskLevel = document.querySelector('.risk__level');
 
 riskInput.addEventListener('input', () => {
     const value = riskInput.value;
@@ -65,8 +65,8 @@ calculateBtn.addEventListener('click', () => {
     updateResultChart(recommendedBet, bankroll);
 });
 
-const simulateBtn = document.getElementById('simulate-btn');
-const winRateInput = document.getElementById('win-rate');
+const simulateBtn = document.getElementById('simulate__btn');
+const winRateInput = document.getElementById('win__rate');
 const payoutInput = document.getElementById('payout');
 const sessionsInput = document.getElementById('sessions');
 let simulationChart = null;
@@ -102,7 +102,7 @@ function simulateSessions(winRate, payout, sessions, initialBankroll) {
 }
 
 function updateSimulationChart(results) {
-    const ctx = document.getElementById('simulation-chart').getContext('2d');
+    const ctx = document.getElementById('simulation__chart').getContext('2d');
     
     if (simulationChart) {
         simulationChart.destroy();
@@ -168,7 +168,7 @@ function animateValue(element, start, end, duration) {
     }, 16);
 }
 
-const statValues = document.querySelectorAll('.stat-value');
+const statValues = document.querySelectorAll('.stat__value');
 let animated = false;
 
 const statsObserver = new IntersectionObserver((entries) => {
@@ -183,12 +183,12 @@ const statsObserver = new IntersectionObserver((entries) => {
     });
 });
 
-document.querySelectorAll('.stat-card').forEach(card => {
+document.querySelectorAll('.stat__card').forEach(card => {
     statsObserver.observe(card);
 });
 
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
+const tabBtns = document.querySelectorAll('.tab__btn');
+const tabContents = document.querySelectorAll('.tab__content');
 
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -198,7 +198,7 @@ tabBtns.forEach(btn => {
         tabContents.forEach(c => c.classList.remove('active'));
         
         btn.classList.add('active');
-        document.querySelector(`.tab-content[data-tab="${tab}"]`).classList.add('active');
+        document.querySelector(`.tab__content[data-tab="${tab}"]`).classList.add('active');
     });
 });
 

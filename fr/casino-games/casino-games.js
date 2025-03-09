@@ -3,9 +3,9 @@ const observer = new IntersectionObserver((entries) => {
 			if (entry.isIntersecting) {
 					entry.target.classList.add('visible');
 					
-					const section = entry.target.closest('.game-section');
+					const section = entry.target.closest('.game__section');
 					if (section) {
-							const preview = section.querySelector('.game-preview');
+							const preview = section.querySelector('.game__preview');
 							if (preview) {
 									preview.style.transform = 'translateZ(30px)';
 							}
@@ -17,11 +17,11 @@ const observer = new IntersectionObserver((entries) => {
 	rootMargin: '-50px'
 });
 
-document.querySelectorAll('.game-content').forEach(content => {
+document.querySelectorAll('.game__content').forEach(content => {
 	observer.observe(content);
 });
 
-document.querySelectorAll('.play-btn').forEach(button => {
+document.querySelectorAll('.play__btn').forEach(button => {
 	button.addEventListener('mouseover', () => {
 			button.style.transform = 'translateY(-5px)';
 	});
@@ -49,7 +49,7 @@ document.querySelectorAll('.play-btn').forEach(button => {
 	});
 });
 
-const stats = document.querySelectorAll('.stat-value');
+const stats = document.querySelectorAll('.stat__value');
 stats.forEach(stat => {
 	const target = parseFloat(stat.textContent.replace(/[^0-9.]/g, ''));
 	let current = 0;
@@ -85,7 +85,7 @@ stats.forEach(stat => {
 });
 
 window.addEventListener('scroll', () => {
-	const sections = document.querySelectorAll('.game-section');
+	const sections = document.querySelectorAll('.game__section');
 	sections.forEach(section => {
 			const rect = section.getBoundingClientRect();
 			const scrollPercent = (window.innerHeight - rect.top) / window.innerHeight;

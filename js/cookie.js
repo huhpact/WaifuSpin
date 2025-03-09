@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const banner = document.getElementById('cookie-banner');
-	const acceptButton = document.getElementById('accept-cookies');
-	const declineButton = document.getElementById('decline-cookies');
+	const banner = document.getElementById('cookie__banner');
+	const acceptButton = document.getElementById('accept__cookies');
+	const declineButton = document.getElementById('decline__cookies');
 
 	const cookieChoice = localStorage.getItem('cookieChoice');
 	

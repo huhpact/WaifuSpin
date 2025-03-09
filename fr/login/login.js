@@ -1,134 +1,166 @@
+if (localStorage.getItem("loggedInUseremail") && 
+    localStorage.getItem("loggedInUserBalance") && 
+    localStorage.getItem("loggedInUserUsername")) {
+    window.location.href = "/fr/dashboard/dashboard.html";
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-	const formulaireConnexion = document.querySelector('.form-box.login');
-	const formulaireInscription = document.querySelector('.form-box.register');
-	const boutonsSwitch = document.querySelectorAll('.switch-btn');
-	const togglesMotDePasse = document.querySelectorAll('.toggle-password');
-	const formulaires = document.querySelectorAll('form');
+    const loginForm = document.querySelector('.form__box.login');
+    const registerForm = document.querySelector('.form__box.register');
+    const switchBtns = document.querySelectorAll('.switch__btn');
+    const forms = document.querySelectorAll('form');
 
-	boutonsSwitch.forEach(btn => {
-			btn.addEventListener('click', (e) => {
-					e.preventDefault();
-					const cible = btn.dataset.target;
-					
-					if (cible === 'register') {
-							formulaireConnexion.classList.remove('active');
-							formulaireConnexion.classList.add('inactive');
-							formulaireInscription.classList.add('active');
-							formulaireInscription.classList.remove('inactive');
-					} else {
-							formulaireInscription.classList.remove('active');
-							formulaireInscription.classList.add('inactive');
-							formulaireConnexion.classList.add('active');
-							formulaireConnexion.classList.remove('inactive');
-					}
-			});
-	});
+    switchBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = btn.dataset.target;
+            
+            if (target === 'register') {
+                loginForm.classList.remove('active');
+                loginForm.classList.add('inactive');
+                registerForm.classList.add('active');
+                registerForm.classList.remove('inactive');
+            } else {
+                registerForm.classList.remove('active');
+                registerForm.classList.add('inactive');
+                loginForm.classList.add('active');
+                loginForm.classList.remove('inactive');
+            }
+        });
+    });
 
-	formulaires.forEach(formulaire => {
-			formulaire.addEventListener('submit', async (e) => {
-					e.preventDefault();
-					
-					if (validerFormulaire(formulaire)) {
-							const boutonSubmit = formulaire.querySelector('.submit-btn');
-							boutonSubmit.classList.add('loading');
+    forms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (validateForm(form)) {
+                const submitBtn = form.querySelector('.submit__btn');
+                submitBtn.classList.add('loading');
 
-							await new Promise(resolve => setTimeout(resolve, 2000));
-							
-							boutonSubmit.classList.remove('loading');
-							afficherSucces(formulaire);
-					}
-			});
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                submitBtn.classList.remove('loading');
+                showSuccess(form);
+            }
+        });
 
-			const inputs = formulaire.querySelectorAll('input');
-			inputs.forEach(input => {
-					input.addEventListener('input', () => {
-							validerInput(input);
-					});
+        const inputs = form.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateInput(input);
+            });
 
-					input.addEventListener('blur', () => {
-							validerInput(input);
-					});
-			});
-	});
+            input.addEventListener('blur', () => {
+                validateInput(input);
+            });
+        });
+    });
 
-	function validerFormulaire(formulaire) {
-			let estValide = true;
-			const inputs = formulaire.querySelectorAll('input');
-			
-			inputs.forEach(input => {
-					if (!validerInput(input)) {
-							estValide = false;
-					}
-			});
+    function validateForm(form) {
+        let isValid = true;
+        const inputs = form.querySelectorAll('input');
+        
+        inputs.forEach(input => {
+            if (!validateInput(input)) {
+                isValid = false;
+            }
+        });
 
-			if (formulaire.id === 'registerForm') {
-					const motDePasse = formulaire.querySelector('input[type="password"]');
-					const confirmerMotDePasse = formulaire.querySelectorAll('input[type="password"]')[1];
-					
-					if (motDePasse.value !== confirmerMotDePasse.value) {
-							afficherErreur(confirmerMotDePasse, 'Les mots de passe ne correspondent pas');
-							estValide = false;
-					}
-			}
+        if (form.id === 'registerForm') {
+            const password = form.querySelector('input[type="password"]');
+            const confirmPassword = form.querySelectorAll('input[type="password"]')[1];
+            
+            if (password.value !== confirmPassword.value) {
+                showError(confirmPassword, 'Les mots de passe ne correspondent pas');
+                isValid = false;
+            }
+        }
 
-			return estValide;
-	}
+        return isValid;
+    }
 
-	function validerInput(input) {
-			const champInput = input.parentElement;
-			
-			champInput.classList.remove('error');
-			const erreurExistante = champInput.querySelector('.error-message');
-			if (erreurExistante) {
-					erreurExistante.remove();
-			}
+    function validateInput(input) {
+        const inputField = input.parentElement;
+        
+        inputField.classList.remove('error');
+        const existingError = inputField.querySelector('.error__message');
+        if (existingError) {
+            existingError.remove();
+        }
 
-			if (input.value.trim() === '') {
-					afficherErreur(input, 'Ce champ est requis');
-					return false;
-			}
+        if (input.value.trim() === '') {
+            showError(input, 'Ce champ est obligatoire');
+            return false;
+        }
 
-			if (input.type === 'email' && !estEmailValide(input.value)) {
-					afficherErreur(input, 'Veuillez entrer une adresse email valide');
-					return false;
-			}
+        if (input.type === 'email' && !isValidEmail(input.value)) {
+            showError(input, "S'il vous plaît, mettez une adresse email valide");
+            return false;
+        }
 
-			if (input.type === 'password' && input.value.length < 6) {
-					afficherErreur(input, 'Le mot de passe doit contenir au moins 6 caractères');
-					return false;
-			}
+        if (input.type === 'password' && input.value.length < 6) {
+            showError(input, 'Le mot de passe doit comporter au moins 6 caractères');
+            return false;
+        }
 
-			return true;
-	}
+        return true;
+    }
 
-	function afficherErreur(input, message) {
-			const champInput = input.parentElement;
-			champInput.classList.add('error');
-			
-			const messageErreur = document.createElement('span');
-			messageErreur.classList.add('error-message');
-			messageErreur.textContent = message;
-			champInput.appendChild(messageErreur);
-	}
+    function showError(input, message) {
+        const inputField = input.parentElement;
+        inputField.classList.add('error');
+        
+        const errorMessage = document.createElement('span');
+        errorMessage.classList.add('error__message');
+        errorMessage.textContent = message;
+        inputField.appendChild(errorMessage);
+    }
 
-	function afficherSucces(formulaire) {
-			const boutonSubmit = formulaire.querySelector('.submit-btn');
-			const contenuOriginal = boutonSubmit.innerHTML;
-			
-			boutonSubmit.innerHTML = '<i class="fas fa-check success-checkmark"></i>';
-			boutonSubmit.style.backgroundColor = '#4CAF50';
-			
-			setTimeout(() => {
-					boutonSubmit.innerHTML = contenuOriginal;
-					boutonSubmit.style.backgroundColor = '';
-					formulaire.reset();
-			}, 2000);
-	}
+    function showSuccess(form) {
+        const submitBtn = form.querySelector('.submit__btn');
+        const originalContent = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-check success__checkmark"></i>';
+        submitBtn.style.backgroundColor = '#4CAF50';
+        
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.style.backgroundColor = '';
+            form.reset();
+        }, 2000);
+    }
 
-	function estEmailValide(email) {
-			return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-	}
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 
-	formulaireConnexion.classList.add('active');
-	formulaireInscription.classList.add('inactive');
+    loginForm.classList.add('active');
+    registerForm.classList.add('inactive');
+});
+
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); 
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("/users.json"); 
+        const users = await response.json();
+
+        const user = users.find(user => user.email === email && user.password === password);
+
+        if (user) {
+            localStorage.setItem("loggedInUseremail", email);
+            localStorage.setItem("loggedInUserBalance", user.balance);
+            localStorage.setItem("loggedInUserUsername", user.username);
+            setTimeout(() => {
+                window.location.href = "/fr/dashboard/dashboard.html"; 
+            }, 2000); 
+        } else {
+            alert("Mauvais nom d'utilisateur ou mot de passe.");
+        }
+    } catch (error) {
+        console.error("Fehler beim Laden der Benutzerdatei:", error);
+    }
 });

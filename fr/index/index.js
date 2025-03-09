@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const games = ["Blackjack", "Slots", "Roulette"];
+  const games = ["Mines", "Slots", "Double ou rien", "Limbo"];
   const users = [" Masqué"];
 
   function generateTableRow() {
-    const table = document.getElementById("stats-data");
+    const table = document.getElementById("stats__data");
     const row = document.createElement("tr");
 
     const game = games[Math.floor(Math.random() * games.length)];
@@ -28,54 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector('.burger-menu');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.overlay');
-
-  const toggleSidebar = () => {
-    const isActive = sidebar.classList.contains('active');
-    sidebar.classList.toggle('active', !isActive);
-    overlay.classList.toggle('active', !isActive);
-  };
-
-  const closeSidebar = (event) => {
-    const isClickInsideSidebar = sidebar.contains(event.target);
-    const isClickOnBurger = burgerMenu.contains(event.target);
-    if (!isClickInsideSidebar && !isClickOnBurger) {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-    }
-  };
-
-  burgerMenu.addEventListener('click', toggleSidebar);
-  overlay.addEventListener('click', closeSidebar);
-  document.addEventListener('click', closeSidebar); 
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const loadingScreen = document.getElementById("loading-screen");
-    const mainContent = document.getElementById("main-content");
-
-    if (localStorage.getItem("hasSeenLoader")) {
-        loadingScreen.style.display = "none";
-        mainContent.classList.remove("hidden");
-    } else {
-        localStorage.setItem("hasSeenLoader", "true");
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-            mainContent.classList.remove("hidden");
-        }, 3000); 
-    }
-});
-
 function getRandomOnlineUsers(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function updateOnlineUsers() {
-	const onlineUsersElement = document.getElementById('online-users');
+	const onlineUsersElement = document.getElementById('online__users');
 	const randomUsers = getRandomOnlineUsers(560, 2531);
 	onlineUsersElement.textContent = `${randomUsers} utilisateurs en ligne`;
 }
@@ -112,15 +70,3 @@ document.addEventListener("scroll", () => {
 	}
 });
 
-async function fetchBitcoinRate() {
-	try {
-			const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
-			const data = await response.json();
-			const rate = parseFloat(data.bpi.USD.rate.replace(',', ''));
-			document.querySelector('.btc-rate').textContent = `1 BTC = $${rate.toFixed(2)}`;
-	} catch (error) {
-			console.error('Error fetching Bitcoin rate:', error);
-	}
-}
-
-window.onload = fetchBitcoinRate;

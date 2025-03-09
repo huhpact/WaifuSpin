@@ -25,7 +25,7 @@ header {
   width: 100%;
 }
 
-.header-content {
+.header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@ header {
 	
 }
 
-.burger-logo {
+.burger__logo {
   display: flex;
   align-items: center;
 }
@@ -44,14 +44,14 @@ header {
   transition: transform 0.3s ease;
 }
 
-.login-reg {
+.login__reg {
   display: flex;
 	flex-shrink: 0;
   gap: 15px;
 	align-items: baseline;
 }
 
-.burger-menu {
+.burger__menu {
 	font-size: 1.8rem;
 	cursor: pointer;
   color: rgb(61, 106, 255);
@@ -62,12 +62,12 @@ header {
 	transform: scale(1.1);
 }
 
-.login-reg {
+.login__reg {
 	display: flex;
   gap: 10px;
 }
 
-.sign-up-btn {
+.sign__up__btn {
   position: relative;
   padding: 10px 20px;
   border-radius: 7px;
@@ -85,7 +85,7 @@ header {
   transition: all 0.2s ease-in;
 }
 
-.sign-up-btn:hover {
+.sign__up__btn:hover {
   background: rgb(61, 106, 255);
   box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
   -webkit-transition: all 0.2s ease-out;
@@ -93,13 +93,13 @@ header {
   transition: all 0.2s ease-out;
 }
 
-.sign-up-btn:hover::before {
+.sign__up__btn:hover::before {
   -webkit-animation: sh02 0.5s 0s linear;
   -moz-animation: sh02 0.5s 0s linear;
   animation: sh02 0.5s 0s linear;
 }
 
-.sign-up-btn::before {
+.sign__up__btn::before {
   content: '';
   display: block;
   width: 0px;
@@ -133,7 +133,7 @@ header {
   }
 }
 
-.sign-up-btn:active {
+.sign__up__btn:active {
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: box-shadow 0.2s ease-in;
   -moz-transition: box-shadow 0.2s ease-in;

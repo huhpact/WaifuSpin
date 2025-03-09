@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const sections = document.querySelectorAll('.policy-section');
+	const sections = document.querySelectorAll('.policy__section');
 	sections.forEach((section, index) => {
 			section.style.setProperty('--delay', index);
 	});

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-FR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaifuSpin - Double or Nothing</title>
+    <title>WaifuSpin - Double ou rien</title>
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
 		<link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/double-or-nothing.css">
 		<link rel="stylesheet" href="/css/cookie.css" />
 		<link rel="stylesheet" href="/css/game-frame.css" />
 		<link rel="stylesheet" href="/css/loading-cursor.css" />
@@ -18,150 +19,96 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
+<div class="custom__cursor"></div>
   
 <nav class="navbar">
-	<a href="/fr/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
+	<a href="/fr/index/index.html?utm_source=waifuspin-doubleornothing&utm_medium=webbrowser&lang=fr"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
 	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
+	<div class="nav__balance">
+			<div class="balance__display">
+					<span id="balance">0.00000000</span>
+					<span class="crypto__symbol">USD</span>
 			</div>
 	</div>
 
-	<div class="nav-profile">
+	<div class="nav__profile">
 			<span id="username">Utilisateur</span>
 		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
 	</div>
 </nav>
   
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
+<div id="cookie__banner" class="hidden">
+  <div class="cookie__content">
+      <div class="cookie__header">
+          <div class="cookie__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
           </div>
           <h4>Paramètres des cookies</h4>
       </div>
       <p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site web.</p>
-      <div class="button-group">
-          <button id="decline-cookies">Refuser</button>
-          <button id="accept-cookies">Accepter</button>
+      <div class="button__group">
+          <button id="decline__cookies">Refuser</button>
+          <button id="accept__cookies">Accepter</button>
       </div>
   </div>
 </div>
-
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Double or Nothing adden-->
+<br><br><br><br><br><br><br>
+    <main class="game__container">
+      <div class="header">
+        <div class="bet__container">
+          <span>Pari:</span>
+          <div class="bet__controls">
+            <button id="bet__decrease" class="bet__button">-</button>
+            <input type="number" id="bet__amount" value="10.00" min="1" step="1">
+            <button id="bet__increase" class="bet__button">+</button>
+          </div>
+        </div>
       </div>
+
+      <div class="multipliers__grid" id="multipliers__grid"></div>
 
       <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
-          </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
-        </div>
+        <button id="play__button" class="primary__button">Commencer</button>
+        <button id="continue__button" class="primary__button" style="display: none;">Continue</button>
+        <button id="cashout__button" class="secondary__button" disabled>Retrait</button>
         
-        <button class="button autoplay" id="autoplayButton">Auto Play</button>
-        <button class="button" id="playButton">Jouer</button>
+        <div class="auto__play__container">
+          <button id="auto__play__button" class="auto__button">Auto</button>
+          <button id="settings__button" class="settings__button">⋮</button>
+        </div>
+      </div>
+
+      <div class="settings__panel" id="settings__panel">
+        <h3>Paramètres de jeu automatique</h3>
+        <div class="setting__group">
+          <label>S'arrêter sur le profit:</label>
+          <input type="number" id="stop__profit" value="100" min="0">
+        </div>
+        <div class="setting__group">
+          <label>S'arrêter sur la perte:</label>
+          <input type="number" id="stop__loss" value="50" min="0">
+        </div>
+        <div class="setting__group">
+          <label>Nombre de tours:</label>
+          <input type="number" id="games__count" value="10" min="1">
+        </div>
+        <div class="setting__group">
+          <label>Arrêt automatique à:</label>
+          <input type="number" id="auto__cashout" value="2" min="1.5" step="0.5">
+        </div>
       </div>
     </main>
+<br>
 
-		<hr>
-		<footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-
-    <div class="container">
-
-        <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>À propos de nous</h4>
-            <ul>
-                <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Informations sur les paiements</h4>
-            <ul>
-                <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Décimale</option>
-                    <option value="fractional">Fractionnelle</option>
-                    <option value="american">Américaine</option>
-                </select>
-            </div>
-
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
-    
-
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
-    </div>
-    </footer>
     <script type="module" src="/fr/double-or-nothing/double-or-nothing.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
 		<script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-fr.js"></script>
   </body>
 </html>

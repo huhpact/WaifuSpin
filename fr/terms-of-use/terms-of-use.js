@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const sections = document.querySelectorAll('section');
-  const progressBar = document.querySelector('.progress-bar');
-  const currentSection = document.querySelector('.current-section');
-  const currentNumber = document.querySelector('.section-counter .current');
-  const nav = document.querySelector('.floating-nav');
-  const totalSections = document.querySelector('.section-counter .total');
+  const progressBar = document.querySelector('.progress__bar');
+  const currentSection = document.querySelector('.current__section');
+  const currentNumber = document.querySelector('.section__counter .current');
+  const nav = document.querySelector('.floating__nav');
+  const totalSections = document.querySelector('.section__counter .total');
 
   if (totalSections) {
     totalSections.textContent = `/${sections.length}`;
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = currentScroll;
   });
 
-  const hero = document.querySelector('.hero-background');
+  const hero = document.querySelector('.hero__background');
   if (hero) {
     window.addEventListener('scroll', () => {
       const scroll = window.pageYOffset;

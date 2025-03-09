@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const sections = document.querySelectorAll('.policy-section');
+	const sections = document.querySelectorAll('.policy__section');
 	
 	const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {

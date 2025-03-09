@@ -1,273 +1,81 @@
-@ -1,266 +0,0 @@
 <!DOCTYPE html>
-<html lang="en">
-    <link rel="canonical" href="https://waifuspin.com" />
-    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <link rel="shortcut icon" href="/images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Access Denied</title>
-    <style>
-			:root {
-    --primary-bg: #080a12;
-    --secondary-bg: #0f1118;
-    --accent-color: #ff2a2a;
-    --text-color: #ffffff;
-    --grid-gap: 2rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: var(--primary-bg);
-    color: var(--text-color);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 2rem;
-    position: relative;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--grid-gap);
-    position: relative;
-    z-index: 1;
-}
-
-.cell {
-    padding: 2rem;
-    background: var(--secondary-bg);
-    border-radius: 0.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 42, 42, 0.1);
-}
-
-.error-code {
-    font-size: 8rem;
-    font-weight: 900;
-    color: var(--accent-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 0 0 20px rgba(255, 42, 42, 0.3);
-    animation: glitch 3s infinite;
-    letter-spacing: -4px;
-}
-
-.main-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.main-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-.main-text p {
-    font-size: 1.1rem;
-    opacity: 0.7;
-    line-height: 1.6;
-    font-weight: 400;
-}
-
-.animated-lock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lock {
-    width: 100px;
-    height: 100px;
-    background: var(--accent-color);
-    border-radius: 4px;
-    position: relative;
-    animation: warning 4s infinite;
-}
-
-.keyhole {
-    width: 30px;
-    height: 30px;
-    background: var(--primary-bg);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.keyhole::after {
-    content: '';
-    width: 10px;
-    height: 20px;
-    background: var(--primary-bg);
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.action-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    background: var(--accent-color);
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-button:hover {
-    background: #ff0000;
-}
-
-.particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-@keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
-}
-
-@keyframes warning {
-    0% { background: var(--accent-color); }
-    50% { background: #ff0000; }
-    100% { background: var(--accent-color); }
-}
-
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .error-code {
-        font-size: 6rem;
-    }
-
-    .main-text h1 {
-        font-size: 2rem;
-    }
-}
-		</style>
+    <title>WaifuSpin - Premium Gaming Experience</title>
+    <link rel="stylesheet" href="/css/access-denied.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
+    
+    <div class="language__bar">
+        <button class="lang__btn" data-lang="en">EN</button>
+        <button class="lang__btn" data-lang="de">DE</button>
+        <button class="lang__btn" data-lang="ja">日本語</button>
+        <button class="lang__btn" data-lang="fr">FR</button>
+    </div>
+
     <div class="container">
-        <div class="grid">
-            <div class="cell error-code">403</div>
-            <div class="cell main-text">
-                <h1>Access Denied</h1>
-                <p>You are not authorized to access this resource. This incident will be reported.</p>
-            </div>
-            <div class="cell animated-lock">
-                <div class="lock">
-                    <div class="keyhole"></div>
+        <div class="screen__notice">
+            <header class="header">
+                <div class="logo__container">
+                    <img src="/images/logo.png" alt="WaifuSpin Logo" class="logo">
+                </div>
+                <p class="message" data-i18n="screenMessage">Your screen is too small to experience WaifuSpin</p>
+                <p class="sub__message" data-i18n="switchDevice">Please switch to a larger device</p>
+            </header>
+            
+            <div class="stats__grid">
+                <div class="stat__card">
+                    <div class="stat__number" data-value="12000">0</div>
+                    <div class="stat__label" data-i18n="statPlayers">Active Players</div>
+                </div>
+                <div class="stat__card">
+                    <div class="stat__number" data-value="50000">0</div>
+                    <div class="stat__label" data-i18n="statJackpot">Daily Jackpot</div>
+                </div>
+                <div class="stat__card">
+                    <div class="stat__number" data-value="100">0</div>
+                    <div class="stat__label" data-i18n="statPayout">Payout Rate</div>
+                </div>
+                <div class="stat__card">
+                    <div class="stat__number">24/7</div>
+                    <div class="stat__label" data-i18n="statSupport">Live Support</div>
                 </div>
             </div>
-            <div class="cell action-button">
-                <button onclick="window.history.back()">Return</button>
+
+            <div class="features__grid">
+                <div class="feature__card">
+                    <i class="fas fa-dice feature__icon"></i>
+                    <h3 class="feature__title" data-i18n="feature1Title">Premium Games</h3>
+                    <p class="feature__text" data-i18n="feature1Text">Experience our exclusive collection of high-quality waifu-themed slots with stunning animations and immersive gameplay.</p>
+                </div>
+                <div class="feature__card">
+                    <i class="fas fa-gem feature__icon"></i>
+                    <h3 class="feature__title" data-i18n="feature2Title">Daily Rewards</h3>
+                    <p class="feature__text" data-i18n="feature2Text">Claim amazing daily rewards, participate in tournaments, and earn special bonuses every time you play.</p>
+                </div>
+                <div class="feature__card">
+                    <i class="fas fa-crown feature__icon"></i>
+                    <h3 class="feature__title" data-i18n="feature3Title">VIP Benefits</h3>
+                    <p class="feature__text" data-i18n="feature3Text">Join our exclusive VIP program for premium perks, personal account manager, and special events access.</p>
+                </div>
+                <div class="feature__card">
+                    <i class="fas fa-shield-alt feature__icon"></i>
+                    <h3 class="feature__title" data-i18n="feature4Title">Secure Gaming</h3>
+                    <p class="feature__text" data-i18n="feature4Text">Play with confidence knowing your data and transactions are protected by state-of-the-art security.</p>
+                </div>
+                <div class="feature__card">
+                    <i class="fas fa-gift feature__icon"></i>
+                    <h3 class="feature__title" data-i18n="feature5Title">Welcome Package</h3>
+                    <p class="feature__text" data-i18n="feature5Text">Start your journey with an incredible welcome bonus package worth up to $1,000 + 100 free spins.</p>
+                </div>
             </div>
         </div>
-        <div class="particles"></div>
     </div>
-    <script>
-			function createParticle() {
-    const particle = document.createElement('div');
-    particle.style.position = 'absolute';
-    particle.style.width = '1px';
-    particle.style.height = '1px';
-    particle.style.background = '#ff2a2a';
-    particle.style.borderRadius = '50%';
-    
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    
-    particle.style.left = `${startX}px`;
-    particle.style.top = `${startY}px`;
-    
-    document.querySelector('.particles').appendChild(particle);
-    
-    const angle = Math.random() * Math.PI * 2;
-    const velocity = 0.5 + Math.random();
-    const lifetime = 2000 + Math.random() * 1000;
-    
-    let opacity = 0.3;
-    const startTime = Date.now();
-    
-    function animate() {
-        const elapsed = Date.now() - startTime;
-        if (elapsed > lifetime) {
-            particle.remove();
-            return;
-        }
-        
-        const x = parseFloat(particle.style.left);
-        const y = parseFloat(particle.style.top);
-        
-        particle.style.left = `${x + Math.cos(angle) * velocity}px`;
-        particle.style.top = `${y + Math.sin(angle) * velocity}px`;
-        
-        opacity = 0.3 - (elapsed / lifetime) * 0.3;
-        particle.style.opacity = opacity;
-        
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
-}
-
-function initParticles() {
-    setInterval(() => {
-        if (document.querySelector('.particles').children.length < 30) {
-            createParticle();
-        }
-    }, 300);
-}
-
-initParticles();
-		</script>
+    <div class="scroll__indicator">↓</div>
+    <script src="/js/i18n-denied.js"></script>
+    <script src="/en/mobile/access-denied.js"></script>
 </body>
 </html>

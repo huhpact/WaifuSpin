@@ -58,7 +58,7 @@ hr {
 }
 
 
-.language-dropdown ul.dropdown {
+.language__dropdown ul.dropdown {
   display: none;
   background: var(--secondary-bg);
   padding: 10px;
@@ -72,21 +72,21 @@ hr {
   width: calc(100% - 30px);
 }
 
-.language-dropdown:hover ul.dropdown {
+.language__dropdown:hover ul.dropdown {
   display: flex;
 }
 
-.language-dropdown ul.dropdown li {
+.language__dropdown ul.dropdown li {
   padding: 5px 10px;
   margin: 5px 0;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.language-dropdown ul.dropdown li:hover {
+.language__dropdown ul.dropdown li:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 
-.language-dropdown {
+.language__dropdown {
   position: relative;
 }

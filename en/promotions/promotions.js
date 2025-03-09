@@ -18,7 +18,7 @@ const observer = new IntersectionObserver((entries) => {
 					entry.target.classList.add('visible');
 					
 					if (entry.target.classList.contains('stat')) {
-							const numberElement = entry.target.querySelector('.stat-number');
+							const numberElement = entry.target.querySelector('.stat__number');
 							if (numberElement) {
 									const endValue = parseInt(numberElement.getAttribute('data-value'));
 									animateNumber(numberElement, endValue);
@@ -28,7 +28,7 @@ const observer = new IntersectionObserver((entries) => {
 	});
 }, observerOptions);
 
-document.querySelectorAll('.feature-card, .stat, .features h2').forEach(el => {
+document.querySelectorAll('.feature__card, .stat, .features h2').forEach(el => {
 	observer.observe(el);
 });
 
@@ -54,9 +54,9 @@ function animateNumber(element, endValue) {
 	requestAnimationFrame(updateNumber);
 }
 
-document.querySelectorAll('.promo-card .cta-btn').forEach(button => {
+document.querySelectorAll('.promo__card .cta__btn').forEach(button => {
 	button.addEventListener('click', function() {
-			const promoCode = this.parentElement.querySelector('.promo-code').textContent;
+			const promoCode = this.parentElement.querySelector('.promo__code').textContent;
 			navigator.clipboard.writeText(promoCode).then(() => {
 					const originalText = this.textContent;
 					this.textContent = 'Copied!';

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin - スロット</title>
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="/css/slots.css">
 		<link rel="stylesheet" href="/css/footer.css" />
 		<link rel="stylesheet" href="/css/cookie.css" />
 		<link rel="stylesheet" href="/css/game-frame.css" />
@@ -17,154 +18,90 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
-  <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
+  <body style="display: flex;">
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
+<div class="custom__cursor"></div>
   
 <nav class="navbar">
-	<a href="/jpn/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
+	<a href="/jpn/index/index.html?utm_source=waifuspin-slots&utm_medium=webbrowser&lang=ja"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
 	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
+	<div class="nav__balance">
+			<div class="balance__display">
+					<span id="balance">0.00000000</span>
+					<span class="crypto__symbol">USD</span>
 			</div>
 	</div>
 
-	<div class="nav-profile">
-			<span id="username">ユーザー</span>
+	<div class="nav__profile">
+			<span id="username">Utilisateur</span>
 		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
 	</div>
 </nav>
   
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
+<div id="cookie__banner" class="hidden">
+  <div class="cookie__content">
+      <div class="cookie__header">
+          <div class="cookie__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
           </div>
           <h4>クッキー設定</h4>
       </div>
       <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
-      <div class="button-group">
-          <button id="decline-cookies">廃棄物</button>
-          <button id="accept-cookies">受け入れる</button>
+      <div class="button__group">
+          <button id="decline__cookies">廃棄物</button>
+          <button id="accept__cookies">受け入れる</button>
       </div>
   </div>
 </div>
+ 
 
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Slots adden-->
-      </div>
-
-      <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
+    <main class="game__container" style="flex: 1; display: flex; flex-direction: column; align-items: center; padding: 1.5rem; gap: 1.5rem;">
+      <div class="game__frame" id="gameFrame">
+        <div class="slot__machine">
+          <div class="header">
+              <div class="stats">
+                  <div class="balance">バランス: $<span id="balance">00.00</span></div>
+                  <div class="win__amount">勝つ: $<span id="winAmount">0</span></div>
+              </div>
           </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
-        </div>
-        
-        <button class="button autoplay" id="autoplayButton">オートプレイ</button>
-        <button class="button" id="playButton">プレー</button>
+
+          <div class="reels__container">
+              <div class="reel" id="reel0"></div>
+              <div class="reel" id="reel1"></div>
+              <div class="reel" id="reel2"></div>
+              <div class="reel" id="reel3"></div>
+              <div class="reel" id="reel4"></div>
+          </div>
+
+          <div class="win__lines"></div>
+
+          <div class="controls">
+              <div class="bet__controls">
+                  <button id="decreaseBet">-</button>
+                  <div class="bet__amount">ベット: $<span id="betAmount">1</span></div>
+                  <button id="increaseBet">+</button>
+              </div>
+              <div class="spin__controls">
+                  <button id="spinButton" class="spin__button">スピン</button>
+                  <button id="autoSpinButton" class="auto__spin__button">自動</button>
+              </div>
+          </div>
+
+          <div id="messageBox" class="message__box"></div>
+      
+  </div>
       </div>
     </main>
 
 		<hr>
-		
-    <footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-
-    <div class="container">
-
-        <div class="section">
-            <h4>カジノ</h4>
-            <ul>
-                <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
-                <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
-                <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
-                <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
-                <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
-                <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
-                <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>サポート</h4>
-            <ul>
-                <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
-                <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
-                <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
-                <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>会社概要</h4>
-            <ul>
-                <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
-                <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
-                <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
-                <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
-                <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>お支払いについて</h4>
-            <ul>
-                <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
-                <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
-                <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
-                <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
-                <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">小数点以下</option>
-                    <option value="fractional">フラクショナル</option>
-                    <option value="american">アメリカン</option>
-                </select>
-            </div>
-
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
-    
-
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
-    </div>
-    </footer>
-
-  
     <script type="module" src="/jpn/slots/slots.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
 		<script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-ja.js"></script>
   </body>
 </html>

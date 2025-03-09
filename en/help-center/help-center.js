@@ -1,6 +1,6 @@
-const topicBtns = document.querySelectorAll('.topic-btn');
-const faqSections = document.querySelectorAll('.faq-section');
-const searchResults = document.querySelector('.search-results');
+const topicBtns = document.querySelectorAll('.topic__btn');
+const faqSections = document.querySelectorAll('.faq__section');
+const searchResults = document.querySelector('.search__results');
 
 topicBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -19,7 +19,7 @@ topicBtns.forEach(btn => {
     });
 });
 
-const faqItems = document.querySelectorAll('.faq-item');
+const faqItems = document.querySelectorAll('.faq__item');
 
 faqItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -33,7 +33,7 @@ faqItems.forEach(item => {
     });
 });
 
-const searchBar = document.querySelector('.search-bar');
+const searchBar = document.querySelector('.search__bar');
 
 searchBar.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
@@ -46,15 +46,15 @@ searchBar.addEventListener('input', (e) => {
 
         let found = false;
         faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question').textContent.toLowerCase();
-            const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+            const question = item.querySelector('.faq__question').textContent.toLowerCase();
+            const answer = item.querySelector('.faq__answer').textContent.toLowerCase();
 
             if (question.includes(searchTerm) || answer.includes(searchTerm)) {
                 found = true;
                 const clone = item.cloneNode(true);
                 clone.addEventListener('click', () => {
                     const isActive = clone.classList.contains('active');
-                    searchResults.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                    searchResults.querySelectorAll('.faq__item').forEach(i => i.classList.remove('active'));
                     if (!isActive) {
                         clone.classList.add('active');
                     }
@@ -65,14 +65,14 @@ searchBar.addEventListener('input', (e) => {
 
         if (!found) {
             searchResults.innerHTML = `
-                <div class="faq-item">
-                    <div class="faq-question">No results found</div>
-                    <div class="faq-answer">Try searching with different keywords.</div>
+                <div class="faq__item">
+                    <div class="faq__question">No results found 😢</div>
+                    <div class="faq__answer">Try searching with different keywords.</div>
                 </div>
             `;
         }
     } else {
         searchResults.classList.remove('active');
-        document.querySelector('.topic-btn.active').click();
+        document.querySelector('.topic__btn.active').click();
     }
 });

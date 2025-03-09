@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin - Lucky Wheel</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 		<link rel="stylesheet" href="/css/footer.css" />
 		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/game-frame.css" />
+		<link rel="stylesheet" href="/css/lucky-wheel.css" />
 		<link rel="stylesheet" href="/css/loading-cursor.css" />
 		<link rel="stylesheet" href="/css/sidebar.css" />
     <link rel="canonical" href="https://waifuspin.com" />
@@ -18,151 +19,99 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
+<div class="custom__cursor"></div>
   
-<nav class="navbar">
-	<a href="/en/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
-	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
-			</div>
-	</div>
-
-	<div class="nav-profile">
-			<span id="username">User</span>
-		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
-	</div>
-</nav>
-  
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-          </div>
-          <h4>Cookie Settings</h4>
-      </div>
-      <p>This site uses cookies to ensure you get the best experience on our website.</p>
-      <div class="button-group">
-          <button id="decline-cookies">Decline</button>
-          <button id="accept-cookies">Accept</button>
-      </div>
+<div id="cookie__banner" class="hidden">
+  <div class="cookie__content">
+    <div class="cookie__header">
+        <div class="cookie__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+        </div>
+        <h4>Cookie Settings</h4>
+    </div>
+    <p>This website uses cookies to ensure that you have the best experience on our website.</p>
+    <div class="button__group">
+        <button id="decline__cookies">Refuse</button>
+        <button id="accept__cookies">Accept</button>
+    </div>
   </div>
 </div>
-
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Lucky Wheel adden-->
-      </div>
-
-      <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
-          </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="/en/index/index.html?utm_source=waifuspin-luckywheel&utm_medium=webbrowser&lang=en"><img src="/images/logo.png" alt="WaifuSpin Logo"></a>
         </div>
-        
-        <button class="button autoplay" id="autoplayButton">Auto Play</button>
-        <button class="button" id="playButton">Play</button>
-      </div>
-    </main>
+        <div class="balance">
+            <i class="fas fa-wallet"></i>
+            <span id="balance">$0.00</span>
+        </div>
+        <div class="profile">
+            <div class="profile__trigger">
+                <span id="username">Username</span>
+                <img src="/images/anime-default-pfp-7.jpg" alt="Profile" class="profile__pic">
+            </div>
+            <div class="dropdown">
+                <button id="notificationsBtn"><i class="fas fa-bell"></i> Notifications</button>
+                <button id="settingsBtn"><i class="fas fa-cog"></i> Settings</button>
+                <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+    </nav>
+</header>
 
-		<hr>
-    <footer>
-      <div class="logo-footer1">
-      <img src="/images/logo.png" alt="Waifuspin Logo">
+<main class="container">
+    <div class="wheel__container">
+        <div class="wheel" id="wheel"></div>
+        <div class="pointer"></div>
     </div>
-  
-    <div class="container">
-  
-      <div class="section">
-        <h4>Casino</h4>
-        <ul>
-          <li><a href="/en/casino-games/casino-games.html">Casino Games</a></li>
-          <li><a href="/en/slots-guide/slots-guide.html">Slots</a></li>
-          <li><a href="/en/live-casino/live-casino.html">Live Casino</a></li>
-          <li><a href="/en/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-          <li><a href="/en/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-          <li><a href="/en/provider/provider.html">Providers</a></li>
-          <li><a href="/en/promotions-and-competitions/promotions-and-competitions.html">Promotions & Competitions</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="/en/help-center/help-center.html">Help Center</a></li>
-          <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">Hotline for Game Problems</a></li>
-          <li><a href="/en/support/support.html">Live Customer Service</a></li>
-          <li><a href="/en/self-exclusion/self-exclusion.html">Self-Exclusion</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-        <h4>About Us</h4>
-        <ul>
-          <li><a href="/en/vip/vip.html">VIP Club</a></li>
-          <li><a href="/en/affiliates/affiliates.html">Affiliate</a></li>
-          <li><a href="/en/privacy-policy/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/en/lbc-policy/lbc-policy.html">LBC Policy</a></li>
-          <li><a href="/en/terms-of-use/terms-of-use.html">Terms of Use</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-        <h4>Payment Information</h4>
-        <ul>
-          <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">Deposits & Withdrawals</a></li>
-          <li><a href="/en/guide-to-currencies/guide-to-currencies.html">Currency Guide</a></li>
-          <li><a href="/en/guide-to-crypto/guide-to-crypto.html">Crypto Guide</a></li>
-          <li><a href="/en/supported-crypto/supported-crypto.html">Supported Crypto</a></li>
-          <li><a href="/en/how-much-to-bet/how-much-to-bet.html">How Much to Bet</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-  
-        <div class="language-selector">
-          <select>
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-          </select>
+
+    <div class="controls">
+        <div class="bet__controls">
+            <input type="number" id="betAmount" class="bet__input" min="1" value="10" step="1">
+            <div class="bet__buttons">
+                <button class="btn" onclick="adjustBet('half')">½</button>
+                <button class="btn" onclick="adjustBet('double')">2×</button>
+                <button class="btn" onclick="adjustBet('max')">Max</button>
+            </div>
         </div>
-  
-        <div class="currency-selector">
-          <select>
-            <option value="decimal">Decimal</option>
-            <option value="fractional">Fractional</option>
-            <option value="american">American</option>
-          </select>
+
+        <div class="spin__controls">
+            <button id="spinButton" class="spin__btn">SPIN</button>
+            <button id="autoSpinButton" class="auto__btn">AUTO</button>
         </div>
-  
-        
-        <div class="btc-rate">1 BTC = Loading...</div>
-      </div>
+
+        <div class="auto__settings" id="autoSettings">
+            <h3>Auto Spin Settings</h3>
+            <div class="setting">
+                <label>Number of Spins:</label>
+                <input type="number" id="spinCount" min="1" max="100" value="10">
+            </div>
+            <div class="setting">
+                <label>Stop if Win Exceeds:</label>
+                <input type="number" id="stopWin" min="0" value="1000">
+            </div>
+            <div class="setting">
+                <label>Stop if Loss Exceeds:</label>
+                <input type="number" id="stopLoss" min="0" value="100">
+            </div>
+        </div>
     </div>
-    <hr>
-    
-  
-    <div class="copyright">
-      &copy; 2024 Waifuspin.com | All Rights Reserved.
+
+    <div class="history">
+        <h3>Recent Spins</h3>
+        <div id="spinHistory" class="history__list"></div>
     </div>
-    </footer>
-  
+</main>
+
     <script type="module" src="/en/lucky-wheel/lucky-wheel.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
 		<script src="/js/sidebar.js"></script>
+        <script src="/js/footer/footer-en.js"></script>
   </body>
 </html>

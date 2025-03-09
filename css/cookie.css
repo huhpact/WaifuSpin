@@ -11,7 +11,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
 
-#cookie-banner {
+#cookie__banner {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -26,38 +26,38 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#cookie-banner.show {
+#cookie__banner.show {
   transform: translateY(0);
 }
 
-#cookie-banner.hide {
+#cookie__banner.hide {
   transform: translateY(100%);
 }
 
-#cookie-banner.hidden {
+#cookie__banner.hidden {
   display: none;
 }
 
-.cookie-content {
+.cookie__content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.cookie-header {
+.cookie__header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
-.cookie-icon {
+.cookie__icon {
   color: var(--accent);
   display: flex;
   align-items: center;
 }
 
-#cookie-banner h4 {
+#cookie__banner h4 {
   color: white;
   margin: 0;
   font-size: 1.25rem;
@@ -65,19 +65,19 @@
   letter-spacing: -0.025em;
 }
 
-#cookie-banner p {
+#cookie__banner p {
   margin: 0 0 1.5rem 0;
   line-height: 1.6;
   font-size: 0.95rem;
 }
 
-.button-group {
+.button__group {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
 }
 
-#cookie-banner button {
+#cookie__banner button {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
@@ -86,44 +86,44 @@
   transition: all 0.2s ease;
 }
 
-#cookie-banner button:hover {
+#cookie__banner button:hover {
   transform: translateY(-1px);
 }
 
-#cookie-banner button:active {
+#cookie__banner button:active {
   transform: translateY(0);
 }
 
-#accept-cookies {
+#accept__cookies {
   background: var(--gradient);
   color: white;
   box-shadow: 0 4px 12px rgba(95, 148, 255, 0.25);
 }
 
-#accept-cookies:hover {
+#accept__cookies:hover {
   box-shadow: 0 6px 16px rgba(95, 148, 255, 0.35);
 }
 
-#decline-cookies {
+#decline__cookies {
   background: rgba(255, 255, 255, 0.1);
   color: var(--text-clr);
   backdrop-filter: blur(10px);
 }
 
-#decline-cookies:hover {
+#decline__cookies:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 640px) {
-  .button-group {
+  .button__group {
       flex-direction: column;
   }
   
-  #cookie-banner button {
+  #cookie__banner button {
       width: 100%;
   }
 
-  #cookie-banner {
+  #cookie__banner {
       padding: 1.25rem;
   }
 }

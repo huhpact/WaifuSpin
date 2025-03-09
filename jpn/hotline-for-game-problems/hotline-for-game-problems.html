@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,41 +23,39 @@
 
 </head>
 <body>
-	<div class="stars"></div>
-  <div class="twinkling"></div>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
+<div class="custom__cursor"></div>
   
 <header>
-    <div class="header-content">
-      <div class="burger-logo">
-        <div class="burger-menu">
+    <div class="header__content">
+      <div class="burger__logo">
+        <div class="burger__menu">
           <i class='bx bx-menu'></i>
         </div>
-        <a href="/jpn/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+        <a href="/jpn/index/index.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
-      <div class="login-reg">
-        <a href="/jpn/login/login.html" class="login">ログイン</a>
-        <a href="/jpn/login/login.html"><button class="sign-up-btn">登録する</button></a>
+      <div class="login__reg">
+        <a href="/jpn/login/login.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja" class="login">ログイン</a>
+        <a href="/jpn/login/login.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><button class="sign__up__btn">登録する</button></a>
       </div>
     </div>
   </header>
   
-<div id="cookie-banner" class="hidden">
-    <div class="cookie-content">
-        <div class="cookie-header">
-            <div class="cookie-icon">
+<div id="cookie__banner" class="hidden">
+    <div class="cookie__content">
+        <div class="cookie__header">
+            <div class="cookie__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
             </div>
             <h4>クッキー設定</h4>
         </div>
         <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
-        <div class="button-group">
-            <button id="decline-cookies">廃棄物</button>
-            <button id="accept-cookies">受け入れる</button>
+        <div class="button__group">
+            <button id="decline__cookies">廃棄物</button>
+            <button id="accept__cookies">受け入れる</button>
         </div>
     </div>
 </div>
@@ -65,13 +63,13 @@
 
   <aside class="sidebar">
     <ul>
-      <li><a href="/jpn/promotions/promotions.html"><i class='bx bxs-gift'></i> プロモーション</a></li>
-      <li><a href="/jpn/affiliates/affiliates.html"><i class='bx bxs-business'></i>所属</a></li>
+      <li><a href="/jpn/promotions/promotions.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><i class='bx bxs-gift'></i> プロモーション</a></li>
+      <li><a href="/jpn/affiliates/affiliates.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><i class='bx bxs-business'></i>所属</a></li>
       <hr>
-      <li><a href="/jpn/vip/vip.html"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
-      <li><a href="/jpn/news/news.html"><i class='bx bxs-news'></i> ニュース</a></li>
-      <li><a href="/jpn/support/support.html"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
-      <li class="language-dropdown">
+      <li><a href="/jpn/vip/vip.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
+      <li><a href="/jpn/news/news.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><i class='bx bxs-news'></i> ニュース</a></li>
+      <li><a href="/jpn/support/support.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
+      <li class="language__dropdown">
         <i class='bx bx-world'></i> 言語
         <ul class="dropdown">
           <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">English</a></li>
@@ -85,265 +83,183 @@
   <div class="overlay"></div>
 
     <div id="quizModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal__content">
+            <div class="modal__header">
                 <h2>自己診断クイズ</h2>
-                <span class="close-modal">&times;</span>
+                <span class="close__modal">&times;</span>
             </div>
             <div id="quizContent"></div>
         </div>
     </div>
 
     <div class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero__bg"></div>
         <nav>
-            <div class="emergency-number">
+            <div class="emergency__number">
                 年中無休の緊急体制： <div class="pulse"></div>
                  <span class="highlight">BAKA-911-UWU</span>
             </div>
         </nav>
         
-        <div class="hero-content" data-aos="fade-up">
+        <div class="hero__content" data-aos="fade-up">
             <h1>助けが必要ですか？<br>我々はここにいる <span class="gradient-text">24/7</span></h1>
-            <p class="hero-subtitle">試合中のあなたの健康は重要です。迅速かつ秘密厳守のサポートをご利用ください。</p>
-            <div class="hero-cta">
-                <a href="/jpn/support/support.html" class="primary-button">今すぐチャットを開始</a>
-                <a href="#resources" class="secondary-button">アセスメントの実施</a>
+            <p class="hero__subtitle">試合中のあなたの健康は重要です。迅速かつ秘密厳守のサポートをご利用ください。</p>
+            <div class="hero__cta">
+                <a href="/jpn/support/support.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja" class="primary__button">今すぐチャットを開始</a>
+                <a href="#resources" class="secondary__button">アセスメントの実施</a>
             </div>
         </div>
     </div>
 
     <main>
-        <section class="quick-help" data-aos="fade-up">
-            <div class="section-header">
-                <span class="section-tag">インスタント・ヘルプ</span>
+        <section class="quick__help" data-aos="fade-up">
+            <div class="section__header">
+                <span class="section__tag">インスタント・ヘルプ</span>
                 <h2>自助具</h2>
-                <p class="section-subtitle">私たちのツールでゲーム習慣をコントロールしよう</p>
+                <p class="section__subtitle">私たちのツールでゲーム習慣をコントロールしよう</p>
             </div>
-            <div class="cards-container">
-                <div class="glass-card" data-aos="zoom-in">
-                    <div class="card-content">
-                        <div class="card-icon">🎮</div>
+            <div class="cards__container">
+                <div class="glass__card" data-aos="zoom-in">
+                    <div class="card__content">
+                        <div class="card__icon">🎮</div>
                         <h3>制限の設定</h3>
                         <p>インテリジェントなツールでプレーの制限をカスタマイズ</p>
-                        <ul class="feature-list">
+                        <ul class="feature__list">
                             <li>1日の入金限度額</li>
                             <li>セッション・タイマー</li>
                             <li>反省期間</li>
                         </ul>
-                        <button class="card-button">今すぐ設定する</button>
+                        <button class="card__button">今すぐ設定する</button>
                     </div>
-                    <div class="card-blur"></div>
+                    <div class="card__blur"></div>
                 </div>
 
-                <div class="glass-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card-content">
-                        <div class="card-icon">⏰</div>
+                <div class="glass__card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card__content">
+                        <div class="card__icon">⏰</div>
                         <h3>休憩を取る</h3>
                         <p>一歩引いて、ポーズツールで考える</p>
-                        <ul class="feature-list">
+                        <ul class="feature__list">
                             <li>一時的な自己排除</li>
                             <li>リアリティ・チェック</li>
                             <li>アクティビティ監視</li>
                         </ul>
-                        <button class="card-button">一時停止を有効にする</button>
+                        <button class="card__button">一時停止を有効にする</button>
                     </div>
-                    <div class="card-blur"></div>
+                    <div class="card__blur"></div>
                 </div>
 
-                <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card-content">
-                        <div class="card-icon">💬</div>
+                <div class="glass__card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card__content">
+                        <div class="card__icon">💬</div>
                         <h3>援助を受ける</h3>
                         <p>サポートネットワークに即座に接続</p>
-                        <ul class="feature-list">
+                        <ul class="feature__list">
                             <li>24時間365日ライブチャット</li>
                             <li>専門家のアドバイス</li>
                             <li>地域支援</li>
                         </ul>
-                        <button class="card-button">ログイン</button>
+                        <button class="card__button">ログイン</button>
                     </div>
-                    <div class="card-blur"></div>
+                    <div class="card__blur"></div>
                 </div>
             </div>
         </section>
 
-        <section class="contact-methods" data-aos="fade-up">
-            <div class="section-header">
-                <span class="section-tag">手を差し出す</span>
+        <section class="contact__methods" data-aos="fade-up">
+            <div class="section__header">
+                <span class="section__tag">手を差し出す</span>
                 <h2>私たちはまだここにいる</h2>
-                <p class="section-subtitle">必要な時に必要なサポートを受けるための複数の方法</p>
+                <p class="section__subtitle">必要な時に必要なサポートを受けるための複数の方法</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-item" style="background-image: url('/images/anime1.jpg')">
-                    <div class="contact-content">
-                        <div class="contact-icon">📞</div>
+            <div class="contact__grid">
+                <div class="contact__item" style="background-image: url('/images/anime1.jpg')">
+                    <div class="contact__content">
+                        <div class="contact__icon">📞</div>
                         <h3>電話サポート</h3>
-                        <p class="contact-number">BAKA-911-UWU</p>
+                        <p class="contact__number">BAKA-911-UWU</p>
                         <span class="availability">1日24時間、週7日利用可能</span>
-                        <a href="tel:BAKA-911-UWU" class="contact-button">今すぐお電話を</a>
+                        <a href="tel:BAKA-911-UWU" class="contact__button">今すぐお電話を</a>
                     </div>
                 </div>
 
-                <div class="contact-item" style="background-image: url('/images/anime2.webp')">
-                    <div class="contact-content">
-                        <div class="contact-icon">💬</div>
+                <div class="contact__item" style="background-image: url('/images/anime2.webp')">
+                    <div class="contact__content">
+                        <div class="contact__icon">💬</div>
                         <h3>ライブチャット</h3>
                         <p>インスタントメッセージのサポート</p>
                         <span class="availability">5分で答える</span>
-                        <a href="/jpn/support/support.html" class="contact-button">チャットを開始する</a>
+                        <a href="/jpn/support/support.html?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja" class="contact__button">チャットを開始する</a>
                     </div>
                 </div>
 
-                <div class="contact-item" style="background-image: url('/images/anime3.webp')">
-                    <div class="contact-content">
-                        <div class="contact-icon">✉️</div>
+                <div class="contact__item" style="background-image: url('/images/anime3.webp')">
+                    <div class="contact__content">
+                        <div class="contact__icon">✉️</div>
                         <h3>メールサポート</h3>
                         <p>WaifuSpinサポート</p>
                         <span class="availability">24時間以内の対応</span>
-                        <a href="mailto:huhpact@outlook.fr" class="contact-button">電子メールを送信する</a>
+                        <a href="mailto:huhpact@outlook.fr" class="contact__button">電子メールを送信する</a>
                     </div>
                 </div>
             </div>
         </section>
 				<br>
         <section class="resources" id="resources" data-aos="fade-up">
-            <div class="section-header">
-                <span class="section-tag">リソース</span>
+            <div class="section__header">
+                <span class="section__tag">リソース</span>
                 <h2>今日、行動を起こす</h2>
-                <p class="section-subtitle">健全なギャンブル習慣を維持するためのツールとリソース</p>
+                <p class="section__subtitle">健全なギャンブル習慣を維持するためのツールとリソース</p>
             </div>
-            <div class="resources-grid">
-                <article class="resource-card" data-aos="flip-left">
-                    <div class="resource-icon">📊</div>
+            <div class="resources__grid">
+                <article class="resource__card" data-aos="flip-left">
+                    <div class="resource__icon">📊</div>
                     <h3>自己評価</h3>
                     <p>秘密厳守のアンケートに答えて、あなたのギャンブル習慣を診断しましょう。</p>
-                    <button class="resource-button" id="startQuiz">クイズに答える</button>
+                    <button class="resource__button" id="startQuiz">クイズに答える</button>
                 </article>
 
-                <article class="resource-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="resource-icon">👥</div>
+                <article class="resource__card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="resource__icon">👥</div>
                     <h3>地域支援</h3>
                     <p>適度な支援グループに参加する</p>
-                    <button class="resource-button">参加する</button>
+                    <button class="resource__button">参加する</button>
                 </article>
 
-                <article class="resource-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="resource-icon">📚</div>
+                <article class="resource__card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="resource__icon">📚</div>
                     <h3>教材</h3>
                     <p>責任あるギャンブルの詳細</p><br>
-                    <a href="https://www.americangaming.org/wp-content/uploads/2019/11/RGC-RG-Principles_11-5.pdf" class="resource-button">詳細はこちら</a>
+                    <a href="https://www.americangaming.org/wp-content/uploads/2019/11/RGC-RG-Principles_11-5.pdf?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja" class="resource__button">詳細はこちら</a>
                 </article>
             </div>
         </section>
 				<br>
-        <section class="social-support" data-aos="fade-up">
-            <div class="section-header">
-                <span class="section-tag">コネクト</span>
+        <section class="social__support" data-aos="fade-up">
+            <div class="section__header">
+                <span class="section__tag">コネクト</span>
                 <h2>コミュニティに参加する</h2>
-                <p class="section-subtitle">ソーシャル・チャンネルでつながりを保ち、サポートする</p>
+                <p class="section__subtitle">ソーシャル・チャンネルでつながりを保ち、サポートする</p>
             </div>
-            <div class="social-grid">
-                <a href="https://www.x.com" class="social-item">
-                    <div class="social-icon"><i class='bx bxl-twitter'></i></div>
+            <div class="social__grid">
+                <a href="https://www.x.com?utm_source=waifuspin-hotlineforgameproblems&utm_medium=webbrowser&lang=ja" class="social__item">
+                    <div class="social__icon"><i class='bx bxl-twitter'></i></div>
                     <p>@WaifuSpinHelp</p>
-                    <span class="social-stat">アシスタンス 24/7</span>
+                    <span class="social__stat">アシスタンス 24/7</span>
                 </a>
-                <a href="#" class="social-item">
-                    <div class="social-icon"><i class='bx bxl-discord-alt' ></i></div>
+                <a href="#" class="social__item">
+                    <div class="social__icon"><i class='bx bxl-discord-alt' ></i></div>
                     <p>アシスタンス Discord</p>
-                    <span class="social-stat">クイックアンサー</span>
+                    <span class="social__stat">クイックアンサー</span>
                 </a>
-                <a href="#" class="social-item">
-                    <div class="social-icon"><i class='bx bxl-meta' ></i></div>
+                <a href="#" class="social__item">
+                    <div class="social__icon"><i class='bx bxl-meta' ></i></div>
                     <p>グループ Facebook</p>
-                    <span class="social-stat">活発なコミュニティ</span>
+                    <span class="social__stat">活発なコミュニティ</span>
                 </a>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="logo-footer1">
-          <img src="/images/logo.png" alt="Waifuspin Logo">
-      </div>
-  
-      <div class="container">
-  
-          <div class="section">
-              <h4>カジノ</h4>
-              <ul>
-                  <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
-                  <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
-                  <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
-                  <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
-                  <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
-                  <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
-                  <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
-              </ul>
-          </div>
-  
-          <div class="section">
-              <h4>サポート</h4>
-              <ul>
-                  <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
-                  <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
-                  <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
-                  <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
-              </ul>
-          </div>
-  
-          <div class="section">
-              <h4>会社概要</h4>
-              <ul>
-                  <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
-                  <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
-                  <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
-                  <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
-                  <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
-              </ul>
-          </div>
-  
-          <div class="section">
-              <h4>お支払いについて</h4>
-              <ul>
-                  <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
-                  <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
-                  <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
-                  <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
-                  <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
-              </ul>
-          </div>
-  
-          <div class="section">
-  
-              <div class="language-selector">
-                  <select>
-                      <option value="fr">Français</option>
-                      <option value="en">English</option>
-                  </select>
-              </div>
-  
-              <div class="currency-selector">
-                  <select>
-                      <option value="decimal">小数点以下</option>
-                      <option value="fractional">フラクショナル</option>
-                      <option value="american">アメリカン</option>
-                  </select>
-              </div>
-  
-            
-              <div class="btc-rate">1 BTC = Loading...</div>
-          </div>
-      </div>
-      <hr>
-      
-  
-      <div class="copyright">
-          &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
-      </div>
-      </footer>
-
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="/jpn/hotline-for-game-problems/hotline-for-game-problems.js"></script>
@@ -351,5 +267,6 @@
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
 		<script src="/js/sidebar.js"></script>
+        <script src="/js/footer/footer-ja.js"></script>
 </body>
 </html>

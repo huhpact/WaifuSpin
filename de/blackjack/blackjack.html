@@ -1,159 +1,164 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-DE">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaifuSpin - Blackjack</title>
+    <title>WaifuSpin - Kommt Bald!</title>
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="stylesheet" href="/css/footer.css" />
 		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/game-frame.css" />
+		<link rel="stylesheet" href="/css/coming-soon.css">
 		<link rel="stylesheet" href="/css/loading-cursor.css" />
 		<link rel="stylesheet" href="/css/sidebar.css" />
     <link rel="canonical" href="https://waifuspin.com" />
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
+<div class="custom__cursor"></div>
   
-<nav class="navbar">
-	<a href="/de/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
-	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
-			</div>
-	</div>
-
-	<div class="nav-profile">
-			<span id="username">Nutzer</span>
-		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
-	</div>
-</nav>
-  
-<div id="cookie-banner">
-  <h4>Cookie-Einstellungen</h4>
-  <p>Diese Seite verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Seite haben.</p>
-  <button id="accept-cookies">Akzeptieren</button>
-  <button id="decline-cookies">Ablehnen</button>
+<div id="cookie__banner" class="hidden">
+  <div class="cookie__content">
+    <div class="cookie__header">
+        <div class="cookie__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+        </div>
+        <h4>Cookie-Einstellungen</h4>
+    </div>
+    <p>Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.</p>
+    <div class="button__group">
+        <button id="decline__cookies">Ablehnen</button>
+        <button id="accept__cookies">Akzeptieren</button>
+    </div>
+  </div>
 </div>
 
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Blackjack adden-->
+<div class="back__button">
+  <button id="backBtn"><i class="fas fa-arrow-left"></i> Zurück</button>
+</div>
+<div id="bubble__container"></div>
+<div id="app">
+  <section class="hero__section">
+    <div class="hero__bg"></div>
+    <div class="logo__container">
+      <div class="logo">
+        <span class="waifu">Waifu</span><span class="spin">Spin</span>
       </div>
-
-      <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
-          </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
-        </div>
-        
-        <button class="button autoplay" id="autoplayButton">Auto Play</button>
-        <button class="button" id="playButton">Spielen</button>
-      </div>
-    </main>
-
-		<hr>
-		<footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
     </div>
-
-    <div class="container">
-
-        <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/de/casino-games/casino-games.html">Casino-Spiele</a></li>
-                <li><a href="/de/slots-guide/slots-guide.html">Slots</a></li>
-                <li><a href="/de/live-casino/live-casino.html">Live Casino</a></li>
-                <li><a href="/de/lucky-wheel-guide/lucky-wheel-guide.html">Glücksrad</a></li>
-                <li><a href="/de/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/de/provider/provider.html">Anbieter</a></li>
-                <li><a href="/de/promotions-and-competitions/promotions-and-competitions.html">Promotions & Wettbewerbe</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/de/help-center/help-center.html">Hilfe-Center</a></li>
-                <li><a href="/de/hotline-for-game-problems/hotline-for-game-problems.html">Hotline für Spielprobleme</a></li>
-                <li><a href="/de/support/support.html">Live-Kundenservice</a></li>
-                <li><a href="/de/self-exclusion/self-exclusion.html">Selbstausschluss</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Über uns</h4>
-            <ul>
-                <li><a href="/de/vip/vip.html">VIP Club</a></li>
-                <li><a href="/de/affiliates/affiliates.html">Affiliates</a></li>
-                <li><a href="/de/privacy-policy/privacy-policy">Datenschutzrichtlinie</a></li>
-                <li><a href="/de/lbc-policy/lbc-policy.html">LBC-Richtlinie</a></li>
-                <li><a href="/de/terms-of-use/terms-of-use.html">Nutzungsbedingungen</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Informationen zu Zahlungen</h4>
-            <ul>
-                <li><a href="/de/deposits-and-withdrawals/deposits-and-withdrawals.html">Einzahlungen & Abhebungen</a></li>
-                <li><a href="/de/guide-to-currencies/guide-to-currencies.html">Leitfaden zu Währungen</a></li>
-                <li><a href="/de/guide-to-crypto/guide-to-crypto.html">Leitfaden zu Crypto</a></li>
-                <li><a href="/de/supported-crypto/supported-crypto.html">Unterstützte Crypto-Währungen</a></li>
-                <li><a href="/de/how-much-to-bet/how-much-to-bet.html">Wie viel wetten</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Dezimal</option>
-                    <option value="fractional">Fraktionell</option>
-                    <option value="american">Amerikanisch</option>
-                </select>
-            </div>
-
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
     
-
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Alle Rechte vorbehalten.
+    <h1 class="title">Coming Soon</h1>
+    
+    <div class="description">
+      <p>Bald ist es soweit! Unser Blackjack-Game steht in den Startlöchern und wartet nur noch auf den Release!</p>
     </div>
-    </footer>
+    
+    <div class="cta__container">
+      <button class="notify__btn pulse">Informier mich, wenn es los geht!</button>
+      <div class="countdown">
+        <div class="countdown__item">
+          <span id="days">00</span>
+          <span class="label">Tage</span>
+        </div>
+        <div class="countdown__item">
+          <span id="hours">00</span>
+          <span class="label">Stunden</span>
+        </div>
+        <div class="countdown__item">
+          <span id="minutes">00</span>
+          <span class="label">Minuten</span>
+        </div>
+        <div class="countdown__item">
+          <span id="seconds">00</span>
+          <span class="label">Sekunden</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll__indicator">
+      <i class="fas fa-chevron-down"></i>
+      <span>Scrollen</span>
+    </div>
+  </section>
+
+  <section class="features__section">
+    <h2 class="section__title">Spiel Features</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-dice"></i>
+        <h3>Live Games</h3>
+        <p>Unsere Croupiers werden 24/7 für dich wach sein, um dir den besten Service liefern zu können.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-trophy"></i>
+        <h3>Riesengewinne</h3>
+        <p>Schon ab 1 USD kannst du Blackjack spielen und die maximale Summe? Naja die gibt es nicht. ALSO MAXIMALE GEWINNE!!</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3>Community</h3>
+        <p>Unsere aktive Community wird dein Spielerlebnis auf ein ganz neues Level heben und trust me; du wirst es nicht bereuen!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery__section">
+    <h2 class="section__title">Sneak Peek</h2>
+    <div class="gallery">
+      <div class="gallery__item">
+        <img src="/images/blackjack.jpg" alt="Blackjack Sneakpeek">
+        <div class="overlay">
+          <h4>Tische mit dem gewissen Anime-Touch</h4>
+          <p>...Mit deinen Lieblingscharakteren</p>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <img src="/images/blackjack1.jpg" alt="Poker table">
+        <div class="overlay">
+          <h4>Multiplayer Blackjack</h4>
+          <p>Play with friends in real-time</p>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <img src="/images/blackjack3.webp" alt="Roulette wheel">
+        <div class="overlay">
+          <h4>Abartig gute KI</h4>
+          <p>Unsere selbstentwickelte KI sorgt für einen reibungslosen Spielablauf!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter__section">
+    <h2 class="section__title">Bleib auf dem Laufendem</h2>
+    <div class="newsletter__container">
+      <p class="description">Abonniere unseren Newsletter, um die neuesten Updates über WaifuSpin zu erhalten!</p>
+      <form class="newsletter__form" id="newsletterForm">
+        <div class="form__group">
+          <input type="text" id="name" placeholder=" ">
+          <label for="name">Dein Name</label>
+        </div>
+        <div class="form__group">
+          <input type="email" id="email" placeholder=" ">
+          <label for="email">Deine E-Mail</label>
+        </div>
+        <button type="submit" class="submit__btn">Jetzt Anmelden!</button>
+      </form>
+    </div>
+  </section>
 
     <script type="module" src="/de/blackjack/blackjack.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
 		<script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-de.js"></script>
   </body>
 </html>

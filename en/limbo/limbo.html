@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin - Limbo</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
 		<link rel="stylesheet" href="/css/footer.css" />
 		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/game-frame.css" />
+		<link rel="stylesheet" href="/css/limbo.css" />
 		<link rel="stylesheet" href="/css/loading-cursor.css" />
-		<link rel="stylesheet" href="/css/sidebar.css" />
     <link rel="canonical" href="https://waifuspin.com" />
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
@@ -18,151 +17,149 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
-  
+<div class="custom__cursor"></div>
+<div id="app"> 
 <nav class="navbar">
-	<a href="/en/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
+	<a href="/en/index/index.html?utm_source=waifuspin-limbo&utm_medium=webbrowser&lang=en"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
 	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
+	<div class="nav__balance">
+			<div class="balance__display">
+					<span id="balance">0.00000000</span>
+					<span class="crypto__symbol">USD</span>
 			</div>
 	</div>
 
-	<div class="nav-profile">
-			<span id="username">User</span>
+	<div class="nav__profile">
+			<span id="username">Utilisateur</span>
 		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
 	</div>
 </nav>
   
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
+<div id="cookie__banner" class="hidden">
+  <div class="cookie__content">
+      <div class="cookie__header">
+          <div class="cookie__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
           </div>
           <h4>Cookie Settings</h4>
       </div>
       <p>This site uses cookies to ensure you get the best experience on our website.</p>
-      <div class="button-group">
-          <button id="decline-cookies">Decline</button>
-          <button id="accept-cookies">Accept</button>
+      <div class="button__group">
+          <button id="decline__cookies">Decline</button>
+          <button id="accept__cookies">Accept</button>
       </div>
   </div>
 </div>
 
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Limbo adden-->
+
+  <main class="main__content">
+    <div class="game__controls">
+      <div class="control__group">
+        <label for="bet__amount">Bet</label>
+        <div class="input__with__buttons">
+          <input type="number" id="bet__amount" value="10.00" min="1" step="1">
+          <div class="amount__buttons">
+            <button class="btn btn__small" id="half__bet">1/2</button>
+            <button class="btn btn__small" id="double__bet">2x</button>
+            <button class="btn btn__small" id="min__bet">Min</button>
+            <button class="btn btn__small" id="max__bet">Max</button>
+          </div>
+          <div class="preset__buttons">
+            <button class="btn btn__small preset__bet" data-amount="10">10</button>
+            <button class="btn btn__small preset__bet" data-amount="25">25</button>
+            <button class="btn btn__small preset__bet" data-amount="50">50</button>
+            <button class="btn btn__small preset__bet" data-amount="100">100</button>
+          </div>
+        </div>
       </div>
 
-      <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
-          </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
+      <div class="control__group">
+        <label for="target__multiplier">Target Multiplier</label>
+        <input type="number" id="target__multiplier" value="2.00" min="1.01" step="0.01">
+        <div class="preset__buttons">
+          <button class="btn btn__small preset__multiplier" data-value="1.5">1.5x</button>
+          <button class="btn btn__small preset__multiplier" data-value="2">2x</button>
+          <button class="btn btn__small preset__multiplier" data-value="5">5x</button>
+          <button class="btn btn__small preset__multiplier" data-value="10">10x</button>
         </div>
-        
-        <button class="button autoplay" id="autoplayButton">Auto Play</button>
-        <button class="button" id="playButton">Play</button>
       </div>
-    </main>
+
+      <div class="control__group">
+        <label for="auto__play">Auto Play</label>
+        <div class="auto__play__controls">
+          <input type="number" id="auto__play__count" value="0" min="0" step="1" placeholder="Number of rounds (0 = infinite)">
+          <div class="checkbox__container">
+            <input type="checkbox" id="auto__play">
+            <label for="auto__play" class="toggle__label"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy__section">
+        <div class="strategy__title">Bet Strategy</div>
+        <div class="strategy__options">
+          <select id="strategy__select" class="btn">
+            <option value="flat">Flat</option>
+            <option value="martingale">Martingale</option>
+            <option value="d-alembert">D'Alembert</option>
+            <option value="fibonacci">Fibonacci</option>
+          </select>
+        </div>
+        <div class="strategy__description" id="strategy__description">
+          Flat: bet every time with the same amount.
+        </div>
+      </div>
+
+      <div class="control__group">
+        <button class="btn btn__play" id="play__button">PLAY</button>
+        <button class="btn btn__stop hidden" id="stop__button">STOP</button>
+      </div>
+
+      <div class="game__stats">
+        <div class="stat">
+          <span>Win Rate:</span>
+          <span id="win__rate">0%</span>
+        </div>
+        <div class="stat">
+          <span>Highest profit:</span>
+          <span id="highest__win">0.00</span>
+        </div>
+        <div class="stat">
+          <span>Total profit:</span>
+          <span id="total__profit">0.00</span>
+        </div>
+        <div class="stat">
+          <span>Played rounds:</span>
+          <span id="rounds__played">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game__frame">
+      <div id="result__container">
+        <div id="multiplier__display">0.00x</div>
+        <div id="result__message"></div>
+      </div>
+      <div id="history__container">
+        <h3>
+          Last results
+          <button class="clear__history" id="clear__history">Delete</button>
+        </h3>
+        <div id="history__list"></div>
+      </div>
+    </div>
+  </main>
 
 		<hr>
-		<footer>
-      <div class="logo-footer1">
-      <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-  
-    <div class="container">
-  
-      <div class="section">
-        <h4>Casino</h4>
-        <ul>
-          <li><a href="/en/casino-games/casino-games.html">Casino Games</a></li>
-          <li><a href="/en/slots-guide/slots-guide.html">Slots</a></li>
-          <li><a href="/en/live-casino/live-casino.html">Live Casino</a></li>
-          <li><a href="/en/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-          <li><a href="/en/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-          <li><a href="/en/provider/provider.html">Providers</a></li>
-          <li><a href="/en/promotions-and-competitions/promotions-and-competitions.html">Promotions & Competitions</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="/en/help-center/help-center.html">Help Center</a></li>
-          <li><a href="/en/hotline-for-game-problems/hotline-for-game-problems.html">Hotline for Game Problems</a></li>
-          <li><a href="/en/support/support.html">Live Customer Service</a></li>
-          <li><a href="/en/self-exclusion/self-exclusion.html">Self-Exclusion</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-        <h4>About Us</h4>
-        <ul>
-          <li><a href="/en/vip/vip.html">VIP Club</a></li>
-          <li><a href="/en/affiliates/affiliates.html">Affiliate</a></li>
-          <li><a href="/en/privacy-policy/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/en/lbc-policy/lbc-policy.html">LBC Policy</a></li>
-          <li><a href="/en/terms-of-use/terms-of-use.html">Terms of Use</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-        <h4>Payment Information</h4>
-        <ul>
-          <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">Deposits & Withdrawals</a></li>
-          <li><a href="/en/guide-to-currencies/guide-to-currencies.html">Currency Guide</a></li>
-          <li><a href="/en/guide-to-crypto/guide-to-crypto.html">Crypto Guide</a></li>
-          <li><a href="/en/supported-crypto/supported-crypto.html">Supported Crypto</a></li>
-          <li><a href="/en/how-much-to-bet/how-much-to-bet.html">How Much to Bet</a></li>
-        </ul>
-      </div>
-  
-      <div class="section">
-  
-        <div class="language-selector">
-          <select>
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-          </select>
-        </div>
-  
-        <div class="currency-selector">
-          <select>
-            <option value="decimal">Decimal</option>
-            <option value="fractional">Fractional</option>
-            <option value="american">American</option>
-          </select>
-        </div>
-  
-        
-        <div class="btc-rate">1 BTC = Loading...</div>
-      </div>
-    </div>
-    <hr>
-    
-  
-    <div class="copyright">
-      &copy; 2024 Waifuspin.com | All Rights Reserved.
-    </div>
-    </footer>
-  
-    <script type="module" src="/en/limbo/limbo.js"></script>
+
+    <script src="/en/limbo/limbo.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
-		<script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-en.js"></script>
   </body>
 </html>

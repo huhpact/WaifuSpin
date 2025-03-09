@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin - ダッシュボード</title>
     <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/css/cookie.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/loading-cursor.css" />
@@ -14,359 +15,228 @@
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
 </head>
 <body>
-
     <div class="preloader">
         <div class="spinner"></div>
       </div>
       
-    <div class="custom-cursor"></div>
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-
-    <div id="cookie-banner" class="hidden">
-        <div class="cookie-content">
-            <div class="cookie-header">
-                <div class="cookie-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-                </div>
-                <h4>クッキー設定</h4>
+      <div class="custom__cursor"></div>
+        
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/jpn/index/index.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja"><img src="/images/logo.png" alt="WaifuSpin Logo"></a>
             </div>
-            <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
-            <div class="button-group">
-                <button id="decline-cookies">廃棄物</button>
-                <button id="accept-cookies">受け入れる</button>
+            <div class="balance">
+                <i class="fas fa-wallet"></i>
+                <span id="userBalance">$0.00</span>
+            </div>
+            <div class="profile">
+                <div class="profile__trigger">
+                    <span id="username">Utilisateur</span>
+                    <img src="/images/anime-default-pfp-7.jpg" alt="Profile" class="profile__pic">
+                </div>
+                <div class="dropdown">
+                    <button id="notificationsBtn"><i class="fas fa-bell"></i> 通知</button>
+                    <button id="settingsBtn"><i class="fas fa-cog"></i> 設定</button>
+                    <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> ログアウト</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="greeting__section">
+                <h1 id="greeting">おかえり</h1>
+                <div class="stats">
+                    <div class="stat__card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>合計勝利</h3>
+                        <p>1,234</p>
+                    </div>
+                    <div class="stat__card">
+                        <i class="fas fa-coins"></i>
+                        <h3>最大の勝利</h3>
+                        <p>$5,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="transactions">
+            <div class="deposit">
+                <h2>デポジット</h2>
+                <div class="amount__buttons">
+                    <button data-amount="10">$10</button>
+                    <button data-amount="25">$25</button>
+                    <button data-amount="50">$50</button>
+                    <button data-amount="100">$100</button>
+                    <button data-amount="250">$250</button>
+                    <button data-amount="500">$500</button>
+                </div>
+                <p class="remark">安全な支払いのためにパートナーのストライプにリダイレクトされます</p>
+            </div>
+
+            <div class="withdraw">
+                <h2>撤回する</h2>
+                <select id="cryptoSelect">
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="sol">Solana (SOL)</option>
+                    <option value="xrp">Ripple (XRP)</option>
+                </select>
+                <input type="text" placeholder="ウォレットアドレスを入力します" id="walletAddress">
+                <button id="withdrawBtn">撤回する</button>
+            </div>
+        </section>
+
+        <section class="games">
+            <h2>私たちのゲーム</h2>
+            <div class="game__grid">
+                <div class="game__card">
+                    <img src="/images/slots-dashboard.jpg" alt="Slots">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/jpn/slots/slots.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja'">今すぐ遊んでください</button>
+                    </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/limbo-dashboard.webp" alt="Limbo">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/jpn/limbo/limbo.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja'">今すぐ遊んでください</button>
+                    </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/blackjack-dashboard.png" alt="Blackjack">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/jpn/blackjack/blackjack.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja'">今すぐ遊んでください</button>
+                    </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/double-or-nth.jpg" alt="Double or Nothing">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/jpn/double-or-nothing/double-or-nothing.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja'">今すぐ遊んでください</button>
+                    </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/lucky-wheel-dashboard.webp" alt="Lucky Wheel">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/jpn/lucky-wheel/lucky-wheel.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja'">今すぐ遊んでください</button>
+                    </div>
+                </div>
+                <div class="game__card">
+                    <img src="/images/mines-dashboard.jpg" alt="Mines">
+                    <div class="game__overlay">
+                        <button onclick="location.href='/jpn/mines/mines.html?utm_source=waifuspin-dashboard&utm_medium=webbrowser&lang=ja'">今すぐ遊んでください</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="crypto__prices">
+            <h2>ライブ暗号価格</h2>
+            <div class="price__grid">
+                <div class="price__card" data-crypto="btc">
+                    <img src="/images/bitcoin-btc-logo.svg" alt="Bitcoin" class="crypto__icon">
+                    <h3>Bitcoin</h3>
+                    <p class="price">Loading...</p>
+                </div>
+                <div class="price__card" data-crypto="eth">
+                    <img src="/images/ethereum-eth-logo.svg" alt="Ethereum" class="crypto__icon">
+                    <h3>Ethereum</h3>
+                    <p class="price">Loading...</p>
+                </div>
+                <div class="price__card" data-crypto="sol">
+                    <img src="/images/solana-sol-logo.svg" alt="Solana" class="crypto__icon">
+                    <h3>Solana</h3>
+                    <p class="price">Loading...</p>
+                </div>
+                <div class="price__card" data-crypto="xrp">
+                    <img src="/images/xrp-xrp-logo.svg" alt="XRP" class="crypto__icon">
+                    <h3>XRP</h3>
+                    <p class="price">Loading...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="notificationsModal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>通知</h2>
+            <div class="notifications__list">
+                <div class="notification">
+                    <i class="fas fa-gift"></i>
+                    <div class="notification__content">
+                        <h4>ようこそボーナスが利用可能です！</h4>
+                        <p>今すぐ100％のデポジットボーナスを請求してください</p>
+                    </div>
+                </div>
+                <div class="notification">
+                    <i class="fas fa-coins"></i>
+                    <div class="notification__content">
+                        <h4>毎日の報酬</h4>
+                        <p>あなたの毎日のボーナスは請求する準備ができています</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <nav class="navbar">
-        <a href="/jpn/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
-        
-        <div class="nav-balance">
-            <div class="balance-display">
-                <span id="balanceAmount">0.00000000</span>
-                <span class="crypto-symbol">BTC</span>
-            </div>
-            <div class="balance-dropdown">
-                <div class="dropdown-option" data-crypto="BTC">
-                    <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>BTC</span>
+    <div id="settingsModal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>設定</h2>
+            <div class="settings__form">
+                <div class="setting__group">
+                    <label>
+                        <span>電子メール通知</span>
+                        <input type="checkbox" checked>
+                    </label>
                 </div>
-                <div class="dropdown-option" data-crypto="ETH">
-                    <img src="/images/ethereum-eth-logo.svg" alt="ETH">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>ETH</span>
+                <div class="setting__group">
+                    <label>
+                        <span>効果音</span>
+                        <input type="checkbox" checked>
+                    </label>
                 </div>
-                <div class="dropdown-option" data-crypto="SOL">
-                    <img src="/images/solana-sol-logo.svg" alt="SOL">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>SOL</span>
-                </div>
-                <div class="dropdown-option" data-crypto="XRP">
-                    <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                    <span class="balance-amount">0.00000000</span>
-                    <span>XRP</span>
+                <div class="setting__group">
+                    <label>
+                        <span>ダークモード</span>
+                        <input type="checkbox" checked>
+                    </label>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="nav-profile">
-            <span id="username">ユーザー</span>
-           <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
+    <div id="withdrawModal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>引き出し領収書</h2>
+            <div class="receipt">
+                <div class="receipt__header">
+                    <img src="/images/logo.png" alt="WaifuSpin Logo">
+                    <p>トランザクションID: <span id="transactionId"></span></p>
+                </div>
+                <div class="receipt__details">
+                    <p>額: <span id="withdrawAmount"></span></p>
+                    <p>暗号通貨: <span id="withdrawCrypto"></span></p>
+                    <p>財布: <span id="withdrawWallet"></span></p>
+                    <p>日付: <span id="withdrawDate"></span></p>
+                </div>
+            </div>
         </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <h1 class="hero-title">ゲームの未来へようこそ</h1>
-            <p class="hero-subtitle">即時入出金で透明な暗号化ゲームを体験してください。</p>
-            <div class="hero-cta">
-                <a href="#games"><button class="btn btn-primary" id="playNowBtn">今すぐプレイ 🎮</button></a>
-                <a href="/jpn/casino-games/casino-games.html"><button class="btn btn-secondary" id="learnMoreBtn">詳細はこちら 📚</button></a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <h3>インスタント・ゲーム</h3>
-                <p>ダウンロード不要。ブラウザで直接再生。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💎</div>
-                <h3>暗号通貨の報酬</h3>
-                <p>お気に入りのゲームをプレイしながら暗号通貨を獲得しよう。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>セキュアなプラットフォーム</h3>
-                <p>高度なセキュリティシステムにより、お客様の資金は安全です。</p>
-            </div>
-        </section>
-
-        <section class="transaction-section">
-            <div class="transaction-container">
-                <div class="deposit-section">
-                    <h2>クイック入金 💰</h2>
-                    <div class="currency-selector">
-                        <h3>預入通貨を選択する</h3>
-                        <div class="crypto-options">
-                            <button class="crypto-option active" data-crypto="BTC">
-                                <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
-                                <span>BTC</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="ETH">
-                                <img src="/images/ethereum-eth-logo.svg" alt="ETH">
-                                <span>ETH</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="SOL">
-                                <img src="/images/solana-sol-logo.svg" alt="SOL">
-                                <span>SOL</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="XRP">
-                                <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                                <span>XRP</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="amount-grid">
-                        <a class="amount-btn" data-amount="10" href="https://buy.stripe.com/8wM15P1sk5Hg5W0bII">$10</a>
-                        <a class="amount-btn" data-amount="25" href="https://buy.stripe.com/eVa5m5fjaglU1FK146">$25</a>
-                        <a class="amount-btn" data-amount="50" href="https://buy.stripe.com/00gbKtgned9IdoseUX">$50</a>
-                        <a class="amount-btn" data-amount="100" href="https://buy.stripe.com/28og0Jgne7Po7049AE">$100</a>
-                        <a class="amount-btn" data-amount="250" href="https://buy.stripe.com/00g15P4EwedMesw28d">$250</a>
-                        <a class="amount-btn" data-amount="500" href="https://buy.stripe.com/6oE15Pfja8Tsesw5kq">$500</a>
-                    </div>
-                </div>
-
-                <div class="withdrawal-section">
-                    <h2>退会 💸</h2>
-                    <div class="crypto-selection">
-                        <h3>暗号を選択 🪙</h3>
-                        <div class="crypto-options withdraw-options">
-                            <button class="crypto-option active" data-crypto="BTC">
-                                <img src="/images/bitcoin-btc-logo.svg" alt="BTC">
-                                <span>BTC</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="ETH">
-                                <img src="/images/ethereum-eth-logo.svg" alt="ETH">
-                                <span>ETH</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="SOL">
-                                <img src="/images/solana-sol-logo.svg" alt="SOL">
-                                <span>SOL</span>
-                            </button>
-                            <button class="crypto-option" data-crypto="XRP">
-                                <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                                <span>XRP</span>
-                            </button>
-                        </div>
-                    </div>
-                    <form id="withdrawalForm">
-                        <div class="form-group">
-                            <label>金額</label>
-                            <input type="number" id="withdrawAmount" step="0.00000001" required>
-                            <span class="available-balance">下記にて入手可能: <span id="availableBalance">0.00000000 BTC</span></span>
-                        </div>
-                        <div class="form-group">
-                            <label>ポートフォリオのアドレス</label>
-                            <input type="text" id="walletAddress" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">辞退 🚀</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="games" id="games">
-            <h2>注目のゲーム 🎲</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <img src="/images/blackjack.jpg" alt="Blackjack" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>ブラックジャック</h3>
-                            <p>プレイして即座に暗号を獲得</p>
-                            <a href="/jpn/blackjack/blackjack.html"><button class="btn btn-play">今すぐプレイ</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/slots.webp" alt="Slots" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>スロット</h3>
-                            <p>アクション満載のカジノゲーム</p>
-                           <a href="/jpn/slots/slots.html"><button class="btn btn-play">今すぐプレイ</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/lucky-wheel.jpg" alt="Lucky Wheel" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>幸運の輪</h3>
-                            <p>運は味方するか？</p>
-                            <a href="/jpn/lucky-wheel/lucky-wheel.html"><button class="btn btn-play">今すぐプレイ</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/double-or-nth.jpg" alt="Double or Nothing" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>ダブル・オア・ナッシング</h3>
-                            <p>彼を追い越せるか、それとも敗者か？</p>
-                           <a href="/jpn/double-or-nothing/double-or-nothing.html"><button class="btn btn-play">今すぐプレイ</button></a> 
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/mines.png" alt="Mines" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>鉱山</h3>
-                            <p>地雷を踏むな</p>
-                            <a href="/jpn/mines/mines.html"><button class="btn btn-play">今すぐプレイ</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <img src="/images/limbo.webp" alt="Limbo" class="game-image">
-                    <div class="game-overlay">
-                        <div class="game-info">
-                            <h3>リンボ</h3>
-                            <p>最大の倍率を得る！</p>
-                            <a href="/jpn/limbo/limbo.html"><button class="btn btn-play">今すぐプレイ</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="crypto-tracker">
-            <h2>暗号通貨のライブ価格  📈</h2>
-            <div class="crypto-grid">
-                <div class="crypto-card" data-crypto="BTC">
-                    <img src="/images/bitcoin-btc-logo.svg" alt="BTC" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>Bitcoin</h3>
-                        <div class="crypto-price" id="price-BTC">Loading...</div>
-                    </div>
-                </div>
-                <div class="crypto-card" data-crypto="ETH">
-                    <img src="/images/ethereum-eth-logo.svg" alt="ETH" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>Ethereum</h3>
-                        <div class="crypto-price" id="price-ETH">Loading...</div>
-                    </div>
-                </div>
-                <div class="crypto-card" data-crypto="SOL">
-                    <img src="/images/solana-sol-logo.svg" alt="SOL" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>Solana</h3>
-                        <div class="crypto-price" id="price-SOL">Loading...</div>
-                    </div>
-                </div>
-                <div class="crypto-card" data-crypto="XRP">
-                    <img src="/images/xrp-xrp-logo.svg" alt="XRP" class="crypto-icon">
-                    <div class="crypto-info">
-                        <h3>XRP</h3>
-                        <div class="crypto-price" id="price-XRP">Loading...</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="logo-footer1">
-              <img src="/images/logo.png" alt="Waifuspin Logo">
-          </div>
-      
-          <div class="container">
-      
-              <div class="section">
-                  <h4>カジノ</h4>
-                  <ul>
-                      <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
-                      <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
-                      <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
-                      <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
-                      <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
-                      <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
-                      <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-                  <h4>サポート</h4>
-                  <ul>
-                      <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
-                      <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
-                      <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
-                      <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-                  <h4>会社概要</h4>
-                  <ul>
-                      <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
-                      <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
-                      <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
-                      <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
-                      <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-                  <h4>お支払いについて</h4>
-                  <ul>
-                      <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
-                      <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
-                      <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
-                      <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
-                      <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
-                  </ul>
-              </div>
-      
-              <div class="section">
-      
-                  <div class="language-selector">
-                      <select>
-                          <option value="fr">Français</option>
-                          <option value="en">English</option>
-                      </select>
-                  </div>
-      
-                  <div class="currency-selector">
-                      <select>
-                          <option value="decimal">小数点以下</option>
-                          <option value="fractional">フラクショナル</option>
-                          <option value="american">アメリカン</option>
-                      </select>
-                  </div>
-      
-                
-                  <div class="btc-rate">1 BTC = Loading...</div>
-              </div>
-          </div>
-          <hr>
-          
-      
-          <div class="copyright">
-              &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
-          </div>
-          </footer>
-    
-    </main>
+    </div>
 
     <script src="/jpn/dashboard/dashboard.js"></script>
-    <script src="/js/loading-cursor.js"></script>
     <script src="/js/cookie.js"></script>
+    <script src="/js/footer/footer-ja.js"></script>
+    <script src="/js/footer-btc.js"></script>
+    <script src="/js/loading-cursor.js"></script>
 </body>
 </html>

@@ -1,16 +1,15 @@
-async function fetchBitcoinRate() {
-	try {
-			const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
-			const data = await response.json();
-			const rate = parseFloat(data.bpi.USD.rate.replace(',', ''));
-			document.querySelector('.btc-rate').textContent = `1 BTC = $${rate.toFixed(2)}`;
-	} catch (error) {
-			console.error('Error fetching Bitcoin rate:', error);
-	}
+function fetchBitcoinPrice() {
+	fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
+			.then(response => response.json())
+			.then(data => {
+					const btcPrice = data.bitcoin.usd;
+					document.querySelector(".btc__rate").textContent = `1 BTC = ${btcPrice} USD`;
+			})
+			.catch(error => {
+					console.error("Erreur lors de la consultation du prix du bitcoin:", error);
+					document.querySelector(".btc__rate").textContent = "1 BTC = Loading...";
+			});
 }
 
-window.onload = fetchBitcoinRate;
-
-const copyrightElement = document.querySelector('.copyright');
-const currentYear = new Date().getFullYear();
-copyrightElement.innerHTML = `&copy; ${currentYear} Waifuspin.com | Alle Rechte vorbehalten.`;
+fetchBitcoinPrice();
+setInterval(fetchBitcoinPrice, 60000); 

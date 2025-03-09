@@ -1,7 +1,7 @@
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach(entry => {
 			if (entry.isIntersecting) {
-					entry.target.classList.add('slide-in');
+					entry.target.classList.add('slide__in');
 			}
 	});
 }, { threshold: 0.1 });
@@ -75,14 +75,14 @@ document.querySelectorAll('button').forEach(button => {
 					ripple.remove();
 			}, 600);
 
-			if (this.classList.contains('spin-btn') || 
-					this.classList.contains('draw-btn')) {
+			if (this.classList.contains('spin__btn') || 
+					this.classList.contains('draw__btn')) {
 					
 					const originalText = this.textContent;
 					this.textContent = 'Eingetragen!';
 					this.classList.add('entered');
 
-					const card = this.closest('.giveaway-card');
+					const card = this.closest('.giveaway__card');
 					card.style.transform = 'rotateY(360deg)';
 					card.style.transition = 'transform 1s ease';
 					
@@ -147,7 +147,7 @@ window.addEventListener('scroll'), () => { {
 	}
 }};
 
-document.querySelectorAll('.glass-card').forEach(card => {
+document.querySelectorAll('.glass__card').forEach(card => {
 	card.addEventListener('mousemove', (e) => {
 			const rect = card.getBoundingClientRect();
 			const x = e.clientX - rect.left;
@@ -167,7 +167,7 @@ document.querySelectorAll('.glass-card').forEach(card => {
 	});
 });
 
-document.querySelectorAll('.prize-amount').forEach(prize => {
+document.querySelectorAll('.prize__amount').forEach(prize => {
 	const finalAmount = parseInt(prize.textContent.replace(/[^0-9]/g, ''));
 	let currentAmount = 0;
 	const duration = 2000;
@@ -193,7 +193,6 @@ document.querySelectorAll('.prize-amount').forEach(prize => {
 });
 
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
 	let current = '';
@@ -203,13 +202,6 @@ window.addEventListener('scroll', () => {
 			const sectionHeight = section.clientHeight;
 			if (pageYOffset >= sectionTop - sectionHeight / 3) {
 					current = section.getAttribute('id');
-			}
-	});
-	
-	navLinks.forEach(link => {
-			link.classList.remove('active');
-			if (link.getAttribute('href').slice(1) === current) {
-					link.classList.add('active');
 			}
 	});
 });

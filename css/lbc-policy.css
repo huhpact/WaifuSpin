@@ -52,7 +52,7 @@ body {
 	font-size: 1.2rem;
 }
 
-.policy-section {
+.policy__section {
 	background-color: var(--secondary-bg);
 	border-radius: 1rem;
 	padding: 2rem;
@@ -63,7 +63,7 @@ body {
 	animation-delay: calc(var(--delay) * 200ms);
 }
 
-.policy-section h2 {
+.policy__section h2 {
 	background: var(--gradient);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -75,12 +75,12 @@ body {
 	gap: 0.5rem;
 }
 
-.policy-section .content {
+.policy__section .content {
 	padding: 1rem;
 	border-left: 3px solid var(--accent);
 }
 
-.policy-section p {
+.policy__section p {
 	margin-bottom: 1rem;
 }
 
@@ -108,7 +108,7 @@ li {
 			font-size: 2rem;
 	}
 
-	.policy-section {
+	.policy__section {
 			padding: 1.5rem;
 	}
 }

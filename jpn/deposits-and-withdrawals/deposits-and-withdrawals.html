@@ -1,364 +1,557 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+<!doctype html>
+<html lang="ja-JP">
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaifuSpinの入金と出金 - 入金と出金の方法を学ぶ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-		<link rel="stylesheet" href="/css/bg-animation.css" />
-		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/deposits-and-withdrawals.css" />
-		<link rel="stylesheet" href="/css/footer.css" />
-		<link rel="stylesheet" href="/css/header.css" />
-		<link rel="stylesheet" href="/css/loading-cursor.css" />
-		<link rel="stylesheet" href="/css/sidebar.css" />
-        <link rel="canonical" href="https://waifuspin.com" />
-        <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-        <link rel="shortcut icon" href="/images/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-
-</head>
-<body>
-    
-			<div class="stars"></div>
-			<div class="twinkling"></div>
-			<div class="preloader">
-			<div class="spinner"></div>
-		</div>
-		
-		<div class="custom-cursor"></div>
-			
-		<header>
-            <div class="header-content">
-              <div class="burger-logo">
-                <div class="burger-menu">
-                  <i class='bx bx-menu'></i>
-                </div>
-                <a href="/jpn/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
-              </div>
-              <div class="login-reg">
-                <a href="/jpn/login/login.html" class="login">ログイン</a>
-                <a href="/jpn/login/login.html"><button class="sign-up-btn">登録する</button></a>
-              </div>
-            </div>
-          </header>
-          
-       <div id="cookie-banner" class="hidden">
-            <div class="cookie-content">
-                <div class="cookie-header">
-                    <div class="cookie-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-                    </div>
-                    <h4>クッキー設定</h4>
-                </div>
-                <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
-                <div class="button-group">
-                    <button id="decline-cookies">廃棄物</button>
-                    <button id="accept-cookies">受け入れる</button>
-                </div>
-            </div>
+    <title>WaifuSpin 預金と引き出し - シンプルで効果的</title>
+    <link rel="stylesheet" href="/css/deposits-and-withdrawals.css" />
+    <link rel="stylesheet" href="/css/cookie.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/loading-cursor.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="canonical" href="https://waifuspin.com" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id="app">
+        <div class="preloader">
+        <div class="spinner"></div>
         </div>
-          
         
-          <aside class="sidebar">
-            <ul>
-              <li><a href="/jpn/promotions/promotions.html"><i class='bx bxs-gift'></i> プロモーション</a></li>
-              <li><a href="/jpn/affiliates/affiliates.html"><i class='bx bxs-business'></i>所属</a></li>
-              <hr>
-              <li><a href="/jpn/vip/vip.html"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
-              <li><a href="/jpn/news/news.html"><i class='bx bxs-news'></i> ニュース</a></li>
-              <li><a href="/jpn/support/support.html"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
-              <li class="language-dropdown">
-                <i class='bx bx-world'></i> 言語
-                <ul class="dropdown">
-                  <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">English</a></li>
-                  <li><a href="/de/deposits-and-withdrawals/deposits-and-withdrawals.html">Deutsch</a></li>
-                  <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Français</a></li>
-                  <li><a href="#">日本語</a></li>
-                </ul>
-              </li>
-            </ul>
-          </aside>
-          <div class="overlay"></div>
-    
-			<div class="container">
-        <main>
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>新世代の暗号ゲームを発見しよう</h1>
-                    <p class="hero-subtitle">即時入金、迅速な出金、暗号通貨のシームレスな変換</p>
-                    <div class="hero-buttons">
-                        <a href="/jpn/login/login.html" class="primary-btn">スタート</a>
-                        <a href="#features" class="secondary-btn">詳細はこちら</a>
+        <div class="custom__cursor"></div>
+        
+        <body>
+            <header>
+                <div class="header__content">
+                  <div class="burger__logo">
+                    <div class="burger__menu">
+                      <i class='bx bx-menu'></i>
                     </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">アシスタンス</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5分</span>
-                            <span class="stat-label">出金</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">セキュア</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="features" class="features">
-                <h2 class="section-title">なぜWaifuSpinを選ぶのか？</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-wallet"></i>
-                        <h3>簡単な入金</h3>
-                        <p>アップルペイ、グーグルペイ、カード決済など、複数の支払いオプションがある。</p>
-                        <div class="feature-info">
-                            <ul>
-                                <li>即時入金</li>
-                                <li>隠れた料金なし</li>
-                                <li>安全な取引</li>
-                                <li>24時間365日のサポート</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-exchange-alt"></i>
-                        <h3>インスタント・コンバージョン</h3>
-                        <p>米ドルをXRP、BTC、SOLまたはETHに即座に変換します。</p>
-                        <div class="feature-info">
-                            <ul>
-                                <li>リアルタイム・レート</li>
-                                <li>換金手数料無料</li>
-                                <li>いくつかの暗号オプション</li>
-                                <li>自動化プロセス</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <h3>急速な撤退</h3>
-                        <p>いつでもあなたの暗号ウォレットアドレスに出金できます。</p>
-                        <div class="feature-info">
-                            <ul>
-                                <li>5分で治療</li>
-                                <li>すべてのポートフォリオに対応</li>
-                                <li>最低金額の低さ</li>
-                                <li>自動検証</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="payment" class="payment-methods">
-                <h2 class="section-title">支払い方法</h2>
-                <p class="section-subtitle">ご希望の入金方法をお選びください</p>
-                <div class="payment-grid">
-                    <div class="payment-option">
-                        <i class="fab fa-apple-pay"></i>
-                        <span>アップル・ペイ</span>
-                        <div class="limits">限度額：1日1万ドル</div>
-                    </div>
-                    <div class="payment-option">
-                        <i class="fab fa-google-pay"></i>
-                        <span>グーグルペイ</span>
-                        <div class="limits">限度額：1日1万ドル</div>
-                    </div>
-                    <div class="payment-option">
-                        <i class="fas fa-credit-card"></i>
-                        <span>カード決済</span>
-                        <div class="limits">限度額：1日5,000ドル</div>
-                    </div>
-                    <div class="payment-option">
-                        <i class="fas fa-link"></i>
-                        <span>銀行リンク</span>
-                        <div class="limits">限度額：1日5万ドル</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="crypto" class="crypto-options">
-                <h2 class="section-title">対応暗号通貨</h2>
-                <p class="section-subtitle">お好きな暗号通貨で換金・引き出し</p>
-                <div class="crypto-grid">
-                    <div class="crypto-card">
-                        <img src="/images/bitcoin-btc-logo.svg" alt="Bitcoin">
-                        <h3>Bitcoin</h3>
-                        <p>ネットワーク: BTC</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>最小引き出し</span>
-                                <span>0.001 BTC</span>
-                            </div>
-                            <div class="info-item">
-                                <span>処理時間</span>
-                                <span>~30 分</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crypto-card">
-                        <img src="/images/ethereum-eth-logo.svg" alt="Ethereum">
-                        <h3>Ethereum</h3>
-                        <p>ネットワーク: ERC20</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>最小引き出し</span>
-                                <span>0.01 ETH</span>
-                            </div>
-                            <div class="info-item">
-                                <span>処理時間</span>
-                                <span>~5 分</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crypto-card">
-                        <img src="/images/solana-sol-logo.svg" alt="Solana">
-                        <h3>Solana</h3>
-                        <p>ネットワーク: SOL</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>最小引き出し</span>
-                                <span>0.1 SOL</span>
-                            </div>
-                            <div class="info-item">
-                                <span>処理時間</span>
-                                <span>~1 分</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crypto-card">
-                        <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                        <h3>Ripple</h3>
-                        <p>ネットワーク: XRP</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>最小引き出し</span>
-                                <span>10 XRP</span>
-                            </div>
-                            <div class="info-item">
-                                <span>処理時間</span>
-                                <span>~1 分</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="security-features">
-                <h2 class="section-title">お客様の安全が最優先</h2>
-                <div class="security-grid">
-                    <div class="security-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>銀行レベルのセキュリティ</h3>
-                        <p>全取引の256ビット暗号化</p>
-                    </div>
-                    <div class="security-item">
-                        <i class="fas fa-lock"></i>
-                        <h3>2FAプロテクション</h3>
-                        <p>アカウントのセキュリティを強化</p>
-                    </div>
-                    <div class="security-item">
-                        <i class="fas fa-user-shield"></i>
-                        <h3>KYCチェック済み</h3>
-                        <p>認可され規制されたプラットフォーム</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-			</div>
-            <footer>
-                <div class="logo-footer1">
-                  <img src="/images/logo.png" alt="Waifuspin Logo">
-              </div>
-          
-              <div class="container">
-          
-                  <div class="section">
-                      <h4>カジノ</h4>
-                      <ul>
-                          <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
-                          <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
-                          <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
-                          <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
-                          <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
-                          <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
-                          <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
-                      </ul>
+                    <a href="/jpn/index/index.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
                   </div>
-          
-                  <div class="section">
-                      <h4>サポート</h4>
-                      <ul>
-                          <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
-                          <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
-                          <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
-                          <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
-                      </ul>
+                  <div class="login__reg">
+                    <a href="/jpn/login/login.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja" class="login">ログイン</a>
+                    <a href="/jpn/login/login.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><button class="sign__up__btn">登録する</button></a>
                   </div>
-          
-                  <div class="section">
-                      <h4>会社概要</h4>
-                      <ul>
-                          <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
-                          <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
-                          <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
-                          <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
-                          <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
-                      </ul>
-                  </div>
-          
-                  <div class="section">
-                      <h4>お支払いについて</h4>
-                      <ul>
-                          <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
-                          <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
-                          <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
-                          <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
-                          <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
-                      </ul>
-                  </div>
-          
-                  <div class="section">
-          
-                      <div class="language-selector">
-                          <select>
-                              <option value="fr">Français</option>
-                              <option value="en">English</option>
-                          </select>
-                      </div>
-          
-                      <div class="currency-selector">
-                          <select>
-                              <option value="decimal">小数点以下</option>
-                              <option value="fractional">フラクショナル</option>
-                              <option value="american">アメリカン</option>
-                          </select>
-                      </div>
-          
-                    
-                      <div class="btc-rate">1 BTC = Loading...</div>
-                  </div>
-              </div>
-              <hr>
+                </div>
+              </header>
               
-          
-              <div class="copyright">
-                  &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
-              </div>
-              </footer>
+              <div id="cookie__banner" class="hidden">
+                <div class="cookie__content">
+                    <div class="cookie__header">
+                        <div class="cookie__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+                        </div>
+                        <h4>クッキー設定</h4>
+                    </div>
+                    <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
+                    <div class="button__group">
+                        <button id="decline__cookies">廃棄物</button>
+                        <button id="accept__cookies">受け入れる</button>
+                    </div>
+                </div>
+            </div>
+              
+            
+              <aside class="sidebar">
+                <ul>
+                  <li><a href="/jpn/promotions/promotions.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><i class='bx bxs-gift'></i> プロモーション</a></li>
+                  <li><a href="/jpn/affiliates/affiliates.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><i class='bx bxs-business'></i>所属</a></li>
+                  <hr>
+                  <li><a href="/jpn/vip/vip.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
+                  <li><a href="/jpn/news/news.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><i class='bx bxs-news'></i> ニュース</a></li>
+                  <li><a href="/jpn/support/support.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=ja"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
+                  <li class="language__dropdown">
+                    <i class='bx bx-world'></i> 言語
+                    <ul class="dropdown">
+                      <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">English</a></li>
+                      <li><a href="/de/deposits-and-withdrawals/deposits-and-withdrawals.html">Deutsch</a></li>
+                      <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Français</a></li>
+                      <li><a href="#">日本語</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </aside>
+              <div class="overlay"></div>
+              <br><br>
+      <main class="tutorial__container">
+        <h1 class="main__title">デポジットと撤退 <span class="highlight">チュートリアル</span></h1>
         
+        <div class="tabs">
+          <button class="tab__btn active" data-tab="deposit">デポジット</button>
+          <button class="tab__btn" data-tab="withdraw">撤回する</button>
+        </div>
 
-    <script src="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.js"></script>
-		<script src="/js/cookie.js"></script>
-		<script src="/js/footer-btc.js"></script>
-		<script src="/js/loading-cursor.js"></script>
-		<script src="/js/sidebar.js"></script>
+        <div class="tab__content">
+          <div class="tab__pane active" id="deposit">
+            <div class="tutorial__steps">
+              <div class="step" id="step1">
+                <div class="step__number">1</div>
+                <div class="step__content">
+                  <h3>アカウントにログインします</h3>
+                  <p>資格情報を使用してWaifuspinアカウントにアクセスします。</p>
+                  <div class="animation__container">
+                    <div class="login__animation">
+                      <div class="login__form">
+                        <div class="form__field"></div>
+                        <div class="form__field"></div>
+                        <div class="login__btn"></div>
+                      </div>
+                      <div class="login__character">
+                        <div class="character__head"></div>
+                        <div class="character__body"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-</body>
+              <div class="step" id="step2">
+                <div class="step__number">2</div>
+                <div class="step__content">
+                  <h3>デポジットセクションに移動します</h3>
+                  <p>アカウントのダッシュボードの[入金]ボタンをクリックします。</p>
+                  <div class="animation__container">
+                    <div class="dashboard__animation">
+                      <div class="dashboard__sidebar">
+                        <div class="sidebar__item active"></div>
+                        <div class="sidebar__item"></div>
+                        <div class="sidebar__item"></div>
+                      </div>
+                      <div class="dashboard__main">
+                        <div class="dashboard__header"></div>
+                        <div class="dashboard__content">
+                          <div class="deposit__button pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step3">
+                <div class="step__number">3</div>
+                <div class="step__content">
+                  <h3>地元の通貨を選択します</h3>
+                  <p>ドロップダウンメニューからお好みのローカル通貨を選択してください。</p>
+                  <div class="animation__container">
+                    <div class="currency__selector1">
+                      <div class="currency__dropdown">
+                        <div class="selected__currency">
+                          <span>USD</span>
+                          <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="currency__options">
+                          <div class="currency__option" data-currency="USD">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>USD</span>
+                          </div>
+                          <div class="currency__option" data-currency="EUR">
+                            <i class="fas fa-euro-sign"></i>
+                            <span>EUR</span>
+                          </div>
+                          <div class="currency__option" data-currency="GBP">
+                            <i class="fas fa-pound-sign"></i>
+                            <span>GBP</span>
+                          </div>
+                          <div class="currency__option" data-currency="JPY">
+                            <i class="fas fa-yen-sign"></i>
+                            <span>JPY</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step4">
+                <div class="step__number">4</div>
+                <div class="step__content">
+                  <h3>入金量を入力します</h3>
+                  <p>デポジットの金額を指定します。 システムは、暗号通貨の同等物を自動的に計算します。</p>
+                  <div class="animation__container">
+                    <div class="deposit__form">
+                      <div class="amount__input">
+                        <input type="text" id="deposit__amount" placeholder="0.00">
+                        <span class="currency__symbol">$</span>
+                      </div>
+                      <div class="conversion__display">
+                        <div class="conversion__arrow">
+                          <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="crypto__value">
+                          <span id="crypto__amount">0.00000000</span>
+                          <select id="crypto__currency">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>
+                            <option value="SOL">SOL</option>
+                            <option value="XRP">XRP</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step5">
+                <div class="step__number">5</div>
+                <div class="step__content">
+                  <h3>支払い方法を選択します</h3>
+                  <p>利用可能なオプションからお好みの支払い方法を選択します。</p>
+                  <div class="animation__container">
+                    <div class="payment__methods">
+                      <div class="payment__method" data-method="card">
+                        <div class="payment__icon">
+                          <i class="fas fa-credit-card"></i>
+                        </div>
+                        <span>クレジットカード</span>
+                      </div>
+                      <div class="payment__method" data-method="bank">
+                        <div class="payment__icon">
+                          <i class="fas fa-university"></i>
+                        </div>
+                        <span>銀行譲渡</span>
+                      </div>
+                      <div class="payment__method" data-method="ewallet">
+                        <div class="payment__icon">
+                          <i class="fas fa-wallet"></i>
+                        </div>
+                        <span>e-wallet</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step6">
+                <div class="step__number">6</div>
+                <div class="step__content">
+                  <h3>完全な支払い</h3>
+                  <p>選択した方法を介して支払いを完了するための指示に従ってください。</p>
+                  <div class="animation__container">
+                    <div class="payment__process">
+                      <div class="process__steps">
+                        <div class="process__step completed">
+                          <div class="process__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>額</span>
+                        </div>
+                        <div class="process__step completed">
+                          <div class="process__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>方法</span>
+                        </div>
+                        <div class="process__step active">
+                          <div class="process__icon">
+                            <i class="fas fa-spinner fa-spin"></i>
+                          </div>
+                          <span>支払い</span>
+                        </div>
+                        <div class="process__step">
+                          <div class="process__icon">
+                            <i class="far fa-circle"></i>
+                          </div>
+                          <span>確認する</span>
+                        </div>
+                      </div>
+                      <div class="payment__details">
+                        <div class="card__form">
+                          <div class="card__number form__field"></div>
+                          <div class="card__info">
+                            <div class="expiry form__field"></div>
+                            <div class="cvv form__field"></div>
+                          </div>
+                          <div class="cardholder form__field"></div>
+                          <button class="submit__btn">完全な支払い</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step7">
+                <div class="step__number">7</div>
+                <div class="step__content">
+                  <h3>確認と資金のクレジット</h3>
+                  <p>支払いが確認されると、アカウントには同等の暗号通貨額が付与されます。</p>
+                  <div class="animation__container">
+                    <div class="confirmation__animation">
+                      <div class="confirmation__circle">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      <div class="confirmation__message">
+                        <h4>成功しました！</h4>
+                        <p>あなたのアカウントはクレジットされています <span class="crypto__amount">0.00123456 BTC</span></p>
+                      </div>
+                      <div class="balance__update">
+                        <div class="balance__label">ニューバランス：</div>
+                        <div class="balance__value">0.00123456 BTC</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab__pane" id="withdraw">
+            <div class="tutorial__steps">
+              <div class="step" id="withdraw__step1">
+                <div class="step__number">1</div>
+                <div class="step__content">
+                  <h3>アクセス離脱セクション</h3>
+                  <p>アカウントダッシュボードの「撤回」セクションに移動します。</p>
+                  <div class="animation__container">
+                    <div class="dashboard__animation">
+                      <div class="dashboard__sidebar">
+                        <div class="sidebar__item"></div>
+                        <div class="sidebar__item active"></div>
+                        <div class="sidebar__item"></div>
+                      </div>
+                      <div class="dashboard__main">
+                        <div class="dashboard__header"></div>
+                        <div class="dashboard__content">
+                          <div class="withdraw__button pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step2">
+                <div class="step__number">2</div>
+                <div class="step__content">
+                  <h3>暗号通貨を選択します</h3>
+                  <p>利用可能な残高から撤回する暗号通貨を選択してください。</p>
+                  <div class="animation__container">
+                    <div class="crypto__selector">
+                      <div class="crypto__option selected" data-crypto="BTC">
+                        <div class="crypto__icon">
+                          <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Bitcoin</span>
+                          <span class="crypto__balance">0.00123456 BTC</span>
+                        </div>
+                      </div>
+                      <div class="crypto__option" data-crypto="ETH">
+                        <div class="crypto__icon">
+                          <i class="fab fa-ethereum"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Ethereum</span>
+                          <span class="crypto__balance">0.0123 ETH</span>
+                        </div>
+                      </div>
+                      <div class="crypto__option" data-crypto="SOL">
+                        <div class="crypto__icon">
+                          <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Solana</span>
+                          <span class="crypto__balance">0.123 SOL</span>
+                        </div>
+                      </div>
+                      <div class="crypto__option" data-crypto="XRP">
+                        <div class="crypto__icon">
+                          <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Ripple</span>
+                          <span class="crypto__balance">10.0 XRP</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step3">
+                <div class="step__number">3</div>
+                <div class="step__content">
+                  <h3>引き出し額を入力します</h3>
+                  <p>撤回したい暗号通貨の量を指定します。</p>
+                  <div class="animation__container">
+                    <div class="withdraw__form">
+                      <div class="amount__input crypto">
+                        <input type="text" id="withdraw__amount" placeholder="0.00000000">
+                        <span class="currency__symbol">BTC</span>
+                      </div>
+                      <div class="balance__info">
+                        <span>Available: </span>
+                        <span class="available__balance">0.00123456 BTC</span>
+                      </div>
+                      <div class="quick__amount__buttons">
+                        <button class="quick__amount" data-percent="25">25%</button>
+                        <button class="quick__amount" data-percent="50">50%</button>
+                        <button class="quick__amount" data-percent="75">75%</button>
+                        <button class="quick__amount" data-percent="100">Max</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step4">
+                <div class="step__number">4</div>
+                <div class="step__content">
+                  <h3>ウォレットアドレスを入力します</h3>
+                  <p>資金を受け取りたい場所で暗号通貨ウォレットアドレスを提供します。</p>
+                  <div class="animation__container">
+                    <div class="wallet__address__input">
+                      <div class="address__field">
+                        <input type="text" id="wallet__address" placeholder="ウォレットアドレスを入力してください">
+                        <button class="scan__qr__btn">
+                          <i class="fas fa-qrcode"></i>
+                        </button>
+                      </div>
+                      <div class="qr__scanner">
+                        <div class="scanner__frame">
+                          <div class="scanner__line"></div>
+                        </div>
+                      </div>
+                      <div class="address__warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>ウォレットアドレスを再確認してください！ トランザクションを逆にすることはできません。</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step5">
+                <div class="step__number">5</div>
+                <div class="step__content">
+                  <h3>トランザクションの詳細を確認します</h3>
+                  <p>撤退を確認する前に、すべてのトランザクションの詳細を確認してください。</p>
+                  <div class="animation__container">
+                    <div class="transaction__review">
+                      <div class="review__item">
+                        <span class="review__label">額:</span>
+                        <span class="review__value">0.00100000 BTC</span>
+                      </div>
+                      <div class="review__item">
+                        <span class="review__label">ネットワーク料金:</span>
+                        <span class="review__value">0.00005000 BTC</span>
+                      </div>
+                      <div class="review__item">
+                        <span class="review__label">あなたは受け取ります:</span>
+                        <span class="review__value highlight">0.00095000 BTC</span>
+                      </div>
+                      <div class="review__item address">
+                        <span class="review__label">対処する:</span>
+                        <span class="review__value address__value">bc1q...7e9h</span>
+                        <div class="address__tooltip">bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq</div>
+                      </div>
+                      <div class="review__item">
+                        <span class="review__label">推定時間:</span>
+                        <span class="review__value">10-30 minutes</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step6">
+                <div class="step__number">6</div>
+                <div class="step__content">
+                  <h3>撤退を確認します</h3>
+                  <p>2FAコードを入力して、離脱トランザクションを確認します。</p>
+                  <div class="animation__container">
+                    <div class="confirmation__form">
+                      <div class="two__fa__input">
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                      </div>
+                      <div class="timer__container">
+                        <div class="timer__circle">
+                          <svg>
+                            <circle cx="30" cy="30" r="28"></circle>
+                            <circle cx="30" cy="30" r="28" class="progress"></circle>
+                          </svg>
+                          <span class="timer__count">30</span>
+                        </div>
+                      </div>
+                      <button class="confirm__btn">撤退を確認します</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step7">
+                <div class="step__number">7</div>
+                <div class="step__content">
+                  <h3>トランザクションステータスを追跡します</h3>
+                  <p>トランザクション履歴セクションで撤退のステータスを監視します。</p>
+                  <div class="animation__container">
+                    <div class="transaction__status">
+                      <div class="status__header">
+                        <h4>トランザクションの詳細</h4>
+                        <span class="tx__id">TX ID: 7a8b9c0d1e2f3g4h5i6j</span>
+                      </div>
+                      <div class="status__progress">
+                        <div class="progress__step completed">
+                          <div class="progress__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>リクエスト</span>
+                        </div>
+                        <div class="progress__step completed">
+                          <div class="progress__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>処理</span>
+                        </div>
+                        <div class="progress__step active">
+                          <div class="progress__icon">
+                            <i class="fas fa-spinner fa-spin"></i>
+                          </div>
+                          <span>確認</span>
+                        </div>
+                        <div class="progress__step">
+                          <div class="progress__icon">
+                            <i class="far fa-circle"></i>
+                          </div>
+                          <span>完了しました</span>
+                        </div>
+                      </div>
+                      <div class="blockchain__explorer">
+                        <a href="#" class="explorer__link">
+                          <i class="fas fa-external-link-alt"></i>
+                          <span>ブロックチェーンエクスプローラーの表示</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/footer-btc.js"></script>
+    <script src="/js/loading-cursor.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-ja.js"></script>
+  </body>
 </html>

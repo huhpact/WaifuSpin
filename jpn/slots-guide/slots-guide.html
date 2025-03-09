@@ -1,237 +1,207 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaifuSpinスロット-完全ガイド</title>
+    <title>WaifuSpin スロットガイド - 完全なチュートリアル</title>
     <link rel="stylesheet" href="/css/slots-guide.css" />
-		<link rel="stylesheet" href="/css/bg-animation.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 		<link rel="stylesheet" href="/css/cookie.css" />
 		<link rel="stylesheet" href="/css/footer.css" />
 		<link rel="stylesheet" href="/css/header.css" />
-		<link rel="stylesheet" href="/css/sidebar.css" />
-		<link rel="stylesheet" href="/css/loading-cursor.css" />
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+		<link rel="stylesheet" href="/css/loading-cursor.css" />
+		<link rel="stylesheet" href="/css/sidebar.css" />
     <link rel="canonical" href="https://waifuspin.com" />
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
 </head>
 <body>
-	<div class="stars"></div>
-  <div class="twinkling"></div>
+
   <div class="preloader">
-  <div class="spinner"></div>
-</div>
-
-<div class="custom-cursor"></div>
+    <div class="spinner"></div>
+  </div>
   
-<header>
-  <div class="header-content">
-    <div class="burger-logo">
-      <div class="burger-menu">
-        <i class='bx bx-menu'></i>
+  <div class="custom__cursor"></div>
+    
+  <header>
+    <div class="header__content">
+      <div class="burger__logo">
+        <div class="burger__menu">
+          <i class='bx bx-menu'></i>
+        </div>
+        <a href="/jpn/index/index.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
       </div>
-      <a href="/jpn/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+      <div class="login__reg">
+        <a href="/jpn/login/login.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja" class="login">ログイン</a>
+        <a href="/jpn/login/login.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><button class="sign__up__btn">登録する</button></a>
+      </div>
     </div>
-    <div class="login-reg">
-      <a href="/jpn/login/login.html" class="login">ログイン</a>
-      <a href="/jpn/login/login.html"><button class="sign-up-btn">登録する</button></a>
-    </div>
-  </div>
-</header>
-
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-          </div>
-          <h4>クッキー設定</h4>
-      </div>
-      <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
-      <div class="button-group">
-          <button id="decline-cookies">廃棄物</button>
-          <button id="accept-cookies">受け入れる</button>
-      </div>
-  </div>
-</div>
-
-
-<aside class="sidebar">
-  <ul>
-    <li><a href="/jpn/promotions/promotions.html"><i class='bx bxs-gift'></i> プロモーション</a></li>
-    <li><a href="/jpn/affiliates/affiliates.html"><i class='bx bxs-business'></i>所属</a></li>
-    <hr>
-    <li><a href="/jpn/vip/vip.html"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
-    <li><a href="/jpn/news/news.html"><i class='bx bxs-news'></i> ニュース</a></li>
-    <li><a href="/jpn/support/support.html"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
-    <li class="language-dropdown">
-      <i class='bx bx-world'></i> 言語
-      <ul class="dropdown">
-        <li><a href="/en/slots-guide/slots-guide.html">English</a></li>
-        <li><a href="/de/slots-guide/slots-guide.html">Deutsch</a></li>
-        <li><a href="/fr/slots-guide/slots-guide.html">Français</a></li>
-        <li><a href="#">日本語</a></li>
-      </ul>
-    </li>
-  </ul>
-</aside>
-<div class="overlay"></div>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>スロットマスター</h1>
-            <p>クラシックなカジノゲームをステップ・バイ・ステップで学ぶ</p>
-            <div class="scroll-indicator">
-                <span>学ぶことに挑戦する</span>
-                <div class="chevron"></div>
+  </header>
+  
+  <div id="cookie__banner" class="hidden">
+    <div class="cookie__content">
+        <div class="cookie__header">
+            <div class="cookie__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
             </div>
+            <h4>クッキー設定</h4>
+        </div>
+        <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
+        <div class="button__group">
+            <button id="decline__cookies">廃棄物</button>
+            <button id="accept__cookies">受け入れる</button>
+        </div>
+    </div>
+</div>
+  
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="/jpn/promotions/promotions.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-gift'></i> プロモーション</a></li>
+      <li><a href="/jpn/affiliates/affiliates.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-business'></i>所属</a></li>
+      <hr>
+      <li><a href="/jpn/vip/vip.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
+      <li><a href="/jpn/news/news.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-news'></i> ニュース</a></li>
+      <li><a href="/jpn/support/support.html?utm_source=waifuspin-slotsguide&utm_medium=webbrowser&lang=ja"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
+      <li class="language__dropdown">
+        <i class='bx bx-world'></i> 言語
+        <ul class="dropdown">
+          <li><a href="/en/slots-guide/slots-guide.html">English</a></li>
+          <li><a href="/de/slots-guide/slots-guide.html">Deutsch</a></li>
+          <li><a href="/fr/slots-guide/slots-guide.html">Français</a></li>
+          <li><a href="#">日本語</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="overlay"></div>
+
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="glitch" data-text="究極のスロットガイド">究極のスロットガイド</h1>
+            <p class="subtitle">スロットの世界を発見してください</p>
         </div>
     </section>
 
-		<main>
-			<section class="tutorial-section fade-right" id="basics">
-				<div class="content">
-					<h2>1. 目的</h2>
-					<p>スロットマシンの目的は、リール上のシンボルをマッチさせて賞金を獲得することである。各マシンには独自のルールとペイアウトテーブルがあります。</p>
-				</div>
-				<div class="image">
-					<img src="/images/slots1.webp" alt="Machine à sous">
-				</div>
-			</section>
-
-			<section class="tutorial-section fade-left">
-				<div class="image">
-					<img src="/images/slots2.jpg" alt="Rouleaux de machine à sous">
-				</div>
-				<div class="content">
-					<h2>2. 遊び方</h2>
-					<p>コインまたはチケットを入れ、ベット額を選択し、スピンボタンを押してください。リールが回転し、停止してシンボルが現れます。ウイニングコンビネーションが揃うと、ペイテーブルに従って配当が支払われます。</p>
-				</div>
-			</section>
-
-			<section class="tutorial-section fade-right" id="strategy">
-				<div class="content">
-					<h2>3. 戦略</h2>
-					<p>スロットマシンは、主に運に左右されるものですが、あなたは、その運を利用することができます：
-						<ul>
-							<li>ペイアウト率の高いマシンを選ぶ</li>
-							<li>責任ある予算管理</li>
-							<li>ボーナスやキャンペーンを利用する</li>
-						</ul>
-					</p>
-				</div>
-				<div class="image">
-					<img src="/images/slots3.jpg" alt="Joueur utilisant une machine à sous">
-				</div>
-			</section>
-
-			<section class="tutorial-section fade-left">
-				<div class="image">
-					<img src="/images/slots4.jpg" alt="Symbole de jackpot sur une machine à sous">
-				</div>
-				<div class="content">
-					<h2>4. 勝ちと負け</h2>
-					<p>以下の場合に勝利となる：
-						<ul>
-							<li>シンボルのウイニングコンビネーション</li>
-							<li>ボーナスラウンドやジャックポットが発生する</li>
-						</ul>
-					</p>
-				</div>
-			</section>
-		</main>
-
-    <footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-
-    <div class="container">
-
-        <div class="section">
-            <h4>カジノ</h4>
-            <ul>
-                <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
-                <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
-                <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
-                <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
-                <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
-                <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
-                <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>サポート</h4>
-            <ul>
-                <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
-                <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
-                <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
-                <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>会社概要</h4>
-            <ul>
-                <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
-                <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
-                <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
-                <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
-                <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>お支払いについて</h4>
-            <ul>
-                <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
-                <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
-                <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
-                <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
-                <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
+    <main>
+        <section id="grundlagen" class="section">
+            <h2 class="section__title">スロットマシンの基本</h2>
+            <div class="info__grid">
+                <div class="info__card" data-tilt>
+                    <i class="fas fa-dice"></i>
+                    <h3>ランダム原理（RNG）</h3>
+                    <p>最新のスロットマシンは、複雑なアルゴリズムを使用して乱数を生成します。 これらのRNGシステムは、スピンごとに公正かつ予測不可能な結果を​​保証します。</p>
+                    <div class="card__stats">
+                        <div class="stat">
+                            <span>公平性</span>
+                            <div class="progress__bar"><div class="fill" style="width: 98%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info__card" data-tilt>
+                    <i class="fas fa-percentage"></i>
+                    <h3>支払い率（RTP）</h3>
+                    <p>RTP（プレーヤーに戻る）は通常、96％から99％です。 99％のRTPは、理論的には100ユーロの使用のうち99ユーロがプレイヤーに返済されることを意味します。</p>
+                    <div class="card__stats">
+                        <div class="stat">
+                            <span>平均</span>
+                            <div class="progress__bar"><div class="fill" style="width: 96%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info__card" data-tilt>
+                    <i class="fas fa-chart-line"></i>
+                    <h3>ボラティリティ</h3>
+                    <p>ボラティリティは、リスク営利の比率を決定します。 ボラティリティが高いことは、より希少であるが利益が高いことを意味し、低ボラティリティはより頻繁にありますが、利益が少ないことを意味します。</p>
+                </div>
             </div>
+        </section>
 
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">小数点以下</option>
-                    <option value="fractional">フラクショナル</option>
-                    <option value="american">アメリカン</option>
-                </select>
+        <section id="strategien" class="section">
+            <h2 class="section__title">プレイの戦略とスタイル</h2>
+            <div class="strategy__container">
+                <div class="strategy__timeline">
+                    <div class="timeline__item" data-aos="fade-right">
+                        <div class="timeline__content">
+                            <h3>1. 予算管理</h3>
+                            <ul class="strategy__list">
+                                <li>固定された毎日の予算を設定します</li>
+                                <li>予算をゲームユニットに共有します</li>
+                                <li>停止を使用して、利益制限を取得します</li>
+                            </ul>
+                            <div class="strategy__meter">
+                                <div class="meter__fill" style="width: 90%"></div>
+                                <span>重要性: 90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline__item" data-aos="fade-left">
+                        <div class="timeline__content">
+                            <h3>2. ゲームの選択</h3>
+                            <ul class="strategy__list">
+                                <li>RTP値を確認してください</li>
+                                <li>適切なボラティリティを選択してください</li>
+                                <li>ボーナス機能に注意してください</li>
+                            </ul>
+                            <div class="strategy__meter">
+                                <div class="meter__fill" style="width: 85%"></div>
+                                <span>重要性: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
-    
+        <section id="begriffe" class="section">
+            <h2 class="section__title">重要な用語</h2>
+            <div class="terms__container">
+                <div class="term__card" data-tilt>
+                    <div class="term__icon"><i class="fas fa-sync"></i></div>
+                    <h3>フリースピン</h3>
+                    <p>しばしば特別なシンボルによってトリガーされるフリースピン。 フリースピン中に追加の乗数または機能がアクティブになる可能性があります。</p>
+                    <div class="term__stats">
+                        <div class="stat__bar">
+                            <span>頻度</span>
+                            <div class="bar"><div class="fill" style="width: 70%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="term__card" data-tilt>
+                    <div class="term__icon"><i class="fas fa-star"></i></div>
+                    <h3>散乱</h3>
+                    <p>ペイラインに関係なく、ボーナス機能をアクティブ化できる特別なシンボル。 通常、トリガーには3つ以上の散布が必要です。</p>
+                    <div class="term__stats">
+                        <div class="stat__bar">
+                            <span>価値</span>
+                            <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="term__card" data-tilt>
+                    <div class="term__icon"><i class="fas fa-crown"></i></div>
+                    <h3>ワイルドシンボル</h3>
+                    <p>より良い勝利の組み合わせのために、他のシンボルを置き換えます。 ワイルドの拡大や粘着性のあるワイルドなどの特別なバリエーションは、勝つ可能性をさらに高めます。</p>
+                    <div class="term__stats">
+                        <div class="stat__bar">
+                            <span>意味</span>
+                            <div class="bar"><div class="fill" style="width: 90%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
-    </div>
-    </footer>
-
-
-    <script src="/jpn/slots-guide/slots-guide.js"></script>
-		<script src="/js/cookie.js"></script>
-		<script src="/js/footer-btc.js"></script>
-		<script src="/js/sidebar.js"></script>
-		<script src="/js/loading-cursor.js"></script>
+    <script src="/jpn/slots-guide/slots-guide.js" type="module"></script>
+    <script src="/js/footer-btc.js"></script>
+    <script src="/js/footer/footer-ja.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/loading-cursor.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
 </html>

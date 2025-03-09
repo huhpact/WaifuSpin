@@ -32,14 +32,14 @@ function formatDate(dateString) {
 
 function createNewsHTML(newsItem) {
 	return `
-			<article class="news-item">
-					<h2 class="news-title">${newsItem.title}</h2>
-					<div class="news-meta">
-							<span class="news-user">By ${newsItem.user}</span>
-							<span class="news-date">${formatDate(newsItem.date)}</span>
+			<article class="news__item">
+					<h2 class="news__title">${newsItem.title}</h2>
+					<div class="news__meta">
+							<span class="news__user">By ${newsItem.user}</span>
+							<span class="news__date">${formatDate(newsItem.date)}</span>
 					</div>
-					<p class="news-description">${newsItem.description}</p>
-					<button class="news-more" onclick="openModal(${newsItem.id})">Read More</button>
+					<p class="news__description">${newsItem.description}</p>
+					<button class="news__more" onclick="openModal(${newsItem.id})">Read More</button>
 			</article>
 	`;
 }
@@ -65,7 +65,7 @@ function filterNews(searchTerm) {
 }
 
 const modal = document.getElementById('modal');
-const closeButton = document.getElementsByClassName('close-button')[0];
+const closeButton = document.getElementsByClassName('close__button')[0];
 
 function openModal(newsId) {
 	const newsItem = newsData.find(item => item.id === newsId);

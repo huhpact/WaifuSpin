@@ -24,13 +24,13 @@ body {
 }
 
 
-.hero-section {
+.hero__section {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
 
-.grid-overlay {
+.grid__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -54,12 +54,12 @@ body {
   gap: 4rem;
 }
 
-.hero-content {
+.hero__content {
   flex: 1;
   max-width: 600px;
 }
 
-.hero-h1 {
+.hero__h1 {
   font-size: 4.25rem;
   font-weight: 700;
   line-height: 1.2;
@@ -70,19 +70,19 @@ body {
   color: transparent;
 }
 
-.hero-p {
+.hero__p {
   font-size: 1.25rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2.5rem;
 }
 
-.hero-image {
+.hero__image {
   flex: 1;
   position: relative;
 }
 
-.hero-image img {
+.hero__image img {
   width: 100%;
   max-width: 600px;
   height: 90%;
@@ -91,7 +91,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.hero-image img:hover {
+.hero__image img:hover {
   transform: perspective(1000px) rotateY(0deg);
 }
 
@@ -106,16 +106,16 @@ body {
       font-size: 3rem;
   }
 
-  .hero-image {
+  .hero__image {
       margin-top: 2rem;
   }
 
-  .hero-image img {
+  .hero__image img {
       transform: none;
   }
 }
 
-.game-section {
+.game__section {
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
@@ -123,7 +123,7 @@ body {
 	perspective: 1000px;
 }
 
-.parallax-container {
+.parallax__container {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -132,7 +132,7 @@ body {
 	transform-style: preserve-3d;
 }
 
-.parallax-bg {
+.parallax__bg {
 	position: absolute;
 	top: -20%;
 	left: -20%;
@@ -145,7 +145,7 @@ body {
 	opacity: 0.1;
 }
 
-.game-content {
+.game__content {
 	position: relative;
 	z-index: 2;
 	max-width: 1200px;
@@ -160,23 +160,23 @@ body {
 	transition: all 0.8s ease;
 }
 
-.game-content.visible {
+.game__content.visible {
 	opacity: 1;
 	transform: translateY(0);
 }
 
-.game-info {
+.game__info {
 	color: var(--text-clr);
 }
 
-.game-info h2 {
+.game__info h2 {
 	font-size: 3rem;
 	color: white;
 	margin-bottom: 1.5rem;
 	position: relative;
 }
 
-.game-info h2::after {
+.game__info h2::after {
 	content: '';
 	position: absolute;
 	bottom: -10px;
@@ -187,29 +187,29 @@ body {
 	border-radius: 2px;
 }
 
-.game-info p {
+.game__info p {
 	margin-bottom: 1.5rem;
 	font-size: 1.1rem;
 	line-height: 1.8;
 }
 
-.game-features {
+.game__features {
 	list-style: none;
 	margin: 2rem 0;
 }
 
-.game-features li {
+.game__features li {
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 }
 
-.game-features li i {
+.game__features li i {
 	color: var(--accent);
 	font-size: 1.2rem;
 }
-.play-btn {
+.play__btn {
 	margin-top: 2rem;
 	padding: 1rem 2rem;
 	font-size: 1.2rem;
@@ -222,7 +222,7 @@ body {
 	overflow: hidden;
 }
 
-.play-btn::before {
+.play__btn::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -233,12 +233,12 @@ body {
 	transition: 0.5s;
 }
 
-.play-btn:hover {
+.play__btn:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 10px 20px rgba(61, 106, 255, 0.2);
 }
 
-.play-btn:hover::before {
+.play__btn:hover::before {
 	left: 100%;
 }
 
@@ -249,7 +249,7 @@ body {
 	margin: 2rem 0;
 }
 
-.stat-item {
+.stat__item {
 	text-align: center;
 	padding: 1.5rem;
 	background: var(--secondary-bg);
@@ -257,18 +257,18 @@ body {
 	transition: transform 0.3s ease;
 }
 
-.stat-item:hover {
+.stat__item:hover {
 	transform: translateY(-5px);
 }
 
-.stat-value {
+.stat__value {
 	font-size: 2.5rem;
 	font-weight: bold;
 	color: white;
 	margin-bottom: 0.5rem;
 }
 
-.stat-label {
+.stat__label {
 	color: var(--text-clr);
 	font-size: 0.9rem;
 	text-transform: uppercase;
@@ -329,17 +329,17 @@ body {
 }
 
 @media (max-width: 1024px) {
-	.game-content {
+	.game__content {
 			grid-template-columns: 1fr;
 			text-align: center;
 	}
 
-	.game-info h2::after {
+	.game__info h2::after {
 			left: 50%;
 			transform: translateX(-50%);
 	}
 
-	.game-features li {
+	.game__features li {
 			justify-content: center;
 	}
 
@@ -349,10 +349,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.glitch-text {
+	.glitch__text {
 			animation: none;
 	}
-	.scroll-indicator {
+	.scroll__indicator {
 			animation: none;
 	}
 }

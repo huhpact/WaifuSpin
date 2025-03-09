@@ -55,7 +55,7 @@ function createCurrencyItems() {
 
   const items = [...currencies, ...currencies, ...currencies].map(currency => {
     const item = document.createElement('div');
-    item.className = 'currency-item';
+    item.className = 'currency__item';
     item.innerHTML = `
       <img src="${currency.image}" alt="${currency.name}" />
       <span>${currency.symbol}</span>
@@ -84,13 +84,13 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
   createCurrencyItems();
   
-  document.querySelectorAll('.info-card, .feature-card').forEach(card => {
+  document.querySelectorAll('.info__card, .feature__card').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(50px)';
     observer.observe(card);
   });
 
-  document.querySelectorAll('.stat-number').forEach(stat => {
+  document.querySelectorAll('.stat__number').forEach(stat => {
     const finalValue = parseInt(stat.textContent);
     let currentValue = 0;
     const duration = 2000; 

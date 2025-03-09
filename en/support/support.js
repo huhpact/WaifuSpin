@@ -1,48 +1,60 @@
-const OPENAI_API_KEY = 'hier muss salem api noch adden , er commited sonst nicht'; 
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
-
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
 const sendButton = document.getElementById('sendMessage');
-const faqItems = document.querySelectorAll('.faq-item');
+const faqItems = document.querySelectorAll('.faq__item');
+
+const responses = {
+    hello: "Hello! How can I assist you today?",
+    hi: "Hi there! How can I help you?",
+    hey: "Hey! What can I do for you?",
+    greetings: "Greetings! How can I be of service?",
+    morning: "Good morning! How can I assist you?",
+    afternoon: "Good afternoon! How can I help you?",
+    evening: "Good evening! What do you need help with?",
+    help: "Sure, I'm here to help! What do you need assistance with?",
+    support: "I'm here to support you. What do you need?",
+    assistance: "How can I assist you today?",
+    account: "For account-related issues, please visit our account support page.",
+    login: "If you're having trouble logging in, please check our login help page.",
+    password: "For password issues, you can reset your password on our password reset page.",
+    crypto: "We support various cryptocurrencies. Which one are you interested in?",
+    bitcoin: "Bitcoin is supported. Do you need help with transactions?",
+    ethereum: "Ethereum is supported. What do you need assistance with?",
+    litecoin: "Litecoin is supported. How can I help you with it?",
+    transaction: "For transaction-related queries, please visit our transaction support page.",
+    payment: "For payment issues, please check our payment support page.",
+    refund: "For refund requests, please visit our refund policy page.",
+    shipping: "For shipping information, please check our shipping details page.",
+    order: "For order-related queries, please visit our order support page.",
+    product: "For product information, please check our product details page.",
+    pricing: "For pricing details, please visit our pricing page.",
+    discount: "For discount information, please check our discount offers page.",
+    subscription: "For subscription details, please visit our subscription page.",
+    cancel: "To cancel your subscription, please visit our cancellation page.",
+    upgrade: "For upgrade options, please check our upgrade page.",
+    downgrade: "For downgrade options, please visit our downgrade page.",
+    trial: "For trial information, please check our trial offers page.",
+    features: "For feature details, please visit our features page.",
+    contact: "To contact us, please visit our contact page.",
+    feedback: "We value your feedback! Please visit our feedback page.",
+    complaint: "To file a complaint, please visit our complaint page.",
+    suggestion: "We appreciate your suggestions! Please visit our suggestion page.",
+    default: "I'm sorry, I didn't understand that. Can you please rephrase?"
+};
 
 window.addEventListener('DOMContentLoaded', () => {
-    addMessage("Good morning ! Welcome to the Waifuspin assistance. How can I help you today? 🎮", false);
+    addMessage("Good morning! Welcome to the Waifuspin assistance. How can I help you today? 🎮", false);
     initFAQ();
 });
 
-async function sendToOpenAI(message) {
-    try {
-        const response = await fetch(OPENAI_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${OPENAI_API_KEY}`
-            },
-            body: JSON.stringify({
-                model: "gpt-4-turbo-preview",
-                messages: [{
-                    role: 'system',
-                    content: 'You are a helpful customer support agent for WaifuSpin, a crypto casino. Be professional, friendly, and knowledgeable about cryptocurrency, gambling, and account security. Keep responses concise and helpful. Never break character and you speak english.'
-                }, {
-                    role: 'user',
-                    content: message
-                }],
-                max_tokens: 150,
-                temperature: 0.7
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('API request failed');
+function getResponse(message) {
+    const lowerCaseMessage = message.toLowerCase();
+    for (const key in responses) {
+        if (lowerCaseMessage.includes(key)) {
+            return responses[key];
         }
-
-        const data = await response.json();
-        return data.choices[0].message.content;
-    } catch (error) {
-        console.error('Error:', error);
-        return "I beg you to apologize, but I can't connect to our system. Please try again in a moment.";
     }
+    return responses.default;
 }
 
 function addMessage(content, isUser = false) {
@@ -50,7 +62,7 @@ function addMessage(content, isUser = false) {
     messageDiv.className = `message ${isUser ? 'user' : 'agent'}`;
     
     const messageContent = document.createElement('div');
-    messageContent.className = 'message-content';
+    messageContent.className = 'message__content';
     
     if (!isUser) {
         const typing = document.createElement('div');
@@ -74,24 +86,24 @@ function addMessage(content, isUser = false) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-async function handleSendMessage() {
+function handleSendMessage() {
     const message = userInput.value.trim();
     if (message) {
         addMessage(message, true);
         userInput.value = '';
         
-        const response = await sendToOpenAI(message);
+        const response = getResponse(message);
         addMessage(response);
     }
 }
 
 function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    const faqItems = document.querySelectorAll('.faq__item');
     
     faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const icon = item.querySelector('.faq-icon');
+        const question = item.querySelector('.faq__question');
+        const answer = item.querySelector('.faq__answer');
+        const icon = item.querySelector('.faq__icon');
         
         answer.style.height = '0px';
         
@@ -101,8 +113,8 @@ function initFAQ() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.height = '0px';
-                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    otherItem.querySelector('.faq__answer').style.height = '0px';
+                    otherItem.querySelector('.faq__icon').style.transform = 'rotate(0deg)';
                 }
             });
             
@@ -128,10 +140,10 @@ userInput.addEventListener('input', function() {
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-	anchor.addEventListener('click', function (e) {
-			e.preventDefault();
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
-			});
-	});
+    anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+            });
+    });
 });

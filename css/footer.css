@@ -52,7 +52,7 @@ footer ul li a:hover {
     color: #fff;
 }
 
-footer .language-selector, footer .currency-selector {
+footer .language__selector, footer .currency__selector {
     margin-top: 20px;
 }
 
@@ -67,34 +67,17 @@ footer select {
     width: 50%;
 }
 
-footer .btc-rate {
+footer .btc__rate {
     margin-top: 20px;
     font-size: 14px;
     color: #ccc;
 }
 
-footer .social-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
-
-footer .social-icons a {
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-footer .social-icons a:hover {
-    color: #ccc;
-}
-
-.logo-footer {
-    text-align: center;
+.logo__footer1 {
     margin-bottom: 20px;
 }
 
-.logo-footer img {
+.logo__footer1 img {
     max-width: 100px;
 }
 

@@ -1,0 +1,4 @@
+[
+  { "email": "huhpact@outlook.fr", "password": "admin123", "balance": 999999, "username": "Admin" },
+  {"email": "test@test.com", "password": "test123", "balance": "250", "username": "Testii"}
+]

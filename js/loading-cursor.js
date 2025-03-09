@@ -13,7 +13,7 @@ class AnimationController {
   }
 
 	initCursor() {
-		const cursor = document.querySelector('.custom-cursor');
+		const cursor = document.querySelector('.custom__cursor');
 		
 		document.addEventListener('mousemove', (e) => {
 				cursor.style.left = e.clientX + 'px';
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
 
 if (isTouchDevice) {
-  document.querySelectorAll('.custom-cursor').forEach(cursor => {
+  document.querySelectorAll('.custom__cursor').forEach(cursor => {
     cursor.style.display = 'none';
   });
   document.querySelectorAll('*').forEach(element => {

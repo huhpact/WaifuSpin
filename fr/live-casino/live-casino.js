@@ -1,5 +1,5 @@
 function createCTAParticles() {
-  const particlesContainer = document.querySelector('.cta-particles');
+  const particlesContainer = document.querySelector('.cta__particles');
   if (!particlesContainer) return;
 
   for (let i = 0; i < 50; i++) {
@@ -14,16 +14,16 @@ function createCTAParticles() {
   }
 }
 
-const featureCards = document.querySelectorAll('.feature-card');
+const featureCards = document.querySelectorAll('.feature__card');
 featureCards.forEach((card, index) => {
   card.style.animationDelay = `${index * 0.1}s`;
   
   card.addEventListener('mouseenter', () => {
-    card.querySelector('.feature-icon').style.transform = 'scale(1.1) rotate(5deg)';
+    card.querySelector('.feature__icon').style.transform = 'scale(1.1) rotate(5deg)';
   });
   
   card.addEventListener('mouseleave', () => {
-    card.querySelector('.feature-icon').style.transform = 'scale(1) rotate(0)';
+    card.querySelector('.feature__icon').style.transform = 'scale(1) rotate(0)';
   });
 });
 

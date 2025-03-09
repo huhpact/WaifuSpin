@@ -1,363 +1,558 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>WaifuSpin Deposits & Withdrawals - Lernen, wie man Geld einzahlt oder abhebt</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-        <link rel="canonical" href="https://waifuspin.com" />
-        <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-        <link rel="shortcut icon" href="/images/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-		<link rel="stylesheet" href="/css/bg-animation.css" />
-		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/deposits-and-withdrawals.css" />
-		<link rel="stylesheet" href="/css/footer.css" />
-		<link rel="stylesheet" href="/css/header.css" />
-		<link rel="stylesheet" href="/css/loading-cursor.css" />
-		<link rel="stylesheet" href="/css/sidebar.css" />
-</head>
-<body>
-    
-			<div class="stars"></div>
-			<div class="twinkling"></div>
-			<div class="preloader">
-			<div class="spinner"></div>
-		</div>
-		
-		<div class="custom-cursor"></div>
-			
-        <header>
-            <div class="header-content">
-              <div class="burger-logo">
-                <div class="burger-menu">
-                  <i class='bx bx-menu'></i>
+<!doctype html>
+<html lang="de-DE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaifuSpin Einzahlungen & Auszahlungen - Simpel & Effektiv</title>
+    <link rel="stylesheet" href="/css/deposits-and-withdrawals.css" />
+    <link rel="stylesheet" href="/css/cookie.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/loading-cursor.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="canonical" href="https://waifuspin.com" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id="app">
+        <div class="preloader">
+        <div class="spinner"></div>
+        </div>
+        
+        <div class="custom__cursor"></div>
+        
+        <body>
+            <header>
+                <div class="header__content">
+                  <div class="burger__logo">
+                    <div class="burger__menu">
+                      <i class='bx bx-menu'></i>
+                    </div>
+                    <a href="/de/index/index.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+                  </div>
+                  <div class="login__reg">
+                    <a href="/de/login/login.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de" class="login">Login</a>
+                    <a href="/de/login/login.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><button class="sign__up__btn">Registrieren</button></a>
+                  </div>
                 </div>
-                <a href="/de/index/index.html"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
-              </div>
-              <div class="login-reg">
-                <a href="/de/login/login.html" class="login">Login</a>
-                <a href="/de/login/login.html"><button class="sign-up-btn">Registrieren</button></a>
+              </header>
+              
+            <div id="cookie__banner" class="hidden">
+              <div class="cookie__content">
+                <div class="cookie__header">
+                    <div class="cookie__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+                    </div>
+                    <h4>Cookie-Einstellungen</h4>
+                </div>
+                <p>Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.</p>
+                <div class="button__group">
+                    <button id="decline__cookies">Ablehnen</button>
+                    <button id="accept__cookies">Akzeptieren</button>
+                </div>
               </div>
             </div>
-          </header>
-          
-          <div id="cookie-banner" class="hidden">
-            <div class="cookie-content">
-              <div class="cookie-header">
-                  <div class="cookie-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+              
+            
+              <aside class="sidebar">
+                <ul>
+                  <li><a href="/de/promotions/promotions.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><i class='bx bxs-gift'></i> Promotions</a></li>
+                  <li><a href="/de/affiliates/affiliates.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><i class='bx bxs-business'></i> Affiliates</a></li>
+                  <hr>
+                  <li><a href="/de/vip/vip.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><i class='bx bxs-trophy'></i> VIP Club</a></li>
+                  <li><a href="/de/news/news.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><i class='bx bxs-news'></i> Neuigkeiten</a></li>
+                  <li><a href="/de/support/support.html?utm_source=waifuspin-depositsandwithdrawals&utm_medium=webbrowser&lang=de"><i class='bx bx-support'></i> Live-Kundenservice</a></li>
+                  <li class="language__dropdown">
+                    <i class='bx bx-world'></i> Sprache
+                    <ul class="dropdown">
+                      <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">English</a></li>
+                      <li><a href="#">Deutsch</a></li>
+                      <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Français</a></li>
+                      <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">日本語</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </aside>
+              <div class="overlay"></div>
+              <br><br>
+      <main class="tutorial__container">
+        <h1 class="main__title">Einzahlungs- & Auszahlungs- <span class="highlight">Tutorial</span></h1>
+        
+        <div class="tabs">
+          <button class="tab__btn active" data-tab="deposit">Einzahlung</button>
+          <button class="tab__btn" data-tab="withdraw">Auszahlung</button>
+        </div>
+
+        <div class="tab__content">
+          <div class="tab__pane active" id="deposit">
+            <div class="tutorial__steps">
+              <div class="step" id="step1">
+                <div class="step__number">1</div>
+                <div class="step__content">
+                  <h3>Log dich ein</h3>
+                  <p>Melde dich mithilfe deiner WaifuSpin Login-Daten ein.</p>
+                  <div class="animation__container">
+                    <div class="login__animation">
+                      <div class="login__form">
+                        <div class="form__field"></div>
+                        <div class="form__field"></div>
+                        <div class="login__btn"></div>
+                      </div>
+                      <div class="login__character">
+                        <div class="character__head"></div>
+                        <div class="character__body"></div>
+                      </div>
+                    </div>
                   </div>
-                  <h4>Cookie-Einstellungen</h4>
+                </div>
               </div>
-              <p>Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.</p>
-              <div class="button-group">
-                  <button id="decline-cookies">Ablehnen</button>
-                  <button id="accept-cookies">Akzeptieren</button>
+
+              <div class="step" id="step2">
+                <div class="step__number">2</div>
+                <div class="step__content">
+                  <h3>Scrolle etwas runter zur Einzahlungssektion</h3>
+                  <p>Klicke auf "Einzahlen" und zahle ein.</p>
+                  <div class="animation__container">
+                    <div class="dashboard__animation">
+                      <div class="dashboard__sidebar">
+                        <div class="sidebar__item active"></div>
+                        <div class="sidebar__item"></div>
+                        <div class="sidebar__item"></div>
+                      </div>
+                      <div class="dashboard__main">
+                        <div class="dashboard__header"></div>
+                        <div class="dashboard__content">
+                          <div class="deposit__button pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step3">
+                <div class="step__number">3</div>
+                <div class="step__content">
+                  <h3>Wähle deine lokale Währung aus</h3>
+                  <p>Wähle dir deine bevorzugte lokale Währung im Dropdown-Menü.</p>
+                  <div class="animation__container">
+                    <div class="currency__selector1">
+                      <div class="currency__dropdown">
+                        <div class="selected__currency">
+                          <span>USD</span>
+                          <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="currency__options">
+                          <div class="currency__option" data-currency="USD">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>USD</span>
+                          </div>
+                          <div class="currency__option" data-currency="EUR">
+                            <i class="fas fa-euro-sign"></i>
+                            <span>EUR</span>
+                          </div>
+                          <div class="currency__option" data-currency="GBP">
+                            <i class="fas fa-pound-sign"></i>
+                            <span>GBP</span>
+                          </div>
+                          <div class="currency__option" data-currency="JPY">
+                            <i class="fas fa-yen-sign"></i>
+                            <span>JPY</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step4">
+                <div class="step__number">4</div>
+                <div class="step__content">
+                  <h3>Einzahlungsbetrag eingeben</h3>
+                  <p>Gib an, wie viel du einzahlen möchtest. Das System berechnet automatisch das Äquivalent in der Cryptowährung.</p>
+                  <div class="animation__container">
+                    <div class="deposit__form">
+                      <div class="amount__input">
+                        <input type="text" id="deposit__amount" placeholder="0.00">
+                        <span class="currency__symbol">$</span>
+                      </div>
+                      <div class="conversion__display">
+                        <div class="conversion__arrow">
+                          <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="crypto__value">
+                          <span id="crypto__amount">0.00000000</span>
+                          <select id="crypto__currency">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>
+                            <option value="SOL">SOL</option>
+                            <option value="XRP">XRP</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step5">
+                <div class="step__number">5</div>
+                <div class="step__content">
+                  <h3>Wähle deine Zahlungsmethode</h3>
+                  <p>Wähle deine bevorzugte Zahlungsmethode aus den verfügbaren Optionen aus.</p>
+                  <div class="animation__container">
+                    <div class="payment__methods">
+                      <div class="payment__method" data-method="card">
+                        <div class="payment__icon">
+                          <i class="fas fa-credit-card"></i>
+                        </div>
+                        <span>Kreditkarte</span>
+                      </div>
+                      <div class="payment__method" data-method="bank">
+                        <div class="payment__icon">
+                          <i class="fas fa-university"></i>
+                        </div>
+                        <span>Sofortüberweisung</span>
+                      </div>
+                      <div class="payment__method" data-method="ewallet">
+                        <div class="payment__icon">
+                          <i class="fas fa-wallet"></i>
+                        </div>
+                        <span>E-Wallet</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step6">
+                <div class="step__number">6</div>
+                <div class="step__content">
+                  <h3>Vollständige deine Zahlung</h3>
+                  <p>Befolge die Anweisungen, um deine Zahlung über die ausgewählte Methode abzuschließen.</p>
+                  <div class="animation__container">
+                    <div class="payment__process">
+                      <div class="process__steps">
+                        <div class="process__step completed">
+                          <div class="process__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>Betrag</span>
+                        </div>
+                        <div class="process__step completed">
+                          <div class="process__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>Methode</span>
+                        </div>
+                        <div class="process__step active">
+                          <div class="process__icon">
+                            <i class="fas fa-spinner fa-spin"></i>
+                          </div>
+                          <span>Bezahlung</span>
+                        </div>
+                        <div class="process__step">
+                          <div class="process__icon">
+                            <i class="far fa-circle"></i>
+                          </div>
+                          <span>Bestätigen</span>
+                        </div>
+                      </div>
+                      <div class="payment__details">
+                        <div class="card__form">
+                          <div class="card__number form__field"></div>
+                          <div class="card__info">
+                            <div class="expiry form__field"></div>
+                            <div class="cvv form__field"></div>
+                          </div>
+                          <div class="cardholder form__field"></div>
+                          <button class="submit__btn">Kauf bestätigen</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="step7">
+                <div class="step__number">7</div>
+                <div class="step__content">
+                  <h3>Bestätigung und Guthaben gutgeschrieben</h3>
+                  <p>Sobald die Zahlung bestätigt wurde, wird dein Konto mit dem gleichwertigen Kryptowährungsbetrag gutgeschrieben.</p>
+                  <div class="animation__container">
+                    <div class="confirmation__animation">
+                      <div class="confirmation__circle">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      <div class="confirmation__message">
+                        <h4>Einzahlung erfolgreich!</h4>
+                        <p>Deinem Account wurden <span class="crypto__amount">0.00123456 BTC</span> gutgeschrieben!</p>
+                      </div>
+                      <div class="balance__update">
+                        <div class="balance__label">Neuer Kontostand:</div>
+                        <div class="balance__value">0.00123456 BTC</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          
-        
-          <aside class="sidebar">
-            <ul>
-              <li><a href="/de/promotions/promotions.html"><i class='bx bxs-gift'></i> Promotions</a></li>
-              <li><a href="/de/affiliates/affiliates.html"><i class='bx bxs-business'></i> Affiliates</a></li>
-              <hr>
-              <li><a href="/de/vip/vip.html"><i class='bx bxs-trophy'></i> VIP Club</a></li>
-              <li><a href="/de/news/news.html"><i class='bx bxs-news'></i> Neuigkeiten</a></li>
-              <li><a href="/de/support/support.html"><i class='bx bx-support'></i> Live-Kundenservice</a></li>
-              <li class="language-dropdown">
-                <i class='bx bx-world'></i> Sprache
-                <ul class="dropdown">
-                  <li><a href="/en/deposits-and-withdrawals/deposits-and-withdrawals.html">English</a></li>
-                  <li><a href="#">Deutsch</a></li>
-                  <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Français</a></li>
-                  <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">日本語</a></li>
-                </ul>
-              </li>
-            </ul>
-          </aside>
-          <div class="overlay"></div>
-			<div class="container">
-        <main>
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Entdecken Sie die nächste Generation von Cryptospielen</h1>
-                    <p class="hero-subtitle">Sofortige Einzahlungen, blitzschnelle Auszahlungen und nahtlose Cryptowährungsumrechnung</p>
-                    <div class="hero-buttons">
-                        <a href="/de/login/login.html" class="primary-btn">Anfangen</a>
-                        <a href="#features" class="secondary-btn">Mehr erfahren</a>
-                    </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Hilfe</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5min</span>
-                            <span class="stat-label">Abhebungen</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Sicher</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="features" class="features">
-                <h2 class="section-title">Warum WaifuSpin wählen?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-wallet"></i>
-                        <h3>Einfache Einzahlungen</h3>
-                        <p>Mehrere Einzahlungsmöglichkeiten, darunter Apple Pay, Google Pay und Kartenzahlungen.</p>
-                        <div class="feature-info">
-                            <ul>
-                                <li>Sofortige Einzahlungen</li>
-                                <li>Keine versteckten Kosten</li>
-                                <li>Sichere Transaktionen</li>
-                                <li>Unterstützung rund um die Uhr</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-exchange-alt"></i>
-                        <h3>Sofortige Konvertierung</h3>
-                        <p>Wandeln Sie ihre USD sofort in XRP, BTC, SOL oder ETH um.</p>
-                        <div class="feature-info">
-                            <ul>
-                                <li>Echtzeitkurse</li>
-                                <li>Keine Tauschgebühren</li>
-                                <li>Mehrere Crypto-Optionen</li>
-                                <li>Automatischer Prozess</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <h3>Schnelle Auszahlungen</h3>
-                        <p>Auszahlungen jederzeit auf Ihre Crypto-Wallet</p>
-                        <div class="feature-info">
-                            <ul>
-                                <li>Bearbeitung in 5 Minuten</li>
-                                <li>Alle Wallets werden unterstützt</li>
-                                <li>Niederiger Mindestbetrag</li>
-                                <li>Automatische Überprüfung</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="payment" class="payment-methods">
-                <h2 class="section-title">Zahlungsarten</h2>
-                <p class="section-subtitle">Wähle deine bevorzugte Einzahlungsmethode</p>
-                <div class="payment-grid">
-                    <div class="payment-option">
-                        <i class="fab fa-apple-pay"></i>
-                        <span>Apple Pay</span>
-                        <div class="limits">Limit: $10,000/Tag</div>
-                    </div>
-                    <div class="payment-option">
-                        <i class="fab fa-google-pay"></i>
-                        <span>Google Pay</span>
-                        <div class="limits">Limit: $10,000/Tag</div>
-                    </div>
-                    <div class="payment-option">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Kartenzahlung</span>
-                        <div class="limits">Limit: $5,000/Tag</div>
-                    </div>
-                    <div class="payment-option">
-                        <i class="fas fa-link"></i>
-                        <span>Bank Link</span>
-                        <div class="limits">Limit: $50,000/Tag</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="crypto" class="crypto-options">
-                <h2 class="section-title">Unterstützte Cryptowährungen</h2>
-                <p class="section-subtitle">Konvertiere und hebe ab in deiner bevorzugten Cryptowährung</p>
-                <div class="crypto-grid">
-                    <div class="crypto-card">
-                        <img src="/images/bitcoin-btc-logo.svg" alt="Bitcoin">
-                        <h3>Bitcoin</h3>
-                        <p>Netzwerk: BTC</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>Mindestauszahlung</span>
-                                <span>0.001 BTC</span>
-                            </div>
-                            <div class="info-item">
-                                <span>Bearbeitungsdauer</span>
-                                <span>~30 mins</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crypto-card">
-                        <img src="/images/ethereum-eth-logo.svg" alt="Ethereum">
-                        <h3>Ethereum</h3>
-                        <p>Netzwerk: ERC20</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>Mindestauszahlung</span>
-                                <span>0.01 ETH</span>
-                            </div>
-                            <div class="info-item">
-                                <span>Bearbeitungsdauer</span>
-                                <span>~5 mins</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crypto-card">
-                        <img src="/images/solana-sol-logo.svg" alt="Solana">
-                        <h3>Solana</h3>
-                        <p>Netzwerk: SOL</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>Mindestauszahlung</span>
-                                <span>0.1 SOL</span>
-                            </div>
-                            <div class="info-item">
-                                <span>Bearbeitungsdauer</span>
-                                <span>~1 min</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crypto-card">
-                        <img src="/images/xrp-xrp-logo.svg" alt="XRP">
-                        <h3>Ripple</h3>
-                        <p>Netzwerk: XRP</p>
-                        <div class="crypto-info">
-                            <div class="info-item">
-                                <span>Mindestauszahlung</span>
-                                <span>10 XRP</span>
-                            </div>
-                            <div class="info-item">
-                                <span>Bearbeitungsdauer</span>
-                                <span>~1 min</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="security-features">
-                <h2 class="section-title">Ihre Sicherheit ist unsere Priorität</h2>
-                <div class="security-grid">
-                    <div class="security-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Sicherheit auf Bankniveau</h3>
-                        <p>256-Bit-Verschlüsselung für alle Transaktionen</p>
-                    </div>
-                    <div class="security-item">
-                        <i class="fas fa-lock"></i>
-                        <h3>Schutz 2FA</h3>
-                        <p>Eine zusätzliche Sicherheitsebene für Konten</p>
-                    </div>
-                    <div class="security-item">
-                        <i class="fas fa-user-shield"></i>
-                        <h3>KYC-zertifiziert</h3>
-                        <p>Genehmigte und regulierte Plattform</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-			</div>
-       
-            <footer>
-                <div class="logo-footer1">
-                  <img src="/images/logo.png" alt="Waifuspin Logo">
-              </div>
-          
-              <div class="container">
-          
-                  <div class="section">
-                      <h4>Casino</h4>
-                      <ul>
-                          <li><a href="/de/casino-games/casino-games.html">Casino-Spiele</a></li>
-                          <li><a href="/de/slots-guide/slots-guide.html">Slots</a></li>
-                          <li><a href="/de/live-casino/live-casino.html">Live Casino</a></li>
-                          <li><a href="/de/lucky-wheel-guide/lucky-wheel-guide.html">Glücksrad</a></li>
-                          <li><a href="/de/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                          <li><a href="/de/provider/provider.html">Anbieter</a></li>
-                          <li><a href="/de/promotions-and-competitions/promotions-and-competitions.html">Promotions & Wettbewerbe</a></li>
-                      </ul>
-                  </div>
-          
-                  <div class="section">
-                      <h4>Support</h4>
-                      <ul>
-                          <li><a href="/de/help-center/help-center.html">Hilfe-Center</a></li>
-                          <li><a href="/de/hotline-for-game-problems/hotline-for-game-problems.html">Hotline für Spielprobleme</a></li>
-                          <li><a href="/de/support/support.html">Live-Kundenservice</a></li>
-                          <li><a href="/de/self-exclusion/self-exclusion.html">Selbstausschluss</a></li>
-                      </ul>
-                  </div>
-          
-                  <div class="section">
-                      <h4>Über uns</h4>
-                      <ul>
-                          <li><a href="/de/vip/vip.html">VIP Club</a></li>
-                          <li><a href="/de/affiliates/affiliates.html">Affiliates</a></li>
-                          <li><a href="/de/privacy-policy/privacy-policy">Datenschutzrichtlinie</a></li>
-                          <li><a href="/de/lbc-policy/lbc-policy.html">LBC-Richtlinie</a></li>
-                          <li><a href="/de/terms-of-use/terms-of-use.html">Nutzungsbedingungen</a></li>
-                      </ul>
-                  </div>
-          
-                  <div class="section">
-                      <h4>Informationen zu Zahlungen</h4>
-                      <ul>
-                          <li><a href="/de/deposits-and-withdrawals/deposits-and-withdrawals.html">Einzahlungen & Abhebungen</a></li>
-                          <li><a href="/de/guide-to-currencies/guide-to-currencies.html">Leitfaden zu Währungen</a></li>
-                          <li><a href="/de/guide-to-crypto/guide-to-crypto.html">Leitfaden zu Crypto</a></li>
-                          <li><a href="/de/supported-crypto/supported-crypto.html">Unterstützte Crypto-Währungen</a></li>
-                          <li><a href="/de/how-much-to-bet/how-much-to-bet.html">Wie viel wetten</a></li>
-                      </ul>
-                  </div>
-          
-                  <div class="section">
-          
-                      <div class="language-selector">
-                          <select>
-                              <option value="fr">Français</option>
-                              <option value="en">English</option>
-                          </select>
+          <div class="tab__pane" id="withdraw">
+            <div class="tutorial__steps">
+              <div class="step" id="withdraw__step1">
+                <div class="step__number">1</div>
+                <div class="step__content">
+                  <h3>Auf geht's zur Sektion "Auszahlung"</h3>
+                  <p>Navigiere in deinem Konto-Dashboard zum Abschnitt "Auszahlen".</p>
+                  <div class="animation__container">
+                    <div class="dashboard__animation">
+                      <div class="dashboard__sidebar">
+                        <div class="sidebar__item"></div>
+                        <div class="sidebar__item active"></div>
+                        <div class="sidebar__item"></div>
                       </div>
-          
-                      <div class="currency-selector">
-                          <select>
-                              <option value="decimal">Dezimal</option>
-                              <option value="fractional">Fraktionell</option>
-                              <option value="american">Amerikanisch</option>
-                          </select>
+                      <div class="dashboard__main">
+                        <div class="dashboard__header"></div>
+                        <div class="dashboard__content">
+                          <div class="withdraw__button pulse"></div>
+                        </div>
                       </div>
-          
-                    
-                      <div class="btc-rate">1 BTC = Loading...</div>
+                    </div>
                   </div>
+                </div>
               </div>
-              <hr>
-              
-          
-              <div class="copyright">
-                  &copy; 2024 Waifuspin.com | Alle Rechte vorbehalten.
+
+              <div class="step" id="withdraw__step2">
+                <div class="step__number">2</div>
+                <div class="step__content">
+                  <h3>Suche dir deine Cryptowährung aus</h3>
+                  <p>Wähle aus, welche Cryptowährung du aus deinem verfügbaren Restbetrag auszahlen möchtest.</p>
+                  <div class="animation__container">
+                    <div class="crypto__selector">
+                      <div class="crypto__option selected" data-crypto="BTC">
+                        <div class="crypto__icon">
+                          <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Bitcoin</span>
+                          <span class="crypto__balance">0.00123456 BTC</span>
+                        </div>
+                      </div>
+                      <div class="crypto__option" data-crypto="ETH">
+                        <div class="crypto__icon">
+                          <i class="fab fa-ethereum"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Ethereum</span>
+                          <span class="crypto__balance">0.0123 ETH</span>
+                        </div>
+                      </div>
+                      <div class="crypto__option" data-crypto="SOL">
+                        <div class="crypto__icon">
+                          <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Solana</span>
+                          <span class="crypto__balance">0.123 SOL</span>
+                        </div>
+                      </div>
+                      <div class="crypto__option" data-crypto="XRP">
+                        <div class="crypto__icon">
+                          <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="crypto__details">
+                          <span class="crypto__name">Ripple</span>
+                          <span class="crypto__balance">10.0 XRP</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              </footer>
-        
 
-    <script src="/de/deposits-and-withdrawals/deposits-and-withdrawals.js"></script>
-		<script src="/js/cookie.js"></script>
-		<script src="/js/footer-btc.js"></script>
-		<script src="/js/loading-cursor.js"></script>
-		<script src="/js/sidebar.js"></script>
+              <div class="step" id="withdraw__step3">
+                <div class="step__number">3</div>
+                <div class="step__content">
+                  <h3>Gib den Auszahlbetrag an</h3>
+                  <p>Gib die Höhe der Cryptowährung an, die du auszahlen möchtest.</p>
+                  <div class="animation__container">
+                    <div class="withdraw__form">
+                      <div class="amount__input crypto">
+                        <input type="text" id="withdraw__amount" placeholder="0.00000000">
+                        <span class="currency__symbol">BTC</span>
+                      </div>
+                      <div class="balance__info">
+                        <span>Verfügbar: </span>
+                        <span class="available__balance">0.00123456 BTC</span>
+                      </div>
+                      <div class="quick__amount__buttons">
+                        <button class="quick__amount" data-percent="25">25%</button>
+                        <button class="quick__amount" data-percent="50">50%</button>
+                        <button class="quick__amount" data-percent="75">75%</button>
+                        <button class="quick__amount" data-percent="100">Max</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-</body>
+              <div class="step" id="withdraw__step4">
+                <div class="step__number">4</div>
+                <div class="step__content">
+                  <h3>Gib deine Wallet-Adresse ein</h3>
+                  <p>Gib deine Cryptowährungs-Wallet-adresse an, auf der du deine Cryptos erhalten möchtest.</p>
+                  <div class="animation__container">
+                    <div class="wallet__address__input">
+                      <div class="address__field">
+                        <input type="text" id="wallet__address" placeholder="Enter your wallet address">
+                        <button class="scan__qr__btn">
+                          <i class="fas fa-qrcode"></i>
+                        </button>
+                      </div>
+                      <div class="qr__scanner">
+                        <div class="scanner__frame">
+                          <div class="scanner__line"></div>
+                        </div>
+                      </div>
+                      <div class="address__warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Überprüfe lieber zweimal deine Wallet-adresse! Transaktionen können nicht reversed werden.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step5">
+                <div class="step__number">5</div>
+                <div class="step__content">
+                  <h3>Überprüfe die Transaktionsdetails</h3>
+                  <p>Überprüfe alle Transaktionsdetails, bevor du deine Auszahlung bestätigst.</p>
+                  <div class="animation__container">
+                    <div class="transaction__review">
+                      <div class="review__item">
+                        <span class="review__label">Betrag:</span>
+                        <span class="review__value">0.00100000 BTC</span>
+                      </div>
+                      <div class="review__item">
+                        <span class="review__label">Netzwerk-Fee:</span>
+                        <span class="review__value">0.00005000 BTC</span>
+                      </div>
+                      <div class="review__item">
+                        <span class="review__label">Du erhälst:</span>
+                        <span class="review__value highlight">0.00095000 BTC</span>
+                      </div>
+                      <div class="review__item address">
+                        <span class="review__label">Auf folgende Adresse:</span>
+                        <span class="review__value address__value">bc1q...7e9h</span>
+                        <div class="address__tooltip">bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq</div>
+                      </div>
+                      <div class="review__item">
+                        <span class="review__label">Geschätzte Zeit:</span>
+                        <span class="review__value">10-30 Minuten</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step6">
+                <div class="step__number">6</div>
+                <div class="step__content">
+                  <h3>Bestätige die Auszahlung</h3>
+                  <p>Gebe deinen 2FA-Code ein und bestätige die Auszahlungstransaktion.</p>
+                  <div class="animation__container">
+                    <div class="confirmation__form">
+                      <div class="two__fa__input">
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                        <div class="input__box"></div>
+                      </div>
+                      <div class="timer__container">
+                        <div class="timer__circle">
+                          <svg>
+                            <circle cx="30" cy="30" r="28"></circle>
+                            <circle cx="30" cy="30" r="28" class="progress"></circle>
+                          </svg>
+                          <span class="timer__count">30</span>
+                        </div>
+                      </div>
+                      <button class="confirm__btn">Auszahlung bestätigen</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" id="withdraw__step7">
+                <div class="step__number">7</div>
+                <div class="step__content">
+                  <h3>Tracke deinen Transaktionsstatus</h3>
+                  <p>Überwache den Status deiner Auszahlung über deine Wallet.</p>
+                  <div class="animation__container">
+                    <div class="transaction__status">
+                      <div class="status__header">
+                        <h4>Transaktions -Details</h4>
+                        <span class="tx__id">TX ID: 7a8b9c0d1e2f3g4h5i6j</span>
+                      </div>
+                      <div class="status__progress">
+                        <div class="progress__step completed">
+                          <div class="progress__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>Angefragt</span>
+                        </div>
+                        <div class="progress__step completed">
+                          <div class="progress__icon">
+                            <i class="fas fa-check-circle"></i>
+                          </div>
+                          <span>In Bearbeitung</span>
+                        </div>
+                        <div class="progress__step active">
+                          <div class="progress__icon">
+                            <i class="fas fa-spinner fa-spin"></i>
+                          </div>
+                          <span>Bestätigt</span>
+                        </div>
+                        <div class="progress__step">
+                          <div class="progress__icon">
+                            <i class="far fa-circle"></i>
+                          </div>
+                          <span>Fertig!</span>
+                        </div>
+                      </div>
+                      <div class="blockchain__explorer">
+                        <a href="#" class="explorer__link">
+                          <i class="fas fa-external-link-alt"></i>
+                          <span>Zeigen auf Blockchain Explorer</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+    <script type="module" src="/de/deposits-and-withdrawals/deposits-and-withdrawals.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/footer-btc.js"></script>
+    <script src="/js/loading-cursor.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-de.js"></script>
+  </body>
 </html>

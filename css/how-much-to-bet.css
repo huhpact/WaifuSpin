@@ -47,7 +47,7 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
-.hero-content {
+.hero__content {
 	text-align: center;
 	z-index: 1;
 }
@@ -71,7 +71,7 @@ body {
 	50% { border-color: var(--accent) }
 }
 
-.floating-cards {
+.floating__cards {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -120,13 +120,13 @@ body {
 			transform: translateY(0) rotate(0deg);
 	}
 }
-.strategy-section {
+.strategy__section {
 	padding: 5rem 10%;
 	background: var(--secondary-bg);
 	position: relative;
 }
 
-.section-title {
+.section__title {
 	text-align: center;
 	font-size: 2.5rem;
 	margin-bottom: 3rem;
@@ -136,14 +136,14 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
-.strategy-grid {
+.strategy__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 2rem;
 	margin-top: 3rem;
 }
 
-.strategy-card {
+.strategy__card {
 	background: rgba(255, 255, 255, 0.05);
 	padding: 2rem;
 	border-radius: 15px;
@@ -157,17 +157,17 @@ body {
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.strategy-card:hover {
+.strategy__card:hover {
 	transform: perspective(1000px) translateZ(20px);
 	box-shadow: var(--card-shadow);
 }
 
-.card-content {
+.card__content {
 	position: relative;
 	z-index: 1;
 }
 
-.card-overlay {
+.card__overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -181,14 +181,14 @@ body {
 	pointer-events: none;
 }
 
-.strategy-card i {
+.strategy__card i {
 	font-size: 2.5rem;
 	color: var(--accent);
 	margin-bottom: 1rem;
 	text-shadow: var(--neon-shadow);
 }
 
-.strategy-stats {
+.strategy__stats {
 	display: flex;
 	justify-content: space-around;
 	margin-top: 1.5rem;
@@ -200,18 +200,18 @@ body {
 	text-align: center;
 }
 
-.stat-value {
+.stat__value {
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: var(--accent);
 }
 
-.stat-label {
+.stat__label {
 	font-size: 0.8rem;
 	opacity: 0.7;
 }
 
-.calculator-section {
+.calculator__section {
 	padding: 5rem 10%;
 	position: relative;
 }
@@ -234,13 +234,13 @@ body {
 	opacity: 1;
 }
 
-.calculator-tabs {
+.calculator__tabs {
 	display: flex;
 	gap: 1rem;
 	margin-bottom: 2rem;
 }
 
-.tab-btn {
+.tab__btn {
 	padding: 0.5rem 1.5rem;
 	background: transparent;
 	border: 1px solid var(--accent);
@@ -251,7 +251,7 @@ body {
 	overflow: hidden;
 }
 
-.tab-btn::before {
+.tab__btn::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -263,30 +263,30 @@ body {
 	z-index: -1;
 }
 
-.tab-btn:hover::before,
-.tab-btn.active::before {
+.tab__btn:hover::before,
+.tab__btn.active::before {
 	left: 0;
 }
 
-.tab-btn:hover,
-.tab-btn.active {
+.tab__btn:hover,
+.tab__btn.active {
 	color: white;
 	border-color: transparent;
 }
 
-.input-group {
+.input__group {
 	margin-bottom: 1.5rem;
 	position: relative;
 }
 
-.input-group label {
+.input__group label {
 	display: block;
 	margin-bottom: 0.5rem;
 	color: var(--text-clr);
 	font-weight: 500;
 }
 
-.input-group input {
+.input__group input {
 	width: 100%;
 	padding: 0.8rem;
 	border: 1px solid rgba(255, 255, 255, 0.1);
@@ -296,13 +296,13 @@ body {
 	transition: all 0.3s ease;
 }
 
-.input-group input:focus {
+.input__group input:focus {
 	outline: none;
 	border-color: var(--accent);
 	box-shadow: 0 0 0 2px rgba(61, 106, 255, 0.2);
 }
 
-.risk-meter {
+.risk__meter {
 	height: 4px;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 2px;
@@ -310,13 +310,13 @@ body {
 	overflow: hidden;
 }
 
-.risk-level {
+.risk__level {
 	height: 100%;
 	background: var(--gradient);
 	transition: width 0.3s ease;
 }
 
-.gradient-btn {
+.gradient__btn {
 	width: 100%;
 	padding: 1rem;
 	background: var(--gradient);
@@ -329,7 +329,7 @@ body {
 	overflow: hidden;
 }
 
-.gradient-btn::before {
+.gradient__btn::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -345,7 +345,7 @@ body {
 	transition: 0.5s;
 }
 
-.gradient-btn:hover::before {
+.gradient__btn:hover::before {
 	left: 100%;
 }
 
@@ -357,7 +357,7 @@ body {
 	text-align: center;
 }
 
-#bet-amount {
+#bet__amount {
 	font-size: 2rem;
 	font-weight: bold;
 	color: var(--accent);
@@ -366,19 +366,19 @@ body {
 	margin: 1rem 0;
 }
 
-.statistics-section {
+.statistics__section {
 	padding: 5rem 10%;
 	background: var(--secondary-bg);
 }
 
-.stats-container {
+.stats__container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2rem;
 	margin-top: 3rem;
 }
 
-.stat-card {
+.stat__card {
 	background: rgba(255, 255, 255, 0.05);
 	padding: 2rem;
 	border-radius: 15px;
@@ -389,29 +389,29 @@ body {
 	transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
 }
 
-.stat-card:hover {
+.stat__card:hover {
 	box-shadow: var(--card-shadow);
 }
 
-.stat-card.animate {
+.stat__card.animate {
 	transform: translateY(0);
 	opacity: 1;
 }
 
-.stat-header {
+.stat__header {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	margin-bottom: 1rem;
 }
 
-.stat-header i {
+.stat__header i {
 	font-size: 1.5rem;
 	color: var(--accent);
 	text-shadow: var(--neon-shadow);
 }
 
-.stat-value {
+.stat__value {
 	font-size: 2.5rem;
 	font-weight: bold;
 	margin: 1rem 0;
@@ -422,7 +422,7 @@ body {
 	position: relative;
 }
 
-.stat-value::after {
+.stat__value::after {
 	content: '';
 	position: absolute;
 	bottom: -5px;
@@ -435,11 +435,11 @@ body {
 	transition: transform 0.3s ease;
 }
 
-.stat-card:hover .stat-value::after {
+.stat__card:hover .stat__value::after {
 	transform: scaleX(1);
 }
 
-.button-particles {
+.button__particles {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -448,7 +448,7 @@ body {
 	pointer-events: none;
 }
 
-.cta-button {
+.cta__button {
 	position: relative;
 	padding: 1rem 2rem;
 	background: var(--gradient);
@@ -460,11 +460,11 @@ body {
 	transition: transform 0.3s ease;
 }
 
-.cta-button:hover {
+.cta__button:hover {
 	transform: translateY(-2px);
 }
 
-.cta-button::before {
+.cta__button::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -480,7 +480,7 @@ body {
 	transition: 0.5s;
 }
 
-.cta-button:hover::before {
+.cta__button:hover::before {
 	left: 100%;
 }
 
@@ -505,7 +505,7 @@ body {
 			font-size: 2.5rem;
 	}
 	
-	.strategy-grid {
+	.strategy__grid {
 			grid-template-columns: 1fr;
 	}
 	
@@ -513,7 +513,7 @@ body {
 			margin: 2rem 1rem;
 	}
 	
-	.stat-card {
+	.stat__card {
 			margin: 1rem;
 	}
 }
@@ -523,15 +523,15 @@ body {
 			font-size: 2rem;
 	}
 	
-	.section-title {
+	.section__title {
 			font-size: 2rem;
 	}
 	
-	.calculator-tabs {
+	.calculator__tabs {
 			flex-direction: column;
 	}
 	
-	.tab-btn {
+	.tab__btn {
 			width: 100%;
 	}
 }

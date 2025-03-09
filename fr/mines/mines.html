@@ -1,167 +1,161 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
+<html lang="fr-FR">
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WaifuSpin - Mines</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-		<link rel="stylesheet" href="/css/footer.css" />
-		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/game-frame.css" />
-		<link rel="stylesheet" href="/css/loading-cursor.css" />
-		<link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/mines.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/bg-animation.css" />
+    <link rel="stylesheet" href="/css/cookie.css" />
+    <link rel="stylesheet" href="/css/loading-cursor.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="canonical" href="https://waifuspin.com" />
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-  </head>
-  <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
+</head>
+<body>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
-  
-<nav class="navbar">
-	<a href="/fr/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
-	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
-			</div>
-	</div>
-
-	<div class="nav-profile">
-			<span id="username">Utilisateur</span>
-		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
-	</div>
-</nav>
-  
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
-          </div>
-          <h4>Paramètres des cookies</h4>
-      </div>
-      <p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site web.</p>
-      <div class="button-group">
-          <button id="decline-cookies">Refuser</button>
-          <button id="accept-cookies">Accepter</button>
-      </div>
-  </div>
-</div>
-
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Mines adden-->
-      </div>
-
-      <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
-          </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
-        </div>
-        
-        <button class="button autoplay" id="autoplayButton">Auto Play</button>
-        <button class="button" id="playButton">Jouer</button>
-      </div>
-    </main>
-
-		<hr>
-		<footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
-    </div>
-
-    <div class="container">
-
-        <div class="section">
-            <h4>Casino</h4>
-            <ul>
-                <li><a href="/fr/casino-games/casino-games.html">Jeux de Casino</a></li>
-                <li><a href="/fr/slots-guide/slots-guide.html">Machines à Sous</a></li>
-                <li><a href="/fr/live-casino/live-casino.html">Casino en direct</a></li>
-                <li><a href="/fr/lucky-wheel-guide/lucky-wheel-guide.html">Lucky Wheel</a></li>
-                <li><a href="/fr/blackjack-guide/blackjack-guide.html">Blackjack</a></li>
-                <li><a href="/fr/provider/provider.html">Fournisseurs</a></li>
-                <li><a href="/fr/promotions-and-competitions/promotions-and-competitions.html">Promos & Compétitions</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="/fr/help-center/help-center.html">Centre d'Aide</a></li>
-                <li><a href="/fr/hotline-for-game-problems/hotline-for-game-problems.html">Ligne d'assistance pour les problèmes de jeu</a></li>
-                <li><a href="/fr/support/support.html">Service client en direct</a></li>
-                <li><a href="/fr/self-exclusion/self-exclusion.html">Auto-Exclusion</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>À propos de nous</h4>
-            <ul>
-                <li><a href="/fr/vip/vip.html">Club VIP</a></li>
-                <li><a href="/fr/affiliates/affiliates.html">Affilié</a></li>
-                <li><a href="/fr/privacy-policy/privacy-policy">Politique de Confidentialité</a></li>
-                <li><a href="/fr/lbc-policy/lbc-policy.html">Politique LBC</a></li>
-                <li><a href="/fr/terms-of-use/terms-of-use.html">Conditions d'Utilisation</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>Informations sur les paiements</h4>
-            <ul>
-                <li><a href="/fr/deposits-and-withdrawals/deposits-and-withdrawals.html">Dépôts & Retraits</a></li>
-                <li><a href="/fr/guide-to-currencies/guide-to-currencies.html">Guide sur les devises</a></li>
-                <li><a href="/fr/guide-to-crypto/guide-to-crypto.html">Guide sur la crypto</a></li>
-                <li><a href="/fr/supported-crypto/supported-crypto.html">Crypto supportée</a></li>
-                <li><a href="/fr/how-much-to-bet/how-much-to-bet.html">Combien parier</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">Décimale</option>
-                    <option value="fractional">Fractionnelle</option>
-                    <option value="american">Américaine</option>
-                </select>
-            </div>
-
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
+<div class="custom__cursor"></div>
+  <nav class="navbar">
+    <a href="/fr/index/index.html?utm_source=waifuspin-mines&utm_medium=webbrowser&lang=fr"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
     
-
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | Tous Droits Réservés.
+    <div class="nav__balance">
+        <div class="balance__display">
+            <span id="balance">00.00</span>
+            <span class="crypto__symbol">USD</span>
+        </div>
     </div>
-    </footer>
-    <script type="module" src="/fr/mines/mines.js"></script>
-		<script src="/js/cookie.js"></script>
-		<script src="/js/footer-btc.js"></script>
-		<script src="/js/loading-cursor.js"></script>
-		<script src="/js/sidebar.js"></script>
-  </body>
+  
+    <div class="nav__profile">
+        <span id="username">Utilisateur</span>
+       <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
+    </div>
+  </nav>
+
+    <div class="game__container">
+        <div class="controls__panel">
+
+            <div class="betting__controls">
+                <div class="control__group">
+                    <label for="bet">Montant de pari</label>
+                    <div class="input__with__controls">
+                        <button class="adjust__btn" data-action="half">½</button>
+                        <input type="number" id="bet" min="1" value="10">
+                        <button class="adjust__btn" data-action="double">2×</button>
+                    </div>
+                </div>
+
+                <div class="control__group">
+                    <label for="mines">Nombre de mines</label>
+                    <div class="input__with__controls">
+                        <button class="adjust__btn" data-action="decrease">-</button>
+                        <input type="number" id="mines" min="1" max="24" value="5">
+                        <button class="adjust__btn" data-action="increase">+</button>
+                    </div>
+                </div>
+
+                <div class="multiplier__display">
+                    <div class="current">
+                        <span class="label">Multiplicateur actuel</span>
+                        <span id="current__multiplier" class="value">1.00×</span>
+                    </div>
+                    <div class="next">
+                        <span class="label">Prochain</span>
+                        <span id="next__multiplier" class="value">1.21×</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game__controls">
+                <button id="start__btn" class="btn btn__primary">
+                    <i class="fas fa-play"></i>
+                    Commencer
+                </button>
+                <button id="cashout__btn" class="btn btn__success" disabled>
+                    <i class="fas fa-coins"></i>
+                    Encaissement
+                </button>
+            </div>
+
+            <div class="auto__play__controls">
+                <div class="mode__switch">
+                    <label class="switch">
+                        <input type="checkbox" id="auto__mode">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Auto Play</span>
+                </div>
+                <div class="auto__settings">
+                    <div class="control__group">
+                        <label for="auto__clicks">Clics par tour</label>
+                        <input type="number" id="auto__clicks" min="1" max="24" value="3">
+                    </div>
+                    <div class="control__group">
+                        <label for="auto__turns">Nombre de tours</label>
+                        <input type="number" id="auto__turns" min="1" value="3">
+                    </div>
+                    <div class="control__group">
+                        <label for="auto__delay">Delai (ms)</label>
+                        <input type="number" id="auto__delay" min="100" value="500">
+                    </div>
+                    <div class="auto__stats">
+                        <div class="stat">
+                            <span class="label">Tourne à gauche</span>
+                            <span id="turns__left" class="value">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Bénéfice total</span>
+                            <span id="total__profit" class="value">0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats__panel">
+                <h3>Statistiques</h3>
+                <div class="stats__grid">
+                    <div class="stat__item">
+                        <span class="label">Tours joués</span>
+                        <span id="games__played" class="value">0</span>
+                    </div>
+                    <div class="stat__item">
+                        <span class="label">Total parié</span>
+                        <span id="total__wagered" class="value">0.00</span>
+                    </div>
+                    <div class="stat__item">
+                        <span class="label">Victoire la plus élevée</span>
+                        <span id="highest__win" class="value">0.00</span>
+                    </div>
+                    <div class="stat__item">
+                        <span class="label">Taux de victoire</span>
+                        <span id="win__rate" class="value">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game__board">
+            <div class="game__grid"></div>
+        </div>
+    </div>
+
+    <div id="win__popup" class="popup">
+        <div class="popup__content">
+            <i class="fas fa-trophy win__icon"></i>
+            <h2>Félicitations!</h2>
+            <p>Tu as gagné <span id="win__amount">0.00</span> USD!</p>
+        </div>
+    </div>
+  <hr>
+    <script src="/fr/mines/mines.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/loading-cursor.js"></script>
+</body>
 </html>

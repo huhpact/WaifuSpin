@@ -3,7 +3,7 @@ const observerOptions = {
 	rootMargin: '50px'
 };
 
-document.querySelectorAll('.card, .cert-logo, .feature-card').forEach(element => {
+document.querySelectorAll('.card, .cert__logo, .feature__card').forEach(element => {
 	observer.observe(element);
 });
 

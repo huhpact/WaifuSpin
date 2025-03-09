@@ -1,5 +1,5 @@
 const scrollReveal = () => {
-	const elements = document.querySelectorAll('.scroll-reveal');
+	const elements = document.querySelectorAll('.scroll__reveal');
 	
 	const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {

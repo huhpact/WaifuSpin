@@ -78,26 +78,26 @@ function showQuestion() {
 
 	const question = quizQuestions[currentQuestion];
 	let html = `
-			<div class="quiz-question">
+			<div class="quiz__question">
 					<h3>${question.question}</h3>
-					<div class="quiz-options">
+					<div class="quiz__options">
 							${question.options.map((option, index) => `
-									<div class="quiz-option" onclick="selectOption(${index})">
+									<div class="quiz__option" onclick="selectOption(${index})">
 											${option}
 									</div>
 							`).join('')}
 					</div>
 			</div>
-			<div class="quiz-navigation">
-					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary-button">前へ</button>' : ''}
-					<button onclick="nextQuestion()" class="primary-button">次のページ</button>
+			<div class="quiz__navigation">
+					${currentQuestion > 0 ? '<button onclick="previousQuestion()" class="secondary__button">前へ</button>' : ''}
+					<button onclick="nextQuestion()" class="primary__button">次のページ</button>
 			</div>
 	`;
 	quizContent.innerHTML = html;
 }
 
 function selectOption(index) {
-	const options = document.querySelectorAll('.quiz-option');
+	const options = document.querySelectorAll('.quiz__option');
 	options.forEach(option => option.classList.remove('selected'));
 	options[index].classList.add('selected');
 	answers[currentQuestion] = index;
@@ -138,13 +138,13 @@ function showResults() {
 	}
 
 	quizContent.innerHTML = `
-			<div class="quiz-results">
+			<div class="quiz__results">
 					<h3>Résultats de l'évaluation</h3>
 					<p>${message}</p>
 					<p class="recommendations">${recommendations}</p>
-					<div class="quiz-navigation">
-							<button onclick="closeQuiz()" class="primary-button">閉じる</button>
-							<button onclick="startChat()" class="secondary-button">お問い合わせ</button>
+					<div class="quiz__navigation">
+							<button onclick="closeQuiz()" class="primary__button">閉じる</button>
+							<button onclick="startChat()" class="secondary__button">お問い合わせ</button>
 					</div>
 			</div>
 	`;
@@ -159,7 +159,7 @@ function calculateRiskLevel() {
 
 startQuizBtn.addEventListener('click', showQuiz);
 
-document.querySelector('.close-modal').addEventListener('click', closeQuiz);
+document.querySelector('.close__modal').addEventListener('click', closeQuiz);
 
 window.addEventListener('click', (e) => {
 	if (e.target === modal) {
@@ -194,7 +194,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 	});
 });
 
-document.querySelectorAll('.contact-item, .resource-card, .social-item').forEach(item => {
+document.querySelectorAll('.contact__item, .resource__card, .social__item').forEach(item => {
 	item.addEventListener('mouseenter', () => {
 			item.style.transform = 'translateY(-5px)';
 	});

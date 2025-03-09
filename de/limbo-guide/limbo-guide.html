@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaifuSpin Limbo - Der komplette Guide</title>
+    <link rel="stylesheet" href="/css/limbo-guide.css" />
+	<link rel="stylesheet" href="/css/cookie.css" />
+	<link rel="stylesheet" href="/css/footer.css" />
+	<link rel="stylesheet" href="/css/header.css" />
+	<link rel="stylesheet" href="/css/sidebar.css" />
+	<link rel="stylesheet" href="/css/loading-cursor.css" />
+    <link rel="canonical" href="https://waifuspin.com" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+</head>
+<body>
+  <div class="preloader">
+  <div class="spinner"></div>
+</div>
+
+<div class="custom__cursor"></div>
+  
+<header>
+    <div class="header__content">
+      <div class="burger__logo">
+        <div class="burger__menu">
+          <i class='bx bx-menu'></i>
+        </div>
+        <a href="/de/index/index.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+      </div>
+      <div class="login__reg">
+        <a href="/de/login/login.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de" class="login">Login</a>
+        <a href="/de/login/login.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><button class="sign__up__btn">Registrieren</button></a>
+      </div>
+    </div>
+  </header>
+  
+  <div id="cookie__banner" class="hidden">
+    <div class="cookie__content">
+      <div class="cookie__header">
+          <div class="cookie__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+          </div>
+          <h4>Cookie-Einstellungen</h4>
+      </div>
+      <p>Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.</p>
+      <div class="button__group">
+          <button id="decline__cookies">Ablehnen</button>
+          <button id="accept__cookies">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="/de/promotions/promotions.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><i class='bx bxs-gift'></i> Promotions</a></li>
+      <li><a href="/de/affiliates/affiliates.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><i class='bx bxs-business'></i> Affiliates</a></li>
+      <hr>
+      <li><a href="/de/vip/vip.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><i class='bx bxs-trophy'></i> VIP Club</a></li>
+      <li><a href="/de/news/news.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><i class='bx bxs-news'></i> Neuigkeiten</a></li>
+      <li><a href="/de/support/support.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de"><i class='bx bx-support'></i> Live-Kundenservice</a></li>
+      <li class="language__dropdown">
+        <i class='bx bx-world'></i> Sprache
+        <ul class="dropdown">
+          <li><a href="/en/limbo-guide/limbo-guide.html">English</a></li>
+          <li><a href="#">Deutsch</a></li>
+          <li><a href="/fr/limbo-guide/limbo-guide.html">Français</a></li>
+          <li><a href="/jpn/limbo-guide/limbo-guide.html">日本語</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="overlay"></div>
+
+
+  <div id="app">
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Meistere die Kunst von <span class="accent__text">Limbo</span></h1>
+        <p class="hero__subtitle">Das spannende Casinospiel, bei dem Risiko auf Profit trifft</p>
+        <button class="cta__button" id="exploreBtn">
+          <span>Jetzt erkunden</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="hero__visual">
+        <div class="limbo__animation__container">
+          <div class="multiplier__display">
+            <span id="multiplierValue">1.00</span><span class="multiplier__x">×</span>
+          </div>
+          <div class="limbo__graph">
+            <canvas id="limboCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="basics" class="section">
+      <div class="section__container">
+        <h2 class="section__title">Die Basics von Limbo</h2>
+        <div class="card__container">
+          <div class="info__card">
+            <div class="card__icon">
+              <i class="fas fa-dice"></i>
+            </div>
+            <h3>Was ist Limbo?</h3>
+            <p>Limbo ist ein nachweisbar faires Casino-Spiel, bei dem die Spieler darauf wetten, ob ein zufällig erzeugter Multiplikator sein gewähltes Ziel überschreitet. Je höher Ihr Ziel ist, desto größer ist Ihre potenziellen Gewinne.</p>
+          </div>
+          <div class="info__card">
+            <div class="card__icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Wie es funktioniert</h3>
+            <p>Das Spiel erzeugt einen Multiplikator zwischen 1,00× und möglicherweise unendlich unendlich. Sie gewinnen, wenn der Multiplikator höher ist als Ihre Vorhersage. Niedrigere Vorhersagen sind einfacher zu gewinnen, bieten jedoch kleinere Auszahlungen an.</p>
+          </div>
+          <div class="info__card">
+            <div class="card__icon">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <h3>Hausvorteil</h3>
+            <p>Limbo hat in der Regel einen Hausvorteil von rund 1% und ist damit eines der fairsten Casino-Spiele. Dies bedeutet, dass die erwartete Rendite für alle 100 US-Dollar im Laufe der Zeit 99 US-Dollar beträgt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gameplay" class="section alt__bg">
+      <div class="section__container">
+        <h2 class="section__title">Wie spielt man Limbo?</h2>
+        <div class="steps__container">
+          <div class="step__card" data-step="1">
+            <div class="step__number">1</div>
+            <h3>Lege deinen Wettenbetrag fest</h3>
+            <p>Wähle in jeder Runde, wie viel du wetten möchtest. Du kannst diesen Betrag anhand deiner Bankroll-Management-Strategie anpassen.</p>
+          </div>
+          <div class="step__card" data-step="2">
+            <div class="step__number">2</div>
+            <h3>Wähle deinen Zielmultiplikator</h3>
+            <p>Wählen Sie einen Zielmultiplikator. Je höher der Zielmultiplikator ist, desto geringer ist die Wahrscheinlichkeit, dass Sie gewinnen, aber desto höher ist Ihre potenzielle Auszahlung, wenn Sie gewinnen.</p>
+          </div>
+          <div class="step__card" data-step="3">
+            <div class="step__number">3</div>
+            <h3>Plaziere deine Bet</h3>
+            <p>Klicke auf die Schaltfläche "Bet", um das Spiel zu starten. Das System generiert einen zufälligen Multiplikator.</p>
+          </div>
+          <div class="step__card" data-step="4">
+            <div class="step__number">4</div>
+            <h3>Überprüfe das Ergebnis</h3>
+            <p>Wenn der generierte Multiplikator höher ist als dein Ziel, gewinnst du! Deine Auszahlung ist der Wettenbetrag multipliziert mit dem Zielmultiplikator.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy" class="section">
+      <div class="section__container">
+        <h2 class="section__title">Gewinnstrategien</h2>
+        <div class="strategy__container">
+          <div class="strategy__card">
+            <h3>Konservativer Ansatz</h3>
+            <p>Wähle niedrigere Multiplikatoren (1,5× bis 2×) für häufigere Siege, aber kleinere Auszahlungen. Diese Strategie hilft bei der Erhaltung deiner Bankroll-Strategie und liefert konsistentere Ergebnisse.</p>
+            <div class="strategy__stats">
+              <div class="stat">
+                <span class="stat__value">Hohe</span>
+                <span class="stat__label">Win Rate</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">Geringes</span>
+                <span class="stat__label">Risiko</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">Geringe</span>
+                <span class="stat__label">Gewinne</span>
+              </div>
+            </div>
+          </div>
+          <div class="strategy__card">
+            <h3>Ausgeglichene Strategie</h3>
+            <p>Ziel-Multiplikatoren zwischen 2× und 5× für einen Restbetrag zwischen der Gewinnfrequenz und der Ausschüttungsgröße. Dieser Ansatz bietet ein moderates Risiko mit angemessenen potenziellen Renditen.</p>
+            <div class="strategy__stats">
+              <div class="stat">
+                <span class="stat__value">Medium</span>
+                <span class="stat__label">Win Rate</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">Medium</span>
+                <span class="stat__label">Risiko</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">Medium</span>
+                <span class="stat__label">Gewinne</span>
+              </div>
+            </div>
+          </div>
+          <div class="strategy__card">
+            <h3>Hochrisikoansatz</h3>
+            <p>Setze dir Multiplikatoren über 10× für potenziell massive Auszahlungen, jedoch mit einer viel geringeren Gewinnwahrscheinlichkeit. Diese Strategie kann zu schnellen Verlusten, aber auch zu erheblichen Siegen führen.</p>
+            <div class="strategy__stats">
+              <div class="stat">
+                <span class="stat__value">Geringe</span>
+                <span class="stat__label">Win Rate</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">Hohes</span>
+                <span class="stat__label">Risiko</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">Hohe</span>
+                <span class="stat__label">Gewinne</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta__section">
+      <div class="cta__container">
+        <h2>Bereit für Limbo?</h2>
+        <p>Schließe dich Tausenden von Spielern an und teste dein Glück in einem der aufregendsten Casino-Spiele. Mit unserem Nachweislich fairen System kanst du jedes Ergebnis für vollständige Transparenz überprüfen.</p>
+        <div class="cta__features">
+          <div class="cta__feature">
+            <i class="fas fa-shield-alt"></i>
+            <span>Nachweislich fair</span>
+          </div>
+          <div class="cta__feature">
+            <i class="fas fa-bolt"></i>
+            <span>Sofort-Payouts</span>
+          </div>
+        </div>
+        <a href="/de/login/login.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=de" class="get__started__btn">
+          <span>Auf geht's</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <p class="disclaimer">Verantwortungsbewusst spielen. Glücksspiel sollte unterhaltsam sein und kein Weg, um Geld zu verdienen. Setzen Sie Grenzen und halten Sie sich an sie.</p>
+      </div>
+    </section>
+
+    <script src="/de/limbo-guide/limbo-guide.js"></script>
+		<script src="/js/cookie.js"></script>
+		<script src="/js/footer-btc.js"></script>
+		<script src="/js/sidebar.js"></script>
+		<script src="/js/loading-cursor.js"></script>
+    <script src="/js/footer/footer-de.js"></script>
+</body>
+</html>

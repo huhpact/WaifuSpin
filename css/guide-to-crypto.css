@@ -25,7 +25,6 @@ body {
 	cursor: none;
 }
 
-
 .hero {
 	height: 100vh;
 	display: flex;
@@ -35,7 +34,7 @@ body {
 	overflow: hidden;
 }
 
-.hero-content {
+.hero__content {
 	text-align: center;
 	z-index: 2;
 }
@@ -74,7 +73,7 @@ body {
 	animation: glitch-anim 3s infinite linear alternate-reverse;
 }
 
-.hero-subtitle {
+.hero__subtitle {
 	font-size: 1.5rem;
 	margin-top: 1rem;
 	opacity: 0;
@@ -82,7 +81,7 @@ body {
 	animation: fadeInUp 0.8s ease forwards 0.5s;
 }
 
-.scroll-indicator {
+.scroll__indicator {
 	position: absolute;
 	bottom: 2rem;
 	left: 50%;
@@ -110,7 +109,7 @@ body {
 	animation: scroll 1.5s infinite;
 }
 
-.crypto-grid {
+.crypto__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 2rem;
@@ -120,13 +119,13 @@ body {
 	position: relative;
 }
 
-.section-title {
+.section__title {
 	grid-column: 1 / -1;
 	text-align: center;
 	margin-bottom: 3rem;
 }
 
-.section-title h2 {
+.section__title h2 {
 	font-size: 2.5rem;
 	background: var(--gradient);
 	-webkit-background-clip: text;
@@ -135,12 +134,12 @@ body {
 	margin-bottom: 1rem;
 }
 
-.crypto-card {
+.crypto__card {
 	perspective: 1000px;
 	height: 500px;
 }
 
-.card-inner {
+.card__inner {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -148,12 +147,12 @@ body {
 	transform-style: preserve-3d;
 }
 
-.crypto-card:hover .card-inner {
+.crypto__card:hover .card__inner {
 	transform: rotateY(180deg);
 }
 
-.card-front,
-.card-back {
+.card__front,
+.card__back {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -165,19 +164,18 @@ body {
 	border: 1px solid rgba(255,255,255,0.1);
 }
 
-.card-back {
+.card__back {
 	transform: rotateY(180deg);
 }
 
-.card-back h3 {
+.card__back h3 {
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
 	text-align: center;
 	color: var(--accent);
 }
 
-.card-back li {
-
+.card__back li {
 list-style: none;
 display: flex;
 justify-content: center;
@@ -185,7 +183,7 @@ align-items: center;
 padding: 0.2rem 0;
 }
 
-.card-content {
+.card__content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -193,14 +191,14 @@ padding: 0.2rem 0;
 	height: 100%;
 }
 
-.crypto-card img {
+.crypto__card img {
 	width: 100px;
 	height: 100px;
 	margin-bottom: 1.5rem;
 	filter: drop-shadow(0 0 10px rgba(95, 148, 255, 0.3));
 }
 
-.crypto-card h2 {
+.crypto__card h2 {
 	font-size: 1.8rem;
 	background: var(--gradient);
 	-webkit-background-clip: text;
@@ -209,12 +207,12 @@ padding: 0.2rem 0;
 	margin-bottom: 1rem;
 }
 
-.card-description {
+.card__description {
 	font-size: 1.1rem;
 	text-align: center;
 }
 
-.tech-specs {
+.tech__specs {
 	margin-top: 2rem;
 }
 
@@ -222,7 +220,7 @@ padding: 0.2rem 0;
 	margin: 1rem 0;
 }
 
-.progress-bar {
+.progress__bar {
 	width: 100%;
 	height: 6px;
 	background: rgba(255,255,255,0.1);
@@ -238,12 +236,12 @@ padding: 0.2rem 0;
 	transition: width 1s ease;
 }
 
-.market-data {
+.market__data {
 	padding: 4rem 2rem;
 	background: var(--secondary-bg);
 }
 
-.market-grid {
+.market__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2rem;
@@ -251,26 +249,26 @@ padding: 0.2rem 0;
 	margin: 0 auto;
 }
 
-.market-card {
+.market__card {
 	background: var(--card-gradient);
 	border-radius: 1rem;
 	padding: 1.5rem;
 	border: 1px solid rgba(255,255,255,0.1);
 }
 
-.market-header {
+.market__header {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	margin-bottom: 1.5rem;
 }
 
-.market-header img {
+.market__header img {
 	width: 40px;
 	height: 40px;
 }
 
-.market-stats {
+.market__stats {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
@@ -280,7 +278,7 @@ padding: 0.2rem 0;
 	text-align: center;
 }
 
-.stat-value {
+.stat__value {
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: white;
@@ -350,11 +348,11 @@ padding: 0.2rem 0;
 			gap: 1rem;
 	}
 	
-	.crypto-grid {
+	.crypto__grid {
 			grid-template-columns: 1fr;
 	}
 	
-	.market-grid {
+	.market__grid {
 			grid-template-columns: 1fr;
 	}
 }

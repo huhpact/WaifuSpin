@@ -27,12 +27,12 @@ body {
   overflow-x: hidden;
 }
 
-.content-wrapper {
+.content__wrapper {
   width: var(--content-width);
   margin: 0 auto;
 }
 
-.floating-nav {
+.floating__nav {
   position: fixed;
   top: 20px;
   left: 50%;
@@ -47,31 +47,31 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.floating-nav:hover {
+.floating__nav:hover {
   transform: translateX(-50%) translateY(-2px);
   background: rgba(30, 27, 46, 0.95);
 }
 
 
-.nav-content {
+.nav__content {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.current-section {
+.current__section {
   font-weight: 500;
   color: white;
   transition: color 0.3s ease;
 }
 
-.section-counter {
+.section__counter {
   font-size: 0.9rem;
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
-.section-counter .current {
+.section__counter .current {
   color: white;
   font-weight: 600;
 }
@@ -87,7 +87,7 @@ body {
   margin-bottom: var(--section-spacing);
 }
 
-.hero-background {
+.hero__background {
   position: absolute;
   top: 0;
   left: 0;
@@ -100,7 +100,7 @@ body {
   transition: transform 0.5s ease;
 }
 
-.hero-content {
+.hero__content {
   position: relative;
   z-index: 1;
   max-width: 800px;
@@ -128,7 +128,7 @@ h1 {
   animation: fadeInUp 1s ease-out 0.3s forwards;
 }
 
-.last-update {
+.last__update {
   font-size: 1rem;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.6s forwards;
@@ -199,33 +199,33 @@ strong {
   font-weight: 600;
 }
 
-.content-wrapper ul {
+.content__wrapper ul {
   list-style-position: none;
   margin: 1.5rem 0;
   padding-left: 1rem;
 }
 
-.content-wrapper li {
+.content__wrapper li {
   margin-bottom: 0.8rem;
   position: relative;
   padding-left: 1rem;
 }
 
-.content-wrapper li::before {
+.content__wrapper li::before {
   content: '•';
   color: var(--accent);
   position: absolute;
   left: -1rem;
 }
 
-.content-wrapper a {
+.content__wrapper a {
   color: var(--accent);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.content-wrapper a::after {
+.content__wrapper a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -238,11 +238,11 @@ strong {
   transition: transform 0.3s ease;
 }
 
-.content-wrapper a:hover {
+.content__wrapper a:hover {
   color: white;
 }
 
-.content-wrapper a:hover::after {
+.content__wrapper a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -276,14 +276,14 @@ strong {
     --section-padding: 1.5rem;
   }
 
-  .floating-nav {
+  .floating__nav {
     width: 90%;
     padding: 0.8rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .floating-nav {
+  .floating__nav {
     display: none;
   }
 

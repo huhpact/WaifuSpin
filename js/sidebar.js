@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector('.burger-menu');
+  const burgerMenu = document.querySelector('.burger__menu');
   const sidebar = document.querySelector('.sidebar');
   const overlay = document.querySelector('.overlay');
 

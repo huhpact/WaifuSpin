@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaifuSpin リンボ - 完全なガイド</title>
+    <link rel="stylesheet" href="/css/limbo-guide.css" />
+	<link rel="stylesheet" href="/css/cookie.css" />
+	<link rel="stylesheet" href="/css/footer.css" />
+	<link rel="stylesheet" href="/css/header.css" />
+	<link rel="stylesheet" href="/css/sidebar.css" />
+	<link rel="stylesheet" href="/css/loading-cursor.css" />
+    <link rel="canonical" href="https://waifuspin.com" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+</head>
+<body>
+  <div class="preloader">
+  <div class="spinner"></div>
+</div>
+
+<div class="custom__cursor"></div>
+  
+<header>
+    <div class="header__content">
+      <div class="burger__logo">
+        <div class="burger__menu">
+          <i class='bx bx-menu'></i>
+        </div>
+        <a href="/jpn/index/index.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><img src="/images/logo.png" alt="WaifuSpin Logo" class="logo"></a>
+      </div>
+      <div class="login__reg">
+        <a href="/jpn/login/login.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja" class="login">ログイン</a>
+        <a href="/jpn/login/login.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><button class="sign__up__btn">登録する</button></a>
+      </div>
+    </div>
+  </header>
+  
+  <div id="cookie__banner" class="hidden">
+    <div class="cookie__content">
+        <div class="cookie__header">
+            <div class="cookie__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+            </div>
+            <h4>クッキー設定</h4>
+        </div>
+        <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
+        <div class="button__group">
+            <button id="decline__cookies">廃棄物</button>
+            <button id="accept__cookies">受け入れる</button>
+        </div>
+    </div>
+</div>
+  
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="/jpn/promotions/promotions.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-gift'></i> プロモーション</a></li>
+      <li><a href="/jpn/affiliates/affiliates.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-business'></i>所属</a></li>
+      <hr>
+      <li><a href="/jpn/vip/vip.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-trophy'></i> VIPクラブ</a></li>
+      <li><a href="/jpn/news/news.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><i class='bx bxs-news'></i> ニュース</a></li>
+      <li><a href="/jpn/support/support.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja"><i class='bx bx-support'></i> ライブ・カスタマー・サービス</a></li>
+      <li class="language__dropdown">
+        <i class='bx bx-world'></i> 言語
+        <ul class="dropdown">
+          <li><a href="/en/limbo-guide/limbo-guide.html">English</a></li>
+          <li><a href="/de/limbo-guide/limbo-guide.html">Deutsch</a></li>
+          <li><a href="/fr/limbo-guide/limbo-guide.html">Français</a></li>
+          <li><a href="#">日本語</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="overlay"></div>
+
+
+  <div id="app">
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">の芸術をマスターします <span class="accent__text">リンボ</span></h1>
+        <p class="hero__subtitle">利益のリスクにおけるエキサイティングなカジノゲーム</p>
+        <button class="cta__button" id="exploreBtn">
+          <span>今すぐ探索してください</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="hero__visual">
+        <div class="limbo__animation__container">
+          <div class="multiplier__display">
+            <span id="multiplierValue">1.00</span><span class="multiplier__x">×</span>
+          </div>
+          <div class="limbo__graph">
+            <canvas id="limboCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="basics" class="section">
+      <div class="section__container">
+        <h2 class="section__title">リンボの基本</h2>
+        <div class="card__container">
+          <div class="info__card">
+            <div class="card__icon">
+              <i class="fas fa-dice"></i>
+            </div>
+            <h3>リンボとは何ですか？</h3>
+            <p>Limboは、ランダムに生成された乗数が選択した目的地を超えるかどうかに賭けることに、明らかに公正なカジノゲームです。 目標が高ければ高いほど、潜在的な賞金が大きくなります。</p>
+          </div>
+          <div class="info__card">
+            <div class="card__icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>それがどのように機能するか</h3>
+            <p>このゲームは、1.00×から無限に無限の間の乗数を作成します。 乗数が予測よりも高い場合に勝ちます。 予測の低下は勝ちやすくなりますが、より少ない支払いを提供します。</p>
+          </div>
+          <div class="info__card">
+            <div class="card__icon">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <h3>ハウスエッジ</h3>
+            <p>Limboには通常、約1％の家の利点があるため、最も公平なカジノゲームの1つです。 これは、時間の経過とともに100ドルすべての期待収益率が99ドルであることを意味します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gameplay" class="section alt__bg">
+      <div class="section__container">
+        <h2 class="section__title">リンボをどのようにプレイしますか？</h2>
+        <div class="steps__container">
+          <div class="step__card" data-step="1">
+            <div class="step__number">1</div>
+            <h3>賭け金額を設定します</h3>
+            <p>すべてのラウンドで、どれだけ賭けたいかを選択してください。 バンクロール管理戦略に基づいて、この金額を適応させることができます。</p>
+          </div>
+          <div class="step__card" data-step="2">
+            <div class="step__number">2</div>
+            <h3>ターゲット乗数を選択してください</h3>
+            <p>ターゲット乗数を選択します。 目標が高ければ高いほど、勝つ可能性は低くなりますが、勝つと潜在的な支払いが大きくなります。</p>
+          </div>
+          <div class="step__card" data-step="3">
+            <div class="step__number">3</div>
+            <h3>賭けをしてください</h3>
+            <p>[ベット]ボタンをクリックしてゲームを開始します。 システムはランダムな乗数を生成します。</p>
+          </div>
+          <div class="step__card" data-step="4">
+            <div class="step__number">4</div>
+            <h3>結果を確認してください</h3>
+            <p>生成された乗数が目標よりも高い場合、あなたは勝ちます！ 支払いにはターゲット乗数が掛けられます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy" class="section">
+      <div class="section__container">
+        <h2 class="section__title">利益戦略</h2>
+        <div class="strategy__container">
+          <div class="strategy__card">
+            <h3>保守的なアプローチ</h3>
+            <p>より頻繁な勝利のために、下の乗数（1.5×から2x）を選択しますが、支払いが少なくなります。 この戦略は、バンクロール戦略を維持し、より一貫した結果を提供します。</p>
+            <div class="strategy__stats">
+              <div class="stat">
+                <span class="stat__value">高い</span>
+                <span class="stat__label">勝利率</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">高い</span>
+                <span class="stat__label">リスク</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">低い</span>
+                <span class="stat__label">勝ちます</span>
+              </div>
+            </div>
+          </div>
+          <div class="strategy__card">
+            <h3>バランスの取れた戦略</h3>
+            <p>利益頻度と配布サイズの間の残りの量のために、2倍から5倍の間のターゲット乗数。 このアプローチは、適切な潜在的なリターンで中程度のリスクを提供します。</p>
+            <div class="strategy__stats">
+              <div class="stat">
+                <span class="stat__value">中くらい</span>
+                <span class="stat__label">勝利率</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">中くらい</span>
+                <span class="stat__label">リスク</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">中くらい</span>
+                <span class="stat__label">勝ちます</span>
+              </div>
+            </div>
+          </div>
+          <div class="strategy__card">
+            <h3>ハイリスクアプローチ</h3>
+            <p>潜在的に大規模な支払いのために、10倍以上の乗数を設定しますが、勝つ確率ははるかに低くなります。 この戦略は、迅速な損失につながる可能性がありますが、大幅な勝利にもつながります。</p>
+            <div class="strategy__stats">
+              <div class="stat">
+                <span class="stat__value">低い</span>
+                <span class="stat__label">勝利率</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">高い</span>
+                <span class="stat__label">リスク</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">高い</span>
+                <span class="stat__label">勝ちます</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta__section">
+      <div class="cta__container">
+        <h2>リンボの準備はできましたか？</h2>
+        <p>何千人ものプレイヤーに参加して、最もエキサイティングなカジノゲームの1つで運をテストしてください。 明らかに公正なシステムを使用すると、すべての結果を完全に透明性を確認できます。</p>
+        <div class="cta__features">
+          <div class="cta__feature">
+            <i class="fas fa-shield-alt"></i>
+            <span>明らかに公平です</span>
+          </div>
+          <div class="cta__feature">
+            <i class="fas fa-bolt"></i>
+            <span>即時の支払い</span>
+          </div>
+        </div>
+        <a href="/jpn/login/login.html?utm_source=waifuspin-limboguide&utm_medium=webbrowser&lang=ja" class="get__started__btn">
+          <span>さあ行こう</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <p class="disclaimer">責任を持ってプレイします。 ギャンブルは面白くてお金を稼ぐ方法はないはずです。 制限を設定し、あなたに固執します。</p>
+      </div>
+    </section>
+
+    <script src="/jpn/limbo-guide/limbo-guide.js"></script>
+		<script src="/js/cookie.js"></script>
+		<script src="/js/footer-btc.js"></script>
+		<script src="/js/sidebar.js"></script>
+		<script src="/js/loading-cursor.js"></script>
+    <script src="/js/footer/footer-ja.js"></script>
+</body>
+</html>

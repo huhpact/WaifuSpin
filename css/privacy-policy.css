@@ -30,19 +30,19 @@ body {
   padding-top: 6rem;
 }
 
-.hero-content {
+.hero__content {
   flex: 1;
   padding: 2rem;
 }
 
-.hero-image {
+.hero__image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-image img {
+.hero__image img {
   max-width: 100%;
   height: auto;
   border-radius: 20px;
@@ -75,7 +75,7 @@ h3 {
   padding: 2rem;
 }
 
-.policy-section {
+.policy__section {
   background: var(--secondary-bg);
   border-radius: 16px;
   padding: 2rem;
@@ -84,11 +84,11 @@ h3 {
   transition: transform 0.3s ease;
 }
 
-.policy-section:hover {
+.policy__section:hover {
   transform: translateY(-5px);
 }
 
-.policy-section h2 {
+.policy__section h2 {
   color: #fff;
   margin-bottom: 1rem;
   display: flex;
@@ -128,7 +128,7 @@ p {
     padding: 2rem;
   }
   
-  .hero-image {
+  .hero__image {
     order: -1;
     margin-bottom: 2rem;
   }
@@ -141,7 +141,7 @@ p {
     font-size: 1.5rem;
   }
   
-  .policy-section {
+  .policy__section {
     padding: 1.5rem;
   }
 }

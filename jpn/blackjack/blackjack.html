@@ -1,168 +1,164 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaifuSpin - ブラックジャック</title>
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <title>WaifuSpin - 近日公開!</title>
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="stylesheet" href="/css/footer.css" />
 		<link rel="stylesheet" href="/css/cookie.css" />
-		<link rel="stylesheet" href="/css/game-frame.css" />
+		<link rel="stylesheet" href="/css/coming-soon.css">
 		<link rel="stylesheet" href="/css/loading-cursor.css" />
 		<link rel="stylesheet" href="/css/sidebar.css" />
     <link rel="canonical" href="https://waifuspin.com" />
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <div class="stars"></div>
-  <div class="twinkling"></div>
   <div class="preloader">
   <div class="spinner"></div>
 </div>
 
-<div class="custom-cursor"></div>
+<div class="custom__cursor"></div>
   
-<nav class="navbar">
-	<a href="/jpn/index/index.html"><img class="logo" src="/images/logo.png" alt="WaifuSpin"></a>
-	
-	<div class="nav-balance">
-			<div class="balance-display">
-					<span id="balanceAmount">0.00000000</span>
-					<span class="crypto-symbol">USDT</span>
-			</div>
-	</div>
-
-	<div class="nav-profile">
-			<span id="username">ユーザー</span>
-		 <img class="avatar" src="/images/anime-default-pfp-7.jpg" alt="">
-	</div>
-</nav>
-  
-<div id="cookie-banner" class="hidden">
-  <div class="cookie-content">
-      <div class="cookie-header">
-          <div class="cookie-icon">
+<div id="cookie__banner" class="hidden">
+  <div class="cookie__content">
+      <div class="cookie__header">
+          <div class="cookie__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
           </div>
           <h4>クッキー設定</h4>
       </div>
       <p>本サイトでは、お客様に本サイトを快適にご利用いただくためにクッキーを使用しています。</p>
-      <div class="button-group">
-          <button id="decline-cookies">廃棄物</button>
-          <button id="accept-cookies">受け入れる</button>
+      <div class="button__group">
+          <button id="decline__cookies">廃棄物</button>
+          <button id="accept__cookies">受け入れる</button>
       </div>
   </div>
 </div>
 
-    <main class="game-container">
-      <div class="game-frame" id="gameFrame">
-        <!--Hier musst du Blackjack adden-->
+<div class="back__button">
+  <button id="backBtn"><i class="fas fa-arrow-left"></i> 戻る</button>
+</div>
+<div id="bubble__container"></div>
+<div id="app">
+  <section class="hero__section">
+    <div class="hero__bg"></div>
+    <div class="logo__container">
+      <div class="logo">
+        <span class="waifu">Waifu</span><span class="spin">Spin</span>
       </div>
-
-      <div class="controls">
-        <div class="bet-controls">
-          <div class="input-wrapper">
-            <input type="number" class="bet-input" id="betAmount" value="10" min="1" max="1000" step="1">
-          </div>
-          <button class="button" id="decreaseBet">-</button>
-          <button class="button" id="increaseBet">+</button>
-        </div>
-        
-        <button class="button autoplay" id="autoplayButton">オートプレイ</button>
-        <button class="button" id="playButton">プレー</button>
-      </div>
-    </main>
-
-		<hr>
-    <footer>
-      <div class="logo-footer1">
-        <img src="/images/logo.png" alt="Waifuspin Logo">
     </div>
-
-    <div class="container">
-
-        <div class="section">
-            <h4>カジノ</h4>
-            <ul>
-                <li><a href="/jpn/casino-games/casino-games.html">カジノゲーム</a></li>
-                <li><a href="/jpn/slots-guide/slots-guide.html">スロットマシン</a></li>
-                <li><a href="/jpn/live-casino/live-casino.html">ライブカジノ</a></li>
-                <li><a href="/jpn/lucky-wheel-guide/lucky-wheel-guide.html">ラッキーホイール</a></li>
-                <li><a href="/jpn/blackjack-guide/blackjack-guide.html">ブラックジャック</a></li>
-                <li><a href="/jpn/provider/provider.html">サプライヤー</a></li>
-                <li><a href="/jpn/promotions-and-competitions/promotions-and-competitions.html">プロモーション＆コンペティション</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>サポート</h4>
-            <ul>
-                <li><a href="/jpn/help-center/help-center.html">ヘルプセンター</a></li>
-                <li><a href="/jpn/hotline-for-game-problems/hotline-for-game-problems.html">ギャンブル依存症ヘルプライン</a></li>
-                <li><a href="/jpn/support/support.html">ライブ・カスタマー・サービス</a></li>
-                <li><a href="/jpn/self-exclusion/self-exclusion.html">自己排除</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>会社概要</h4>
-            <ul>
-                <li><a href="/jpn/vip/vip.html">VIPクラブ</a></li>
-                <li><a href="/jpn/affiliates/affiliates.html">所属</a></li>
-                <li><a href="/jpn/privacy-policy/privacy-policy">プライバシーポリシー</a></li>
-                <li><a href="/jpn/lbc-policy/lbc-policy.html">AMLポリシー</a></li>
-                <li><a href="/jpn/terms-of-use/terms-of-use.html">ご利用条件</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h4>お支払いについて</h4>
-            <ul>
-                <li><a href="/jpn/deposits-and-withdrawals/deposits-and-withdrawals.html">入出金</a></li>
-                <li><a href="/jpn/guide-to-currencies/guide-to-currencies.html">通貨ガイド</a></li>
-                <li><a href="/jpn/guide-to-crypto/guide-to-crypto.html">暗号ガイド</a></li>
-                <li><a href="/jpn/supported-crypto/supported-crypto.html">暗号化対応</a></li>
-                <li><a href="/jpn/how-much-to-bet/how-much-to-bet.html">いくら賭けるか</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-
-            <div class="language-selector">
-                <select>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div class="currency-selector">
-                <select>
-                    <option value="decimal">小数点以下</option>
-                    <option value="fractional">フラクショナル</option>
-                    <option value="american">アメリカン</option>
-                </select>
-            </div>
-
-          
-            <div class="btc-rate">1 BTC = Loading...</div>
-        </div>
-    </div>
-    <hr>
     
-
-    <div class="copyright">
-        &copy; 2024 Waifuspin.com | 無断複写・転載を禁じます。
+    <h1 class="title">近日公開</h1>
+    
+    <div class="description">
+      <p>すぐに時間です！ ブラックジャックのゲームはスターティングブロックにあり、そのリリースのみを待っています！</p>
     </div>
-    </footer>
+    
+    <div class="cta__container">
+      <button class="notify__btn pulse">それが始まるときに私に知らせてください！</button>
+      <div class="countdown">
+        <div class="countdown__item">
+          <span id="days">00</span>
+          <span class="label">日</span>
+        </div>
+        <div class="countdown__item">
+          <span id="hours">00</span>
+          <span class="label">時間</span>
+        </div>
+        <div class="countdown__item">
+          <span id="minutes">00</span>
+          <span class="label">分</span>
+        </div>
+        <div class="countdown__item">
+          <span id="seconds">00</span>
+          <span class="label">秒</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll__indicator">
+      <i class="fas fa-chevron-down"></i>
+      <span>スクロール</span>
+    </div>
+  </section>
+
+  <section class="features__section">
+    <h2 class="section__title">ゲーム機能</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-dice"></i>
+        <h3>ライブゲーム</h3>
+        <p>あなたが最高のサービスを提供するために、私たちのクルーパーは24時間年中無休で目を覚まします。</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-trophy"></i>
+        <h3>大きな勝利</h3>
+        <p>1米ドルから、ブラックジャックと最大額をプレイできますか？ まあ、それらは存在しません。 だから最大の利益!!</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3>コミュニティ</h3>
+        <p>私たちのアクティブなコミュニティは、あなたのゲーム体験をまったく新しいレベルに引き上げ、私を信頼します。 あなたはそれを後悔することはありません！</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery__section">
+    <h2 class="section__title">スニークピーク</h2>
+    <div class="gallery">
+      <div class="gallery__item">
+        <img src="/images/blackjack.jpg" alt="Blackjack Sneakpeek">
+        <div class="overlay">
+          <h4>特定のアニメタッチを備えたテーブル</h4>
+          <p>...お気に入りのキャラクターと</p>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <img src="/images/blackjack1.jpg" alt="Poker table">
+        <div class="overlay">
+          <h4>マルチプレイヤーブラックジャック</h4>
+          <p>リアルタイムで友達と遊ぶ</p>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <img src="/images/blackjack3.webp" alt="Roulette wheel">
+        <div class="overlay">
+          <h4>異常に良いAI</h4>
+          <p>私たちの自己開発のAIは、スムーズなゲームプレイを保証します！</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter__section">
+    <h2 class="section__title">最新の状態を保ちます</h2>
+    <div class="newsletter__container">
+      <p class="description">ニュースレターを購読して、waifuspin経由で最新の更新を取得してください！</p>
+      <form class="newsletter__form" id="newsletterForm">
+        <div class="form__group">
+          <input type="text" id="name" placeholder=" ">
+          <label for="name">あなたの名前</label>
+        </div>
+        <div class="form__group">
+          <input type="email" id="email" placeholder=" ">
+          <label for="email">あなたの電子メール</label>
+        </div>
+        <button type="submit" class="submit__btn">今すぐ登録してください！</button>
+      </form>
+    </div>
+  </section>
 
     <script type="module" src="/jpn/blackjack/blackjack.js"></script>
 		<script src="/js/cookie.js"></script>
 		<script src="/js/footer-btc.js"></script>
 		<script src="/js/loading-cursor.js"></script>
 		<script src="/js/sidebar.js"></script>
+    <script src="/js/footer/footer-ja.js"></script>
   </body>
 </html>

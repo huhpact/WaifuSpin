@@ -27,7 +27,7 @@ body {
 	line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+section h1, section h2, section h3, section h4 {
 	background: var(--gradient);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -52,20 +52,6 @@ section::before {
 	height: 100%;
 	background: radial-gradient(circle at 50% 50%, rgba(95, 148, 255, 0.1), transparent);
 	pointer-events: none;
-}
-
-.glass-nav {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	padding: 2rem var(--spacing-lg);
-	background: rgba(30, 27, 46, 0.95);
-	backdrop-filter: blur(20px);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	z-index: 1000;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
@@ -94,44 +80,6 @@ section::before {
 	transform: scaleX(1);
 }
 
-.nav-links {
-	display: flex;
-	gap: var(--spacing-sm);
-}
-
-.nav-links a {
-	color: var(--text-clr);
-	text-decoration: none;
-	font-size: 1.1rem;
-	font-weight: 500;
-	padding: 0.5rem 1rem;
-	border-radius: 8px;
-	transition: all 0.3s ease;
-	position: relative;
-}
-
-.nav-links a::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: var(--gradient);
-	opacity: 0;
-	border-radius: 8px;
-	z-index: -1;
-	transition: opacity 0.3s ease;
-}
-
-.nav-links a:hover {
-	color: white;
-}
-
-.nav-links a:hover::before {
-	opacity: 0.1;
-}
-
 .hero {
 	min-height: 100vh;
 	display: flex;
@@ -154,7 +102,7 @@ section::before {
 	pointer-events: none;
 }
 
-.hero-content {
+.hero__content {
 	flex: 1;
 	max-width: 700px;
 }
@@ -172,12 +120,12 @@ section::before {
 	max-width: 600px;
 }
 
-.hero-image {
+.hero__image {
 	flex: 1;
 	position: relative;
 }
 
-.hero-image::before {
+.hero__image::before {
 	content: '';
 	position: absolute;
 	top: -20px;
@@ -190,7 +138,7 @@ section::before {
 	z-index: 0;
 }
 
-.hero-image img {
+.hero__image img {
 	width: 100%;
 	max-width: 800px;
 	border-radius: 20px;
@@ -200,30 +148,30 @@ section::before {
 	z-index: 1;
 }
 
-.glass-section {
+.glass__section {
 	background: rgba(30, 27, 46, 0.5);
 	backdrop-filter: blur(20px);
 	padding: var(--spacing-xl) var(--spacing-lg);
 }
 
-.section-header {
+.section__header {
 	text-align: center;
 	margin-bottom: var(--spacing-lg);
 }
 
-.section-header h2 {
+.section__header h2 {
 	font-size: 3.5rem;
 	margin-bottom: 1rem;
 }
 
-.section-header p {
+.section__header p {
 	font-size: 1.2rem;
 	max-width: 800px;
 	margin: 0 auto;
 	color: rgba(255, 255, 255, 0.8);
 }
 
-.glass-card {
+.glass__card {
 	background: var(--card-bg);
 	backdrop-filter: blur(20px);
 	border-radius: 20px;
@@ -234,7 +182,7 @@ section::before {
 	overflow: hidden;
 }
 
-.glass-card::before {
+.glass__card::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -247,68 +195,68 @@ section::before {
 	z-index: 0;
 }
 
-.glass-card:hover {
+.glass__card:hover {
 	transform: translateY(-10px);
 	border-color: rgba(255, 255, 255, 0.1);
 }
 
-.glass-card:hover::before {
+.glass__card:hover::before {
 	opacity: 0.05;
 }
 
-.glass-card > * {
+.glass__card > * {
 	position: relative;
 	z-index: 1;
 }
 
-.cards-container {
+.cards__container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: var(--spacing-md);
 	margin-top: var(--spacing-lg);
 }
 
-.promo-card {
+.promo__card {
 	text-align: left;
 }
 
-.promo-card h3 {
+.promo__card h3 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }
 
-.promo-card p {
+.promo__card p {
 	font-size: 1.1rem;
 	margin-bottom: var(--spacing-sm);
 	color: rgba(255, 255, 255, 0.9);
 }
 
-.promo-details {
+.promo__details {
 	margin: var(--spacing-sm) 0;
 	padding: var(--spacing-sm);
 	background: rgba(255, 255, 255, 0.03);
 	border-radius: 12px;
 }
 
-.promo-details li {
+.promo__details li {
 	margin-bottom: 0.5rem;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-.promo-details i {
+.promo__details i {
 	color: var(--accent);
 }
 
-.competition-grid {
+.competition__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	gap: var(--spacing-md);
 	padding: var(--spacing-sm);
 }
 
-.competition-card {
+.competition__card {
 	position: relative;
 }
 
@@ -323,18 +271,18 @@ section::before {
 	border-radius: 12px;
 }
 
-.progress-container {
+.progress__container {
 	margin: var(--spacing-sm) 0;
 }
 
-.progress-info {
+.progress__info {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 0.5rem;
 	font-size: 0.9rem;
 }
 
-.progress-bar {
+.progress__bar {
 	width: 100%;
 	height: 8px;
 	background: rgba(255, 255, 255, 0.1);
@@ -349,18 +297,18 @@ section::before {
 	transition: width 1s ease;
 }
 
-.giveaway-container {
+.giveaway__container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: var(--spacing-md);
 }
 
-.giveaway-card {
+.giveaway__card {
 	text-align: center;
 	padding: var(--spacing-md);
 }
 
-.giveaway-card i {
+.giveaway__card i {
 	font-size: 4rem;
 	margin-bottom: var(--spacing-sm);
 	background: var(--gradient);
@@ -369,7 +317,7 @@ section::before {
 	-webkit-text-fill-color: transparent;
 }
 
-.prize-amount {
+.prize__amount {
 	font-size: 2.5rem;
 	font-weight: 800;
 	margin: var(--spacing-sm) 0;
@@ -422,13 +370,13 @@ button:hover::before {
 	50% { transform: translateY(-20px); }
 }
 
-.slide-in {
+.slide__in {
 	animation: slideIn 1s ease forwards;
 	opacity: 0;
 	transform: translateX(-100px);
 }
 
-.slide-in-delayed {
+.slide__in__delayed {
 	animation: slideIn 1s ease forwards;
 	animation-delay: 0.3s;
 	opacity: 0;
@@ -487,15 +435,11 @@ button:hover::before {
 			font-size: 1.2rem;
 	}
 
-	.hero-image img {
+	.hero__image img {
 			margin-top: var(--spacing-md);
 	}
 
-	.nav-links {
-			display: none;
-	}
-
-	.section-header h2 {
+	.section__header h2 {
 			font-size: 2.5rem;
 	}
 }
@@ -516,7 +460,7 @@ button:hover::before {
 	}
 }
 
-.giveaway-card.flipped {
+.giveaway__card.flipped {
 	transform: rotateY(360deg);
 	transition: transform 1s ease;
 }

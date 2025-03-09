@@ -1,48 +1,60 @@
-const OPENAI_API_KEY = 'hier muss salem api noch adden , er commited sonst nicht'; 
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
-
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
 const sendButton = document.getElementById('sendMessage');
-const faqItems = document.querySelectorAll('.faq-item');
+const faqItems = document.querySelectorAll('.faq__item');
+
+const responses = {
+    bonjour: "Bonjour! Comment puis-je vous aider aujourd'hui?",
+    salut: "Salut! Comment puis-je vous aider?",
+    hé: "Hé! Que puis-je faire pour vous?",
+    salutations: "Salutations! Comment puis-je vous être utile?",
+    matin: "Bonjour! Comment puis-je vous aider?",
+    aprèsmidi: "Bon après-midi! Comment puis-je vous aider?",
+    soir: "Bonsoir! De quoi avez-vous besoin?",
+    aide: "Bien sûr, je suis là pour vous aider! De quoi avez-vous besoin?",
+    support: "Je suis là pour vous soutenir. De quoi avez-vous besoin?",
+    assistance: "Comment puis-je vous aider aujourd'hui?",
+    compte: "Pour les problèmes liés au compte, veuillez visiter notre page de support de compte.",
+    connexion: "Si vous avez des problèmes de connexion, veuillez consulter notre page d'aide à la connexion.",
+    motdepasse: "Pour les problèmes de mot de passe, vous pouvez réinitialiser votre mot de passe sur notre page de réinitialisation de mot de passe.",
+    crypto: "Nous supportons diverses cryptomonnaies. Laquelle vous intéresse?",
+    bitcoin: "Le Bitcoin est supporté. Avez-vous besoin d'aide pour les transactions?",
+    ethereum: "L'Ethereum est supporté. De quoi avez-vous besoin?",
+    litecoin: "Le Litecoin est supporté. Comment puis-je vous aider avec cela?",
+    transaction: "Pour les questions liées aux transactions, veuillez visiter notre page de support des transactions.",
+    paiement: "Pour les problèmes de paiement, veuillez consulter notre page de support de paiement.",
+    remboursement: "Pour les demandes de remboursement, veuillez visiter notre page de politique de remboursement.",
+    expédition: "Pour les informations sur l'expédition, veuillez consulter notre page de détails d'expédition.",
+    commande: "Pour les questions liées aux commandes, veuillez visiter notre page de support des commandes.",
+    produit: "Pour les informations sur les produits, veuillez consulter notre page de détails des produits.",
+    prix: "Pour les détails sur les prix, veuillez visiter notre page de tarification.",
+    réduction: "Pour les informations sur les réductions, veuillez consulter notre page d'offres de réduction.",
+    abonnement: "Pour les détails sur les abonnements, veuillez visiter notre page d'abonnement.",
+    annuler: "Pour annuler votre abonnement, veuillez visiter notre page d'annulation.",
+    miseajour: "Pour les options de mise à jour, veuillez consulter notre page de mise à jour.",
+    rétrograder: "Pour les options de rétrogradation, veuillez visiter notre page de rétrogradation.",
+    essai: "Pour les informations sur les essais, veuillez consulter notre page d'offres d'essai.",
+    fonctionnalités: "Pour les détails sur les fonctionnalités, veuillez visiter notre page de fonctionnalités.",
+    contact: "Pour nous contacter, veuillez visiter notre page de contact.",
+    retour: "Nous apprécions vos retours! Veuillez visiter notre page de retour.",
+    plainte: "Pour déposer une plainte, veuillez visiter notre page de plainte.",
+    suggestion: "Nous apprécions vos suggestions! Veuillez visiter notre page de suggestion.",
+    défaut: "Je suis désolé, je n'ai pas compris cela. Pouvez-vous reformuler?"
+};
 
 window.addEventListener('DOMContentLoaded', () => {
-    addMessage("Bonjour ! Bienvenue à l'assistance WaifuSpin. Comment puis-je vous aider aujourd'hui ? 🎮", false);
+    addMessage("Bonjour! Bienvenue à l'assistance Waifuspin. Comment puis-je vous aider aujourd'hui? 🎮", false);
     initFAQ();
 });
 
-async function sendToOpenAI(message) {
-    try {
-        const response = await fetch(OPENAI_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${OPENAI_API_KEY}`
-            },
-            body: JSON.stringify({
-                model: "gpt-4-turbo-preview",
-                messages: [{
-                    role: 'system',
-                    content: 'You are a helpful customer support agent for WaifuSpin, a crypto casino. Be professional, friendly, and knowledgeable about cryptocurrency, gambling, and account security. Keep responses concise and helpful. Never break character and you speak french.'
-                }, {
-                    role: 'user',
-                    content: message
-                }],
-                max_tokens: 150,
-                temperature: 0.7
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('API request failed');
+function getResponse(message) {
+    const lowerCaseMessage = message.toLowerCase();
+    for (const key in responses) {
+        if (lowerCaseMessage.includes(key)) {
+            return responses[key];
         }
-
-        const data = await response.json();
-        return data.choices[0].message.content;
-    } catch (error) {
-        console.error('Error:', error);
-        return "Je vous prie de m'excuser, mais je n'arrive pas à me connecter à notre système. Veuillez réessayer dans un instant.";
     }
+    return responses.default;
 }
 
 function addMessage(content, isUser = false) {
@@ -50,7 +62,7 @@ function addMessage(content, isUser = false) {
     messageDiv.className = `message ${isUser ? 'user' : 'agent'}`;
     
     const messageContent = document.createElement('div');
-    messageContent.className = 'message-content';
+    messageContent.className = 'message__content';
     
     if (!isUser) {
         const typing = document.createElement('div');
@@ -74,24 +86,24 @@ function addMessage(content, isUser = false) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-async function handleSendMessage() {
+function handleSendMessage() {
     const message = userInput.value.trim();
     if (message) {
         addMessage(message, true);
         userInput.value = '';
         
-        const response = await sendToOpenAI(message);
+        const response = getResponse(message);
         addMessage(response);
     }
 }
 
 function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    const faqItems = document.querySelectorAll('.faq__item');
     
     faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const icon = item.querySelector('.faq-icon');
+        const question = item.querySelector('.faq__question');
+        const answer = item.querySelector('.faq__answer');
+        const icon = item.querySelector('.faq__icon');
         
         answer.style.height = '0px';
         
@@ -101,8 +113,8 @@ function initFAQ() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.height = '0px';
-                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    otherItem.querySelector('.faq__answer').style.height = '0px';
+                    otherItem.querySelector('.faq__icon').style.transform = 'rotate(0deg)';
                 }
             });
             
@@ -128,10 +140,10 @@ userInput.addEventListener('input', function() {
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-	anchor.addEventListener('click', function (e) {
-			e.preventDefault();
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
-			});
-	});
+    anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+            });
+    });
 });

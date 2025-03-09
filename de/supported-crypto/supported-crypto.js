@@ -12,7 +12,7 @@ const observer = new IntersectionObserver((entries) => {
 	});
 }, observerOptions);
 
-document.querySelectorAll('.crypto-card, .step, .feature-card').forEach(el => {
+document.querySelectorAll('.crypto__card, .step, .feature__card').forEach(el => {
 	el.style.opacity = '0';
 	el.style.transform = 'translateY(30px)';
 	el.style.transition = 'all 0.6s ease';
@@ -50,7 +50,7 @@ function createParticles() {
 }
 
 function createTransactionFeed() {
-	const feed = document.querySelector('.transaction-feed');
+	const feed = document.querySelector('.transaction__feed');
 	const currencies = ['BTC', 'ETH', 'SOL', 'XRP'];
 	const types = ['Einzahlung', 'Abhebung', 'Konvertierung'];
 
@@ -83,7 +83,7 @@ function createTransactionFeed() {
 					transaction.style.opacity = '1';
 			}, 100);
 
-			const items = feed.getElementsByClassName('transaction-item');
+			const items = feed.getElementsByClassName('transaction__item');
 			if (items.length > 8) {
 					items[items.length - 1].remove();
 			}
@@ -94,8 +94,8 @@ function createTransactionFeed() {
 }
 
 function initializeCharts() {
-	const volumeChart = document.querySelector('.volume-chart');
-	const usersChart = document.querySelector('.users-chart');
+	const volumeChart = document.querySelector('.volume__chart');
+	const usersChart = document.querySelector('.users__chart');
 
 	function createChartBars(container, count) {
 			for (let i = 0; i < count; i++) {
@@ -123,7 +123,7 @@ function initializeCharts() {
 }
 
 function initializeConversionAnimation() {
-	const conversions = document.querySelectorAll('.conversion-animation');
+	const conversions = document.querySelectorAll('.conversion__animation');
 	const currencies = ['USD', 'EUR', 'YEN', 'CAD'];
 	const cryptos = ['BTC', 'ETH', 'SOL', 'XRP'];
 

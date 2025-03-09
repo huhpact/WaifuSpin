@@ -12,11 +12,11 @@ const observer = new IntersectionObserver((entries) => {
 	});
 }, observerOptions);
 
-document.querySelectorAll('.provider-card, .stat-card').forEach(element => {
+document.querySelectorAll('.provider__card, .stat__card').forEach(element => {
 	observer.observe(element);
 });
 
-document.querySelectorAll('.game-item').forEach(game => {
+document.querySelectorAll('.game__item').forEach(game => {
 	game.addEventListener('mousemove', (e) => {
 			const bounds = game.getBoundingClientRect();
 			const mouseX = e.clientX - bounds.left;
@@ -41,11 +41,11 @@ document.querySelectorAll('.game-item').forEach(game => {
 	});
 });
 
-document.querySelectorAll('.provider-features li').forEach((item, index) => {
+document.querySelectorAll('.provider__features li').forEach((item, index) => {
 	item.style.transitionDelay = `${index * 0.1}s`;
 });
 
-const stats = document.querySelectorAll('.stat-number');
+const stats = document.querySelectorAll('.stat__number');
 const animateValue = (element, start, end, duration) => {
 	const range = end - start;
 	const increment = range / (duration / 16);

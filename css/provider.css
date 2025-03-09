@@ -88,7 +88,7 @@ body {
   }
 }
 
-.hero-minimal {
+.hero__minimal {
   padding: 12rem 2rem 6rem;
   text-align: center;
   background: var(--primary-bg);
@@ -96,7 +96,7 @@ body {
   overflow: hidden;
 }
 
-.hero-minimal::before {
+.hero__minimal::before {
   content: '';
   position: absolute;
   width: 200%;
@@ -107,7 +107,7 @@ body {
   animation: rotate 30s linear infinite;
 }
 
-.gradient-text {
+.gradient__text {
   background: var(--gradient);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -120,7 +120,7 @@ body {
   animation: rotateGradient 8s linear infinite;
 }
 
-.hero-subtitle {
+.hero__subtitle {
   font-size: 1.5rem;
   color: var(--text-clr);
   max-width: 800px;
@@ -130,7 +130,7 @@ body {
   animation-delay: 0.5s;
 }
 
-.providers-showcase {
+.providers__showcase {
   padding: 4rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -140,7 +140,7 @@ body {
 	background: var(--primary-bg);
 }
 
-.provider-card {
+.provider__card {
   background: rgba(30, 27, 46, 0.5);
   border-radius: 20px;
   padding: 3rem;
@@ -152,18 +152,18 @@ body {
   transform: translateY(50px);
 }
 
-.provider-card.fade-in {
+.provider__card.fade-in {
   opacity: 1;
   transform: translateY(0);
   animation: glow 3s ease-in-out infinite;
 }
 
-.provider-card:hover {
+.provider__card:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.provider-card.premium::before {
+.provider__card.premium::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -182,25 +182,25 @@ body {
   animation: rotateGradient 8s linear infinite;
 }
 
-.card-icon {
+.card__icon {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #5f94ff;
   animation: float 6s ease-in-out infinite;
 }
 
-.card-content h3 {
+.card__content h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
   opacity: 0;
   transform: translateX(-50px);
 }
 
-.provider-card.fade-in .card-content h3 {
+.provider__card.fade-in .card__content h3 {
   animation: slideInLeft 0.8s ease-out forwards;
 }
 
-.provider-description {
+.provider__description {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   color: var(--text-clr);
@@ -208,17 +208,17 @@ body {
   transform: translateX(50px);
 }
 
-.provider-card.fade-in .provider-description {
+.provider__card.fade-in .provider__description {
   animation: slideInRight 0.8s ease-out forwards;
   animation-delay: 0.2s;
 }
 
-.provider-features {
+.provider__features {
   list-style: none;
   margin-bottom: 2rem;
 }
 
-.provider-features li {
+.provider__features li {
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -227,19 +227,19 @@ body {
   transform: translateX(-30px);
 }
 
-.provider-card.fade-in .provider-features li {
+.provider__card.fade-in .provider__features li {
   animation: slideInLeft 0.6s ease-out forwards;
 }
 
-.provider-card.fade-in .provider-features li:nth-child(1) { animation-delay: 0.3s; }
-.provider-card.fade-in .provider-features li:nth-child(2) { animation-delay: 0.4s; }
-.provider-card.fade-in .provider-features li:nth-child(3) { animation-delay: 0.5s; }
+.provider__card.fade-in .provider__features li:nth-child(1) { animation-delay: 0.3s; }
+.provider__card.fade-in .provider__features li:nth-child(2) { animation-delay: 0.4s; }
+.provider__card.fade-in .provider__features li:nth-child(3) { animation-delay: 0.5s; }
 
-.provider-features i {
+.provider__features i {
   color: #5f94ff;
 }
 
-.game-preview {
+.game__preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -248,31 +248,31 @@ body {
   transform: scale(0.9);
 }
 
-.provider-card.fade-in .game-preview {
+.provider__card.fade-in .game__preview {
   animation: scaleIn 0.8s ease-out forwards;
   animation-delay: 0.6s;
 }
 
-.game-item {
+.game__item {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.game-item:hover {
+.game__item:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(95, 148, 255, 0.2);
 }
 
-.game-item img {
+.game__item img {
   width: 100%;
   height: auto;
   border-radius: 10px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.game-name {
+.game__name {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -285,11 +285,11 @@ body {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.game-item:hover .game-name {
+.game__item:hover .game__name {
   transform: translateY(0);
 }
 
-.provider-stats {
+.provider__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -300,7 +300,7 @@ body {
   overflow: hidden;
 }
 
-.provider-stats::before {
+.provider__stats::before {
   content: '';
   position: absolute;
   top: 0;
@@ -312,14 +312,14 @@ body {
   animation: rotateGradient 8s linear infinite;
 }
 
-.stat-card {
+.stat__card {
   text-align: center;
   padding: 2rem;
   opacity: 0;
   transform: translateY(30px);
 }
 
-.stat-card.fade-in {
+.stat__card.fade-in {
   animation: slideUp 0.8s ease-out forwards;
 }
 
@@ -334,14 +334,14 @@ body {
   }
 }
 
-.stat-card i {
+.stat__card i {
   font-size: 3rem;
   color: #5f94ff;
   margin-bottom: 1rem;
   animation: float 6s ease-in-out infinite;
 }
 
-.stat-number {
+.stat__number {
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
@@ -354,25 +354,25 @@ body {
   animation: rotateGradient 8s linear infinite;
 }
 
-.stat-label {
+.stat__label {
   font-size: 1.1rem;
   color: var(--text-clr);
 }
 
 @media (max-width: 768px) {
-  .hero-minimal {
+  .hero__minimal {
     padding: 8rem 1rem 4rem;
   }
   
-  .gradient-text {
+  .gradient__text {
     font-size: 2.5rem;
   }
   
-  .provider-card {
+  .provider__card {
     padding: 2rem;
   }
   
-  .game-preview {
+  .game__preview {
     grid-template-columns: 1fr;
   }
 }

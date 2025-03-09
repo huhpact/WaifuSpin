@@ -8,8 +8,8 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('aos-animate');
 
-            if (entry.target.parentElement.classList.contains('stats-grid') ||
-                entry.target.parentElement.classList.contains('benefits-grid')) {
+            if (entry.target.parentElement.classList.contains('stats__grid') ||
+                entry.target.parentElement.classList.contains('benefits__grid')) {
                 const delay = Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100;
                 entry.target.style.transitionDelay = `${delay}ms`;
             }
@@ -22,7 +22,7 @@ document.querySelectorAll('[data-aos]').forEach(element => {
 });
 
 const hero = document.querySelector('.hero');
-const heroContent = document.querySelector('.hero-content');
+const heroContent = document.querySelector('.hero__content');
 
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -59,12 +59,12 @@ const faqData = [
     }
 ];
 
-const faqGrid = document.querySelector('.faq-grid');
+const faqGrid = document.querySelector('.faq__grid');
 const faqSearch = document.querySelector('#faqSearch');
 
 function createFaqElement(faq, index) {
     const faqElement = document.createElement('div');
-    faqElement.className = 'faq-question';
+    faqElement.className = 'faq__question';
     faqElement.setAttribute('data-aos', 'fade-right');
     faqElement.style.transitionDelay = `${index * 100}ms`;
     
@@ -82,7 +82,7 @@ function renderFaqs(faqs) {
         faqGrid.appendChild(createFaqElement(faq, index));
     });
 
-    document.querySelectorAll('.faq-question[data-aos]').forEach(element => {
+    document.querySelectorAll('.faq__question[data-aos]').forEach(element => {
         observer.observe(element);
     });
 }

@@ -1,18 +1,18 @@
-const featureBoxes = document.querySelectorAll('.vip-feature-box');
-const featureImages = document.querySelectorAll('.vip-feature-image');
+const featureBoxes = document.querySelectorAll('.vip__feature__box');
+const featureImages = document.querySelectorAll('.vip__feature__image');
 const DURATION = 5000;
 let currentIndex = 0;
 let progressInterval;
 
 function updateProgress(progress) {
-  const activeBox = document.querySelector('.vip-feature-box.active');
+  const activeBox = document.querySelector('.vip__feature__box.active');
   if (activeBox) {
-    activeBox.querySelector('.vip-progress').style.width = `${progress}%`;
+    activeBox.querySelector('.vip__progress').style.width = `${progress}%`;
   }
 }
 
 function resetProgress() {
-  document.querySelectorAll('.vip-progress').forEach(progress => {
+  document.querySelectorAll('.vip__progress').forEach(progress => {
     progress.style.width = '0%';
   });
 }
