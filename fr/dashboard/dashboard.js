@@ -6,7 +6,7 @@ let userData = {
 const greetings = [
     `Content de te revoir, ${userData.username}! Prêt à tourner?`,
     `Hey ${userData.username}! Faisons aujourd'hui votre jour de chance!`,
-    `Ravi de vous voir, ${userData.username}! Les créneaux sont chauds aujourd'hui!`
+    `Ravi de vous voir, ${userData.username}! Les Slots sont chauds aujourd'hui!`
 ];
 
 function updateUI() {
