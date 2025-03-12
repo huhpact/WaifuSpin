@@ -139,7 +139,7 @@ function showResults() {
 
 	quizContent.innerHTML = `
 			<div class="quiz__results">
-					<h3>Résultats de l'évaluation</h3>
+					<h3>Testergebnisse</h3>
 					<p>${message}</p>
 					<p class="recommendations">${recommendations}</p>
 					<div class="quiz__navigation">
