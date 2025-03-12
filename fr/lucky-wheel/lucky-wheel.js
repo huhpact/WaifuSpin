@@ -96,12 +96,12 @@ class LuckyWheel {
 
   getBalance() {
       const balanceText = document.getElementById('balance').textContent;
-      return parseFloat(balanceText.replace('Balance: $', ''));
+      return parseFloat(balanceText.replace('Solde: $', ''));
   }
 
   setBalance(amount) {
       const newBalance = amount.toFixed(2);
-      document.getElementById('balance').textContent = `Balance: $${newBalance}`;
+      document.getElementById('balance').textContent = `Solde: $${newBalance}`;
       localStorage.setItem('loggedInUserBalance', newBalance);
   }
 
@@ -324,5 +324,5 @@ if (loggedInUserUsername) {
     document.getElementById("username").textContent = loggedInUserUsername;
     document.getElementById("balance").textContent = loggedInUserBalance;
 } else {
-    window.location.href = "/fr/login/login.html"; 
+    window.location.href = "/fr/login/login.html?status=not_logged_in"; 
 }
