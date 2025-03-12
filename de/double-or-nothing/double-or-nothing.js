@@ -5,7 +5,7 @@ function checkLoggedInUser() {
   const balanceEl = document.getElementById("balance");
   
   if (!username || !storedBalance) {
-    window.location.href = "/de/login/login.html";
+    window.location.href = "/de/login/login.html?status=not_logged_in";
     return;
   }
 
@@ -79,7 +79,7 @@ function updateBalance() {
 
 function startGame() {
   if (balance < gameState.currentBet) {
-    showNotification('Unauszureichender Kontostand', 'error');
+    showNotification('Unauszureichendes Guthaben', 'error');
     return;
   }
 
@@ -182,7 +182,7 @@ function checkAndStartAutoPlay() {
   }
   
   if (balance < gameState.currentBet) {
-    stopAutoPlay('Unauszureichender Kontostand!');
+    stopAutoPlay('Unauszureichendes Guthaben!');
     return;
   }
   
@@ -194,7 +194,7 @@ function stopAutoPlay(reason) {
   gameState.autoPlayEnabled = false;
   autoPlayButton.textContent = 'Auto';
   autoPlayButton.classList.remove('active');
-  showNotification('Auto play stopped: ' + reason, 'info');
+  showNotification('Auto play gestoppt: ' + reason, 'info');
 }
 
 function updateUI() {
@@ -294,7 +294,6 @@ function playLoseSound() {
   // lose sound effect
 }
 
-// Event Listeners
 if (playButton) playButton.addEventListener('click', startGame);
 if (continueButton) continueButton.addEventListener('click', continueGame);
 if (cashoutButton) cashoutButton.addEventListener('click', cashout);
