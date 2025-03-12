@@ -3,7 +3,7 @@ function checkLoggedInUser() {
   const storedBalance = localStorage.getItem("loggedInUserBalance");
   
   if (!username || !storedBalance) {
-    window.location.href = "/fr/login/login.html";
+    window.location.href = "/fr/login/login.html?status=not_logged_in";
     return;
   }
 
@@ -177,7 +177,7 @@ function updateStrategy() {
 
   switch (gameState.strategy) {
     case 'flat':
-      strategyDescription.textContent = 'Plat: Je parie le même montant à chaque fois.';
+      strategyDescription.textContent = 'Plat: Pariez le même montant à chaque fois.';
       break;
     case 'martingale':
       strategyDescription.textContent = 'Martingale: Réinitialisez le double pari après chaque défaite après la victoire.';
@@ -206,7 +206,7 @@ function startGame() {
   validateTargetMultiplier();
   
   if (balance < gameState.betAmount) {
-    showMessage('Solde de compte inadéquat!', 'lose');
+    showMessage('Solde insuffisant!', 'lose');
     return;
   }
   
@@ -319,7 +319,7 @@ function playRound() {
         stopAutoPlay();
         gameState.isPlaying = false;
         playButton.classList.remove('hidden');
-        showMessage('Le jeu automatique arrêté: solde de compte inadéquat', 'lose');
+        showMessage('Le jeu automatique arrêté: Solde insuffisant', 'lose');
       }
     } else {
       stopAutoPlay();
