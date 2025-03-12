@@ -5,7 +5,7 @@ function checkLoggedInUser() {
   const balanceEl = document.getElementById("balance");
   
   if (!username || !storedBalance) {
-    window.location.href = "/fr/login/login.html";
+    window.location.href = "/fr/login/login.html?status=not_logged_in";
     return;
   }
 
@@ -79,7 +79,7 @@ function updateBalance() {
 
 function startGame() {
   if (balance < gameState.currentBet) {
-    showNotification('Solde du compte sensoriel', 'error');
+    showNotification('Solde insuffisant', 'error');
     return;
   }
 
@@ -167,12 +167,12 @@ function checkAndStartAutoPlay() {
   const loss = gameState.initialBalance - balance;
   
   if (profit >= autoPlaySettings.stopProfit) {
-    stopAutoPlay("L'arrêt de profit est atteint!");
+    stopAutoPlay("L'arrêt de profit atteint!");
     return;
   }
   
   if (loss >= autoPlaySettings.stopLoss) {
-    stopAutoPlay('Arrêter la perte atteinte!');
+    stopAutoPlay("L'arrêt de perte atteint!");
     return;
   }
   
@@ -182,7 +182,7 @@ function checkAndStartAutoPlay() {
   }
   
   if (balance < gameState.currentBet) {
-    stopAutoPlay('Solde de compte insuffisant!');
+    stopAutoPlay('Solde insuffisant!');
     return;
   }
   
@@ -294,7 +294,6 @@ function playLoseSound() {
   // lose sound effect
 }
 
-// Event Listeners
 if (playButton) playButton.addEventListener('click', startGame);
 if (continueButton) continueButton.addEventListener('click', continueGame);
 if (cashoutButton) cashoutButton.addEventListener('click', cashout);
