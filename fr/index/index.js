@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const games = ["Mines", "Slots", "Double ou rien", "Limbo"];
+  const games = ["Mines", "Slots", "Double ou rien", "Limbo", "Roue de la fortune"];
   const users = [" Masqué"];
 
   function generateTableRow() {
