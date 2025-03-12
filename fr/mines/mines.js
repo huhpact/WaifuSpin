@@ -1,7 +1,7 @@
 class MinesGame {
     constructor() {
         if (!localStorage.getItem("loggedInUserUsername") || !localStorage.getItem("loggedInUserBalance")) {
-            window.location.href = "/fr/login/login.html";
+            window.location.href = "/fr/login/login.html?status=not_logged_in";
             return;
         }
 
@@ -126,7 +126,7 @@ class MinesGame {
     startGame() {
         const betAmount = parseFloat(this.betInput.value);
         if (betAmount > this.balance) {
-            this.showError('Crédit insuffisant');
+            this.showError('Solde insuffisant');
             return;
         }
 
@@ -200,7 +200,7 @@ class MinesGame {
     }
 
     calculateMultiplier(mines, revealed) {
-        const base = 0.65; // House edge
+        const base = 0.65; 
         const probability = (25 - mines - revealed) / (25 - revealed);
         return base / probability;
     }
