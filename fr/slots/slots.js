@@ -36,7 +36,7 @@ const config = {
 class SlotMachine {
     constructor() {
         if (!this.checkAuthentication()) {
-            window.location.href = '/fr/login/login.html';
+            window.location.href = '/fr/login/login.html?status=not_logged_in';
             return;
         }
 
