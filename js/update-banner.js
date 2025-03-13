@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	setTimeout(() => {
 			hideNotification();
-	}, 10000);
+	}, 5000);
 
 	function hideNotification() {
 			if (updateNotification.classList.contains('hide')) return; 
