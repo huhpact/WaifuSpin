@@ -12,7 +12,7 @@
 
 ## License 📄
 
-All rights reserved. No unauthorized cloning, redistribution, or commercial use of this project is allowed. For more details, refer to the [LICENSE](LICENSE.md).
+All rights reserved. No unauthorized cloning, redistribution, or commercial use of this project is allowed. For more details, refer to the [LICENSE](LICENSE).
 
 
 ## Contact 📧
