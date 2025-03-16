@@ -87,3 +87,23 @@ footer .btc__rate {
     font-size: 12px;
     color: #ccc;
 }
+
+
+.credit {
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credit a {
+    display: flex;
+    align-items: center;
+}
+
+.img-credit {
+    height: 20px;
+    margin-left: 5px;
+}

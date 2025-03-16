@@ -81,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {
       <div class="copyright">
           &copy; 2025 waifuspin.com | Tous droits réservés.
       </div>
+       <p class="credit">Réalisé par 
+            <a href="https://huhpact.dev?utm_source=waifuspin&utm_medium=webbrowser&utm_campaign=ws-footer">
+                <img class="img-credit" src="https://huhpact.dev/s/logo-huhpact.png" alt="huh(pact)"></a></p>
       </footer>
 	`;
 	
